@@ -1,0 +1,190 @@
+{
+    "id": 1,
+    "sku": "N/A",
+    "name": "Kobe 5 Protro 2K Gamer Exclusive",
+    "slug": "kobe-5-protro-2k-gamer-exclusive",
+    "description": "Made available for purchase to players who completed an in-game challege in NBA 2K20, the NBA 2K20 x Kobe 5 Protro 'Chaos Alternate' Gamer Exclusive updates the Kobe 5 'Chaos.' The shoe's upper appears largely similar to its predecessor, although the grey overlays replace the former's white finish. Flywrie cables support the fit, while Volt and iridescent purple accent the look throughout. Underfoot, Air Zoom Turbo provides cushioning.",
+    "category": {
+        "id": 1,
+        "name": "shoes",
+        "slug": "shoes"
+    },
+    "tags": [
+        {
+            "id": 1,
+            "name": "Casual",
+            "slug": "casual"
+        },
+        {
+            "id": 2,
+            "name": "Cotton",
+            "slug": "cotton"
+        },
+        {
+            "id": 3,
+            "name": "Red",
+            "slug": "red"
+        }
+    ],
+    "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/products/Nike-Kobe-5-Protro-2K.png",
+        "original": "/assets/images/products/Nike-Kobe-5-Protro-2K.png"
+    },
+    "gallery": [
+        {
+            "id": 1,
+            "thumbnail": "/assets/images/products/Nike-Kobe-5-Protro-2K.png",
+            "original": "/assets/images/products/Nike-Kobe-5-Protro-2K.png"
+        },
+        {
+            "id": 2,
+            "thumbnail": "/assets/images/products/Nike-Kobe-5-Protro-2K.png",
+            "original": "/assets/images/products/Nike-Kobe-5-Protro-2K.png"
+        },
+        {
+            "id": 3,
+            "thumbnail": "/assets/images/products/Nike-Kobe-5-Protro-2K.png",
+            "original": "/assets/images/products/Nike-Kobe-5-Protro-2K.png"
+        },
+        {
+            "id": 4,
+            "thumbnail": "/assets/images/products/Nike-Kobe-5-Protro-2K.png",
+            "original": "/assets/images/products/Nike-Kobe-5-Protro-2K.png"
+        }
+    ],
+    "price": 1100,
+    "sale_price": 250,
+    "quantity": 20,
+    "variations": [
+        {
+            "id": 1,
+            "value": "9",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 2,
+            "value": "9.5",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 3,
+            "value": "10",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 4,
+            "value": "10.5",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 5,
+            "value": "11",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 6,
+            "value": "12",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 7,
+            "value": "13",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 8,
+            "value": "14",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 9,
+            "value": "Orange",
+            "meta": "#e86c25",
+            "attribute": {
+                "id": 1,
+                "name": "Color",
+                "slug": "color"
+            }
+        },
+        {
+            "id": 10,
+            "value": "Black",
+            "meta": "#000",
+            "attribute": {
+                "id": 1,
+                "name": "Color",
+                "slug": "color"
+            }
+        },
+        {
+            "id": 11,
+            "value": "Purple",
+            "meta": "#8224e3",
+            "attribute": {
+                "id": 1,
+                "name": "Color",
+                "slug": "color"
+            }
+        },
+        {
+            "id": 12,
+            "value": "Red",
+            "meta": "#dd3333",
+            "attribute": {
+                "id": 1,
+                "name": "Color",
+                "slug": "color"
+            }
+        }
+    ],
+    "meta": [
+        {
+            "id": 1,
+            "title": "Product Details",
+            "content": "Our Customer Experience Team is available 7 days a week and we offer 2 ways to get in contact.Email and Chat . We try to reply quickly, so you need not to wait too long for a response!."
+        },
+        {
+            "id": 2,
+            "title": "Additional Information",
+            "content": "Please read the documentation carefully . We also have some online video tutorials regarding this issue . If the problem remains, Please Open a ticket in the support forum"
+        },
+        {
+            "id": 3,
+            "title": "Customer Reviews",
+            "content": "At first, Please check your internet connection . We also have some online video tutorials regarding this issue . If the problem remains, Please Open a ticket in the support forum."
+        }
+    ]
+}
