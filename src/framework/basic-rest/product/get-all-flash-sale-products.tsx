@@ -15,10 +15,20 @@ const fetchAncientFlashSaleProducts = async ({ queryKey }: any) => {
   return data;
 };
 
+const fetchNewKobeArrivals = async ({ queryKey }: any) => {
+  const [_key, _params] = queryKey;
+  const { data } = await http.get(API_ENDPOINTS.KOBE_NEW_ARRIVALS);
+  return data;
+};
+
 export const useFlashSaleProductsQuery = (options: QueryOptionsType) => {
   if (options.demoVariant === 'ancient') {
     return useQuery<any, Error>([API_ENDPOINTS.FLASH_SALE_PRODUCTS_ANCIENT, options], fetchAncientFlashSaleProducts);
   }
 
   return useQuery<any, Error>([API_ENDPOINTS.FLASH_SALE_PRODUCTS, options], fetchFlashSaleProducts);
+};
+
+export const useKobeArrivalsQuery = (options: QueryOptionsType) => {
+  return useQuery<any, Error>([API_ENDPOINTS.KOBE_NEW_ARRIVALS, options], fetchNewKobeArrivals);
 };

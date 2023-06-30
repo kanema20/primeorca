@@ -20,7 +20,10 @@ import { homeOneBanner as banner } from '@framework/static/banner';
 import { collectionData as collection } from '@framework/static/collection';
 import { ROUTES } from '@utils/routes';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import ContactInfoBlock from '@containers/contact-info';
+import InquiryForm from '@components/common/form/inquiry';
 import { GetStaticProps } from 'next';
+import { useTranslation } from 'next-i18next';
 
 const flashSaleCarouselBreakpoint = {
   '1280': {
@@ -38,6 +41,8 @@ const flashSaleCarouselBreakpoint = {
 };
 
 export default function Home() {
+  const { t } = useTranslation('common');
+
   return (
     <Container>
       {/* <HeroWithCategory bannerData={heroBanner} /> */}
@@ -52,19 +57,30 @@ export default function Home() {
       <CollectionBlock data={collection} />
       <ProductsFlashSaleBlock date={'2023-03-01T01:02:03'} />
       {/* <ProductsWithFlashSale carouselBreakpoint={flashSaleCarouselBreakpoint} /> */}
-      <BannerGridBlock />
-      <CategoryGridBlock sectionHeading="text-featured-categories" />
+      {/* <BannerGridBlock />
+      <CategoryGridBlock sectionHeading="text-featured-categories" /> */}
       {/* <Divider /> */}
-
       {/* <NewArrivalsProductFeed /> */}
-      <Divider />
+      {/* <Divider /> */}
       {/* <BrandBlock sectionHeading="text-top-brands" /> */}
       <FeatureBlock />
       {/* <DownloadApps /> */}
-      <Support />
-      <Subscription />
+      {/* <Support /> */}
+      <Container>
+        <div className="my-14 lg:my-16 xl:my-20 px-0 pb-2 lg: xl:max-w-screen-xl mx-auto flex flex-col md:flex-row w-full">
+          <div className="md:w-full lg:full 2xl:full flex h-full  flex-col">
+            <div className="flex pb-7 md:pb-9 mt-7 md:-mt-1.5">
+              <h4 className="text-2xl 2xl:text-3xl font-bold text-heading">
+                {t('text-inquiry')}
+              </h4>
+            </div>
+            <InquiryForm />
+          </div>
+        </div>
+        <Subscription />
+      </Container>
     </Container>
-  );
+  )
 }
 
 Home.Layout = Layout;

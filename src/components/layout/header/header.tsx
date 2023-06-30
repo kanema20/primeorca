@@ -53,7 +53,7 @@ const Header: React.FC = () => {
             >
               <SearchIcon />
             </button>
-            <div className="-mt-0.5 flex-shrink-0">
+            {/* <div className="-mt-0.5 flex-shrink-0">
               <AuthMenu
                 isAuthorized={isAuthorized}
                 href={ROUTES.ACCOUNT}
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
               >
                 {t('text-account')}
               </AuthMenu>
-            </div>
+            </div> */}
             <CartButton />
           </div>
         </div>

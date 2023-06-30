@@ -42,6 +42,6 @@
   "placeholder-email": "Enter Your Email",
   "placeholder-subject": "Enter Your Subject",
   "placeholder-message": "Write your message here",
-  "placeholder-email-subscribe": "Write your email here",
+  "placeholder-email-subscribe": "Email Address",
   "placeholder-order-notes": "Notes about your order, e.g. special notes for delivery"
 }

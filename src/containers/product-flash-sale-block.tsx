@@ -1,7 +1,7 @@
 import SectionHeader from '@components/common/section-header';
 import ProductCard from '@components/product/product-card';
 import ProductCardGridLoader from '@components/ui/loaders/product-card-grid-loader';
-import { useFlashSaleProductsQuery } from '@framework/product/get-all-flash-sale-products';
+import { useKobeArrivalsQuery } from '@framework/product/get-all-flash-sale-products';
 import Alert from '@components/ui/alert';
 import dynamic from 'next/dynamic';
 
@@ -119,7 +119,7 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
   disableBorderRadius = false,
   bgGray,
 }) => {
-  const { data, isLoading, error } = useFlashSaleProductsQuery({
+  const { data, isLoading, error } = useKobeArrivalsQuery({
     limit: limit || 10,
     demoVariant,
   });

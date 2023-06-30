@@ -59,7 +59,7 @@
     "variations": [
         {
             "id": 1,
-            "value": "9",
+            "value": "8",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -68,7 +68,7 @@
         },
         {
             "id": 2,
-            "value": "9.5",
+            "value": "8.5",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -77,7 +77,7 @@
         },
         {
             "id": 3,
-            "value": "10",
+            "value": "9",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -86,7 +86,7 @@
         },
         {
             "id": 4,
-            "value": "10.5",
+            "value": "9.5",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -95,7 +95,7 @@
         },
         {
             "id": 5,
-            "value": "11",
+            "value": "10",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -104,7 +104,7 @@
         },
         {
             "id": 6,
-            "value": "12",
+            "value": "10.5",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -113,7 +113,7 @@
         },
         {
             "id": 7,
-            "value": "13",
+            "value": "11",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -122,7 +122,7 @@
         },
         {
             "id": 8,
-            "value": "14",
+            "value": "11.5",
             "attribute": {
                 "id": 1,
                 "name": "Size",
@@ -131,42 +131,47 @@
         },
         {
             "id": 9,
-            "value": "Orange",
-            "meta": "#e86c25",
+            "value": "12",
             "attribute": {
                 "id": 1,
-                "name": "Color",
-                "slug": "color"
+                "name": "Size",
+                "slug": "size"
             }
         },
         {
             "id": 10,
-            "value": "Black",
-            "meta": "#000",
+            "value": "12.5",
             "attribute": {
                 "id": 1,
-                "name": "Color",
-                "slug": "color"
+                "name": "Size",
+                "slug": "size"
             }
         },
         {
             "id": 11,
-            "value": "Purple",
-            "meta": "#8224e3",
+            "value": "13",
             "attribute": {
                 "id": 1,
-                "name": "Color",
-                "slug": "color"
+                "name": "Size",
+                "slug": "size"
             }
         },
         {
             "id": 12,
-            "value": "Red",
-            "meta": "#dd3333",
+            "value": "13.5",
             "attribute": {
                 "id": 1,
-                "name": "Color",
-                "slug": "color"
+                "name": "Size",
+                "slug": "size"
+            }
+        },
+        {
+            "id": 13,
+            "value": "14",
+            "attribute": {
+                "id": 1,
+                "name": "Size",
+                "slug": "size"
             }
         }
     ],

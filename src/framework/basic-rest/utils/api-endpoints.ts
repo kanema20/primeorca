@@ -25,6 +25,7 @@ export const API_ENDPOINTS = {
   NEW_ARRIVAL_PRODUCTS_ANCIENT: '/products_new_arrival.json',
   FLASH_SALE_PRODUCTS: '/products_flash_sale.json',
   FLASH_SALE_PRODUCTS_ANCIENT: '/products_flash_sale_ancient.json',
+  KOBE_NEW_ARRIVALS: '/kobe_new_arrivals.json',
   SHOPS: '/shops.json',
   SHOP: '/shop.json',
   SEARCH: '/search.json',
