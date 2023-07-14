@@ -24,6 +24,22 @@ import ContactInfoBlock from '@containers/contact-info';
 import InquiryForm from '@components/common/form/inquiry';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
+import { Elements, PaymentElement } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+
+// const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
+
+// const stripePromise = loadStripe('pk_test_51NODKeBHHcQnL99C1aRpVHrkczyPHhGeH5i2ZYhfLW7NGCXTtC3wgJusSintO9atIXnO2reRhwgEHAa5RYZ6L2Xt008Z1sORpQ');
+// const options = {
+//   // passing the client secret obtained from the server
+//   // clientSecret: await stripePromise.paymentIntents.create().client_secret,
+//   clientSecret: (async () => {
+//     const response = await fetch('https://localhost:3005/secret');
+//     const { client_secret: clientSecret } = await response.json();
+//     // Render the form using the clientSecret
+//   })(),
+// };
 
 const flashSaleCarouselBreakpoint = {
   '1280': {
@@ -45,6 +61,7 @@ export default function Home() {
 
   return (
     <Container>
+      {/* <Elements stripe={stripePromise} options={options}> */}
       {/* <HeroWithCategory bannerData={heroBanner} /> */}
       <BannerCard
         key={`banner--key${banner.id}`}
@@ -79,7 +96,8 @@ export default function Home() {
         </div>
         <Subscription />
       </Container>
-    </Container>
+      {/* </Elements> */}
+    </Container >
   )
 }
 
@@ -93,7 +111,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         'forms',
         'menu',
         'footer',
-      ])),
+      ]))
     },
   };
 };

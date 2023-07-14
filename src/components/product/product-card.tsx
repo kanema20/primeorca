@@ -3,7 +3,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { useUI } from '@contexts/ui.context';
 import usePrice from '@framework/product/use-price';
-import { Product } from '@framework/types';
+import { Product, StripeProduct } from '@framework/types';
 // import ProductIcon1 from '../../../public/assets/images/products/icons/product-icon1.svg'
 // import ProductIcon2 from '../../../public/assets/images/products/icons/product-icon2.svg'
 // import ProductIcon3 from '../../../public/assets/images/products/icons/product-icon3.svg'
@@ -13,7 +13,8 @@ import ProductCompareIcon from '@components/icons/product-compare-icon';
 import RatingDisplay from '@components/common/rating-display';
 
 interface ProductProps {
-  product: Product;
+  // product: Product;
+  product: StripeProduct;
   className?: string;
   contactClassName?: string;
   imageContentClassName?: string;
@@ -59,10 +60,11 @@ const ProductCard: FC<ProductProps> = ({
   const { openModal, setModalView, setModalData } = useUI();
   const placeholderImage = `/assets/placeholder/products/product-${variant}.svg`;
   const { price, basePrice, discount } = usePrice({
-    amount: product.sale_price ? product.sale_price : product.price,
-    baseAmount: product.price,
+    amount: product.default_price,
+    baseAmount: product.default_price,
     currencyCode: 'USD',
   });
+
   function handlePopupView() {
     setModalData({ data: product });
     setModalView('PRODUCT_VIEW');
@@ -118,7 +120,7 @@ const ProductCard: FC<ProductProps> = ({
         )}
       >
         <Image
-          src={product?.image?.thumbnail ?? placeholderImage}
+          src={product?.images?.thumbnail ?? placeholderImage}
           width={demoVariant === 'ancient' ? 352 : imgWidth}
           height={demoVariant === 'ancient' ? 452 : imgHeight}
           loading={imgLoading}
@@ -277,7 +279,7 @@ const ProductCard: FC<ProductProps> = ({
             className={`inline-block ${demoVariant === 'ancient' && 'font-bold text-gray-900 text-lg'
               }`}
           >
-            {price}
+            {product?.default_price}
           </span>
           {discount && (
             <del

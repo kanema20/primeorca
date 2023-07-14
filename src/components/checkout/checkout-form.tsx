@@ -7,6 +7,7 @@ import Button from '@components/ui/button';
 import Router from 'next/router';
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
+import { useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
 
 interface CheckoutInputType {
   firstName: string;
@@ -21,6 +22,9 @@ interface CheckoutInputType {
 }
 
 const CheckoutForm: React.FC = () => {
+  const stripe = useStripe();
+  const elements = useElements();
+
   const { t } = useTranslation();
   const { mutate: updateUser, isLoading } = useCheckoutMutation();
   const {
@@ -125,6 +129,7 @@ const CheckoutForm: React.FC = () => {
             className="relative pt-3 xl:pt-6"
           />
           <div className="flex w-full">
+            <PaymentElement />
             <Button
               className="w-full sm:w-auto"
               loading={isLoading}

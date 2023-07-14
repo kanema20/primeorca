@@ -6,8 +6,8 @@ import CheckoutForm from '@components/checkout/checkout-form';
 import CheckoutCard from '@components/checkout/checkout-card';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
-
 export default function CheckoutPage() {
+
   return (
     <>
       <PageHeader pageHeader="text-page-checkout" />
@@ -21,7 +21,7 @@ export default function CheckoutPage() {
           </div>
         </div>
         <Subscription />
-      </Container>
+      </Container >
     </>
   );
 }

@@ -29,6 +29,14 @@ export type QueryOptionsType = {
   demoVariant?: 'ancient';
 };
 
+export type QueryKobeItem = {
+  text?: string;
+  category?: string;
+  status?: string;
+  limit?: number;
+  demoVariant?: 'ancient';
+};
+
 export type ShopsQueryOptionsType = {
   text?: string;
   shop?: Shop;
@@ -83,6 +91,7 @@ export type Product = {
   name: string;
   slug: string;
   price: number;
+  default_price: number;
   quantity: number;
   sale_price?: number;
   image: Attachment;
@@ -96,6 +105,29 @@ export type Product = {
   [key: string]: unknown;
   isNewArrival?: boolean;
 };
+
+export type StripeProduct = {
+  id: number | string;
+  active: boolean;
+  object: string;
+  name: string;
+  slug: string;
+  shippable: boolean;
+  default_price: number;
+  quantity: number;
+  sale_price?: number;
+  image: Attachment;
+  sku?: string;
+  images?: Attachment[];
+  category?: Category;
+  tag?: Tag[];
+  metadata?: any[];
+  description?: string;
+  variations?: object;
+  [key: string]: unknown;
+  isNewArrival?: boolean;
+};
+
 export type OrderItem = {
   id: number | string;
   name: string;

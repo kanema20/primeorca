@@ -26,18 +26,19 @@ export default function ProductPopup() {
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
   const { price, basePrice, discount } = usePrice({
-    amount: data.sale_price ? data.sale_price : data.price,
-    baseAmount: data.price,
+    amount: data.default_price ? data.sale_price : data.price,
+    baseAmount: data.default_price,
     currencyCode: 'USD',
   });
   const variations = getVariations(data.variations);
-  const { slug, image, name, description } = data;
+
+  const { slug, images, name, description } = data;
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
-      Object.keys(variations).every((variation) =>
-        attributes.hasOwnProperty(variation)
-      )
+    Object.keys(variations).every((variation) =>
+      attributes.hasOwnProperty(variation)
+    )
     : true;
 
   function addToCart() {
@@ -80,7 +81,7 @@ export default function ProductPopup() {
         <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-430px max-h-430px lg:max-h-full overflow-hidden bg-gray-300">
           <img
             src={
-              image?.original ??
+              images?.original ??
               '/assets/placeholder/products/product-thumbnail.svg'
             }
             alt={name}
@@ -140,9 +141,8 @@ export default function ProductPopup() {
               <Button
                 onClick={addToCart}
                 variant="flat"
-                className={`w-full h-11 md:h-12 px-1.5 ${
-                  !isSelected && 'bg-gray-400 hover:bg-gray-400'
-                }`}
+                className={`w-full h-11 md:h-12 px-1.5 ${!isSelected && 'bg-gray-400 hover:bg-gray-400'
+                  }`}
                 disabled={!isSelected}
                 loading={addToCartLoader}
               >
