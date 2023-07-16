@@ -3,7 +3,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { useUI } from '@contexts/ui.context';
 import usePrice from '@framework/product/use-price';
-import { Product, StripeProduct } from '@framework/types';
+import { Product, StripePrice, StripeProduct } from '@framework/types';
 // import ProductIcon1 from '../../../public/assets/images/products/icons/product-icon1.svg'
 // import ProductIcon2 from '../../../public/assets/images/products/icons/product-icon2.svg'
 // import ProductIcon3 from '../../../public/assets/images/products/icons/product-icon3.svg'
@@ -11,7 +11,7 @@ import ProductViewIcon from '@components/icons/product-view-icon';
 import ProductWishIcon from '@components/icons/product-wish-icon';
 import ProductCompareIcon from '@components/icons/product-compare-icon';
 import RatingDisplay from '@components/common/rating-display';
-
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 interface ProductProps {
   // product: Product;
   product: StripeProduct;
@@ -60,10 +60,12 @@ const ProductCard: FC<ProductProps> = ({
   const { openModal, setModalView, setModalData } = useUI();
   const placeholderImage = `/assets/placeholder/products/product-${variant}.svg`;
   const { price, basePrice, discount } = usePrice({
-    amount: product.default_price,
-    baseAmount: product.default_price,
+    amount: product?.sale_price || product.price,
+    baseAmount: product.sale_price,
     currencyCode: 'USD',
   });
+
+  const { data } = useFetchItemPrice(product.default_price);
 
   function handlePopupView() {
     setModalData({ data: product });
@@ -120,7 +122,8 @@ const ProductCard: FC<ProductProps> = ({
         )}
       >
         <Image
-          src={product?.images?.thumbnail ?? placeholderImage}
+          // src={product?.images[0] ?? placeholderImage}
+          src={placeholderImage}
           width={demoVariant === 'ancient' ? 352 : imgWidth}
           height={demoVariant === 'ancient' ? 452 : imgHeight}
           loading={imgLoading}
@@ -279,7 +282,8 @@ const ProductCard: FC<ProductProps> = ({
             className={`inline-block ${demoVariant === 'ancient' && 'font-bold text-gray-900 text-lg'
               }`}
           >
-            {product?.default_price}
+            {/* {product?.default_price} */}
+            {"$" + data?.unit_amount / 100 + ".00"}
           </span>
           {discount && (
             <del

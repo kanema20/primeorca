@@ -1,3 +1,4 @@
+import { type } from 'os';
 import { QueryKey } from 'react-query';
 
 export type CollectionsQueryOptionsType = {
@@ -113,10 +114,10 @@ export type StripeProduct = {
   name: string;
   slug: string;
   shippable: boolean;
-  default_price: number;
+  default_price: string;
   quantity: number;
   sale_price?: number;
-  image: Attachment;
+  image: string;
   sku?: string;
   images?: Attachment[];
   category?: Category;
@@ -127,6 +128,19 @@ export type StripeProduct = {
   [key: string]: unknown;
   isNewArrival?: boolean;
 };
+
+export type StripePrice = {
+  id: string;
+  object: string;
+  active: boolean;
+  unit_amount: number;
+  product: StripeProduct["id"];
+  currency: string;
+  billing_scheme: string;
+  type: string;
+  metadata?: any[];
+  recurring?: any[];
+}
 
 export type OrderItem = {
   id: number | string;

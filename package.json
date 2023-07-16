@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "seed": "node ./src/api/seed.tsx"
+    "seed": "node ./src/api/seed.tsx",
+    "delete": "node ./src/api/delete-products.tsx"
   },
   "dependencies": {
     "@fontsource/open-sans": "4.5.14",

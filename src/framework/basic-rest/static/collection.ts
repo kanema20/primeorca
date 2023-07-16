@@ -1,21 +1,23 @@
+import { ROUTES } from '@utils/routes';
+
 export const collectionData = [
   {
     id: 1,
-    slug: '/kobe-5',
+    slug: ROUTES.KOBE5,
     image: '/assets/images/collection/kobe-5-bruce-lee-2.jpg',
     title: 'collection-title-one',
     description: 'collection-description-one',
   },
   {
     id: 2,
-    slug: '/kobe-6',
+    slug: ROUTES.KOBE6,
     image: '/assets/images/collection/kobe-6-grinch-2.jpg',
     title: 'collection-title-two',
     description: 'collection-description-two',
   },
   {
     id: 3,
-    slug: '/ja-1',
+    slug: ROUTES.JA1,
     image: '/assets/images/collection/nike-ja-1-5.jpeg',
     title: 'collection-title-three',
     description: 'collection-description-three',

@@ -1,18 +1,17 @@
 import { QueryOptionsType, QueryKobeItem } from '@framework/types';
 import http from '@framework/utils/http';
 import { useQuery } from 'react-query';
-import Stripe from 'stripe';
 import { stripe } from 'src/utils/stripe';
-import { StripeProduct } from "@framework/types";
+import { StripePrice } from "@framework/types";
 
-
-export const fetchItemPrice = async (productId: string) => {
-    const price = await stripe.prices.retrieve(productId);
+export const fetchItemPrice = async (priceId: string) => {
+    const price = await stripe.prices.retrieve(priceId);
     return price;
 }
 
-export const useFetchItemPrice = (productId: string) => {
-    return useQuery<StripeProduct, Error>(['product_price', productId], () =>
-        fetchItemPrice(productId)
+export const useFetchItemPrice = (priceId: string) => {
+    return useQuery<StripePrice, Error>(['product_price', priceId], () =>
+        fetchItemPrice(priceId)
     );
 }
+

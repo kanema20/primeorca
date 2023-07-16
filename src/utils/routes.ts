@@ -1,6 +1,11 @@
 export const ROUTES = {
   HOME: "/",
   PRODUCT: `/products`,
+  SHOP: "/shop",
+  KOBE: "/kobe",
+  KOBE5: "/kobe/kobe-5",
+  KOBE6: "/kobe/kobe-6",
+  JA1: "/ja1",
   CHECKOUT: "/checkout",
   CONTACT: "/contact-us",
   TERMS: "/terms",

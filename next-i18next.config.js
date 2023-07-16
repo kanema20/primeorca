@@ -6,4 +6,14 @@ module.exports = {
 		localeDetection: false,
 	},
 	localePath: path.resolve("./public/locales"),
+	// images: {
+	// 	remotePatterns: [
+	// 		{
+	// 			protocol: 'https',
+	// 			hostname: 'files.stripe.com',
+	// 			// port: '',
+	// 			// pathname: '/links/**',
+	// 		},
+	// 	],
+	// },
 };

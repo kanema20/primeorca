@@ -48,9 +48,9 @@ const ProductSingleDetails: React.FC = () => {
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
-      Object.keys(variations).every((variation) =>
-        attributes.hasOwnProperty(variation)
-      )
+    Object.keys(variations).every((variation) =>
+      attributes.hasOwnProperty(variation)
+    )
     : true;
 
   function addToCart() {
@@ -109,7 +109,7 @@ const ProductSingleDetails: React.FC = () => {
           ))}
         </Carousel>
       ) : (
-        <div className="col-span-5 grid grid-cols-2 gap-2.5">
+        <div className="col-span-5 grid"> {/* grid-cols-2 gap-2.5 */}
           {data?.gallery?.map((item, index: number) => (
             <div
               key={index}
@@ -173,9 +173,8 @@ const ProductSingleDetails: React.FC = () => {
           <Button
             onClick={addToCart}
             variant="slim"
-            className={`w-full md:w-6/12 xl:w-full ${
-              !isSelected && 'bg-gray-400 hover:bg-gray-400'
-            }`}
+            className={`w-full md:w-6/12 xl:w-full ${!isSelected && 'bg-gray-400 hover:bg-gray-400'
+              }`}
             disabled={!isSelected}
             loading={addToCartLoader}
           >

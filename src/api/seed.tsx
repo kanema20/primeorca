@@ -1,7 +1,7 @@
 const Stripe = require('stripe');
 const dotenv = require('dotenv');
-const products = require('./kobe6');
-// import * as products from './kobe5';
+const kobe5Products = require('./kobe5');
+// const kobe6Products = require('./kobe6');
 
 dotenv.config();
 // dotenv.config({ path: `./env.local`, override: true });
@@ -15,10 +15,11 @@ const stripe = Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZ
 // });
 
 (async () => {
-    for (const product of products) {
+    for (const product of kobe5Products) {
         const stripeProduct = await stripe.products.create({
             name: product.name,
             description: product.description,
+            type: product.type,
             default_price_data: {
                 currency: product.currency,
                 unit_amount_decimal: (product.price * 100),
@@ -32,7 +33,25 @@ const stripe = Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZ
                 collection: product.metadata.collection
 
             }
+            // attributes: {
+            //     size:
+            // }
         });
+
+        const sizes = ['8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '13', '14'];
+
+        for (const size of sizes) {
+            await stripe.skus.create({
+                product: stripeProduct.id,
+                attributes: { size: size },
+                price: stripeProduct.default_price_data.unit_amount_decimal, // Set your desired price here
+                currency: 'usd',
+                inventory: { type: 'infinite' },
+            });
+        }
+
         console.log(`${stripeProduct.name}: ${stripeProduct.id}`);
     }
 })();
+
+

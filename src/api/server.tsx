@@ -19,8 +19,8 @@ app.get('/secret', async (req: Request, res: Response) => {
     res.json({ client_secret: intent.client_secret });
 });
 
-app.listen(3001, () => {
-    console.log('Running on port 3001');
+app.listen(8080, () => {
+    console.log('Running on port 8080');
 });
 
 
