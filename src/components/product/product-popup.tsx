@@ -11,7 +11,8 @@ import { generateCartItem } from '@utils/generate-cart-item';
 import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
-
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import { fetchItemSizes, useFetchItemSizes } from '@framework/product/get-product-sizes';
 export default function ProductPopup() {
   const { t } = useTranslation('common');
   const {
@@ -25,14 +26,26 @@ export default function ProductPopup() {
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
+  const { slug, images, name, description, default_price, metadata } = data;
+
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
   const { price, basePrice, discount } = usePrice({
-    amount: data.default_price ? data.sale_price : data.price,
+    // amount: data.sale_price ? data.sale_price : data.price,
+    amount: getProductPrice(default_price)?.unit_amount,
     baseAmount: data.default_price,
     currencyCode: 'USD',
   });
   const variations = getVariations(data.variations);
 
-  const { slug, images, name, description } = data;
+  function getSizes(prod_id: any) {
+    const { data } = useFetchItemSizes(prod_id)
+    return data;
+  }
+  const sizes: string[] = metadata.sizes;
+  console.log(`sizes: ${sizes}`)
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
@@ -56,7 +69,7 @@ export default function ProductPopup() {
 
   function navigateToProductPage() {
     closeModal();
-    router.push(`${ROUTES.PRODUCT}/${slug}`, undefined, {
+    router.push(`${metadata.category}/${metadata.collection}/${name}`, undefined, {
       locale: router.locale,
     });
   }
@@ -106,6 +119,7 @@ export default function ProductPopup() {
 
             <div className="flex items-center mt-3">
               <div className="text-heading font-semibold text-base md:text-xl lg:text-2xl">
+                {/* {"$" + (getProductPrice(default_price).unit_amount) / 100 + ".00"} */}
                 {price}
               </div>
               {discount && (
@@ -127,6 +141,7 @@ export default function ProductPopup() {
               />
             );
           })}
+          {metadata.sizes}
 
           <div className="pt-2 md:pt-4">
             <div className="flex items-center justify-between mb-4 gap-x-3 sm:gap-x-4">

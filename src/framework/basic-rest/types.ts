@@ -114,11 +114,12 @@ export type StripeProduct = {
   name: string;
   slug: string;
   shippable: boolean;
+  // default_price_data: any[];
   default_price: string;
   quantity: number;
   sale_price?: number;
   image: string;
-  sku?: string;
+  statement_descriptor: string;
   images?: Attachment[];
   category?: Category;
   tag?: Tag[];
@@ -128,6 +129,7 @@ export type StripeProduct = {
   [key: string]: unknown;
   isNewArrival?: boolean;
 };
+
 
 export type StripePrice = {
   id: string;

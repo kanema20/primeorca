@@ -9,20 +9,28 @@ import usePrice from '@framework/product/use-price';
 import { ROUTES } from '@utils/routes';
 import { generateCartItemName } from '@utils/generate-cart-item-name';
 import { useTranslation } from 'next-i18next';
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 
 type CartItemProps = {
   item: any;
 };
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
+
   const { t } = useTranslation('common');
   const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
   const { price } = usePrice({
-    amount: item.price,
+    amount: getProductPrice(item.default_price)?.unit_amount,
+    // amount: item.price,
     currencyCode: 'USD',
   });
   const { price: totalPrice } = usePrice({
-    amount: item.itemTotal,
+    // amount: item.itemTotal,
+    amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,
     currencyCode: 'USD',
   });
 
@@ -38,7 +46,8 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
     >
       <div className="relative flex flex-shrink-0 w-24 h-24 overflow-hidden bg-gray-200 rounded-md cursor-pointer md:w-28 md:h-28 ltr:mr-4 rtl:ml-4">
         <Image
-          src={item?.image ?? '/assets/placeholder/cart-item.svg'}
+          // src={item?.images[0] ?? '/assets/placeholder/cart-item.svg'}
+          src={'/assets/placeholder/cart-item.svg'}
           width={112}
           height={112}
           loading="eager"

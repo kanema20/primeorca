@@ -1,11 +1,12 @@
 export interface Item {
   id: string | number;
   price: number;
+  default_price: string;
   quantity?: number;
   [key: string]: any;
 }
 
-export interface UpdateItemInput extends Partial<Omit<Item, "id">> {}
+export interface UpdateItemInput extends Partial<Omit<Item, "id">> { }
 
 export function addItemWithQuantity(
   items: Item[],

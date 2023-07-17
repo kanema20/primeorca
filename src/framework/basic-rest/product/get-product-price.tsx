@@ -1,4 +1,3 @@
-import { QueryOptionsType, QueryKobeItem } from '@framework/types';
 import http from '@framework/utils/http';
 import { useQuery } from 'react-query';
 import { stripe } from 'src/utils/stripe';

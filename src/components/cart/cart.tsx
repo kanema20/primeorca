@@ -11,13 +11,31 @@ import Link from '@components/ui/link';
 import { ROUTES } from '@utils/routes';
 import cn from 'classnames';
 import { useTranslation } from 'next-i18next';
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import { Item } from '@contexts/cart/cart.utils';
 
 export default function Cart() {
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
+
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
+
+  function getTotalPrice(cartItems: any) {
+    let totalCart = 0;
+    cartItems?.map((cartItem) => (
+      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      //useFetchItemPrice(cartItem.prod_price) * item.quantity
+    ))
+    return totalCart;
+  }
+
   const { price: cartTotal } = usePrice({
-    amount: total,
+    // amount: total,
+    amount: getTotalPrice(items),
     currencyCode: 'USD',
   });
   return (

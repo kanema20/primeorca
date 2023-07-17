@@ -1,0 +1,130 @@
+[
+    {
+        "name": "Nike Kobe 6 Protro Mambacita Sweet 16",
+        "price": 150,
+        "type": "kobe",
+        "description": "`Nike honors the legacy of Kobe Bryant and his daughter Gigi with the Kobe 6 Protro 'Mambacita Sweet Sixteen.' Black snake scales across the upper reference the Laker legend's Black Mamba alter ego",
+        "currency": "USD",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Protro-Mamba-Forever-Product.png",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Black/White-Metallic Gold",
+        "url": "https://www.primeorca.com/products/nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "slug": "url-slug",
+            "collection": "kobe6",
+            "variations": [
+                {
+                    "id": 1,
+                    "value": "7",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 2,
+                    "value": "7.5",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 3,
+                    "value": "8",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 4,
+                    "value": "8.5",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 5,
+                    "value": "9",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 6,
+                    "value": "9.5",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 7,
+                    "value": "10",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 8,
+                    "value": "10.5",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 9,
+                    "value": "11",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 10,
+                    "value": "12",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 11,
+                    "value": "13",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                },
+                {
+                    "id": 12,
+                    "value": "14",
+                    "attribute": {
+                        "id": 1,
+                        "name": "Size",
+                        "slug": "size"
+                    }
+                }
+            ]
+        }
+    }
+]

@@ -12,6 +12,7 @@ import Puma from 'public/assets/images/brands/megamenu/puma.png';
 import Levis from 'public/assets/images/brands/megamenu/levis.png';
 import Banner1 from 'public/assets/images/banner/megamenu/banner-1.png';
 import Banner2 from 'public/assets/images/banner/megamenu/banner-2.png';
+import { ROUTES } from '@utils/routes';
 
 import { ThunderIcon } from '@components/icons/thunder-icon';
 import { WomenIcon } from '@components/icons/women-icon';
@@ -155,7 +156,7 @@ export const siteSettings = {
       // },
       {
         id: 2,
-        path: '/search?q=kobe',
+        path: `${ROUTES.KOBE}`,
         label: 'menu-kobe',
         columns: [
           {
@@ -163,12 +164,12 @@ export const siteSettings = {
             columnItems: [
               {
                 id: 1,
-                path: '/search?q=kobe-5',
+                path: `${ROUTES.KOBE5}`,
                 label: 'menu-kobe-5',
                 columnItemItems: [
                   {
                     id: 1,
-                    path: '/search?q=kobe-5-2k-gamer',
+                    path: `${ROUTES.KOBE5}/kobe-5-2k-gamer`,
                     label: 'kobe-5-2k-gamer',
                   },
                   {
@@ -205,7 +206,7 @@ export const siteSettings = {
             columnItems: [
               {
                 id: 1,
-                path: '/search?q=menu-kobe-6',
+                path: `${ROUTES.KOBE6}`,
                 label: 'menu-kobe-6',
                 columnItemItems: [
                   {

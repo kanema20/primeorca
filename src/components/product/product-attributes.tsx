@@ -5,7 +5,7 @@ interface Props {
   attributes: {
     id: number;
     value: string;
-    meta: string;
+    // meta: string;
   }[];
   active: string;
   onClick: any;
@@ -24,7 +24,7 @@ export const ProductAttributes: React.FC<Props> = ({
         {title}
       </h3>
       <ul className="flex flex-wrap colors ltr:-mr-3 rtl:-ml-3">
-        {attributes?.map(({ id, value, meta }) => (
+        {attributes?.map(({ id, value/*, meta*/ }) => (
           <li
             key={`${value}-${id}`}
             className={cn(
@@ -33,14 +33,7 @@ export const ProductAttributes: React.FC<Props> = ({
             )}
             onClick={() => onClick({ [title]: value })}
           >
-            {title === 'color' ? (
-              <span
-                className="block w-full h-full rounded"
-                style={{ backgroundColor: meta }}
-              />
-            ) : (
-              value
-            )}
+            {value}
           </li>
         ))}
       </ul>

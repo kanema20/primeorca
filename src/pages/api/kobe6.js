@@ -1,18 +1,20 @@
-module.exports = [
+const kobe6Products = [
     {
         "name": "Nike Kobe 6 Protro Mambacita Sweet 16",
         "price": 150,
         "type": "kobe",
         "description": "`Nike honors the legacy of Kobe Bryant and his daughter Gigi with the Kobe 6 Protro 'Mambacita Sweet Sixteen.' Black snake scales across the upper reference the Laker legend's Black Mamba alter ego",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Protro-Mamba-Forever-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Protro-Mamba-Forever-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/White-Metallic Gold",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -20,14 +22,16 @@ module.exports = [
         "price": 155,
         "description": "Originally released in 2010 for a Christmas Day collection",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Protro-Grinch-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Protro-Grinch-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Green Apple/Volt-Crimson-Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -35,14 +39,16 @@ module.exports = [
         "price": 150,
         "description": "Nike Kobe 6",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Kobe-6-Protro-Playoff-Pack-White-Del-Sol-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Kobe-6-Protro-Playoff-Pack-White-Del-Sol-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Neutral Grey-Del Sol-Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -50,14 +56,16 @@ module.exports = [
         "price": 155,
         "description": "Nike Kobe 6",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Protro-Challenge-Red-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Protro-Challenge-Red-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Challenge Red/Black-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -65,14 +73,16 @@ module.exports = [
         "price": 200,
         "description": "Nike Kobe 6",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-Protro-6-Think-Pink-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-Protro-6-Think-Pink-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Pinkfire/Metallic Silver/White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -80,14 +90,16 @@ module.exports = [
         "price": 150,
         "description": "The inaugural colorway of the Zoom Kobe 6",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Black-Del-Sol-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Black-Del-Sol-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/Del Sol-Dark Grey-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -95,14 +107,16 @@ module.exports = [
         "price": 308,
         "description": "Originally released in 2010 for a Christmas Day collection",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Protro-Grinch-2020-Includes-Storyteller-Collection-Books.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Protro-Grinch-2020-Includes-Storyteller-Collection-Books.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Green Apple/Volt-Crimson-Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -110,14 +124,16 @@ module.exports = [
         "price": 225,
         "description": "Nike Kobe 6",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Protro-EYBL.jpg645063261",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Protro-EYBL.png645063261",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/Lavender Mint",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -125,14 +141,16 @@ module.exports = [
         "price": 150,
         "description": "Released on Christmas Day 2010",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Grinch-Christmas-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Grinch-Christmas-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Lime Green/Varsity Red/Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -140,14 +158,16 @@ module.exports = [
         "price": 160,
         "description": "Part of an eight-shoe capsule leading up to the release of the Kobe 9",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Prelude-All-Star-MVP-Product.jpg610080200",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Prelude-All-Star-MVP-Product.png610080200",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Cannon/Volt-Purple Venom-Turf Orange",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -155,14 +175,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 Supreme 'Rice' pays tribute to Harlem's Rice High School",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Supreme-Rice-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Supreme-Rice-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Moss Green/Green Apple-Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -170,14 +192,16 @@ module.exports = [
         "price": 155,
         "description": "One of four colorways for the 2011 NBA All-Star Game",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-ASG-East-LA.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-ASG-East-LA.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Drenched Blue/Metallic Silver-Sport Red",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -185,14 +209,16 @@ module.exports = [
         "price": 150,
         "description": "Also known as the 'Glass Blue",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Glass-Helicopter.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Glass-Helicopter.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Dark Grey/Vibrant Yellow/Glass Blue/TTL",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -200,14 +226,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 features a metallic gold accents representing championship accomplishments",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-BHM-2011.png",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-BHM-2011.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/Metallic Gold",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -215,14 +243,16 @@ module.exports = [
         "price": 160,
         "description": "The Zoom Kobe 6 ‘FTB’ dropped in 2016 as part of Nike’s massive ‘Fade to Black’ collection",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Fade-To-Black-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Fade-To-Black-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "River Rock/River Rock",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -230,14 +260,16 @@ module.exports = [
         "price": 155,
         "description": "This Zoom Kobe 6 All-Star dropped in 2011 as part of four-piece Kobe 6 pack celebrating Los Angeles",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-ASG-West-Challenge-Red.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-ASG-West-Challenge-Red.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Challenge Red/White-Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -245,14 +277,16 @@ module.exports = [
         "price": 155,
         "description": "The Zoom Kobe 6 All-Star '3D/Hollywood' was one of three Kobe 6 All-Star models released for the 2011 All-Star Game",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-ASG-Hollywood-3D-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-ASG-Hollywood-3D-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Dark Grey/Chlorine Blue-Daring Red",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -260,14 +294,16 @@ module.exports = [
         "price": 150,
         "description": "The Nike Zoom Kobe 6 ‘Dark Knight’ dropped in 2011",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Dark-Knight-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Dark-Knight-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Dark Grey/Blue Glow-Black-Challenge Red",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -275,14 +311,16 @@ module.exports = [
         "price": 150,
         "description": "Giving the nod to the only franchise Kobe Bryant played for",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Zoom-Kobe-VI-3D-Lakers.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Zoom-Kobe-VI-3D-Lakers.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Club Purple-Del Sol",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -290,14 +328,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 ‘Lower Merion Aces’ features a grey midsole",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Lower-Merion-Aces-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Lower-Merion-Aces-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Metallic Platinum/Varsity Crimson-Cool Grey (Lower Merion HS)",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -305,14 +345,16 @@ module.exports = [
         "price": 150,
         "description": "The 2011 Zoom Kobe 6 Supreme ‘Chaos’ features a color scheme inspired by the Joker",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Supreme-Chaos-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Supreme-Chaos-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Ink/Volt-Dark Grey-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -320,14 +362,16 @@ module.exports = [
         "price": 150,
         "description": "A character driven shoe based on the athlete’s Black Mamba persona",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-FC-Barcelona-Home-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-FC-Barcelona-Home-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Storm Blue/Yellow Ochre-Stream Red",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -335,14 +379,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 ‘Think Pink’ launched in 2011 as part of a larger footwear collection dedicated to raising awareness for the Kay Yow Cancer Fund. Kobe Bryant’s signature shoe is dressed in a snakeskin-textured upper dressed in Pinkfire",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Kay-Yow-Think-Pink.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Kay-Yow-Think-Pink.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Pink Fire I/White-Metallic",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -350,14 +396,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'China' gives the nod to Kobe Bryant's following in China. The shoe's snakeskin-textured upper is finished Metallic Pewter",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-China-3D-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-China-3D-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Metallic Pewter/Ink-White-Crimson",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -365,14 +413,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Imperial Purple' emerges with a Los Angeles Lakers-style colorway. Featuring Imperial Purple throughout its upper",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Imperial-Purple.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Imperial-Purple.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Imperial Purple / Del Sol",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -380,14 +430,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Draft Day' gives the nod to the famous 1996 draft day trade that saw the Charlotte Hornets send the 13th overall pick to the Los Angeles Lakers in exchange for Vlade Divac. The Lakers would take Kobe Bryant",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Draft-Day.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Draft-Day.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Varsity Purple-Photo Blue Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -395,14 +447,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Concord' dresses Kobe Bryant's sixth signature shoe in a colorway more familiar to Jordan Brand. The shoe's white snakeskin-textured upper is accented by Concord on the stabilizing heel counter and lining. The signature color takes over the Zoom midsole",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Concord-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Concord-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Black-Neutral Grey-Concord",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -410,14 +464,16 @@ module.exports = [
         "price": 150,
         "description": "Debuting on the feet of Kobe Bryant during the 2011 NBA Playoffs",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Lightbulb.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Lightbulb.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Del Sol/Black-Tour Yellow-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -425,14 +481,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Steelers' emerges with a Pittsburgh Steelers-style colorway. The white and grey upper features a 3D snakeskin texture",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Steelers.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Steelers.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Black-Del Sol-Dark Grey",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -440,14 +498,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Barcelona' is inspired by FC Barcelona",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-FC-Barcelona-Mango.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-FC-Barcelona-Mango.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Bright Mango/Black-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -455,14 +515,16 @@ module.exports = [
         "price": 150,
         "description": "The Nike Zoom Kobe 6 takes on a Metallic Silver finish",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Metallic-Silver.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Metallic-Silver.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Metallic Silver/White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -470,14 +532,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Camo' features a utilitarian colorway that works a camo pattern into its signature polyurethane snakeskin-textured upper. The tongue and Swoosh branding add contrasting crimson",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Italian-Camo.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Italian-Camo.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/Khaki-Olive-Crimson",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -485,14 +549,16 @@ module.exports = [
         "price": 150,
         "description": "Kobe Bryant's sixth signature shoe with Nike gets a colorway inspired by the only NBA team he ever played for. The Zoom Kobe 6 'Lakers Home' features a white synthetic upper with snakeskin detailing throughout the forefoot and quarter panel",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Lakers-Home.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Lakers-Home.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Del Sol-Neutral Grey-Concord",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -500,14 +566,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Blue Camo' features a colorful Photo Blue camo pattern throughout its snakeskin-textured upper. Supported by a padded tongue and collar",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Blue-Camo-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Blue-Camo-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Photo Blue/White-Black-Volt",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -515,14 +583,16 @@ module.exports = [
         "price": 155,
         "description": "In celebration of the 2011 NBA All-Star Game",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-ASG-Orange-County-OC-Sunset-Product.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-ASG-Orange-County-OC-Sunset-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Orange Peel/Cannon-Black",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -530,14 +600,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Purple Gradient' features a two-tone polyurethane upper that transitions from Concord to black. A metallic silver Swoosh accents the snakeskin-textured look",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Purple-Gradient.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Purple-Gradient.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/Metallic Silver-Concord-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -545,14 +617,16 @@ module.exports = [
         "price": 155,
         "description": "nike-zoom-kobe-6-white-del-sol",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Zoom-Kobe-6-White-Del-Sol.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Zoom-Kobe-6-White-Del-Sol.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Black/Del Sol",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -560,14 +634,16 @@ module.exports = [
         "price": 150,
         "description": "Featuring a Los Angeles Lakers colorway",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Lakers-Gradient-Away.png",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Lakers-Gradient-Away.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Club Purple/White-Del Sol",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -575,14 +651,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 'Duke' features a color scheme that recalls the Duke Blue Devils",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Team-Bank.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Team-Bank.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Various",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -590,14 +668,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 ‘Urban Camo’ complements the low-top’s snakeskin texture with a subtle camouflage print made up of brown",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Urban-Camo.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Urban-Camo.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Concord/Grey Black-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -605,14 +685,16 @@ module.exports = [
         "price": 155,
         "description": "nike-kobe-6-tb-midnight-navy",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-TB-Midnight-Navy.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-TB-Midnight-Navy.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Midnight Navy/White/Metallic Silver",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -620,14 +702,16 @@ module.exports = [
         "price": 150,
         "description": "The Zoom Kobe 6 ‘Bred’ showcases a familiar color scheme",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Bred-Product.png",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Bred-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/White-Varsity Red",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -635,14 +719,16 @@ module.exports = [
         "price": 160,
         "description": "nike-kobe-6-protro-chaos",
         "currency": "USD",
-        "image": "https://stockx-assets.imgix.net/media/Product-Placeholder-Default-20210415.jpg",
+        "image": "https://stockx-assets.imgix.net/media/Product-Placeholder-Default-20210415.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Ink/Dark Grey-White-Volt",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -650,14 +736,16 @@ module.exports = [
         "price": 150,
         "description": " complemented by a black Swoosh and heel counter. A white tongue contrasts the look",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Grey-Black.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Grey-Black.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Medium Grey/Black-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -665,14 +753,16 @@ module.exports = [
         "price": 150,
         "description": "[object Object]",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-VI-Black-Gold-PS.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-VI-Black-Gold-PS.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Black/Gold/Grey",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -680,14 +770,16 @@ module.exports = [
         "price": 155,
         "description": "Nike Kobe 6",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Protro-Think-Pink.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Protro-Think-Pink.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Pinkfire/Metallic Silver-White",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -695,14 +787,16 @@ module.exports = [
         "price": 150,
         "description": "Officially named the 'Green Mamba",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Grinch-GS.png",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Grinch-GS.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Volt/Black-Green Apple-Crimson",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -710,14 +804,16 @@ module.exports = [
         "price": 150,
         "description": "[object Object]",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-USC-PE.jpg",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-USC-PE.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "White/Gym Red/Yellow",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     },
     {
@@ -725,14 +821,18 @@ module.exports = [
         "price": 150,
         "description": "Nike Kobe 6",
         "currency": "USD",
-        "image": "/assets/images/products/kobe6/Nike-Kobe-6-Prelude-All-Star-MVP-GS.png",
+        "image": "./public/assets/images/products/kobe6/Nike-Kobe-6-Prelude-All-Star-MVP-GS.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Cannon/Volt-Turf Orange-Neo Turquoise",
-        "metadata": {
+        "url": "nike-kobe-6-protro-mambacita-sweet-16",
+        "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6"
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-mambacita-sweet-16",
         },
     }
 ];
+
+module.exports = kobe6Products

@@ -59,13 +59,18 @@ const ProductCard: FC<ProductProps> = ({
 }) => {
   const { openModal, setModalView, setModalData } = useUI();
   const placeholderImage = `/assets/placeholder/products/product-${variant}.svg`;
+
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
   const { price, basePrice, discount } = usePrice({
-    amount: product?.sale_price || product.price,
+    // amount: product?.sale_price || product.price,
+    amount: getProductPrice(product.default_price)?.unit_amount,
     baseAmount: product.sale_price,
     currencyCode: 'USD',
   });
 
-  const { data } = useFetchItemPrice(product.default_price);
 
   function handlePopupView() {
     setModalData({ data: product });
@@ -282,8 +287,9 @@ const ProductCard: FC<ProductProps> = ({
             className={`inline-block ${demoVariant === 'ancient' && 'font-bold text-gray-900 text-lg'
               }`}
           >
+            {price}
             {/* {product?.default_price} */}
-            {"$" + data?.unit_amount / 100 + ".00"}
+            {/* {"$" + data?.unit_amount / 100 + ".00"} */}
           </span>
           {discount && (
             <del

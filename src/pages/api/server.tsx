@@ -10,7 +10,7 @@ const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5G
 
 app.get('/', (req: Request, res: Response) => {
 
-    res.send('Express + TypeScript Server');
+    res.send('Prime Orca LLC');
 });
 
 app.get('/secret', async (req: Request, res: Response) => {
@@ -22,7 +22,6 @@ app.get('/secret', async (req: Request, res: Response) => {
 app.listen(8080, () => {
     console.log('Running on port 8080');
 });
-
 
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);

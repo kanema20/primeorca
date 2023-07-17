@@ -45,6 +45,7 @@ const fetchNewKobeArrivals = async ({ queryKey }: any) => {
   // const { data } = await http.get(API_ENDPOINTS.KOBE_NEW_ARRIVALS);
   const { data } = await stripe.products.list({
     limit: 10,
+    active: true,
   });
   // console.log(`products.data: ${products.data}`)
 
