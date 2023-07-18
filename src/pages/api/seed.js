@@ -1,4 +1,4 @@
-import { stripe } from 'src/utils/stripe';
+import { stripe } from './stripe';
 const dotenv = require('dotenv');
 const kobe6Products = require('./kobe6.js');
 

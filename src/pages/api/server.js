@@ -1,6 +1,6 @@
 // import Stripe from "stripe";
 // const Stripe = require('stripe');
-import { stripe } from 'src/utils/stripe';
+import { stripe } from './stripe';
 // import express, { Express, Request, Response } from 'express';
 const express = require('express');
 // import dotenv from 'dotenv';

@@ -1,4 +1,3 @@
-// import Stripe from "stripe";
 const Stripe = require('stripe');
 const dotenv = require('dotenv');
 
