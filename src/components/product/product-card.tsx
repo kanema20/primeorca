@@ -4,16 +4,15 @@ import type { FC } from 'react';
 import { useUI } from '@contexts/ui.context';
 import usePrice from '@framework/product/use-price';
 import { Product, StripePrice, StripeProduct } from '@framework/types';
-// import ProductIcon1 from '../../../public/assets/images/products/icons/product-icon1.svg'
-// import ProductIcon2 from '../../../public/assets/images/products/icons/product-icon2.svg'
-// import ProductIcon3 from '../../../public/assets/images/products/icons/product-icon3.svg'
 import ProductViewIcon from '@components/icons/product-view-icon';
 import ProductWishIcon from '@components/icons/product-wish-icon';
 import ProductCompareIcon from '@components/icons/product-compare-icon';
 import RatingDisplay from '@components/common/rating-display';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import Stripe from 'stripe';
+
 interface ProductProps {
-  product: Product;
+  product: Stripe.Product;
   // product: StripeProduct;
   className?: string;
   contactClassName?: string;
@@ -67,7 +66,7 @@ const ProductCard: FC<ProductProps> = ({
   const { price, basePrice, discount } = usePrice({
     // amount: product?.sale_price || product.price,
     amount: getProductPrice(product.default_price)?.unit_amount,
-    baseAmount: product.sale_price,
+    // baseAmount: product.sale_price,
     // baseAmount: getProductPrice(product.default_price)?.unit_amount,
     currencyCode: 'USD',
   });
@@ -170,7 +169,7 @@ const ProductCard: FC<ProductProps> = ({
               </span>
             )}
 
-          {product?.isNewArrival &&
+          {product &&
             (variant === 'gridModernWide' ||
               variant === 'gridModern' ||
               variant === 'gridTrendy') && (
@@ -222,11 +221,11 @@ const ProductCard: FC<ProductProps> = ({
               <span className="text-xs font-semibold truncate sm:text-sm text-heading">
                 4.5
               </span>
-              {product.quantity === 0 && (
+              {/* {product.quantity === 0 && (
                 <span className="text-xs sm:text-sm leading-5 ltr:pl-3 rtl:pr-3 font-semibold text-[#EF4444]">
                   Out of stock
                 </span>
-              )}
+              )} */}
             </div>
           )}
         {!!(showCategory || showRating) && (
