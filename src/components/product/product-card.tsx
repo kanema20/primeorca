@@ -13,8 +13,8 @@ import ProductCompareIcon from '@components/icons/product-compare-icon';
 import RatingDisplay from '@components/common/rating-display';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 interface ProductProps {
-  // product: Product;
-  product: StripeProduct;
+  product: Product;
+  // product: StripeProduct;
   className?: string;
   contactClassName?: string;
   imageContentClassName?: string;
@@ -68,6 +68,7 @@ const ProductCard: FC<ProductProps> = ({
     // amount: product?.sale_price || product.price,
     amount: getProductPrice(product.default_price)?.unit_amount,
     baseAmount: product.sale_price,
+    // baseAmount: getProductPrice(product.default_price)?.unit_amount,
     currencyCode: 'USD',
   });
 
@@ -288,7 +289,6 @@ const ProductCard: FC<ProductProps> = ({
               }`}
           >
             {price}
-            {/* {product?.default_price} */}
             {/* {"$" + data?.unit_amount / 100 + ".00"} */}
           </span>
           {discount && (

@@ -48,7 +48,8 @@
     "react-toastify": "9.1.2",
     "react-use": "17.4.0",
     "swiper": "8.4.7",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "vercel": "^31.0.3"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "3.1.0",
