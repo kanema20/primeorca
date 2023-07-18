@@ -1,8 +1,5 @@
-// import Stripe from "stripe";
 const Stripe = require('stripe');
 const dotenv = require('dotenv');
-// import dotenv from 'dotenv';
-// const kobe5Products = require('./kobe5.js');
 const kobe6Products = require('./kobe6.js');
 
 dotenv.config();
