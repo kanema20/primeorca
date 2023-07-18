@@ -1,10 +1,26 @@
 import { Item } from '@contexts/cart/cart.utils';
 import { generateCartItemName } from '@utils/generate-cart-item-name';
 import usePrice from '@framework/product/use-price';
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 
 export const CheckoutItem: React.FC<{ item: Item }> = ({ item }) => {
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
+
+  function getTotalPrice(cartItems: any): number {
+    let totalCart: number = 0;
+    cartItems?.map((cartItem: any) => (
+      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      //useFetchItemPrice(cartItem.prod_price) * item.quantity
+    ))
+    return totalCart;
+  }
+
   const { price } = usePrice({
-    amount: item.itemTotal,
+    // amount: item.itemTotal,
+    amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,
     currencyCode: 'USD',
   });
   return (

@@ -3,13 +3,56 @@ import { useCart } from '@contexts/cart/cart.context';
 import { CheckoutItem } from '@components/checkout/checkout-card-item';
 import { CheckoutCardFooterItem } from './checkout-card-footer-item';
 import { useTranslation } from 'next-i18next';
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import { Item } from '@contexts/cart/cart.utils';
 
 const CheckoutCard: React.FC = () => {
   const { items, total, isEmpty } = useCart();
+
+  function getTotalPrice(cartItems: any): number {
+    let totalCart: number = 0;
+    cartItems?.map((cartItem: any) => (
+      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      //useFetchItemPrice(cartItem.prod_price) * item.quantity
+    ))
+    return totalCart;
+  }
   const { price: subtotal } = usePrice({
-    amount: total,
+    amount: getTotalPrice(items),
     currencyCode: 'USD',
   });
+
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
+
+  function getItemsFromCart(cartItems: any): Item[] {
+    let cart_: Item[] = [];
+    cartItems?.map((cartItem: any) => (
+      cart_.push(cartItem)
+    ))
+    return cart_;
+  }
+
+  function totalShipping(cartItems: any): number {
+    let qty: number = 0;
+    cartItems?.map((cartItem: any) => (
+      qty += cartItem.quantity
+    ))
+    if (qty <= 3) {
+      return qty * 30;
+    } else if (qty > 3 && qty <= 6) {
+      return qty * 28;
+    } else if (qty > 6 && qty <= 9) {
+      return qty * 26;
+    } else {
+      return qty * 25;
+    }
+  }
+
+  getItemsFromCart(items);
+
   const { t } = useTranslation('common');
   const checkoutFooter = [
     {
@@ -20,12 +63,12 @@ const CheckoutCard: React.FC = () => {
     {
       id: 2,
       name: t('text-shipping'),
-      price: t('text-free'),
+      price: `$${totalShipping(items)}.00`,
     },
     {
       id: 3,
       name: t('text-total'),
-      price: subtotal,
+      price: `$${(getTotalPrice(items) / 100) + (totalShipping(items))}.00`,
     },
   ];
   return (

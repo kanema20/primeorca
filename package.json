@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "seed": "node ./src/pages/api/seed.js",
+    "server": "node ./src/pages/api/server.js",
     "delete": "node ./src/pages/api/delete-products.tsx"
   },
   "dependencies": {

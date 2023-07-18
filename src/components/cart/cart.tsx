@@ -13,6 +13,7 @@ import cn from 'classnames';
 import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { Item } from '@contexts/cart/cart.utils';
+import { CartItemDetails } from '@stripe/stripe-js';
 
 export default function Cart() {
   const { t } = useTranslation('common');
@@ -24,14 +25,24 @@ export default function Cart() {
     return data;
   }
 
-  function getTotalPrice(cartItems: any) {
-    let totalCart = 0;
+  function getTotalPrice(cartItems: any): number {
+    let totalCart: number = 0;
     cartItems?.map((cartItem: any) => (
       totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
       //useFetchItemPrice(cartItem.prod_price) * item.quantity
     ))
     return totalCart;
   }
+
+  function getItemsFromCart(cartItems: any): Item[] {
+    let cart_: Item[] = [];
+    cartItems?.map((cartItem: any) => (
+      cart_.push(cartItem)
+    ))
+    return cart_;
+  }
+  getItemsFromCart(items);
+
 
   const { price: cartTotal } = usePrice({
     // amount: total,
