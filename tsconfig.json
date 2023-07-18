@@ -56,7 +56,11 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/api/kobe6.js",
-    "src/api/kobe5.js"
+    "src/api/kobe5.js",
+    "src/utils/stripe.js",
+    "src/pages/api/delete-products.js",
+    "src/pages/api/get-available-products.js",
+    "src/pages/api/make-unavailable.js"
   ],
   "exclude": [
     "node_modules"

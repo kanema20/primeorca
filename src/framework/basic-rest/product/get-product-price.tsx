@@ -1,6 +1,6 @@
 import http from '@framework/utils/http';
 import { useQuery } from 'react-query';
-import { stripe } from './stripe';
+import { stripe } from 'src/pages/api/stripe';
 import { StripePrice } from "@framework/types";
 
 export const fetchItemPrice = async (priceId: string) => {
