@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 // dotenv.config();
 dotenv.config({ path: `./env.local`, override: true });
-let STRIPE_PRIV = process.env.STRIPE_PRIVATE_KEY as string;
+let STRIPE_PRIV = process.env.STRIPE_PRIVATE_KEY;
 
 // export const stripe = new Stripe(STRIPE_PRIV, {
 //     apiVersion: '2022-11-15',
