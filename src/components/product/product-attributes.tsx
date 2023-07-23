@@ -7,6 +7,7 @@ interface Props {
     value: string;
     // meta: string;
   }[];
+  sizes: string[];
   active: string;
   onClick: any;
 }

@@ -45,7 +45,7 @@ const ProductCard: FC<ProductProps> = ({
   contactClassName = '',
   imageContentClassName = '',
   variant = 'list',
-  imgWidth = 340,
+  imgWidth = 330,
   imgHeight = 440,
   imgLoading,
   hideProductDescription = false,
@@ -127,10 +127,11 @@ const ProductCard: FC<ProductProps> = ({
         )}
       >
         <Image
-          // src={product?.images[0] ?? placeholderImage}
-          src={placeholderImage}
+          src={product?.images[0] ?? placeholderImage}
+          // src={placeholderImage}
           width={demoVariant === 'ancient' ? 352 : imgWidth}
-          height={demoVariant === 'ancient' ? 452 : imgHeight}
+          // height={demoVariant === 'ancient' ? 452 : imgHeight}
+          height={222}
           loading={imgLoading}
           quality={100}
           alt={product?.name || 'Product Image'}

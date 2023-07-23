@@ -6,9 +6,9 @@ import RelatedProducts from "@containers/related-products";
 import Divider from "@components/ui/divider";
 import Breadcrumb from "@components/common/breadcrumb";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
 
-export default function ProductPage() {
+export default function ProductPage({ slug, }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<>
 			<Divider className="mb-0" />
@@ -16,7 +16,8 @@ export default function ProductPage() {
 				<div className="pt-8">
 					<Breadcrumb />
 				</div>
-				<ProductSingleDetails />
+				{/* <ProductSingleDetails /> */}
+				<ProductSingleDetails slug={slug} />
 				<RelatedProducts sectionHeading="text-related-products" />
 				<Subscription />
 			</Container>
@@ -26,15 +27,41 @@ export default function ProductPage() {
 
 ProductPage.Layout = Layout;
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+	return {
+		paths: [
+			// { params: { slug: "kobe-5" } },
+			// { params: { slug: "kobe-6" } },
+			// Add more paths as needed
+		],
+		fallback: true,
+	};
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+	const { slug } = params;
 	return {
 		props: {
+			slug,
 			...(await serverSideTranslations(locale!, [
-				"common",
-				"forms",
-				"menu",
-				"footer",
+				'common',
+				'forms',
+				'menu',
+				'footer',
 			])),
 		},
 	};
 };
+
+// export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+// 	return {
+// 		props: {
+// 			...(await serverSideTranslations(locale!, [
+// 				"common",
+// 				"forms",
+// 				"menu",
+// 				"footer",
+// 			])),
+// 		},
+// 	};
+// };

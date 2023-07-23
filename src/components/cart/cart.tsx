@@ -28,7 +28,7 @@ export default function Cart() {
   function getTotalPrice(cartItems: any): number {
     let totalCart: number = 0;
     cartItems?.map((cartItem: any) => (
-      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem?.quantity
       //useFetchItemPrice(cartItem.prod_price) * item.quantity
     ))
     return totalCart;

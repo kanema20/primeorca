@@ -6,7 +6,6 @@ interface Item {
   name: string;
   slug: string;
   image: {
-    thumbnail: string;
     [key: string]: unknown;
   };
   default_price: string;
@@ -24,13 +23,14 @@ export function generateCartItem(item: Item, attributes: object) {
     return data;
   }
   return {
-    id: !isEmpty(attributes)
-      ? `${id}.${Object.values(attributes).join(".")}`
-      : id,
+    // id: !isEmpty(attributes)
+    //   ? `${id}.${Object.values(attributes).join(".")}`
+    //   : id,
+    id: id,
     name,
     slug,
     // image: image.thumbnail,
-    image: images[0],
+    image: images,
     default_price: default_price,
     // price: sale_price ? sale_price : price,
     attributes,

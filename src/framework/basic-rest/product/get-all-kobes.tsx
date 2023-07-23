@@ -18,10 +18,9 @@ const fetchKobeCollection = async ({ queryKey }: any) => {
     console.log(slug_);
 
     const products = await stripe.products.search({
-        query: `metadata[\'collection\']:\'${slug_}\'`,
+        query: `active:\'true\' AND metadata[\'collection\']:\'${slug_}\'`,
         // query: `metadata[\'collection\']:\'kobe5\'`,
         limit: 100,
-        // active: true,
     });
     return products.data;
 };
@@ -38,6 +37,7 @@ const fetchAllKobe5 = async ({ queryKey }: any) => {
     const products = await stripe.products.search({
         query: 'metadata[\'collection\']:\'kobe5\'',
         limit: 100,
+        active: true,
     });
 
     return products.data;

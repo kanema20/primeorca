@@ -3,6 +3,7 @@ import Button from '@components/ui/button';
 import Counter from '@components/common/counter';
 import { useRouter } from 'next/router';
 import { useProductQuery } from '@framework/product/get-product';
+import { useSingleProdQuery } from '@framework/product/get-single-product';
 import { getVariations } from '@framework/utils/get-variations';
 import usePrice from '@framework/product/use-price';
 import { useCart } from '@contexts/cart/cart.context';
@@ -16,6 +17,8 @@ import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from 'swiper/react';
 import ProductMetaReview from '@components/product/product-meta-review';
 import { useSsrCompatible } from '@utils/use-ssr-compatible';
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import { ROUTES } from '@utils/routes';
 
 const productGalleryCarouselResponsive = {
   '768': {
@@ -26,25 +29,171 @@ const productGalleryCarouselResponsive = {
   },
 };
 
-const ProductSingleDetails: React.FC = () => {
-  const {
-    query: { slug },
-  } = useRouter();
+interface IndividualProdProps {
+  slug: string;
+}
+
+// const ProductSingleDetails: React.FC = () => {
+const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
+  // const { /*slug, */ images, name, description, default_price, metadata } = data;
+  // const {
+  //   query: { slug },
+  // } = useRouter();
   const { width } = useSsrCompatible(useWindowSize(), { width: 0, height: 0 });
-  const { data, isLoading } = useProductQuery(slug as string);
+  // const { data, isLoading } = useProductQuery(slug as string);
+
+  // retrieve product details based on product slug
+  const { data, isLoading } = useSingleProdQuery(slug as string);
+
   const { addItemToCart } = useCart();
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [quantity, setQuantity] = useState(1);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
+  // console.log('data ', data);
+  // console.log('data[0] ', data[0]);
+  // console.log('data[0].name ', data[0].name);
+  // console.log('data[0].default_price ', data[0]?.default_price);
+  // console.log('data[0].images ', data[0]?.images[0]);
+
+
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data?.unit_amount;
+  }
+
+
   const { price, basePrice, discount } = usePrice(
-    data && {
-      amount: data.sale_price ? data.sale_price : data.price,
-      baseAmount: data.price,
+    // data && {
+    //   // amount: data.sale_price ? data.sale_price : data.price,
+    //   amount: getProductPrice(data.default_price)?.unit_amount,
+    //   baseAmount: data.price,
+    //   currencyCode: 'USD',
+    // }
+    {
+      // amount: data.sale_price ? data.sale_price : data.price,
+      // amount: getProductPrice(data[0]?.default_price),
+      amount: 10000,
+      // baseAmount: data.price,
+      baseAmount: 90,
       currencyCode: 'USD',
     }
   );
   if (isLoading) return <p>Loading...</p>;
-  const variations = getVariations(data?.variations);
+  // const variations = getVariations(data?.variations);
+  const variations =
+  {
+    "Sizes": [
+      {
+        "id": 1,
+        "value": "7",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 2,
+        "value": "7.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 3,
+        "value": "8",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 4,
+        "value": "8.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 5,
+        "value": "9",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 6,
+        "value": "9.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 7,
+        "value": "10",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 8,
+        "value": "10.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 9,
+        "value": "11",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 10,
+        "value": "12",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 11,
+        "value": "13",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 12,
+        "value": "14",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      }
+    ]
+  }
+
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
@@ -61,7 +210,7 @@ const ProductSingleDetails: React.FC = () => {
       setAddToCartLoader(false);
     }, 600);
 
-    const item = generateCartItem(data!, attributes);
+    const item = generateCartItem(data[0]!, attributes);
     addItemToCart(item, quantity);
     toast('Added to the bag', {
       progressClassName: 'fancy-progress-bar',
@@ -93,7 +242,21 @@ const ProductSingleDetails: React.FC = () => {
           className="product-gallery"
           buttonGroupClassName="hidden"
         >
-          {data?.gallery?.map((item, index: number) => (
+
+          <SwiperSlide key={`product-gallery-key`}>
+            <div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
+              <img
+                src={
+                  data[0]?.images[0] ??
+                  '/assets/placeholder/products/product-gallery.svg'
+                }
+                alt={`${data[0].name}--${1}`}
+                className="object-cover w-full"
+              />
+            </div>
+          </SwiperSlide>
+
+          {/* {data?.gallery?.map((item, index: number) => (
             <SwiperSlide key={`product-gallery-key-${index}`}>
               <div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
                 <img
@@ -106,35 +269,36 @@ const ProductSingleDetails: React.FC = () => {
                 />
               </div>
             </SwiperSlide>
-          ))}
+          ))} */}
         </Carousel>
       ) : (
         <div className="col-span-5 grid"> {/* grid-cols-2 gap-2.5 */}
-          {data?.gallery?.map((item, index: number) => (
-            <div
-              key={index}
-              className="col-span-1 transition duration-150 ease-in hover:opacity-90"
-            >
-              <img
-                src={
-                  item?.original ??
-                  '/assets/placeholder/products/product-gallery.svg'
-                }
-                alt={`${data?.name}--${index}`}
-                className="object-cover w-full"
-              />
-            </div>
-          ))}
+          {/* {data?.gallery?.map((item, index: number) => ( */}
+          <div
+            // key={index}
+            className="col-span-1 transition duration-150 ease-in hover:opacity-90"
+          >
+            <img
+              src={
+                data[0]?.images[0] ??
+                '/assets/placeholder/products/product-gallery.svg'
+              }
+              // alt={`${data[0]?.name}--${index}`}
+              alt={`${data[0]?.name}}`}
+              className="object-cover w-full"
+            />
+          </div>
+          {/* ))} */}
         </div>
       )}
 
       <div className="col-span-4 pt-8 lg:pt-0">
         <div className="pb-7 mb-7 border-b border-gray-300">
           <h2 className="text-heading text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold hover:text-black mb-3.5">
-            {data?.name}
+            {data[0]?.name}
           </h2>
           <p className="text-body text-sm lg:text-base leading-6 lg:leading-8">
-            {data?.description}
+            {data[0]?.description}
           </p>
           <div className="flex items-center mt-5">
             <div className="text-heading font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
@@ -185,19 +349,19 @@ const ProductSingleDetails: React.FC = () => {
           <ul className="text-sm space-y-5 pb-1">
             <li>
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
-                SKU:
+                Brand:
               </span>
-              {data?.sku}
+              {(data[0]?.metadata.brand).toUpperCase()}
             </li>
             <li>
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
-                Category:
+                Collection:
               </span>
               <Link
-                href="/"
+                href={ROUTES.KOBE5}
                 className="transition hover:underline hover:text-heading"
               >
-                {data?.category?.name}
+                {data[0]?.metadata.collection}
               </Link>
             </li>
             {data?.tags && Array.isArray(data.tags) && (
@@ -220,7 +384,7 @@ const ProductSingleDetails: React.FC = () => {
           </ul>
         </div>
 
-        <ProductMetaReview data={data} />
+        {/* <ProductMetaReview data={data} /> */}
       </div>
     </div>
   );

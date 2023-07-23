@@ -169,8 +169,8 @@ export const siteSettings = {
                 columnItemItems: [
                   {
                     id: 1,
-                    path: `${ROUTES.KOBE5}/kobe-5-2k-gamer`,
-                    label: 'kobe-5-2k-gamer',
+                    path: `${ROUTES.KOBE}/products/Nike-Kobe-5-Protro-2K`,
+                    label: 'Nike-Kobe-5-Protro-2K',
                   },
                   {
                     id: 2,
@@ -211,8 +211,8 @@ export const siteSettings = {
                 columnItemItems: [
                   {
                     id: 1,
-                    path: '/search?q=dresses',
-                    label: 'menu-dresses',
+                    path: `${ROUTES.KOBE}/products/nike-kobe-6-protro-mambacita-sweet-16`,
+                    label: 'kobe-6-mambacita',
                   },
                   {
                     id: 2,
@@ -525,6 +525,16 @@ export const siteSettings = {
       },
       {
         id: 7,
+        path: '/eybl',
+        label: 'menu-eybl',
+      },
+      {
+        id: 8,
+        path: '/lifestyle',
+        label: 'menu-lifestyle',
+      },
+      {
+        id: 9,
         path: '/search',
         label: 'menu-search',
       },

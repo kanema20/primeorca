@@ -9,8 +9,8 @@ module.exports = {
 	// images: {
 	// 	remotePatterns: [
 	// 		{
-	// 			protocol: 'https',
-	// 			hostname: 'files.stripe.com',
+	protocol: 'https',
+	hostname: 'po-prod.s3.us-west-1.amazonaws.com',
 	// 			// port: '',
 	// 			// pathname: '/links/**',
 	// 		},

@@ -6,7 +6,7 @@ import { stripe } from './stripe';
 const showActiveProducts = async () => {
     let allProducts = [];
     let hasMore = true;
-    let startingAfter = "prod_ODC2OgGv1qNJuE";
+    let startingAfter = "prod_OJS0vUC6dBWlgR";
 
     const products = await stripe.products.list({
         limit: 100,

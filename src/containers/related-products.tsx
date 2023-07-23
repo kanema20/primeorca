@@ -1,7 +1,7 @@
 import SectionHeader from "@components/common/section-header";
 import ProductCard from "@components/product/product-card";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
-import { useRelatedProductsQuery } from "@framework/product/get-related-product";
+import { useRelatedProductsQuery, useRelatedKobeQuery } from "@framework/product/get-related-product";
 import Alert from "@components/ui/alert";
 
 interface ProductsProps {
@@ -13,9 +13,14 @@ const RelatedProducts: React.FC<ProductsProps> = ({
 	sectionHeading,
 	className = "mb-9 lg:mb-10 xl:mb-14",
 }) => {
-	const { data, isLoading, error } = useRelatedProductsQuery({
-		limit: 10,
+	// const { data, isLoading, error } = useRelatedProductsQuery({
+	// 	limit: 10,
+	// });
+	const { data, isLoading, error } = useRelatedKobeQuery({
+		limit: 5,
 	});
+
+
 
 	return (
 		<div className={className}>
@@ -26,7 +31,7 @@ const RelatedProducts: React.FC<ProductsProps> = ({
 						<Alert message={error?.message} />
 					</div>
 				) : isLoading ? (
-					<ProductFeedLoader limit={5} uniqueKey="related-product" />
+					<ProductFeedLoader limit={5} uniqueKey="kobe-related" />
 				) : (
 					data?.map((product: any) => (
 						<ProductCard

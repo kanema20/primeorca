@@ -32,13 +32,129 @@ export default function ProductPopup() {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
+  console.log('data ', data);
+
   const { price, basePrice, discount } = usePrice({
     // amount: data.sale_price ? data.sale_price : data.price,
     amount: getProductPrice(default_price)?.unit_amount,
     baseAmount: data.default_price,
     currencyCode: 'USD',
   });
-  const variations = getVariations(data.variations);
+
+  // const variations = getVariations(data.variations);
+  const variations =
+  {
+    "Sizes": [
+      {
+        "id": 1,
+        "value": "7",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 2,
+        "value": "7.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 3,
+        "value": "8",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 4,
+        "value": "8.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 5,
+        "value": "9",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 6,
+        "value": "9.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 7,
+        "value": "10",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 8,
+        "value": "10.5",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 9,
+        "value": "11",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 10,
+        "value": "12",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 11,
+        "value": "13",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 12,
+        "value": "14",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      }
+    ]
+  }
 
   function getSizes(prod_id: any) {
     const { data } = useFetchItemSizes(prod_id)
@@ -63,13 +179,18 @@ export default function ProductPopup() {
       setViewCartBtn(true);
     }, 600);
     const item = generateCartItem(data!, attributes);
-    addItemToCart(item, quantity);
+    // addItemToCart(item, quantity);
+    addItemToCart(data, quantity);
+    console.log(data, 'item');
     console.log(item, 'item');
   }
 
   function navigateToProductPage() {
     closeModal();
-    router.push(`${metadata.category}/${metadata.collection}/${name}`, undefined, {
+    // router.push(`${metadata.category}/${metadata.collection}/${name}`, undefined, {
+    // const collection_ = metadata.collection
+    // router.push(`${metadata.collection}/${metadata.slug}`, undefined, {
+    router.push(`products/${metadata.slug}`, undefined, {
       locale: router.locale,
     });
   }
@@ -91,14 +212,15 @@ export default function ProductPopup() {
   return (
     <div className="rounded-lg bg-white">
       <div className="flex flex-col lg:flex-row w-full md:w-[650px] lg:w-[960px] mx-auto overflow-hidden">
-        <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-430px max-h-430px lg:max-h-full overflow-hidden bg-gray-300">
+        <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-430px max-h-430px lg:max-h-full overflow-hidden bg-white"
+        >
           <img
             src={
-              images?.original ??
+              data?.images[0] ??
               '/assets/placeholder/products/product-thumbnail.svg'
             }
             alt={name}
-            className="lg:object-cover lg:w-full lg:h-full"
+            className="lg:object-cover lg:w-full lg:h-full" style={{ height: '55%' }}
           />
         </div>
 
@@ -141,7 +263,7 @@ export default function ProductPopup() {
               />
             );
           })}
-          {metadata.sizes}
+          {/* {metadata.sizes} */}
 
           <div className="pt-2 md:pt-4">
             <div className="flex items-center justify-between mb-4 gap-x-3 sm:gap-x-4">

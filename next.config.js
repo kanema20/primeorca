@@ -19,7 +19,7 @@ module.exports = withPWA({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'files.stripe.com',
+        hostname: 'po-prod.s3.us-west-1.amazonaws.com',
         // port: '',
         // pathname: '/links/**',
       },
