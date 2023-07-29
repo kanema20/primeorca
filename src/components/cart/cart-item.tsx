@@ -10,6 +10,7 @@ import { ROUTES } from '@utils/routes';
 import { generateCartItemName } from '@utils/generate-cart-item-name';
 import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import { Item } from '@contexts/cart/cart.utils';
 
 type CartItemProps = {
   item: any;
@@ -34,6 +35,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
     currencyCode: 'USD',
   });
 
+  console.log("item: ", item);
   return (
     <motion.div
       layout
@@ -46,12 +48,13 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
     >
       <div className="relative flex flex-shrink-0 w-24 h-24 overflow-hidden bg-gray-200 rounded-md cursor-pointer md:w-28 md:h-28 ltr:mr-4 rtl:ml-4">
         <Image
-          // src={item?.images ?? '/assets/placeholder/cart-item.svg'}
-          src={'https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product.png'}
+          // src={'/assets/placeholder/cart-item.svg' ?? item?.images[0]}
+          src={item?.images ?? '/assets/placeholder/cart-item.svg'}
+          // src={'https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product.png'}
           width={112}
           height={112}
           loading="eager"
-          alt={item.name || 'Product Image'}
+          alt={item?.name || 'Product Image'}
           className="object-cover bg-gray-300"
         />
         <div

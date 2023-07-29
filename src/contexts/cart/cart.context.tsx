@@ -28,7 +28,7 @@ export const useCart = () => {
 
 export const CartProvider: React.FC = (props) => {
   const [savedCart, saveCart] = useLocalStorage(
-    `chawkbazar-cart`,
+    `primeorca-cart`,
     JSON.stringify(initialState)
   );
   const [state, dispatch] = React.useReducer(

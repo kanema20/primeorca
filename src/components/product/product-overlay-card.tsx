@@ -60,9 +60,8 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
   return (
     <div
       onClick={handlePopupView}
-      className={`${classes} cursor-pointer group flex flex-col bg-gray-200 ${
-        !disableBorderRadius && 'rounded-md'
-      } relative items-center justify-between overflow-hidden`}
+      className={`${classes} cursor-pointer group flex flex-col bg-gray-200 ${!disableBorderRadius && 'rounded-md'
+        } relative items-center justify-between overflow-hidden`}
     >
       <div
         className={cn(

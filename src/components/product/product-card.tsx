@@ -48,7 +48,7 @@ const ProductCard: FC<ProductProps> = ({
   imgWidth = 330,
   imgHeight = 440,
   imgLoading,
-  hideProductDescription = false,
+  hideProductDescription = true,
   showCategory = false,
   showRating = false,
   bgTransparent = false,

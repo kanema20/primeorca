@@ -1,6 +1,6 @@
 // import Stripe from "stripe";
 // const Stripe = require('stripe');
-import { stripe } from './stripe';
+// import { stripe } from './stripe';
 // import express, { Express, Request, Response } from 'express';
 const express = require('express');
 // import dotenv from 'dotenv';
@@ -10,7 +10,7 @@ dotenv.config({ path: `./env.local`, override: true });
 
 const app = express();
 const port = process.env.PORT;
-// const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
+const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
 
 app.get('/', (req, res) => {
 

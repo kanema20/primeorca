@@ -44,7 +44,7 @@ export default function ProductPopup() {
   // const variations = getVariations(data.variations);
   const variations =
   {
-    "Sizes": [
+    "Sizes (US - M)": [
       {
         "id": 1,
         "value": "7",
@@ -169,7 +169,6 @@ export default function ProductPopup() {
       attributes.hasOwnProperty(variation)
     )
     : true;
-
   function addToCart() {
     if (!isSelected) return;
     // to show btn feedback while product carting
@@ -179,18 +178,20 @@ export default function ProductPopup() {
       setViewCartBtn(true);
     }, 600);
     const item = generateCartItem(data!, attributes);
-    // addItemToCart(item, quantity);
-    addItemToCart(data, quantity);
-    console.log(data, 'item');
-    console.log(item, 'item');
+    addItemToCart(item, quantity);
+    // addItemToCart(data, quantity);
   }
+
+  console.log('attributes ', attributes);
+  console.log('data ', data);
+
 
   function navigateToProductPage() {
     closeModal();
     // router.push(`${metadata.category}/${metadata.collection}/${name}`, undefined, {
     // const collection_ = metadata.collection
     // router.push(`${metadata.collection}/${metadata.slug}`, undefined, {
-    router.push(`products/${metadata.slug}`, undefined, {
+    router.push(`/products/${metadata.slug}`, undefined, {
       locale: router.locale,
     });
   }
@@ -206,7 +207,7 @@ export default function ProductPopup() {
     closeModal();
     setTimeout(() => {
       openCart();
-    }, 300);
+    }, 400);
   }
 
   return (
@@ -235,9 +236,9 @@ export default function ProductPopup() {
                 {name}
               </h2>
             </div>
-            <p className="text-sm leading-6 md:text-body md:leading-7">
+            {/* <p className="text-sm leading-6 md:text-body md:leading-7">
               {description}
-            </p>
+            </p> */}
 
             <div className="flex items-center mt-3">
               <div className="text-heading font-semibold text-base md:text-xl lg:text-2xl">

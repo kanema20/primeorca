@@ -1,9 +1,41 @@
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+
+function getTotalPrice(cartItems: any): number {
+  let totalCart: number = 0;
+  cartItems?.map((cartItem: any) => (
+    totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem?.quantity
+    //useFetchItemPrice(cartItem.prod_price) * item.quantity
+  ))
+  return totalCart;
+}
+
+function getProductPrice(prod_price: any) {
+  const { data } = useFetchItemPrice(prod_price)
+  return data;
+}
+
+// export interface Item {
+//   id: string | number;
+//   price: number;
+//   default_price: string;
+//   quantity?: number;
+//   [key: string]: any;
+// }
+
 export interface Item {
   id: string | number;
-  price: number;
+  name: string;
+  slug: string;
+  // image: {
+  //   [key: string]: unknown;
+  // };
+  image: any;
   default_price: string;
+  price: number;
+  sale_price?: number;
+  [key: string]: unknown;
   quantity?: number;
-  [key: string]: any;
+  attributes: any;
 }
 
 export interface UpdateItemInput extends Partial<Omit<Item, "id">> { }
@@ -69,10 +101,13 @@ export function removeItem(items: Item[], id: Item["id"]) {
 export const calculateItemTotals = (items: Item[]) =>
   items.map((item) => ({
     ...item,
+    // itemTotal: getProductPrice(item.default_price)?.unit_amount * item.quantity!,
     itemTotal: item.price * item.quantity!,
+    // getProductPrice(cartItem.default_price)?.unit_amount
   }));
 
 export const calculateTotal = (items: Item[]) =>
+  // items.reduce((total, item) => total + item.quantity! * getProductPrice(item.default_price).unit_amount, 0);
   items.reduce((total, item) => total + item.quantity! * item.price, 0);
 
 export const calculateTotalItems = (items: Item[]) =>

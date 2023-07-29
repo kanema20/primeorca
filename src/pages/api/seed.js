@@ -1,7 +1,7 @@
 // import { stripe } from './stripe';
 const Stripe = require('stripe');
 const dotenv = require('dotenv');
-const kobe6Products = require('./kobe5.js');
+const kobe6Products = require('./kobe6.js');
 
 dotenv.config();
 // dotenv.config({ path: `./env.local`, override: true });
@@ -45,18 +45,18 @@ const createProduct = async (product) => {
             // "size-12": 12,
             // "size-13": 13,
             // "size-14": 14
-            size1: 7,
-            size2: 7.5,
-            size3: 8,
-            size4: 8.5,
-            size5: 9,
-            size6: 9.5,
-            size7: 10,
-            size8: 10.5,
-            size9: 11,
-            size10: 12,
-            size11: 13,
-            size12: 14,
+            // size1: 7,
+            // size2: 7.5,
+            // size3: 8,
+            // size4: 8.5,
+            // size5: 9,
+            // size6: 9.5,
+            // size7: 10,
+            // size8: 10.5,
+            // size9: 11,
+            // size10: 12,
+            // size11: 13,
+            // size12: 14,
         },
     });
     return stripeProduct;

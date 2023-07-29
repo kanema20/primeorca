@@ -19,6 +19,7 @@ import ProductMetaReview from '@components/product/product-meta-review';
 import { useSsrCompatible } from '@utils/use-ssr-compatible';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { ROUTES } from '@utils/routes';
+import { Item } from '@contexts/cart/cart.utils';
 
 const productGalleryCarouselResponsive = {
   '768': {
@@ -35,54 +36,36 @@ interface IndividualProdProps {
 
 // const ProductSingleDetails: React.FC = () => {
 const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
-  // const { /*slug, */ images, name, description, default_price, metadata } = data;
   // const {
   //   query: { slug },
   // } = useRouter();
-  const { width } = useSsrCompatible(useWindowSize(), { width: 0, height: 0 });
-  // const { data, isLoading } = useProductQuery(slug as string);
-
   // retrieve product details based on product slug
   const { data, isLoading } = useSingleProdQuery(slug as string);
-
+  // if (isLoading) return <p>Loading...</p>;
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
+  const { width } = useSsrCompatible(useWindowSize(), { width: 0, height: 0 });
   const { addItemToCart } = useCart();
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [quantity, setQuantity] = useState(1);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
-  // console.log('data ', data);
-  // console.log('data[0] ', data[0]);
-  // console.log('data[0].name ', data[0].name);
-  // console.log('data[0].default_price ', data[0]?.default_price);
-  // console.log('data[0].images ', data[0]?.images[0]);
-
-
-  function getProductPrice(prod_price: any) {
-    const { data } = useFetchItemPrice(prod_price)
-    return data?.unit_amount;
-  }
-
-
   const { price, basePrice, discount } = usePrice(
-    // data && {
-    //   // amount: data.sale_price ? data.sale_price : data.price,
-    //   amount: getProductPrice(data.default_price)?.unit_amount,
-    //   baseAmount: data.price,
-    //   currencyCode: 'USD',
-    // }
+    data &&
     {
       // amount: data.sale_price ? data.sale_price : data.price,
-      // amount: getProductPrice(data[0]?.default_price),
-      amount: 10000,
-      // baseAmount: data.price,
-      baseAmount: 90,
+      amount: getProductPrice(data[0].default_price),
+      // amount: 15000,
+      baseAmount: 9000,
       currencyCode: 'USD',
     }
   );
   if (isLoading) return <p>Loading...</p>;
-  // const variations = getVariations(data?.variations);
+
   const variations =
   {
-    "Sizes": [
+    "Sizes (US - M)": [
       {
         "id": 1,
         "value": "7",
@@ -201,7 +184,6 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
       attributes.hasOwnProperty(variation)
     )
     : true;
-
   function addToCart() {
     if (!isSelected) return;
     // to show btn feedback while product carting
@@ -212,7 +194,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
 
     const item = generateCartItem(data[0]!, attributes);
     addItemToCart(item, quantity);
-    toast('Added to the bag', {
+    toast('Added to cart', {
       progressClassName: 'fancy-progress-bar',
       position: width > 768 ? 'bottom-right' : 'top-right',
       autoClose: 2000,
@@ -247,10 +229,10 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
             <div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
               <img
                 src={
-                  data[0]?.images[0] ??
+                  // data[0].images[0] ??
                   '/assets/placeholder/products/product-gallery.svg'
                 }
-                alt={`${data[0].name}--${1}`}
+                // alt={`${data[0].name}--${1}`}
                 className="object-cover w-full"
               />
             </div>
@@ -280,11 +262,11 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
           >
             <img
               src={
-                data[0]?.images[0] ??
+                // data[0].images[0] ??
                 '/assets/placeholder/products/product-gallery.svg'
               }
-              // alt={`${data[0]?.name}--${index}`}
-              alt={`${data[0]?.name}}`}
+              // alt={`${data[0].name}--${index}`}
+              // alt={`${data[0].name}}`}
               className="object-cover w-full"
             />
           </div>
@@ -295,11 +277,11 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
       <div className="col-span-4 pt-8 lg:pt-0">
         <div className="pb-7 mb-7 border-b border-gray-300">
           <h2 className="text-heading text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold hover:text-black mb-3.5">
-            {data[0]?.name}
+            {/* {data[0].name} */}
           </h2>
-          <p className="text-body text-sm lg:text-base leading-6 lg:leading-8">
-            {data[0]?.description}
-          </p>
+          {/* <p className="text-body text-sm lg:text-base leading-6 lg:leading-8">
+            {data[0].description}
+          </p> */}
           <div className="flex items-center mt-5">
             <div className="text-heading font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
               {price}
@@ -351,7 +333,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
                 Brand:
               </span>
-              {(data[0]?.metadata.brand).toUpperCase()}
+              {/* {(data[0].metadata.brand).toUpperCase()} */}
             </li>
             <li>
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
@@ -361,7 +343,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
                 href={ROUTES.KOBE5}
                 className="transition hover:underline hover:text-heading"
               >
-                {data[0]?.metadata.collection}
+                {/* {data[0].metadata.collection} */}
               </Link>
             </li>
             {data?.tags && Array.isArray(data.tags) && (

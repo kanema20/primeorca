@@ -18,10 +18,9 @@ import { stripe } from 'src/pages/api/stripe';
 
 const fetchIndividualProduct = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
-    // console.log('slug ', slug)
     const product = await stripe.products.search({
         query: `metadata[\'slug\']:\'${queryKey}\'`,
-        limit: 1,
+        // limit: 1,
     });
 
     console.log(`queryKey ${queryKey}`);
@@ -36,5 +35,4 @@ const fetchIndividualProduct = async ({ queryKey }: any) => {
 // };
 export const useSingleProdQuery = (slug: string) => {
     return useQuery<any, Error>([slug], fetchIndividualProduct);
-
-};
+}

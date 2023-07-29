@@ -1,660 +1,1039 @@
 const kobe5Products = [
     {
+        "_id": "64a323f989fa75170e1077b8",
         "name": "Nike Kobe 5 Protro Undefeated Hall of Fame",
-        "price": 150,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "265",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1621955777",
         "description": "Celebrating the Black Mamba's induction into the Naismith Memorial Basketball Hall of Fame, the Undefeated x Zoom Kobe 5 Protro 'Hall Of Fame' emerges in the colors of the only team he ever played for. Built with a mesh base and underlaid by snakeskin-textured leather, the shoe's upper appears in gold, complemented by a purple Swoosh on the right side of both shoes, with pink on the left. The left shoe also includes 24, 10 and 8 on the pink Swoosh as a nod to his NBA and Olympic jersey numbers, while the tongue and heel include mismatched Kobe Bryant and Five Strikes branding. Underfoot, Zoom Air provides cushioning.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
         "colorway": "Metallic Gold/Field Purple-Multi-Color",
-        "metadata_": {
-            "brand": "nike",
-            "category": "kobe",
-            "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product"
-        },
-    },
-    {
-        "name": "Nike Kobe 5 Protro Bruce Lee",
-        "price": 150,
-        "description": "Released in November 2020, the Zoom Kobe 5 Protro 'Bruce Lee' brings back a 2010 colorway. Inspired by Bruce Lee, whose style and mindset in turn inspired Kobe Bryant, the shoe's upper draws from Lee's jumpsuit in Enter the Dragon. The black and Del Sol look is highlighted by Comet Red scratch marks the forefoot, while Flywire cables support the fit. Underfoot, the two-tone midsole houses Zoom Air in the forefoot for cushioning.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Bruce-Lee-Product.png",
-        "shippable": true,
-        "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Del Sol/Metallic Silver-Comet Red-Black",
+        "url": "nike-kobe-5-protro-undefeated-hall-of-fame",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-undefeated-hall-of-fame",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "190",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
             "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
-        }
-    },
-    {
-        "name": "Nike Kobe 5 Protro Undefeated What If Pack",
-        "price": 390,
-        "description": "Part of the What If pack, the Undefeated x Zoom Kobe 5 Protro 'What If Pack' Special Box was designed with the help of the Los Angeles retailer. Inspired by the 1996 NBA Draft, the first shoe looks to the 12 teams that passed on Kobe Bryant that year, incorporating those teams' colors on its construction. The second pays tribute to the team that actually drafted him, the Charlotte Hornets. Metallic gold hits throughout both shoes give the nod to his five titles.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Undefated-What-If-Pack-Product.png",
-        "shippable": true,
-        "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Multi-Color/Multi-Color",
-        "metadata_": {
-            "brand": "nike",
-            "category": "kobe",
-            "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Undefated-What-If-Pack-Product"
-        }
-    },
-    {
-        "name": "Nike Kobe 5 Protro 5 Rings (2020)",
-        "price": 150,
-        "description": "The Zoom Kobe 5 Protro '5 Rings' pays tribute to Kobe Bryant's championship pedigree with this 2020 release, bringing back a 2010 colorway. The shoe's Los Angeles Lakers-style Concord and Midwest Gold upper features a series of graphics thorughout its construction, all based around the number five. Underfoot, the same two colors mark the gradient midsole, which houses forefoot and heel Zoom Air for cushioning.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-5-Rings-Product.png",
-        "shippable": true,
-        "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Concord/Midwest Gold",
-        "metadata_": {
-            "brand": "nike",
-            "category": "kobe",
-            "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-5-Rings-Product"
-        }
-    },
-    {
-        "name": "Nike Kobe 5 Protro 2K Gamer Exclusive",
-        "price": 150,
-        "description": "Made available for purchase to players who completed an in-game challege in NBA 2K20, the NBA 2K20 x Kobe 5 Protro 'Chaos Alternate' Gamer Exclusive updates the Kobe 5 'Chaos.' The shoe's upper appears largely similar to its predecessor, although the grey overlays replace the former's white finish. Flywrie cables support the fit, while Volt and iridescent purple accent the look throughout. Underfoot, Air Zoom Turbo provides cushioning.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-2K-Gamer-Exclusive-Product.png",
-        "shippable": true,
-        "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Black/Cyber-Dark Grey",
-        "metadata_": {
-            "brand": "nike",
-            "category": "kobe",
-            "collection": "kobe5",
-            "slug": "kobe-5-protro-2k-gamer-exclusive"
-        }
-    },
-    {
-        "name": "Nike Kobe 5 Protro Bruce Lee Alternate",
-        "price": 150,
-        "description": "Drawing from a 2010 colorway, the Zoom Kobe 5 Protro 'Alternate Bruce Lee' released in November 2020. A more subdued colorway than its predecessor, the shoe's upper appears primarily in black and white, with Comet Red on the Swoosh outline and scratch marks at the forefoot. A touch of yellow highlights the heel and heel branding, while underfoot, the midsole incorporates Zoom Air in the forefoot.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Bruce-Lee-Alternate-Product",
-        "shippable": true,
-        "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Black-University Red-Varsity Maize",
-        "metadata_": {
-            "brand": "nike",
-            "category": "kobe",
-            "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product"
         },
-
+        "releaseDate": "2021-05-15"
     },
     {
+        "_id": "64a323f989fa75170e1077b9",
+        "name": "Nike Kobe 5 Protro Bruce Lee",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "360",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Bruce-Lee-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1660913739",
+        "description": "Released in November 2020, the Zoom Kobe 5 Protro 'Bruce Lee' brings back a 2010 colorway. Inspired by Bruce Lee, whose style and mindset in turn inspired Kobe Bryant, the shoe's upper draws from Lee's jumpsuit in Enter the Dragon. The black and Del Sol look is highlighted by Comet Red scratch marks the forefoot, while Flywire cables support the fit. Underfoot, the two-tone midsole houses Zoom Air in the forefoot for cushioning.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-bruce-lee",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-bruce-lee",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-11-24"
+    },
+    {
+        "_id": "64a323f989fa75170e1077ba",
+        "name": "Nike Kobe 5 Protro Undefeated What If Pack",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "592",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Undefeated-What-If-Pack-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1609432776",
+        "description": "Part of the What If pack, the Undefeated x Zoom Kobe 5 Protro 'What If Pack' Special Box was designed with the help of the Los Angeles retailer. Inspired by the 1996 NBA Draft, the first shoe looks to the 12 teams that passed on Kobe Bryant that year, incorporating those teams' colors on its construction. The second pays tribute to the team that actually drafted him, the Charlotte Hornets. Metallic gold hits throughout both shoes give the nod to his five titles.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-undefeated-what-if-pack",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-undefeated-what-if-pack",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "390",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-08-27"
+    },
+    {
+        "_id": "64a323f989fa75170e1077bb",
+        "name": "Nike Kobe 5 Protro 5 Rings (2020)",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "346",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-5-Rings-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1607006775",
+        "description": "The Zoom Kobe 5 Protro '5 Rings' pays tribute to Kobe Bryant's championship pedigree with this 2020 release, bringing back a 2010 colorway. The shoe's Los Angeles Lakers-style Concord and Midwest Gold upper features a series of graphics thorughout its construction, all based around the number five. Underfoot, the same two colors mark the gradient midsole, which houses forefoot and heel Zoom Air for cushioning.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-5-rings",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-5-rings",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-10-15"
+    },
+    {
+        "_id": "64a323f989fa75170e1077bc",
+        "name": "Nike Kobe 5 Protro 2K Gamer Exclusive",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1099",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-2K-Gamer-Exclusive-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1607650267",
+        "description": "Made available for purchase to players who completed an in-game challege in NBA 2K20, the NBA 2K20 x Kobe 5 Protro 'Chaos Alternate' Gamer Exclusive updates the Kobe 5 'Chaos.' The shoe's upper appears largely similar to its predecessor, although the grey overlays replace the former's white finish. Flywrie cables support the fit, while Volt and iridescent purple accent the look throughout. Underfoot, Air Zoom Turbo provides cushioning.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-2k-gamer-exclusive",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-2k-gamer-exclusive",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2019-12-26"
+    },
+    {
+        "_id": "64a323f989fa75170e1077bd",
+        "name": "Nike Kobe 5 Protro Bruce Lee Alternate",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "525",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Bruce-Lee-Alternate-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1654800258",
+        "description": "Drawing from a 2010 colorway, the Zoom Kobe 5 Protro 'Alternate Bruce Lee' released in November 2020. A more subdued colorway than its predecessor, the shoe's upper appears primarily in black and white, with Comet Red on the Swoosh outline and scratch marks at the forefoot. A touch of yellow highlights the heel and heel branding, while underfoot, the midsole incorporates Zoom Air in the forefoot.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-bruce-lee-alternate",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-bruce-lee-alternate",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-11-24"
+    },
+    {
+        "_id": "64a323f989fa75170e1077be",
         "name": "Nike Kobe 5 Protro Big Stage/Parade",
-        "price": 150,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "359",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Big-Stage-Parade-PE-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1607049656",
         "description": "Drawing from the shoe Kobe Bryant wore while winning his fifth and final NBA title, the Kobe 5 Protro 'Big Stage/Parade' 2020 released in February 2020. The look draws from the 'Home' and 'Away' editions of the Kobe 5 'Big Stage,' also borrowing graphics from the 'Parade' PE. Finished in white and meatallic gold, the shoe is cushioned underfoot by Air Zoom Turbo.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Big-Stage-Parade-PE-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Metallic Gold-Black",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-big-stage-parade-pe",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-big-stage-parade-pe",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "200",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-08-23"
     },
     {
+        "_id": "64a323f989fa75170e1077bf",
         "name": "Nike Kobe 5 Protro Lakers",
-        "price": 150,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "309",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Lakers-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1677240454",
         "description": "Releasing for Mamba Week to celebrate Kobe Bryant's legacy, the Zoom Kobe 5 Protro '5x Champ' features inspiration from the championship jackets Bryant received after winning his second and third NBA titles. Built with patent leather, the upper sports a Los Angeles Lakers mix of Court Purple and University Gold, with black throughout. The custom sockliner sports an LA theme.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Lakers-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Court Purple/University Gold-Black-White",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-lakers",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-lakers",
+        "make": "Nike Kobe 5",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-Lakers-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-08-24"
     },
     {
+        "_id": "64a323f989fa75170e1077c0",
         "name": "Nike Kobe 5 Protro Chaos",
-        "price": 160,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "349",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Chaos-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1606323198",
         "description": "Commemorating its 10th anniversary, the Nike Zoom Kobe 5 Protro resurfaced in December 2019 with its homage to DC Comics supervillain, the Joker. This 'Chaos' variant calls to mind the character's signature suit in a multicolored, mixed-material upper with eye-catching lizard skin textures, speckled laces, and a robust toe cap. Neon green branding hints at the charatcer's hair. The sneaker sports a splattered midsole and vivid rubber outsole.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Chaos-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Cyber-Purple-Red",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-chaos",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-chaos",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "175",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-Chaos-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2019-01-03"
     },
     {
+        "_id": "64a323f989fa75170e1077c1",
         "name": "Nike Kobe 5 Protro EYBL Girls (2020)",
-        "price": 150,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "361",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-EYBL-Forest-Green-2020-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610081136",
         "description": "Part of a collection that released for Mamba Week, the Zoom Kobe 5 Protro 'EYBL' dropped in August 2020. Inspired by Greek mythology, the shoe's synthetic upper includes a scaly texture modeled after Medusa. The left tongue sports an EYBL logo, with Kobe branding on the right shoe. The collar lining and heel accent the look, while underfoot, Zoom in the midsole provides cushioning.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-EYBL-Forest-Green-2020-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Forest Green/Metallic Red Bronze-Speed Yellow-Forest Green",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-eybl-forest-green-2020",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-eybl-forest-green-2020",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-EYBL-Forest-Green-2020-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-08-29"
     },
     {
+        "_id": "64a323f989fa75170e1077c2",
         "name": "Nike Kobe 5 Protro Zebra PE",
-        "price": 150,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "392",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-PE-Zebra-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1667893105",
         "description": "The Zoom Kobe 5 Protro 'DeMar DeRozan' PE is a PE colorway made for San Antonio's DeMar DeRozan. The shoe's neutral look draws from the team's colors, built with lightweight synthetic and acccented by checkerboard and zebra patterns. A black Swoosh and heel counter provide contrast, with the latter also included for stability, while Zoom Air underfoot provides cushioning.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-PE-Zebra-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Wolf Grey/White-Black",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-pe-zebra",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-pe-zebra",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-PE-Zebra-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-09-18"
     },
     {
+        "_id": "64a323f989fa75170e1077c3",
         "name": "Nike Kobe 5 Protro PJ Tucker",
-        "price": 150,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "740",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-PJ-Tucker.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610080155",
         "description": "The P.J. Tucker x Zoom Kobe 5 Protro PE is a special colorway made for the NBA player. The shoe's upper is built with lightweight synthetic, complemented by tonal animal prints throughout. Flywire cables support the fit, while red mesh on the collar accents the design. Kobe Bryant's signature marks the heel counter, and the Swoosh branding includes a dot matrix-style design.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-PJ-Tucker-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Particle Grey/Light Cream-Sail-White",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-pj-tucker",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-pj-tucker",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-PJ-Tucker-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-09-25"
     },
     {
+        "_id": "64a323f989fa75170e1077c4",
         "name": "Nike Kobe 5 Prelude (Finals MVP)",
-        "price": 150,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1800",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Prelude-Finals-MVP-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610080583",
         "description": "Part of Nike's Prelude Pack, the Zoom Kobe 5 'Prelude' features a pop art-inspired colorway that celebrates Kobe Bryant's impact on popular culture. Featuring a colorful upper that gives the impression of being painted-on, the vibrant design is supported by Flywire cables. The gold Swoosh gives the nod to the championship and Finals MVP that Bryant won while wearing the shoe, while the outsole is finished with a glow-in-the-dark application.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Prelude-Finals-MVP-Product.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "University Gold/Metallic Gold-Gamma Blue",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-prelude-finals-mvp",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-prelude-finals-mvp",
+        "make": "Nike Kobe 5",
+        "retailPrice": "200",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Prelude-Finals-MVP-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2014-01-04"
     },
     {
+        "_id": "64a323f989fa75170e1077c5",
         "name": "Nike Kobe 5 Bruce Lee",
-        "price": 150,
-        "description": "The Zoom Kobe 5 'Bruce Lee",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Bruce-Lee-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "800",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Bruce-Lee-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610084118",
+        "description": "The Zoom Kobe 5 'Bruce Lee,' like several other Kobe silhouettes, pays tribute to Bruce Lee. The black and yellow look gives the nod to two of Lee's iconic films, with the colorway itself inspired by the jumpsuit Lee wore in Game of Death, while the red scratch-mark detailing recalls the final fight scene from Enter the Dragon.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Del Sol/Black-Varsity Red",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-bruce-lee",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-bruce-lee",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Bruce-Lee-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-02-06"
     },
     {
+        "_id": "64a323f989fa75170e1077c6",
         "name": "Nike Kobe 5 Protro EYBL (2020)",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-EYBL-2020.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1750",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-EYBL-2020.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1607033908",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Multi-Color/Black-Orange",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-protro-eybl-2020",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-eybl-2020",
+        "make": "Nike Kobe 5 Protro",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Protro-EYBL-2020"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2020-08-28"
     },
     {
+        "_id": "64a323f989fa75170e1077c7",
         "name": "Nike Kobe 5 Miles Davis",
-        "price": 155,
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1750",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Miles-Davis.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620332154",
         "description": "Paying tribute to the legendary jazz trumpeter, the Zoom Kobe 5 'Miles Davis' emerges with a blue look throughout its performance basketball construction. Built with synthetic leather, the shoe's upper is supported by heat-bonded overlays, with crisscrossing Flywire cables securing the fit. Underfoot, Zoom Air in the forefoot and heel of the injection-molded phylon midsole provides cushioning, giving way to a heartbeat-style traction pattern on the rubber outsole.",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Miles-Davis.png",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Photo Blue/Black-White",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-miles-davis",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-miles-davis",
+        "make": "Nike Kobe 5",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Miles-Davis"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-01-01"
     },
     {
+        "_id": "64a323f989fa75170e1077c8",
+        "name": "Nike Kobe 11 Quai 54",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "499",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-11-Quai-54-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610079478",
+        "description": "Giving the nod to Paris' annual Quai 54 streetball tournament, the Kobe 11 'Quai 54' released as part of the Quai 54 collection in 2016. Featuring an Engineered Mesh upper in white, the shoe is supported by Flywire cables that are partially visible underneath. Quai 54 branding on the heel gives a direct callout to the tournament, while the forefoot mini-Swoosh and heel branding brings color to the look. Underfoot, a custom graphic appears on the outsole.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-11-quai-54",
+        "resellLinks.stockX": "https://stockx.com/kobe-11-quai-54",
+        "make": "Nike Kobe 11",
+        "retailPrice": "155",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2016-07-09"
+    },
+    {
+        "_id": "64a323f989fa75170e1077c9",
         "name": "Nike Kobe 5 Black Mamba Collection Fade to Black",
-        "price": 150,
-        "description": "Dropping in 2016 as part of Nike’s ‘Fade to Black’ collection that celebrates Kobe Bryant’s final NBA season",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Fade-To-Black-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "863",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Fade-To-Black-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1627414744",
+        "description": "Dropping in 2016 as part of Nike’s ‘Fade to Black’ collection that celebrates Kobe Bryant’s final NBA season, the Zoom Kobe 5 ‘FTB’ showcases a monochromatic finish in Tumbled Grey. As for the shoe’s historical significance in the comprehensive lineup, the Mamba wore the Zoom Kobe 5 in 2010, securing his fifth and final NBA championship while taking revenge against the Boston Celtics.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Tumbled Grey/Tumbled Grey",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-black-mamba-collection-fade-to-black",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-black-mamba-collection-fade-to-black",
+        "make": "Nike Kobe 5",
+        "retailPrice": "200",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Fade-To-Black-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2016-04-04"
     },
     {
+        "_id": "64a323f989fa75170e1077ca",
+        "name": "Nike Kobe 10 5AM Flight",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "699",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-10-5AM-Flight-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610078652",
+        "description": "The first colorway for Kobe Bryant's 10th signature shoe, the Kobe 10 '5AM Flight' was inspired by Bryant's early morning leap from a 40-foot diving board after recovering from Achilles tendon surgery in 2013. The shoe's Vapor Green and Blue Lagoon Engineered Mesh upper recalls pool water, while the nubuck tongue sports a scaly pattern. Four lines on the left heel represent the four feet of stitching required to repair the tendon, while the icy blue sole unit includes visible Zoom Air in the heel and a gold 'X' underfoot.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-10-5am-flight",
+        "resellLinks.stockX": "https://stockx.com/kobe-10-5am-flight",
+        "make": "Nike Kobe 10",
+        "retailPrice": "180",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2015-02-07"
+    },
+    {
+        "_id": "64a323f989fa75170e1077cb",
         "name": "Nike Kobe 5 Lakers",
-        "price": 155,
-        "description": "Giving the nod to the only NBA franchise Kobe Bryant played for",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Lakers.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "832",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Kobe-5-Lakers-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1609437117",
+        "description": "Giving the nod to the only NBA franchise Kobe Bryant played for, the Zoom Kobe 5 'Lakers' features a black upper with Del Sol and Varsity Purple accents. Flywire cables support the fit up top, while the Phylon midsole incorporates Zoom units for cushioning. The rubber outsole sports an EKG-inspired traction pattern.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Black/Del Sol-Varsity Purple",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-lakers",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-lakers",
+        "make": "Nike Kobe 5",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Lakers"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-01-16"
     },
     {
+        "_id": "64a323f989fa75170e1077cc",
         "name": "Nike Kobe 5 Del Sol",
-        "price": 155,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Del-Sol-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "763",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Del-Sol-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610081719",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Black/White-Del Sol",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-del-sol",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-del-sol",
+        "make": "Nike Kobe 5",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Del-Sol-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-05-23"
     },
     {
+        "_id": "64a323f989fa75170e1077cd",
         "name": "Nike Zoom Kobe 5 Protro Kay Yow",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Protro-Kay-Yow.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "2000",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Protro-Kay-Yow.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1651194973",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Metallic Silver",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-zoom-kobe-5-protro-kay-yow",
+        "resellLinks.stockX": "https://stockx.com/nike-zoom-kobe-5-protro-kay-yow",
+        "make": "Nike Zoom Kobe 5 Protro",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Zoom-Kobe-5-Protro-Kay-Yow"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": ""
     },
     {
+        "_id": "64a323f989fa75170e1077ce",
         "name": "Nike Kobe 5 Ink",
-        "price": 155,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Ink.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1529",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Ink.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610082562",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Ink/Metallic Silver-Black-Ice",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-ink",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-ink",
+        "make": "Nike Kobe 5",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Ink"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-11-01"
     },
     {
+        "_id": "64a323f989fa75170e1077cf",
         "name": "Nike Kobe 5 POP Away",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-POP-Away-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "710",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-POP-Away-Product.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1686755836",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Black/Chrome-Del Sol-Varsity Purple",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-pop-away",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-pop-away",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-POP-Away-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-04-17"
     },
     {
+        "_id": "64a323f989fa75170e1077d0",
+        "name": "Nike Kobe 2 Prelude (4/50+ Points)",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "789",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Kobe-2-Prelude-4-50-Points-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1607662002",
+        "description": "Part of a eight-shoe capsule released in the lead-up to the Kobe 9, the Zoom Kobe 2 'Prelude' emerges with an allover marble graphic throughout its upper. Accented by hits of gold on the eyelets and branding, the number '4' appears inside the ankle strap as a nod to a stretch in 2007 in which Kobe Bryant scored at least 50 points in four straight games.",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-2-prelude-4-50-points",
+        "resellLinks.stockX": "https://stockx.com/kobe-2-prelude-4-50-points",
+        "make": "Nike Kobe 2",
+        "retailPrice": "200",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2013-12-14"
+    },
+    {
+        "_id": "64a323f989fa75170e1077d1",
         "name": "Nike Kobe 5 All-Star",
-        "price": 150,
-        "description": "Made for Kobe Bryant for the 2010 NBA All-Star Game",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-All-Star-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1199",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-All-Star-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610079500",
+        "description": "Made for Kobe Bryant for the 2010 NBA All-Star Game, the Zoom Kobe 5 'All-Star' features a Daring Red Flywire upper. The toe box sports perforations for breathability, while the black heel gives way to a black stabilizing heel counter. A black Phylon midsole works with Nike Zoom in the forefoot and heel to provide cushioning, while the outsole takes on a translucent finish.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Daring Red/Black",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-all-star",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-all-star",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-All-Star-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-02-06"
     },
     {
+        "_id": "64a323f989fa75170e1077d2",
         "name": "Nike Kobe 5 USA",
-        "price": 150,
-        "description": "The Zoom Kobe 5 'USA' is a performance basketball shoe with a patriotic look. The shoe's upper features a synthetic construction",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-USA.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1269",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-USA.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620331901",
+        "description": "The Zoom Kobe 5 'USA' is a performance basketball shoe with a patriotic look. The shoe's upper features a synthetic construction, finished in white and highlighted by Obsidian and Sport Red throughout. Heat-bonded overlays support the fit, with Flywire cables securing the design. Underfoot, an injection-molded phylon midsole houses Zoom Air for cushioning, working with a carbon-fiber weave shank to provide stability.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Obsidian-Sport Red",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-usa",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-usa",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-USA"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-08-06"
     },
     {
+        "_id": "64a323f989fa75170e1077d3",
         "name": "Nike Kobe 5 Lower Merion Aces (Away)",
-        "price": 150,
-        "description": "The Nike Zoom Kobe 5 ‘Lower Merion Aces’ pays homage to Kobe Bryant’s high school alma mater. Finished in grey and silver with accents in the school’s signature burgundy coloring",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Lower-Merion-Away.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Lower-Merion-Away.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620331829",
+        "description": "The Nike Zoom Kobe 5 ‘Lower Merion Aces’ pays homage to Kobe Bryant’s high school alma mater. Finished in grey and silver with accents in the school’s signature burgundy coloring, the low-top features a lightweight synthetic upper fortified with Flywire technology and a molded heel counter. A cut-out panel on the rubber outsole reveals an innovative glass/carbon fiber shank plate.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Metallic Silver/Team Red-White",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-lower-merion-aces-away",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-lower-merion-aces-away",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Lower-Merion-Away"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-03-06"
     },
     {
+        "_id": "64a323f989fa75170e1077d4",
         "name": "Nike Kobe Aston Martin Pack V/Hyperdunk",
-        "price": 300,
-        "description": "The 2010 Kobe ‘Aston Martin Pack’ celebrates a viral Nike ad from two years earlier",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Aston-Martin.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "2668",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-Aston-Martin-Pack-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610083320",
+        "description": "The 2010 Kobe ‘Aston Martin Pack’ celebrates a viral Nike ad from two years earlier, in which Kobe Bryant appears to leap over an oncoming Aston Martin DB9 Volante. The two-piece pack comprises the Zoom Kobe V and Nike Hyperdunk, the latter worn by Kobe during the video clip. Both pairs are finished in metallic Anthracite hues with leather interiors for a luxurious touch.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Anthracite/Black-Sail",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-aston-martin-pack-v-hyperdunk",
+        "resellLinks.stockX": "https://stockx.com/kobe-aston-martin-pack-v-hyperdunk",
+        "make": "Nike Kobe",
+        "retailPrice": "300",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Aston-Martin"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2016-05-14"
     },
     {
+        "_id": "64a323f989fa75170e1077d5",
         "name": "Nike Kobe 5 5 Rings (2010)",
-        "price": 150,
-        "description": "The Zoom Kobe 5 'Rings' celebrates Kobe Bryant's fifth NBA title with the Los Angeles Lakers. The shoe's upper appears primarily in purple",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-5-Rings-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "525",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Kobe-5-5-Rings-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610081123",
+        "description": "The Zoom Kobe 5 'Rings' celebrates Kobe Bryant's fifth NBA title with the Los Angeles Lakers. The shoe's upper appears primarily in purple, accented by various graphics giving the nod to the accomplishment, including hits of Midwest Gold at the forefoot. More Midwest Gold emerges on the branding, while Zoom Air underfoot provides cushioning.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Midwest Gold/Concord",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-5-rings",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-5-rings",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-5-Rings-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-10-15"
     },
     {
+        "_id": "64a323f989fa75170e1077d6",
         "name": "Nike Kobe 5 USC Trojans",
-        "price": 155,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-USC-Trojans.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "800",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-USC-Trojans.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620333390",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Varsity Crimson/University Gold",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-usc-trojans",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-usc-trojans",
+        "make": "Nike Kobe 5",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-USC-Trojans"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-03-15"
     },
     {
+        "_id": "64a323f989fa75170e1077d7",
         "name": "Nike Kobe 5 Prelude (Finals MVP) (GS)",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Prelude-Finals-MVP-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "777",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Kobe-5-Prelude-Finals-MVP-GS-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1607655033",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "University Gold/Metallic Gold-Black",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-prelue-finals-mvp-gs",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-prelue-finals-mvp-gs",
+        "make": "Nike Kobe 5",
+        "retailPrice": "115",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Prelude-Finals-MVP-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2014-01-04"
     },
     {
+        "_id": "64a323f989fa75170e1077d8",
         "name": "Nike Kobe 5 Dark Knight",
-        "price": 150,
-        "description": "The Zoom Kobe 5 ‘Dark Knight’ shows off a subdued color scheme inspired by the 2008 Christopher Nolan film of the same name. The low-top’s black synthetic upper is accented with a heat-welded overlay in Neptune Blue",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Dark-Knight.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "527",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Dark-Knight.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610079520",
+        "description": "The Zoom Kobe 5 ‘Dark Knight’ shows off a subdued color scheme inspired by the 2008 Christopher Nolan film of the same name. The low-top’s black synthetic upper is accented with a heat-welded overlay in Neptune Blue, as well as a signature Swoosh outlined in white. A matching black and blue midsole packs Nike Zoom units in the heel and forefoot for lightweight cushioning.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Black/Black-Dark Grey-Neptune Blue",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-dark-knight",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-dark-knight",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Dark-Knight"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-01-22"
     },
     {
+        "_id": "64a323f989fa75170e1077d9",
+        "name": "Nike Kobe 11 Low Quai 54 (Friends & Family) (2016)",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "2410",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-11-Low-Quai54-Friends-And-Family.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610078712",
+        "description": "",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-11-low-quai54-friends-and-family",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-11-low-quai54-friends-and-family",
+        "make": "Nike Kobe 11 Low",
+        "retailPrice": "210",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe5",
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2016-06-01"
+    },
+    {
+        "_id": "64a323f989fa75170e1077da",
         "name": "Nike Kobe 5 Lakers",
-        "price": 155,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Lakers.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1210",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Lakers.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610081731",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Del Sol-Neutral Grey-Varsity Purple",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-lakers",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-lakers",
+        "make": "Nike Kobe 5",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Lakers"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2009-10-31"
     },
     {
+        "_id": "64a323f989fa75170e1077db",
         "name": "Nike Kobe 5 Draft Day",
-        "price": 150,
-        "description": "Inspired by the infamous draft-day trade that sent the Charlotte Hornets' 13th overall pick to the Los Angeles Lakers in exchange for Vlade Divac",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Draft-Day.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1202",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Draft-Day.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620331950",
+        "description": "Inspired by the infamous draft-day trade that sent the Charlotte Hornets' 13th overall pick to the Los Angeles Lakers in exchange for Vlade Divac, the Zoom Kobe 5 'Draft Day' gives the nod to the team that didn't select Kobe Bryant. The shoe's white upper is accented by Orion Blue on the branding, mesh collar and heel counter, with Varsity Purple on the Swoosh outline and inner lining. The Phlyon midsole incorporates Zoom units for cushioning.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Varsity Purple-Orion Blue",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-draft-day",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-draft-day",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Draft-Day"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-06-01"
     },
     {
+        "_id": "64a323f989fa75170e1077dc",
         "name": "Nike Kobe 5 Big Stage Home",
-        "price": 150,
-        "description": "As the shoe’s name suggests",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Big-Stage-Home-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "2277",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Big-Stage-Home-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610079408",
+        "description": "As the shoe’s name suggests, the Nike Zoom Kobe 5 ‘Big Stage Home’ was worn by Kobe Bryant during games at L.A.’s Staples Center throughout the 2010 NBA Finals. The low-top’s white upper is emblazoned with an all-over tattoo-like graphic celebrating the Mamba’s performance highlights from the season, including the date that he became the Lakers’ all-time scoring leader.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Metallic Gold-White",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-big-stage-home",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-big-stage-home",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Big-Stage-Home-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-08-06"
     },
     {
+        "_id": "64a323f989fa75170e1077dd",
         "name": "Nike Zoom Kobe 5 Wolf Grey",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Wolf-Grey.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1300",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Wolf-Grey.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1646185140",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Wolf Grey/Red/Black",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-zoom-kobe-5-wolf-grey",
+        "resellLinks.stockX": "https://stockx.com/nike-zoom-kobe-5-wolf-grey",
+        "make": "Nike Zoom Kobe 5",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Zoom-Kobe-5-Wolf-Grey"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-09-18"
     },
     {
+        "_id": "64a323f989fa75170e1077de",
         "name": "Nike Zoom Kobe 5 Duke",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Duke.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Duke.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610078395",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Varsity Royal/White-Black-Metallic Silver",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-zoom-kobe-5-duke",
+        "resellLinks.stockX": "https://stockx.com/nike-zoom-kobe-5-duke",
+        "make": "Nike Zoom Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Zoom-Kobe-5-Duke"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-03-13"
     },
     {
+        "_id": "64a323f989fa75170e1077df",
         "name": "Nike Kobe 5 China",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-China.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "3500",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-China.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620333276",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Comet Red/White/Del Sol",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-china",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-china",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-China"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-08-12"
     },
     {
+        "_id": "64a323f989fa75170e1077e0",
         "name": "Nike Kobe 5 Blackout",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Blackout.png",
+        "brand": "Nike",
+        "price": "150",
+        "price": "150",
+        "lowestResellPrice.stockX": "1100",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Blackout.png?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620331811",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Black/Black-Metallic Silver-Dark Grey",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-kobe-5-blackout",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-blackout",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Blackout"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-01-16"
     },
     {
+        "_id": "64a323f989fa75170e1077e1",
         "name": "Nike Zoom Kobe 5 Inline",
-        "price": 150,
-        "description": "Nike Kobe 5",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Inline.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "900",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Zoom-Kobe-5-Inline.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1650150598",
+        "description": "",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "White/Black/Varsity Purple-Del Sol",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "nike-zoom-kobe-5-inline",
+        "resellLinks.stockX": "https://stockx.com/nike-zoom-kobe-5-inline",
+        "make": "Nike Zoom Kobe 5",
+        "retailPrice": "180",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Zoom-Kobe-5-Inline"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-03-05"
     },
     {
+        "_id": "64a323f989fa75170e1077e2",
         "name": "Nike Kobe 5 Joker (Chaos)",
-        "price": 150,
-        "description": "The Nike Zoom Kobe 5 ‘Chaos’ features a design inspired by Heath Ledger’s portrayal of the Joker in the second installment of Christopher Nolan’s Batman trilogy",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Chaos-Product.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "529",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Chaos-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1610079423",
+        "description": "The Nike Zoom Kobe 5 ‘Chaos’ features a design inspired by Heath Ledger’s portrayal of the Joker in the second installment of Christopher Nolan’s Batman trilogy, The Dark Knight. The low-top’s synthetic upper is finished in a unique purple hue, contrasted by a neon green Swoosh and white heat-bonded overlays. A speckled phylon midsole in white is supported by a green rubber outsole.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Purple/Cyber-White-Black",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-joker-chaos",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-joker-chaos",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Chaos-Product"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2009-12-26"
     },
     {
+        "_id": "64a323f989fa75170e1077e3",
         "name": "Nike Kobe 5 Big Stage Away",
-        "price": 150,
-        "description": "Zoom Kobe 5 'Big Stage Away' puts an allover tribute to Kobe Bryant on the silhouette he wore during the 2010 NBA FInals",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Big-Stage-Away.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "1375",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Big-Stage-Away.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620331758",
+        "description": "Zoom Kobe 5 'Big Stage Away' puts an allover tribute to Kobe Bryant on the silhouette he wore during the 2010 NBA FInals, which resulted in his fifth NBA title and second Finals MVP. Featuring a black upper supported by Flywire cables, the design gives the nod to milestones from the season, including his points-per-game average and his 25,207th point, which made him the Los Angeles Lakers' all-time leading scorer. Gold accents emerge on the heel and branding, while Zoom Air provides cushioning underfoot.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Black/Metallic Gold-White",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-big-stage-away",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-big-stage-away",
+        "make": "Nike Kobe 5",
+        "retailPrice": "130",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Big-Stage-Aw"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2010-08-06"
     },
     {
+        "_id": "64a323f989fa75170e1077e4",
         "name": "Nike Kobe 5 Aston Martin Pack",
-        "price": 150,
-        "description": "Released in 2016",
-        "currency": "USD",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Aston-Martin.png",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "2477",
+        "thumbnail": "https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Aston-Martin.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1620331747",
+        "description": "Released in 2016, the Kobe 5 ‘Aston Martin’ draws inspiration from a 2008 viral marketing stunt in which Kobe jumped over an oncoming Aston Martin DB9 Volante. The low-top features a shiny Anthracite upper, supported by Flywire cables that wrap around the foot for an adaptive fit. A lightweight phylon midsole in matching grey packs Zoom Air cushioning in the forefoot and heel.",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "colorway": "Anthracite/Black-Sail",
+        "colorway": "Metallic Gold/Field Purple-Multi-Color",
+        "url": "kobe-5-aston-martin-pack",
+        "resellLinks.stockX": "https://stockx.com/kobe-5-aston-martin-pack",
+        "make": "Nike Kobe 5",
+        "retailPrice": "150",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
             "collection": "kobe5",
-            "slug": "Nike-Kobe-5-Aston-Martin"
-        }
+            "slug": "Nike-Kobe-5-Protro-Bruce-Lee-Product"
+        },
+        "releaseDate": "2016-05-14"
     }
 ]
 

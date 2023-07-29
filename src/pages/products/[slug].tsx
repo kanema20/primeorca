@@ -16,7 +16,7 @@ export default function ProductPage({ slug, }: InferGetStaticPropsType<typeof ge
 				<div className="pt-8">
 					<Breadcrumb />
 				</div>
-				{/* <ProductSingleDetails /> */}
+				{/* <ProductSingleDetails data={data} /> */}
 				<ProductSingleDetails slug={slug} />
 				<RelatedProducts sectionHeading="text-related-products" />
 				<Subscription />
