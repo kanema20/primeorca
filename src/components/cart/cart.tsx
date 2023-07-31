@@ -19,7 +19,12 @@ import Button from '@components/ui/button';
 import Router from 'next/router';
 import { forEach } from 'lodash';
 import { useState } from 'react';
-const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
+import { loadStripe } from '@stripe/stripe-js';
+import axios, { Axios } from 'axios';
+
+// const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
+const stripePromise = loadStripe('pk_test_51NODKeBHHcQnL99C1aRpVHrkczyPHhGeH5i2ZYhfLW7NGCXTtC3wgJusSintO9atIXnO2reRhwgEHAa5RYZ6L2Xt008Z1sORpQ')
+
 
 export interface CheckoutItems {
   id?: string | number;
@@ -29,7 +34,6 @@ export interface CheckoutItems {
 }
 
 export default function Cart() {
-
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
@@ -44,15 +48,29 @@ export default function Cart() {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
-  console.log("items: ", items);
+
+  const handleClick = async (e) => {
+    const { data } = await axios.post('api/checkout/session',
+      {
+        default_price: items[0].default_price,
+        quantity: items[0].quantity,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
+    );
+    window.location.assign(data)
+  }
 
   // function createCheckout(cartItems: any) {
   const createCheckout = async () => {
     try {
       setLoading(true);
       // TODO: next.js api routing - checkout
-      // const response = await fetch("api/checkout_sessions/", {
-      const response = await fetch("http://localhost:8080/create-checkout-session/", {
+      const response = await fetch("api/checkout/session", {
+        // const response = await fetch("http://localhost:8080/create-checkout-session/", {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         // mode: 'cors', // no-cors, *cors, same-origin
         mode: 'no-cors', // no-cors, *cors, same-origin

@@ -1,12 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 import Stripe from 'stripe'
-
 const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
 
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // const { cart } = req.body;
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  const { price, quantity } = req.body;
   // Handle the POST request
   if (req.method === 'POST') {
     try {
@@ -14,12 +12,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const params: Stripe.Checkout.SessionCreateParams = {
         // payment_method_types: ['card', 'paypal', 'google_pay', 'apple_pay'],
         payment_method_types: ['card'],
-        line_items: req.body,
+        line_items: [{
+          price,
+          quantity
+        }],
         custom_fields: [{
           key: 'size',
           label: {
             type: 'custom',
-            custom: 'Size (US - M)'
+            custom: 'Size (US - Men)'
           },
           type: 'dropdown',
           dropdown: {

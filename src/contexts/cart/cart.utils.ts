@@ -30,7 +30,7 @@ export interface Item {
   //   [key: string]: unknown;
   // };
   image: any;
-  default_price: string;
+  default_price?: string;
   price: number;
   sale_price?: number;
   [key: string]: unknown;

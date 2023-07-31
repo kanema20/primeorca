@@ -1,5 +1,4 @@
 const eyblProducts = [
-
     {
         "_id": "64c3501cd5108ecc23fa0e3c",
         "name": "Nike Ja 1 EYBL Melon Tint",

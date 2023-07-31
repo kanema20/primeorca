@@ -30,21 +30,21 @@ import Stripe from 'stripe'
 const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
 
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    // const { cart } = req.body;
+export default async function POST(request: Request) {
+    let data = await request.json();
     // Handle the POST request
-    if (req.method === 'POST') {
+    if (request.method === 'POST') {
         try {
             // Create Checkout Sessions from body params.
             const params: Stripe.Checkout.SessionCreateParams = {
                 // payment_method_types: ['card', 'paypal', 'google_pay', 'apple_pay'],
                 payment_method_types: ['card'],
-                line_items: req.body,
+                line_items: data,
                 custom_fields: [{
                     key: 'size',
                     label: {
                         type: 'custom',
-                        custom: 'Size (US - M)'
+                        custom: 'Size (US - Men)'
                     },
                     type: 'dropdown',
                     dropdown: {
@@ -65,14 +65,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     },
                 }],
                 mode: 'payment',
-                success_url: `${req.headers.origin}/?success=true`,
-                cancel_url: `${req.headers.origin}/?canceled=true`,
+                success_url: `localhost:3000/?success=true`,
+                cancel_url: `localhost:3000/?canceled=true`,
                 automatic_tax: { enabled: true },
                 shipping_options: [{
-                    'shipping_rate': '25.00',
+                    'shipping_rate': '30.00',
                 }],
             }
-
 
             const checkoutSession: Stripe.Checkout.Session =
                 await stripe.checkout.sessions.create(params)

@@ -25,7 +25,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
   const { t } = useTranslation('common');
   const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
   const { price } = usePrice({
-    amount: getProductPrice(item.default_price)?.unit_amount,
+    amount: getProductPrice(item.default_price).unit_amount,
     // amount: item.price,
     currencyCode: 'USD',
   });

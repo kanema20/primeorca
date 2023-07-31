@@ -2,7 +2,7 @@
 const dotenv = require('dotenv');
 // import dotenv from 'dotenv';
 // const kobe5Products = require('./kobe5.js');
-const kobe6Products = require('./kobe6.js');
+const kobe6Products = require('./catalogues/kobe6.js');
 
 dotenv.config();
 // dotenv.config({ path: `./env.local`, override: true });
@@ -30,8 +30,10 @@ const createProduct = async (product, sizes) => {
             category: product.metadata_.category,
             collection: product.metadata_.collection,
             type: "collectible",
-            sizes: sizes.join(','),
             slug: product.metadata_.slug,
+            retailPrice: product.retailPrice,
+            lowestResell: product.lowestResellPrice.stockX,
+            releaseDate: product.releaseDate
         },
         // attributes: {
         //     size:

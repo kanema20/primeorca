@@ -1,7 +1,7 @@
 // import { stripe } from './stripe';
 const Stripe = require('stripe');
 const dotenv = require('dotenv');
-const kobe6Products = require('./kobe6.js');
+const kobe6Products = require('./catalogues/kobe6.js');
 
 dotenv.config();
 // dotenv.config({ path: `./env.local`, override: true });
@@ -33,18 +33,18 @@ const createProduct = async (product) => {
             collection: product.metadata_.collection,
             type: "collectible",
             // sizes: sizes.join(','),
-            // "size-7": 7,
-            // "size-7-5": 7.5,
-            // "size-8": 8,
-            // "size-8-5": 8.5,
-            // "size-9": 9,
-            // "size-9-5": 9.5,
-            // "size-10": 10,
-            // "size-10-5": 10.5,
-            // "size-11": 11,
-            // "size-12": 12,
-            // "size-13": 13,
-            // "size-14": 14
+            "size-7": 7,
+            "size-7-5": 7.5,
+            "size-8": 8,
+            "size-8-5": 8.5,
+            "size-9": 9,
+            "size-9-5": 9.5,
+            "size-10": 10,
+            "size-10-5": 10.5,
+            "size-11": 11,
+            "size-12": 12,
+            "size-13": 13,
+            "size-14": 14
             // size1: 7,
             // size2: 7.5,
             // size3: 8,
@@ -79,23 +79,24 @@ size_kv = {
     "size-14": 14,
 }
 
-size_kv = {
-    "size1": 7,
-    "size2": 7.5,
-    "size3": 8,
-    "size4": 8.5,
-    "size5": 9,
-    "size6": 9.5,
-    "size7": 10,
-    "size-8": 10.5,
-    "size-9": 11,
-    "size-10": 12,
-    "size-11": 13,
-    "size-12": 14,
-}
+// size_kv = {
+//     "size1": 7,
+//     "size2": 7.5,
+//     "size3": 8,
+//     "size4": 8.5,
+//     "size5": 9,
+//     "size6": 9.5,
+//     "size7": 10,
+//     "size-8": 10.5,
+//     "size-9": 11,
+//     "size-10": 12,
+//     "size-11": 13,
+//     "size-12": 14,
+// }
 
 for (const product of kobe6Products) {
-    createProduct(product, sizes_)
+    // createProduct(product, sizes_)
+    createProduct(product)
         .then(product => {
             console.log(product);
             console.log(`${product.name}: ${product.id}`);
