@@ -15,3 +15,17 @@ export const useFetchItemSizes = (productId: string) => {
     );
 }
 
+export const fetchProductSizes = async (url: string) => {
+    const products = await stripe.products.search({
+        query: `active:\'true\' AND url:\'${url}\'`,
+        // query: `metadata[\'collection\']:\'kobe5\'`,
+        limit: 12,
+    });
+    return products.data;
+}
+
+export const useFetchProductSizes = (url: string) => {
+    return useQuery<StripeProduct, Error>(['all_product_sizes', url], () =>
+        fetchProductSizes(url)
+    );
+}

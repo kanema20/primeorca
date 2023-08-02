@@ -1,17 +1,72 @@
 // import { stripe } from './stripe';
 const Stripe = require('stripe');
 const dotenv = require('dotenv');
-const kobe6Products = require('./catalogues/kobe6.js');
+const kobe5Products = require('./mvp/kobe5.js');
+const kobe6Products = require('./mvp/kobe6.js');
+const kobe8Products = require('./mvp/kobe8.js');
 
-dotenv.config();
-// dotenv.config({ path: `./env.local`, override: true });
+// dotenv.config();
+dotenv.config({ path: `./env.local`, override: true });
 // let STRIPE_PRIV = process.env.STRIPE_PRIVATE_KEY;// as string;
 
 // const stripe = Stripe(STRIPE_PRIV);
 const stripe = new Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom')
+// const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP') // PO
 // , {
 //     apiVersion: '2022-11-15',
 // });
+
+
+// const eybl = [
+//     {
+//         "_id": "64c3501cd5108ecc23fa0e3c",
+//         "name": "Nike Ja 1 EYBL Melon Tint",
+//         "brand": "Nike",
+//         "price": "150",
+//         "lowestResellPrice.stockX": "159",
+//         "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-Ja-1-EYBL-Melon-Tint.jpg",
+//         "description": "something",
+//         "currency": "USD",
+//         "shippable": true,
+//         "statement_descriptor": "PRIME ORCA LLC",
+//         "url": "nike-ja-1-eybl-melon-tint",
+//         "resellLinks.stockX": "https://stockx.com/nike-ja-1-eybl-melon-tint",
+//         "make": "Nike Ja 1",
+//         "retailPrice": "120",
+//         "releaseDate": "2023-07-25",
+//         "metadata_": {
+//             "brand": "nike",
+//             "category": "eybl",
+//             "collection": "ja",
+//             "slug": "nike-ja-1-eybl-melon-tint",
+//             "make": "Nike Ja 1 EYBL Melon Tint"
+//         },
+//     },
+//     {
+//         "_id": "64c3501cd5108ecc23fa0e3d",
+//         "name": "Nike Air Zoom G.T. Cut EYBL Team USA Sport Red",
+//         "brand": "Nike",
+//         "price": "150",
+//         "lowestResellPrice.stockX": "414",
+//         "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-Air-Zoom-GT-Cut-Sport-Red-Product.jpg",
+//         "description": "something",
+//         "currency": "USD",
+//         "shippable": true,
+//         "statement_descriptor": "PRIME ORCA LLC",
+//         "url": "nike-air-zoom-gt-cut-sport-red",
+//         "resellLinks.stockX": "https://stockx.com/nike-air-zoom-gt-cut-sport-red",
+//         "retailPrice": "170",
+//         "releaseDate": "2021-07-06",
+//         "metadata_": {
+//             "brand": "nike",
+//             "category": "eybl",
+//             "collection": "GT",
+//             "slug": "nike-air-zoom-gt-cut-sport-red",
+//             "make": "Nike Air Zoom G.T. Cut EYBL Team USA Sport Red"
+//         },
+//     },
+
+// ]
 
 // const createProduct = async (product, sizes) => {
 const createProduct = async (product) => {
@@ -31,33 +86,10 @@ const createProduct = async (product) => {
             brand: product.metadata_.brand,
             category: product.metadata_.category,
             collection: product.metadata_.collection,
-            type: "collectible",
-            // sizes: sizes.join(','),
-            "size-7": 7,
-            "size-7-5": 7.5,
-            "size-8": 8,
-            "size-8-5": 8.5,
-            "size-9": 9,
-            "size-9-5": 9.5,
-            "size-10": 10,
-            "size-10-5": 10.5,
-            "size-11": 11,
-            "size-12": 12,
-            "size-13": 13,
-            "size-14": 14
-            // size1: 7,
-            // size2: 7.5,
-            // size3: 8,
-            // size4: 8.5,
-            // size5: 9,
-            // size6: 9.5,
-            // size7: 10,
-            // size8: 10.5,
-            // size9: 11,
-            // size10: 12,
-            // size11: 13,
-            // size12: 14,
-        },
+            make: product.metadata_.make,
+            release: product.releaseDate,
+            type: "Replica",
+        }
     });
     return stripeProduct;
 };
@@ -79,28 +111,11 @@ size_kv = {
     "size-14": 14,
 }
 
-// size_kv = {
-//     "size1": 7,
-//     "size2": 7.5,
-//     "size3": 8,
-//     "size4": 8.5,
-//     "size5": 9,
-//     "size6": 9.5,
-//     "size7": 10,
-//     "size-8": 10.5,
-//     "size-9": 11,
-//     "size-10": 12,
-//     "size-11": 13,
-//     "size-12": 14,
-// }
-
-for (const product of kobe6Products) {
+for (const product of kobe8Products) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {
             console.log(product);
-            console.log(`${product.name}: ${product.id}`);
-            console.log(`${product.metadata}: ${product.metadata.size10}`);
         })
         .catch(error => {
             console.error(error);

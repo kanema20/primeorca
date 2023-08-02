@@ -1,4 +1,4 @@
-import { stripe } from './stripe';
+import { stripe } from '../stripe';
 // import Stripe from "stripe";
 // const Stripe = require('stripe');
 import dotenv from 'dotenv';

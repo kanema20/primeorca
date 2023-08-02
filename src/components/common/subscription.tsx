@@ -3,6 +3,7 @@ import Input from '@components/ui/input';
 import Button from '@components/ui/button';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
+import { withFirestore } from 'react-firestore';
 
 const data = {
   title: 'common:text-subscribe-heading',
@@ -23,6 +24,10 @@ const defaultValues = {
   subscription_email: '',
 };
 
+// const addItem = name => {
+//   firestore.collection('items').add({ name });
+// };
+
 const Subscription: React.FC<Props> = ({
   className = 'px-5 sm:px-8 md:px-16 2xl:px-24',
   disableBorderRadius = false,
@@ -38,6 +43,7 @@ const Subscription: React.FC<Props> = ({
   const { title, description, buttonText } = data;
   async function onSubmit(input: FormValues) {
     console.log(input, 'data');
+    // addItem(input);
   }
   return (
     <div
@@ -91,3 +97,4 @@ const Subscription: React.FC<Props> = ({
 };
 
 export default Subscription;
+// export default withFirestore(Subscription);

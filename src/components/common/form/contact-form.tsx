@@ -3,6 +3,7 @@ import Button from '@components/ui/button';
 import { useForm } from 'react-hook-form';
 import TextArea from '@components/ui/text-area';
 import { useTranslation } from 'next-i18next';
+import { init, sendForm } from 'emailjs-com';
 
 interface ContactFormValues {
   name: string;
@@ -12,6 +13,7 @@ interface ContactFormValues {
 }
 
 const ContactForm: React.FC = () => {
+  init("ftsPUcoP3FCRkQx5e");
   const {
     register,
     handleSubmit,
@@ -19,6 +21,15 @@ const ContactForm: React.FC = () => {
   } = useForm<ContactFormValues>();
   function onSubmit(values: ContactFormValues) {
     console.log(values, 'contact');
+    sendForm("service_98y4xgd", "template_xod81hn", "#contact-form", "ftsPUcoP3FCRkQx5e").then(
+      (result) => {
+        alert("Message Sent Successfully");
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   }
   const { t } = useTranslation();
   return (
@@ -26,6 +37,7 @@ const ContactForm: React.FC = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="w-full mx-auto flex flex-col justify-center "
       noValidate
+      id="contact-form"
     >
       <div className="flex flex-col space-y-5">
         <div className="flex flex-col md:flex-row space-y-5 md:space-y-0">
@@ -81,4 +93,5 @@ const ContactForm: React.FC = () => {
   );
 };
 
+// export default withFirestore(ContactForm);
 export default ContactForm;

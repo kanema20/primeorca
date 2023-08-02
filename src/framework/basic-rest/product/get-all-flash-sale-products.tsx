@@ -41,17 +41,22 @@ const fetchAncientFlashSaleProducts = async ({ queryKey }: any) => {
 
 const fetchNewKobeArrivals = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
-  // const { data } = await http.get(API_ENDPOINTS.KOBE_NEW_ARRIVALS);
-  const { data } = await stripe.products.list({
+  const products = await stripe.products.search({
+    query: `active:\'true\' AND metadata[\'type\']:\'Replica\'`,
+    // query: `metadata[\'collection\']:\'kobe5\'`,
     limit: 10,
-    active: true,
   });
+
+  // const { data } = await stripe.products.list({
+  //   limit: 10,
+  //   active: true,
+  // });
   // console.log(`products.data: ${products.data}`)
 
-  data.forEach((product: Stripe.Product) => {
-    console.log(`product info: ${product}`)
-  });
-  return data;
+  // data.forEach((product: Stripe.Product) => {
+  //   console.log(`product info: ${product}`)
+  // });
+  return products.data;
 };
 
 const fetchKobeItem = async ({ queryKey }: any) => {

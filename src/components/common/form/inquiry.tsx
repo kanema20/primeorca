@@ -3,6 +3,7 @@ import Button from '@components/ui/button';
 import { useForm } from 'react-hook-form';
 import TextArea from '@components/ui/text-area';
 import { useTranslation } from 'next-i18next';
+import { init, sendForm } from 'emailjs-com';
 
 interface InquiryFormValues {
     name: string;
@@ -12,6 +13,7 @@ interface InquiryFormValues {
 }
 
 const InquiryForm: React.FC = () => {
+    init("ftsPUcoP3FCRkQx5e");
     const {
         register,
         handleSubmit,
@@ -19,6 +21,15 @@ const InquiryForm: React.FC = () => {
     } = useForm<InquiryFormValues>();
     function onSubmit(values: InquiryFormValues) {
         console.log(values, 'inquiry');
+        sendForm("service_98y4xgd", "template_14dvjai", "#inquiry-form", "ftsPUcoP3FCRkQx5e").then(
+            (result) => {
+                alert("Message Sent Successfully");
+                console.log(result.text);
+            },
+            (error) => {
+                console.log(error.text);
+            }
+        );
     }
     const { t } = useTranslation();
     return (
@@ -26,6 +37,7 @@ const InquiryForm: React.FC = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="w-full mx-auto flex flex-col justify-center"
             noValidate
+            id="inquiry-form"
         >
             <div className="flex flex-col space-y-5">
                 <div className="flex flex-col md:flex-row space-y-5 md:space-y-0">

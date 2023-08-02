@@ -1,41 +1,17 @@
-import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
-
-function getTotalPrice(cartItems: any): number {
-  let totalCart: number = 0;
-  cartItems?.map((cartItem: any) => (
-    totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem?.quantity
-    //useFetchItemPrice(cartItem.prod_price) * item.quantity
-  ))
-  return totalCart;
-}
-
-function getProductPrice(prod_price: any) {
-  const { data } = useFetchItemPrice(prod_price)
-  return data;
-}
-
-// export interface Item {
-//   id: string | number;
-//   price: number;
-//   default_price: string;
-//   quantity?: number;
-//   [key: string]: any;
-// }
-
 export interface Item {
   id: string | number;
   name: string;
   slug: string;
-  // image: {
-  //   [key: string]: unknown;
-  // };
-  image: any;
+  image: string[];
   default_price?: string;
   price: number;
   sale_price?: number;
   [key: string]: unknown;
   quantity?: number;
   attributes: any;
+  // image: {
+  //   [key: string]: unknown;
+  // };
 }
 
 export interface UpdateItemInput extends Partial<Omit<Item, "id">> { }

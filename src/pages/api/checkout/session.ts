@@ -1,68 +1,122 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-import Stripe from 'stripe'
-const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
+const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom')
+import { NextApiRequest, NextApiResponse } from 'next';
+import Stripe from 'stripe';
+import Cors from 'cors'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { price, quantity } = req.body;
-  // Handle the POST request
+// Initializing the cors middleware
+// You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
+const cors = Cors({
+  methods: ['POST', 'GET', 'HEAD'],
+})
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(
+  req: NextApiRequest,
+  res: NextApiResponse,
+  fn: Function
+) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) {
+        return reject(result)
+      }
+
+      return resolve(result)
+    })
+  })
+}
+
+async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]): Promise<Stripe.Checkout.Session> {
+
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card', 'cashapp'], // 'google_pay', 'apple_pay'],
+    line_items: lineItems,
+    mode: 'payment',
+    success_url: 'http://localhost:3000/success',
+    cancel_url: 'http://localhost:3000/cancel',
+    // invoice_creation: {
+    // enabled: true,
+    // invoice_data: {
+    //   description: 'Invoice for Prime Orca LLC',
+    //   metadata: {
+    //     order: 'order-xyz',
+    //   },
+    //   custom_fields: [
+    //     {
+    //       name: 'Purchase Order',
+    //       value: 'PO-XYZ',
+    //     },
+    //   ],
+    //   rendering_options: {
+    //     amount_tax_display: 'include_inclusive_tax',
+    //   },
+    //   footer: 'Prime Orca LLC',
+    // },
+    // },
+    // automatic_tax: { enabled: true },
+    shipping_options: [{
+      shipping_rate: 'shr_1Na7MoBHHcQnL99CZc9w75ys',
+    }],
+  });
+
+  return session;
+}
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  await runMiddleware(req, res, cors)
+  // export default async function handler(req: Request, res: Response) {
   if (req.method === 'POST') {
     try {
       // Create Checkout Sessions from body params.
-      const params: Stripe.Checkout.SessionCreateParams = {
-        // payment_method_types: ['card', 'paypal', 'google_pay', 'apple_pay'],
-        payment_method_types: ['card'],
-        line_items: [{
-          price,
-          quantity
-        }],
-        custom_fields: [{
-          key: 'size',
-          label: {
-            type: 'custom',
-            custom: 'Size (US - Men)'
-          },
-          type: 'dropdown',
-          dropdown: {
-            options: [
-              { label: "7", value: "7" },
-              { label: "7.5", value: "7.5" },
-              { label: "8", value: "8" },
-              { label: "8.5", value: "8.5" },
-              { label: "9", value: "9" },
-              { label: "9.5", value: "9.5" },
-              { label: "10", value: "10" },
-              { label: "10.5", value: "10.5" },
-              { label: "11", value: "11" },
-              { label: "12", value: "12" },
-              { label: "13", value: "13" },
-              { label: "14", value: "14" },
-            ]
-          },
-        }],
-        mode: 'payment',
-        success_url: `${req.headers.origin}/?success=true`,
-        cancel_url: `${req.headers.origin}/?canceled=true`,
-        automatic_tax: { enabled: true },
-        shipping_options: [{
-          'shipping_rate': '25.00',
-        }],
-      }
+      const session = await createCheckoutSession(req.body.items);
+      // const session = await stripe.checkout.sessions.create({
+      //   payment_method_types: ['card', 'cashapp'], // 'google_pay', 'apple_pay'],
+      //   expand: ['line_items.data.price.product'],
+      //   line_items: [
+      //     {
+      //       // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+      //       price: "price_1NWruABHHcQnL99CRnJvfSZG",
+      //       quantity: 4,
+      //     },
+      //   ],
+      //   mode: 'payment',
+      //   invoice_creation: {
+      //     enabled: true,
+      //     invoice_data: {
+      //       description: 'Invoice for Prime Orca LLC',
+      //       metadata: {
+      //         order: 'order-xyz',
+      //       },
+      //       custom_fields: [
+      //         {
+      //           name: 'Purchase Order',
+      //           value: 'PO-XYZ',
+      //         },
+      //       ],
+      //       rendering_options: {
+      //         amount_tax_display: 'include_inclusive_tax',
+      //       },
+      //       footer: 'Prime Orca LLC',
+      //     },
+      //   },
+      //   success_url: `localhost:3000/?success=true`,
+      //   // success_url: `${req.headers.origin}/?success=true`,
+      //   cancel_url: `localhost:3000/?canceled=true`,
+      //   // cancel_url: `${req.headers.origin}/?canceled=true`,
+      //   automatic_tax: { enabled: true },
+      //   shipping_options: [{
+      //     shipping_rate: 'shr_1Na7MoBHHcQnL99CZc9w75ys',
+      //   }],
+      // });
+      res.redirect(session.url);
 
-
-      const checkoutSession: Stripe.Checkout.Session =
-        await stripe.checkout.sessions.create(params)
-
-      // res.status(200).json({ message: 'POST request handled successfully' });
-      res.status(200).json({ checkoutSession });
-      // res.redirect(303, session.url);
     } catch (err) {
-      const errorMessage =
-        err instanceof Error ? err.message : 'Internal server error'
-      res.status(500).json({ statusCode: 500, message: errorMessage })
+      res.status(err.statusCode || 500).json(err.message);
     }
   } else {
-    res.setHeader('Allow', 'POST')
-    res.status(405).end('Method Not Allowed')
+    res.setHeader('Allow', 'POST');
+    res.status(405).end('Method Not Allowed');
   }
-};
+}

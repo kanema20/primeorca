@@ -12,7 +12,7 @@ import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
-import { fetchItemSizes, useFetchItemSizes } from '@framework/product/get-product-sizes';
+import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes } from '@framework/product/get-product-sizes';
 export default function ProductPopup() {
   const { t } = useTranslation('common');
   const {
@@ -33,6 +33,7 @@ export default function ProductPopup() {
     return data;
   }
   console.log('data ', data);
+  console.log('data.images', data.images);
 
   const { price, basePrice, discount } = usePrice({
     // amount: data.sale_price ? data.sale_price : data.price,
@@ -160,8 +161,11 @@ export default function ProductPopup() {
     const { data } = useFetchItemSizes(prod_id)
     return data;
   }
-  const sizes: string[] = metadata.sizes;
-  console.log(`sizes: ${sizes}`)
+
+  function getProductSizes(prod_slug: string) {
+    const { data } = useFetchProductSizes(prod_slug)
+    return data;
+  }
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
@@ -169,6 +173,7 @@ export default function ProductPopup() {
       attributes.hasOwnProperty(variation)
     )
     : true;
+
   function addToCart() {
     if (!isSelected) return;
     // to show btn feedback while product carting
@@ -184,6 +189,7 @@ export default function ProductPopup() {
 
   console.log('attributes ', attributes);
   console.log('data ', data);
+  console.log('getProductSizes', getProductSizes(data.url));
 
 
   function navigateToProductPage() {
@@ -217,7 +223,7 @@ export default function ProductPopup() {
         >
           <img
             src={
-              data?.images[0] ??
+              images[0] ??
               '/assets/placeholder/products/product-thumbnail.svg'
             }
             alt={name}
@@ -236,9 +242,9 @@ export default function ProductPopup() {
                 {name}
               </h2>
             </div>
-            {/* <p className="text-sm leading-6 md:text-body md:leading-7">
+            <p className="text-sm leading-6 md:text-body md:leading-7">
               {description}
-            </p> */}
+            </p>
 
             <div className="flex items-center mt-3">
               <div className="text-heading font-semibold text-base md:text-xl lg:text-2xl">

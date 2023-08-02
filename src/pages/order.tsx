@@ -5,8 +5,14 @@ import PageHeader from "@components/ui/page-header";
 import OrderInformation from "@components/order/order-information";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
-
+import { useCart } from "@contexts/cart/cart.context";
 export default function Order() {
+	const { items, total, isEmpty } = useCart();
+	const { clearItemFromCart } = useCart();
+	items?.map((cartItem: any) => {
+		clearItemFromCart(cartItem.id)
+	})
+
 	return (
 		<>
 			<PageHeader pageHeader="text-page-order" />

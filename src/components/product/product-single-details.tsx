@@ -20,6 +20,7 @@ import { useSsrCompatible } from '@utils/use-ssr-compatible';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { ROUTES } from '@utils/routes';
 import { Item } from '@contexts/cart/cart.utils';
+import { useFetchItemImage } from '@framework/product/get-product-image';
 
 const productGalleryCarouselResponsive = {
   '768': {
@@ -31,21 +32,28 @@ const productGalleryCarouselResponsive = {
 };
 
 interface IndividualProdProps {
-  slug: string;
+  // slug: string;
+  data: any;
 }
 
 // const ProductSingleDetails: React.FC = () => {
-const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
+const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
   // const {
   //   query: { slug },
   // } = useRouter();
   // retrieve product details based on product slug
-  const { data, isLoading } = useSingleProdQuery(slug as string);
-  // if (isLoading) return <p>Loading...</p>;
+  // const { data, isLoading } = useSingleProdQuery(slug as string);
   function getProductPrice(prod_price: any) {
-    const { data } = useFetchItemPrice(prod_price)
+    const { data, isLoading } = useFetchItemPrice(prod_price)
+    if (isLoading) return <p>Loading...</p>;
     return data;
   }
+
+  function getProductImage(prod_id: any) {
+    const { data } = useFetchItemImage(prod_id);
+    return data;
+  }
+
   const { width } = useSsrCompatible(useWindowSize(), { width: 0, height: 0 });
   const { addItemToCart } = useCart();
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
@@ -55,13 +63,12 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
     data &&
     {
       // amount: data.sale_price ? data.sale_price : data.price,
-      amount: getProductPrice(data[0].default_price),
-      // amount: 15000,
+      // amount: getProductPrice(data[0].default_price),
+      amount: 15000,
       baseAmount: 9000,
       currencyCode: 'USD',
     }
   );
-  if (isLoading) return <p>Loading...</p>;
 
   const variations =
   {
@@ -225,18 +232,18 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
           buttonGroupClassName="hidden"
         >
 
-          <SwiperSlide key={`product-gallery-key`}>
+          {/* <SwiperSlide key={`product-gallery-key`}>
             <div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
               <img
                 src={
-                  // data[0].images[0] ??
+                  data.image ??
                   '/assets/placeholder/products/product-gallery.svg'
                 }
-                // alt={`${data[0].name}--${1}`}
+                alt={`${data.name}--${1}`}
                 className="object-cover w-full"
               />
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
 
           {/* {data?.gallery?.map((item, index: number) => (
             <SwiperSlide key={`product-gallery-key-${index}`}>
@@ -262,7 +269,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
           >
             <img
               src={
-                // data[0].images[0] ??
+                data.image ??
                 '/assets/placeholder/products/product-gallery.svg'
               }
               // alt={`${data[0].name}--${index}`}
@@ -277,11 +284,11 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
       <div className="col-span-4 pt-8 lg:pt-0">
         <div className="pb-7 mb-7 border-b border-gray-300">
           <h2 className="text-heading text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold hover:text-black mb-3.5">
-            {/* {data[0].name} */}
+            {data.name}
           </h2>
-          {/* <p className="text-body text-sm lg:text-base leading-6 lg:leading-8">
-            {data[0].description}
-          </p> */}
+          <p className="text-body text-sm lg:text-base leading-6 lg:leading-8">
+            {data.description}
+          </p>
           <div className="flex items-center mt-5">
             <div className="text-heading font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
               {price}
@@ -333,7 +340,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
                 Brand:
               </span>
-              {/* {(data[0].metadata.brand).toUpperCase()} */}
+              {(data.metadata.brand).toUpperCase()}
             </li>
             <li>
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
@@ -343,7 +350,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ slug }) => {
                 href={ROUTES.KOBE5}
                 className="transition hover:underline hover:text-heading"
               >
-                {/* {data[0].metadata.collection} */}
+                {data.metadata.collection}
               </Link>
             </li>
             {data?.tags && Array.isArray(data.tags) && (

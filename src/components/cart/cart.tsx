@@ -22,13 +22,12 @@ import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import axios, { Axios } from 'axios';
 
-// const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
-const stripePromise = loadStripe('pk_test_51NODKeBHHcQnL99C1aRpVHrkczyPHhGeH5i2ZYhfLW7NGCXTtC3wgJusSintO9atIXnO2reRhwgEHAa5RYZ6L2Xt008Z1sORpQ')
-
+const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
 
 export interface CheckoutItems {
   id?: string | number;
   default_price?: string;
+  // images?: string[];
   quantity?: number;
   [key: string]: any;
 }
@@ -49,61 +48,54 @@ export default function Cart() {
     return data;
   }
 
-  const handleClick = async (e) => {
-    const { data } = await axios.post('api/checkout/session',
-      {
-        default_price: items[0].default_price,
-        quantity: items[0].quantity,
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      }
-    );
-    window.location.assign(data)
-  }
+  // const handleClick = async () => {
+  //   try {
+  //     const { data } = await axios.post('http://localhost:8080/create-checkout-session/',
+  //       {
+  //         default_price: items[0].default_price,
+  //         quantity: items[0].quantity,
+  //       },
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       }
+  //     );
+  //     window.location.assign(data)
+  //     console.log(data);
+  //   } catch (error: any) {
+  //     console.error(error);
+  //   }
+  // }
 
   // function createCheckout(cartItems: any) {
   const createCheckout = async () => {
-    try {
-      setLoading(true);
-      // TODO: next.js api routing - checkout
-      const response = await fetch("api/checkout/session", {
-        // const response = await fetch("http://localhost:8080/create-checkout-session/", {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        // mode: 'cors', // no-cors, *cors, same-origin
-        mode: 'no-cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        // credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *client
-        body: JSON.stringify({
-          items: {
-            default_price: items[0].default_price,
-            quantity: items[0].quantity,
-          },
-          // adjustable_quantity: {
-          //   enabled: true,
-          //   minimum: 1,
-          //   maximum: 100,
-          // },
-          // items: getItemsFromCart(items),
-          success_url: window.location.origin + '/success',
-          cancel_url: window.location.origin + '/cart',
-        }),
+    setLoading(true);
+    // TODO: next.js api routing - checkout
+    // await fetch(ROUTES.CHECKOUT_SESSION, {
+    await fetch('http://localhost:8080/create-checkout-session', {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      // mode: 'no-cors', // no-  cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      // credentials: 'omit', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      },
+      redirect: 'follow', // manual, *follow, error
+      // referrerPolicy: 'no-referrer', // no-referrer, *client
+      body: JSON.stringify({
+        items: getItemsFromCart(items),
+      }),
+    })
+      .then((response) => response)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      await response.json();
-    } catch (error) {
-      console.error('error ', error)
-    } finally {
-      setLoading(false);
-    }
-
   }
 
   // console.log("items[0].default_price: ", items[0].default_price);
@@ -134,8 +126,13 @@ export default function Cart() {
     let cart_: CheckoutItems[] = [];
     forEach(cartItems, (item) => {
       cart_.push({
-        default_price: item.default_price,
-        quantity: item.quantity
+        price: item.default_price,
+        quantity: item.quantity,
+        adjustable_quantity: {
+          enabled: true,
+          minimum: 1,
+          maximum: 100,
+        },
       })
     })
     console.log("cart_: ", cart_);

@@ -11,21 +11,32 @@ import { generateCartItemName } from '@utils/generate-cart-item-name';
 import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { Item } from '@contexts/cart/cart.utils';
+import { useFetchItemImage } from '@framework/product/get-product-image';
 
-type CartItemProps = {
-  item: any;
-};
+// type CartItemProps = {
+//   item: Item;
+// };
 
-const CartItem: React.FC<CartItemProps> = ({ item }) => {
+const CartItem: React.FC<Item> = ({ item }) => {
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
+
+  function parseString(str: string) {
+    const parsedString = str.split(".")[0];
+    return parsedString;
+  }
+
+  function getProductImage(prod_id: any) {
+    const { data } = useFetchItemImage(prod_id);
     return data;
   }
 
   const { t } = useTranslation('common');
   const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
   const { price } = usePrice({
-    amount: getProductPrice(item.default_price).unit_amount,
+    amount: getProductPrice(item.default_price)?.unit_amount,
     // amount: item.price,
     currencyCode: 'USD',
   });
@@ -34,6 +45,9 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
     amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,
     currencyCode: 'USD',
   });
+
+  console.log("getProductImage", getProductImage((item.id).split(".")[0]));
+  console.log("item.id", (item.id).split(".")[0]);
 
   console.log("item: ", item);
   return (
@@ -46,10 +60,10 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
       className={`group w-full h-auto flex justify-start items-center bg-white py-4 md:py-7 border-b border-gray-100 relative last:border-b-0`}
       title={item?.name}
     >
-      <div className="relative flex flex-shrink-0 w-24 h-24 overflow-hidden bg-gray-200 rounded-md cursor-pointer md:w-28 md:h-28 ltr:mr-4 rtl:ml-4">
+      <div className="relative flex flex-shrink-0 w-28 h-20 overflow-hidden bg-gray-200 rounded-md cursor-pointer md:w-30 md:h-20 ltr:mr-4 rtl:ml-4">
         <Image
-          // src={'/assets/placeholder/cart-item.svg' ?? item?.images[0]}
-          src={item?.images ?? '/assets/placeholder/cart-item.svg'}
+          src={getProductImage((item.id).split(".")[0]) ?? '/assets/placeholder/cart-item.svg'}
+          // src={'/assets/placeholder/cart-item.svg'}
           // src={'https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product.png'}
           width={112}
           height={112}

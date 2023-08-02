@@ -34,5 +34,6 @@ const fetchIndividualProduct = async ({ queryKey }: any) => {
 
 // };
 export const useSingleProdQuery = (slug: string) => {
-    return useQuery<any, Error>([slug], fetchIndividualProduct);
+    // return useQuery<any, Error>([slug], fetchIndividualProduct);
+    return useQuery<any, Error>(slug, fetchIndividualProduct);
 }

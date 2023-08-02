@@ -19,7 +19,7 @@ export const useRelatedProductsQuery = (options: QueryOptionsType) => {
 const fetchRelatedKobe = async ({ queryKey }: any) => {
 	const [_key, _params] = queryKey;
 	const products = await stripe.products.search({
-		query: 'metadata[\'collection\']:\'kobe6\'',
+		query: 'metadata[\'collection\']:\'kobe8\' AND active:\'true\' AND metadata[\'type\']:\'Replica\'',
 		limit: 5,
 		// active: true
 	});

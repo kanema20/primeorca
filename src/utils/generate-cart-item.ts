@@ -4,7 +4,7 @@ export interface Item {
   id: string | number;
   name: string;
   slug: string;
-  image: any;
+  image: string;
   default_price: string;
   price: number;
   sale_price?: number;
@@ -28,7 +28,7 @@ export function generateCartItem(item: Item, attributes: object) {
     name,
     slug,
     // image: image.thumbnail,
-    image: image,
+    image,
     default_price: default_price,
     price: sale_price ? sale_price : price,
     attributes,
