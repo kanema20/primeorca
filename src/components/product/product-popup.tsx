@@ -163,8 +163,8 @@ export default function ProductPopup() {
     return data;
   }
 
-  console.log("getProductSizes: ", getProductSizes(data.url))
-  console.log("prod_data[0] ", prod_data[0])
+  // console.log("getProductSizes: ", getProductSizes(data.url))
+  // console.log("prod_data[0] ", prod_data[0])
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&

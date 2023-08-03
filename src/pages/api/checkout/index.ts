@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+const stripe = require('stripe')(NEXT_PUBLIC_STRIPE_API_KEY);
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
@@ -42,7 +42,8 @@ async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreatePar
     // },
     // automatic_tax: { enabled: true },
     shipping_options: [{
-      shipping_rate: 'shr_1NauvTCrveYCAKISIyvsu4ez',
+      // shipping_rate: 'shr_1NauvTCrveYCAKISIyvsu4ez',
+      shipping_rate: 'shr_1NbB2aCrveYCAKISFdxZMTb4', // live
     }],
   });
 
