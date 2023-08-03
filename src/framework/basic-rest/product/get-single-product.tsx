@@ -3,22 +3,12 @@ import http from '@framework/utils/http';
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import { useQuery } from 'react-query';
 import Stripe from 'stripe';
-// import { stripe } from 'src/pages/api/stripe';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP', {
-    apiVersion: '2022-11-15',
-});
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
 
-// const fetchIndividualProduct = async (slug: string) => {
-//     // const [_key, _params] = queryKey;
-//     // console.log('slug ', slug)
-//     const product = await stripe.products.search({
-//         query: `metadata[\'slug\']:\'${slug}\'`,
-//         limit: 1,
-//     });
-
-//     return product.data;
-// };
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 const fetchIndividualProduct = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;

@@ -1,20 +1,22 @@
-// import { stripe } from './stripe';
-const Stripe = require('stripe');
-const dotenv = require('dotenv');
-const kobe5Products = require('./mvp/kobe5.js');
-const kobe6Products = require('./mvp/kobe6.js');
-const kobe8Products = require('./mvp/kobe8.js');
+// import Stripe from 'stripe';
+// const stripe = require('stripe')
+// import dotenv from 'dotenv';
+const dotenv = require('dotenv')
+dotenv.config();
 
-// dotenv.config();
-dotenv.config({ path: `./env.local`, override: true });
-// let STRIPE_PRIV = process.env.STRIPE_PRIVATE_KEY;// as string;
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_PROD;
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+// const stripe = require('stripe')('');
 
-// const stripe = Stripe(STRIPE_PRIV);
-// const stripe = new Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom')
-const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP') // PO
-// , {
-//     apiVersion: '2022-11-15',
-// });
+
+// const kobe5Products = require('./mvp/kobe5.js');
+// const kobe5_1Products = require('./mvp/kobe5_1.js');
+// const kobe6Products = require('./mvp/kobe6.js');
+// const kobe6_1Products = require('./mvp/kobe6_1.js');
+// const kobe8Products = require('./mvp/kobe8.js');
+// const kobe8_1Products = require('./mvp/kobe8_1.js');
+const balenciProducts = require('./mvp/balenciaga.js');
+// dotenv.config({ path: `./env.local`, override: true });
 const kobe_prod = [
     {
         "_id": "64a3210b5d8fce08b7d5d724",
@@ -135,7 +137,7 @@ size_kv = {
     "size-14": 14,
 }
 
-for (const product of kobe8Products) {
+for (const product of balenciProducts) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

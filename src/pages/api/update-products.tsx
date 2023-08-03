@@ -1,7 +1,10 @@
-// const Stripe = require('stripe');
-// const stripe = Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
-// const stripe = Stripe(STRIPE_PRIV);
-import { stripe } from './stripe';
+import Stripe from 'stripe';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
+
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 
 const updateAllProducts = async () => {

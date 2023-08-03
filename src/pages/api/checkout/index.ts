@@ -1,8 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
-// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
-const stripe = require('stripe')(STRIPE_PRIV)
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import Cors from 'cors'
@@ -20,8 +19,8 @@ async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreatePar
     payment_method_types: ['card', 'cashapp'], // 'google_pay', 'apple_pay'],
     mode: 'payment',
     line_items: lineItems,
-    success_url: 'http://localhost:3000/success',
-    cancel_url: 'http://localhost:3000/cancel',
+    success_url: 'https://staging.primeorca.com/success?session_id={CHECKOUT_SESSION_ID}',
+    cancel_url: 'https://staging.primeorca.com',
     // invoice_creation: {
     // enabled: true,
     // invoice_data: {

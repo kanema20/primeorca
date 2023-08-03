@@ -1,11 +1,13 @@
-import { stripe } from '../stripe';
-// import Stripe from "stripe";
-// const Stripe = require('stripe');
+import Stripe from 'stripe';
 import dotenv from 'dotenv';
-// import dotenv from 'dotenv';
-// import { kobe5Products } from './kobe5';
-// export const kobe5Products = [
-// module.exports = [
+dotenv.config();
+
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
+
+const stripe = new Stripe(STRIPE_PRIV, {
+    apiVersion: '2022-11-15',
+});
+
 const kobe5Products = [
     {
         "name": "Nike Kobe 5 Protro Undefeated Hall of Fame",
@@ -623,16 +625,6 @@ const kobe5Products = [
         }
     }
 ]
-
-dotenv.config();
-// dotenv.config({ path: `./env.local`, override: true });
-// let STRIPE_PRIV = process.env.STRIPE_PRIVATE_KEY;// as string;
-
-// const stripe = new Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
-// const stripe = Stripe(STRIPE_PRIV);
-// const stripe = new Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom', {
-//     apiVersion: '2022-11-15',
-// });
 
 const createProduct = async (product: any, sizes: string[]): Promise<any> => {
     const stripeProduct = await stripe.products.create({

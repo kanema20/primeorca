@@ -25,6 +25,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
 		error,
 		// } = useKobeCollectionQuery({ ...query });
 	} = useKobeCollectionQuery({ ...query }, slug);
+	console.log("data ", data)
 	if (error) return <p>{error.message}</p>;
 
 	const { t } = useTranslation("common");

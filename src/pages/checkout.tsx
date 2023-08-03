@@ -9,15 +9,14 @@ import { GetStaticProps } from 'next';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useState, useEffect } from 'react';
+import dotenv from 'dotenv';
+dotenv.config();
 
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
-// const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
-
-const stripePromise = loadStripe('pk_test_51NODKeBHHcQnL99C1aRpVHrkczyPHhGeH5i2ZYhfLW7NGCXTtC3wgJusSintO9atIXnO2reRhwgEHAa5RYZ6L2Xt008Z1sORpQ');
 
 export default function CheckoutPage() {
-
-  const [clientSecret, setClientSecret] = useState("");
 
   // useEffect(() => {
   //   // fetch('https://localhost:8080/create-payment-intent', {

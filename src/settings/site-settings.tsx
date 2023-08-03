@@ -164,112 +164,128 @@ export const siteSettings = {
             columnItems: [
               {
                 id: 1,
-                path: `${ROUTES.KOBE5}`,
-                label: 'menu-kobe-5',
+                // path: `${ROUTES.KOBE5}`,
+                path: "/",
+                label: 'Kobe',
                 columnItemItems: [
                   {
                     id: 1,
-                    path: `/products/nike-kobe-5-protro-2k-gamer-exclusive`,
-                    label: 'Nike-Kobe-5-Protro-2K',
+                    path: `${ROUTES.KOBE5}`,
+                    label: 'Kobe 5',
                   },
                   {
                     id: 2,
-                    path: `/products/kobe-5-joker-chaos`,
-                    label: 'Nike-Kobe-5-Joker-Chaos',
+                    path: `${ROUTES.KOBE6}`,
+                    label: 'Kobe 6',
                   },
                   {
                     id: 3,
-                    path: `/products/nike-kobe-5-usa`,
-                    label: 'Nike-Kobe-5-USA',
+                    path: `${ROUTES.KOBE8}`,
+                    label: 'Kobe 8',
                   },
-                  {
-                    id: 4,
-                    path: `/products/nike-kobe-5-protro-lakers`,
-                    label: 'Nike-Kobe-5-Protro-Lakers',
-                  },
-                  {
-                    id: 5,
-                    path: `/products/kobe-5-bruce-lee`,
-                    label: 'Nike-Kobe-5-Bruce-Lee',
-                  },
+                  // {
+                  //   id: 1,
+                  //   path: `/products/nike-kobe-5-protro-2k-gamer-exclusive`,
+                  //   label: 'Nike-Kobe-5-Protro-2K',
+                  // },
+                  // {
+                  //   id: 2,
+                  //   path: `/products/kobe-5-joker-chaos`,
+                  //   label: 'Nike-Kobe-5-Joker-Chaos',
+                  // },
+                  // {
+                  //   id: 3,
+                  //   path: `/products/nike-kobe-5-usa`,
+                  //   label: 'Nike-Kobe-5-USA',
+                  // },
+                  // {
+                  //   id: 4,
+                  //   path: `/products/nike-kobe-5-protro-lakers`,
+                  //   label: 'Nike-Kobe-5-Protro-Lakers',
+                  // },
+                  // {
+                  //   id: 5,
+                  //   path: `/products/kobe-5-bruce-lee`,
+                  //   label: 'Nike-Kobe-5-Bruce-Lee',
+                  // },
                 ],
               },
             ],
           },
-          {
-            id: 2,
-            columnItems: [
-              {
-                id: 1,
-                path: `${ROUTES.KOBE6}`,
-                label: 'menu-kobe-6',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: `/products/nike-kobe-6-protro-grinch`,
-                    label: 'kobe-6-grinch',
-                  },
-                  {
-                    id: 2,
-                    path: `/products/nike-kobe-6-reverse-grinch`,
-                    label: 'kobe-6-reverse-grinch',
-                  },
-                  {
-                    id: 3,
-                    path: `/products/nike-kobe-protro-6-think-pink`,
-                    label: 'kobe-6-think-pink',
-                  },
-                  {
-                    id: 4,
-                    path: `/products/nike-kobe-6-protro-mambacita-sweet-16`,
-                    label: 'kobe-6-mambacita',
-                  },
-                  {
-                    id: 5,
-                    path: `/products/kobe-6-asg-west-challenge-red`,
-                    label: 'kobe-6-asg',
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: 3,
-            columnItems: [
-              {
-                id: 1,
-                path: `${ROUTES.KOBE8}`,
-                label: 'menu-kobe-8',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: `/products/kobe-8-sulfur-electric`,
-                    label: 'kobe-8-sulfur-electric',
-                  },
-                  {
-                    id: 2,
-                    path: `/products/kobe-8-easter`,
-                    label: 'kobe-8-easter',
-                  },
-                  {
-                    id: 3,
-                    path: `/products/kobe-8-milk-snake`,
-                    label: 'kobe-8-milk-snake',
-                  },
-                  {
-                    id: 4,
-                    path: `/products/nike-kobe-8-system-green-glow-laser-orange`,
-                    label: 'kobe-8-green-glow',
-                  },
-                  {
-                    id: 5,
-                    path: `/products/kobe-8-black-history-month`,
-                    label: 'kobe-8-bhm',
-                  },
-                ],
-              },
-            ],
-          },
+          // {
+          //   id: 2,
+          //   columnItems: [
+          //     {
+          //       id: 1,
+          //       path: `${ROUTES.KOBE6}`,
+          //       label: 'menu-kobe-6',
+          //       columnItemItems: [
+          //         {
+          //           id: 1,
+          //           path: `/products/nike-kobe-6-protro-grinch`,
+          //           label: 'kobe-6-grinch',
+          //         },
+          //         {
+          //           id: 2,
+          //           path: `/products/nike-kobe-6-reverse-grinch`,
+          //           label: 'kobe-6-reverse-grinch',
+          //         },
+          //         {
+          //           id: 3,
+          //           path: `/products/nike-kobe-protro-6-think-pink`,
+          //           label: 'kobe-6-think-pink',
+          //         },
+          //         {
+          //           id: 4,
+          //           path: `/products/nike-kobe-6-protro-mambacita-sweet-16`,
+          //           label: 'kobe-6-mambacita',
+          //         },
+          //         {
+          //           id: 5,
+          //           path: `/products/kobe-6-asg-west-challenge-red`,
+          //           label: 'kobe-6-asg',
+          //         },
+          //       ],
+          //     },
+          //   ],
+          // },
+          // {
+          //   id: 3,
+          //   columnItems: [
+          //     {
+          //       id: 1,
+          //       path: `${ROUTES.KOBE8}`,
+          //       label: 'menu-kobe-8',
+          //       columnItemItems: [
+          //         {
+          //           id: 1,
+          //           path: `/products/kobe-8-sulfur-electric`,
+          //           label: 'kobe-8-sulfur-electric',
+          //         },
+          //         {
+          //           id: 2,
+          //           path: `/products/kobe-8-easter`,
+          //           label: 'kobe-8-easter',
+          //         },
+          //         {
+          //           id: 3,
+          //           path: `/products/kobe-8-milk-snake`,
+          //           label: 'kobe-8-milk-snake',
+          //         },
+          //         {
+          //           id: 4,
+          //           path: `/products/nike-kobe-8-system-green-glow-laser-orange`,
+          //           label: 'kobe-8-green-glow',
+          //         },
+          //         {
+          //           id: 5,
+          //           path: `/products/kobe-8-black-history-month`,
+          //           label: 'kobe-8-bhm',
+          //         },
+          //       ],
+          //     },
+          //   ],
+          // },
         ],
       },
       // {
@@ -547,24 +563,24 @@ export const siteSettings = {
       // },
       {
         id: 5,
-        path: '/balenciaga',
+        path: '/balenciaga/balenciaga',
         label: 'menu-balenciaga',
       },
-      {
-        id: 6,
-        path: '/eybl',
-        label: 'menu-eybl',
-      },
-      {
-        id: 7,
-        path: '/off-white',
-        label: 'menu-off-white',
-      },
-      {
-        id: 8,
-        path: '/purple',
-        label: 'menu-purple',
-      },
+      // {
+      //   id: 6,
+      //   path: '/eybl',
+      //   label: 'menu-eybl',
+      // },
+      // {
+      //   id: 7,
+      //   path: '/off-white',
+      //   label: 'menu-off-white',
+      // },
+      // {
+      //   id: 8,
+      //   path: '/purple',
+      //   label: 'menu-purple',
+      // },
       // {
       //   id: 9,
       //   path: '/search',

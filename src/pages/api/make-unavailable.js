@@ -1,10 +1,11 @@
-// import { stripe } from './stripe';
-const Stripe = require('stripe');
-const dotenv = require('dotenv');
+import Stripe from 'stripe';
+import dotenv from 'dotenv';
 dotenv.config();
 
-const stripe = Stripe(process.env.STRIPE_PRIV_PO_TEST);
-// const stripe = Stripe(STRIPE_PRIV);
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
+
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+
 
 const makeUnavailable = async () => {
     let allProducts = [];

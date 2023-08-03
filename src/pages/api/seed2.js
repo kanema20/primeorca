@@ -1,17 +1,13 @@
-const dotenv = require('dotenv');
-// import dotenv from 'dotenv';
-// const kobe5Products = require('./kobe5.js');
-const kobe6Products = require('./catalogues/kobe6.js');
-
-dotenv.config();
-// dotenv.config({ path: `./env.local`, override: true });
-let STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;// as string;
-// import { stripe } from './stripe';
 import Stripe from 'stripe';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const stripe = new Stripe(STRIPE_PRIV, {
-    apiVersion: '2022-11-15',
-});
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
+
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+
+
+const kobe6Products = require('./catalogues/kobe6.js');
 
 
 const createProduct = async (product, sizes) => {

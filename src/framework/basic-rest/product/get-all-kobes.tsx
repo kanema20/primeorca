@@ -4,11 +4,11 @@ import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import { useQuery } from 'react-query';
 import Stripe from 'stripe';
 // import { stripe } from 'src/pages/api/stripe';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP', {
-    apiVersion: '2022-11-15',
-});
-
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 import { useInfiniteQuery } from "react-query";
 type PaginatedProduct = {
@@ -33,25 +33,6 @@ const fetchKobeCollection = async ({ queryKey }: any) => {
 
 export const useKobeCollectionQuery = (options: QueryOptionsType, slug: string) => {
     return useQuery<any, Error>(['kobe-collection', options, slug], fetchKobeCollection);
-
-};
-
-
-// const fetchAllKobe5 = async ({ collection }: ProductListProps) => {
-const fetchAllKobe5 = async ({ queryKey }: any) => {
-    const [_key, _params] = queryKey;
-    const products = await stripe.products.search({
-        query: 'metadata[\'collection\']:\'kobe5\'',
-        limit: 100,
-        active: true,
-    });
-
-    return products.data;
-};
-
-
-export const useKobe5Query = (options: QueryOptionsType) => {
-    return useQuery<any, Error>(['kobe-5', options], fetchAllKobe5);
 
 };
 

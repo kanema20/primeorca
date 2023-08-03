@@ -1,5 +1,5 @@
-const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom')
-import Stripe from 'stripe';
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+
 
 async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]): Promise<Stripe.Checkout.Session> {
     const session = await stripe.checkout.sessions.create({

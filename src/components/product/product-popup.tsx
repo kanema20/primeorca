@@ -13,14 +13,6 @@ import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
-import { useSingleProdSizeQuery } from '@framework/product/get-single-product'
-import Stripe from "stripe";
-import dotenv from 'dotenv'
-dotenv.config()
-const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST
-const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP', {
-  apiVersion: '2022-11-15',
-}) // PO
 
 export default function ProductPopup() {
   const { t } = useTranslation('common');

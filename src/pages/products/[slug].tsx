@@ -12,9 +12,8 @@ import Stripe from "stripe";
 import dotenv from 'dotenv'
 dotenv.config()
 const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST
-const stripe = new Stripe(STRIPE_PRIV, {
-	apiVersion: '2022-11-15',
-}) // PO
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+
 
 // export default function ProductPage({ slug, product }: InferGetStaticPropsType<typeof getStaticProps>) {
 export default function ProductPage({ individualProduct }: InferGetServerSidePropsType<typeof getServerSideProps>) {

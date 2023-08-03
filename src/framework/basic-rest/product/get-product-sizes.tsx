@@ -1,7 +1,12 @@
 import http from '@framework/utils/http';
 import { useQuery } from 'react-query';
 import { StripeProduct } from "@framework/types";
-const stripe = require('stripe')('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP');
+import Stripe from 'stripe';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 
 export const fetchItemSizes = async (productId: string) => {
