@@ -19,14 +19,14 @@ export const aboutUs = [
         title: "about-four-title",
         description: "about-four-content",
     },
-    {
-        id: "5",
-        title: "about-five-title",
-        description: "about-five-content",
-    },
-    {
-        id: "6",
-        title: "about-six-title",
-        description: "about-six-content",
-    },
+    // {
+    //     id: "5",
+    //     title: "about-five-title",
+    //     description: "about-five-content",
+    // },
+    // {
+    //     id: "6",
+    //     title: "about-six-title",
+    //     description: "about-six-content",
+    // },
 ];
