@@ -34,7 +34,6 @@ export default function ProductPopup() {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
-  console.log('data ', data);
 
   const { price, basePrice, discount } = usePrice({
     // amount: data.sale_price ? data.sale_price : data.price,
@@ -163,14 +162,6 @@ export default function ProductPopup() {
     return data;
   }
 
-  // function getProdSize(slug: string, attr: string) {
-  //   const { data } = useFetchProductSize(slug, attr);
-  //   return data;
-  // }
-  console.log('attributes: ', typeof attributes['Sizes (US - M)'])
-  // const prodSize_ = getProdSize(data.url, attributes['Sizes (US - M)'])
-  console.log('prod_data: ', prod_data)
-
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
     Object.keys(variations).every((variation) =>
@@ -194,8 +185,6 @@ export default function ProductPopup() {
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
-
-  console.log('getProductSizes', getProductSizes(data.url));
 
   function navigateToProductPage() {
     closeModal();

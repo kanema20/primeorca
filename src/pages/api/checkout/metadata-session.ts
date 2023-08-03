@@ -40,7 +40,7 @@ export default async function createRegCheckout(): Promise<Stripe.Checkout.Sessi
     const session = await createCheckoutSession(lineItems);
 
     Response.redirect(session.url);
-    console.log('Checkout Session:', session);
+    // console.log('Checkout Session:', session);
     return session;
 }
 
@@ -80,8 +80,6 @@ async function createCheckoutWithMetadata(attribute: string): Promise<Stripe.Che
     ];
 
     const session = await createCheckoutSession(lineItems);
-
-    console.log('Checkout Session:', session);
 
     Response.redirect(session.url);
     return session;

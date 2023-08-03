@@ -88,7 +88,6 @@ ProductPage.Layout = Layout;
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, params }) => {
 	const { slug } = params;
-	console.log("params: ", params)
 	// const { data, isLoading } = useSingleProdQuery(params.slug as string);
 	// const prods = await stripe.products.list();
 	// const paths = prods.data.map((prod: any) => ({
@@ -112,7 +111,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
 		}
 	})
 	const _product = await products.find(product => product.url === slug)
-	console.log('product: ', _product)
 	const individualProduct = JSON.parse(JSON.stringify(_product))
 
 	return {

@@ -17,7 +17,7 @@ const fetchIndividualProduct = async ({ queryKey }: any) => {
         // limit: 1,
     });
 
-    console.log(`queryKey ${queryKey}`);
+    // console.log(`queryKey ${queryKey}`);
 
     return product.data;
 };
@@ -39,7 +39,7 @@ const fetchIndividualProductSize = async ({ queryKey }: any) => {
         query: `active:\'true\' AND metadata[\'size\']:\'${queryKey}\'`,
         // limit: 1,
     });
-    console.log(`queryKey ${queryKey}`);
+    // console.log(`queryKey ${queryKey}`);
     return product.data;
 };
 
