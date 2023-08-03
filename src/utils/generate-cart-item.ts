@@ -10,12 +10,12 @@ export interface Item {
   sale_price?: number;
   [key: string]: unknown;
   quantity?: number;
-  attributes: any;
+  // attributes: any;
 }
 
 
-export function generateCartItem(item: Item, attributes: object) {
-  // export function generateCartItem(item: Item) {
+// export function generateCartItem(item: Item, attributes: object) {
+export function generateCartItem(item: Item) {
 
   const { id, name, url, image, default_price, price, sale_price } = item;
   // function getProductPrice(prod_price: any) {
@@ -33,6 +33,6 @@ export function generateCartItem(item: Item, attributes: object) {
     image,
     default_price: default_price,
     price: sale_price ? sale_price : price,
-    attributes,
+    // attributes,
   };
 }

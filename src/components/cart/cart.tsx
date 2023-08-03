@@ -54,33 +54,23 @@ export default function Cart() {
     try {
       setLoading(true);
       const session_ = await axios
-        .post("/api/checkout", {
-          method: 'POST', // *GET, POST, PUT, DELETE, etc.
-          // // mode: 'no-cors', // no-  cors, *cors, same-origin
-          // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-          // // credentials: 'omit', // include, *same-origin, omit
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          },
-          // redirect: 'follow', // manual, *follow, error
-          // referrerPolicy: 'no-referrer', // no-referrer, *client
-          data: JSON.stringify({
-            items: getItemsFromCart(items),
-          }),
+        .post("/api/checkout", getItemsFromCart(items))
+        .then((res) => res.data)
+        .then((data) => {
+          console.log(data);
         })
-        .then((res) => res.data);
-      const result = await redirectToCheckout();
-      if (result?.error) {
-        console.log("error in result: ", error);
-      }
+        .catch((error) => {
+          console.error(error);
+        });
+      // const result = await redirectToCheckout();   
+      // if (result?.error) {
+      //   console.log("error in result: ", error);
+      // }
     } catch (error) {
-      console.error(error.response.data);
+      console.error(error);
     } finally {
       setLoading(false);
     }
-
   }
 
   // function createCheckout(cartItems: any) {
@@ -201,7 +191,7 @@ export default function Cart() {
         {/* </span> */}
         {/* </Link> } */}
         <Button
-          onClick={createCheckout}
+          onClick={handleCheckout}
           className={cn(
             'w-full px-5 py-3 md:py-4 flex items-center justify-center rounded-md text-sm sm:text-base text-white focus:outline-none transition duration-300 ',
             isEmpty

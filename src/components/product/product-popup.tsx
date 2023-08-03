@@ -35,7 +35,8 @@ export default function ProductPopup() {
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
-  const { slug, images, name, description, default_price, metadata } = data;
+  const { url, images, name, description, default_price, metadata } = data;
+  const { data: prod_data } = useFetchProductSize(data.url, attributes['Sizes (US - M)']);
 
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
@@ -170,13 +171,13 @@ export default function ProductPopup() {
     return data;
   }
 
-  function getProdSize(slug: string, attr: string) {
-    const { data } = useFetchProductSize(slug, attr);
-    return data;
-  }
+  // function getProdSize(slug: string, attr: string) {
+  //   const { data } = useFetchProductSize(slug, attr);
+  //   return data;
+  // }
   console.log('attributes: ', typeof attributes['Sizes (US - M)'])
-  const prodSize_ = getProdSize(data.url, attributes['Sizes (US - M)'])
-  console.log('getProdSize: ', prodSize_)
+  // const prodSize_ = getProdSize(data.url, attributes['Sizes (US - M)'])
+  console.log('prod_data: ', prod_data)
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
@@ -187,32 +188,22 @@ export default function ProductPopup() {
 
   function addToCart() {
     if (!isSelected) return;
+    if (attributes['Sizes (US - M)'] == undefined) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
     setTimeout(() => {
       setAddToCartLoader(false);
       setViewCartBtn(true);
     }, 600);
+
     // const item_data = getProdSize(data.url, attributes['Sizes (US - M)']);
-    // const item = generateCartItem(item_data[0]!);
-    const item = generateCartItem(data!, attributes);
+    const item = generateCartItem(prod_data[0]!);
+    // const item = generateCartItem(data!, attributes);
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
 
   console.log('getProductSizes', getProductSizes(data.url));
-  // console.log('mapSize: ', mapSize(attributes['Sizes (US - M)'], data.url))
-
-  // async function mapSize(attr: string, url_: string) {
-  //   const { data } = await useSingleProdSizeQuery(attr);
-  //   console.log(`length: ${data.length}`)
-  //   for (let i = 0; i < data.length; i++) {
-  //     if (data[i].url == url_) {
-  //       return data[i]
-  //     }
-  //   }
-  //   return data;
-  // }
 
   function navigateToProductPage() {
     closeModal();
