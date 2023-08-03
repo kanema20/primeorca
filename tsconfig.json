@@ -1,4 +1,4 @@
-s{
+{
   "compilerOptions": {
     "baseUrl": ".",
     "target": "esnext",

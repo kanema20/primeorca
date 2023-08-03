@@ -303,13 +303,13 @@ export default function ProductPopup() {
               </button>
             )}
 
-            <Button
+            {/* <Button
               onClick={navigateToProductPage}
               variant="flat"
               className="w-full h-11 md:h-12"
             >
               {t('text-view-details')}
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

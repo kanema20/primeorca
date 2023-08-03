@@ -6,7 +6,7 @@ const stripe = new Stripe(STRIPE_PRIV)
 
 // const kobe5Products = require('./mvp/kobe5_1.js');
 // const kobe6Products = require('./mvp/kobe6_1.js');
-const kobe8Products = require('./mvp/kobe8.js');
+// const kobe8Products = require('./mvp/kobe8.js');
 const kobe8_1Products = require('./mvp/kobe8_1.js');
 // const kobe8Products = [
 //     {
@@ -95,7 +95,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of kobe8Products) {
+for (const product of kobe8_1Products) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

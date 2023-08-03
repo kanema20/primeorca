@@ -82,7 +82,8 @@ const CartItem: React.FC<Item> = ({ item }) => {
 
       <div className="flex flex-col w-full overflow-hidden">
         <Link
-          href={`${ROUTES.PRODUCT}/${item.slug}`}
+          // href={`${ROUTES.PRODUCT}/${item.slug}`}
+          href={`/`}
           className="truncate text-sm text-heading mb-1.5 -mt-1"
         >
           {generateCartItemName(item.name, item.attributes)}
