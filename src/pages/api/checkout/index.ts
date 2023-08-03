@@ -56,23 +56,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Create Checkout Sessions from body params.
       const session = await createCheckoutSession(req.body);
-      // const session = await stripe.checkout.sessions.create({
-      // const cart = req.body.items;
-      // console.log('cart: ', cart)
-      // const inventory = await stripe.products.list({
-      //   expand: ['data.default_price']
-      // })
-      // const products = inventory.data.map(product => {
-      //   const price = product.default_price;
-      //   return {
-      //     currency: price.currency,
-      //     id: product.id,
-      //     name: product.name,
-      //     price: price.unit_amount,
-      //     image: product.images[0]
-      //   }
-      // })
-      // const lineItems = validateCartItems(products, cart)
 
       // const session = await stripe.checkout.session.create({
       //   payment_method_types: ['card', 'cashapp'], // 'google_pay', 'apple_pay'],
@@ -89,8 +72,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       //   success_url: `${req.headers.origin}/success`,
       //   cancel_url: `${req.headers.origin}/`,
       // })
-      // res.status(200).json(session);
-      res.redirect(303, session.url);
+      res.status(200).json({ url: session.url });
+      // res.redirect(303, session.url);
     } catch (err) {
       console.log(err)
       res.status(err.statusCode || 500).json(err.message);

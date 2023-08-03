@@ -16,7 +16,7 @@ import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-produc
 import { Item } from '@contexts/cart/cart.utils';
 import { CartItemDetails } from '@stripe/stripe-js';
 import Button from '@components/ui/button';
-import Router from 'next/router';
+import router from 'next/router';
 import { forEach } from 'lodash';
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
@@ -53,52 +53,42 @@ export default function Cart() {
   const handleCheckout = async () => {
     try {
       setLoading(true);
-      const session_ = await axios
+      const { data } = await axios
         .post("/api/checkout", getItemsFromCart(items))
-        .then((res) => res.data)
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-      // const result = await redirectToCheckout();   
-      // if (result?.error) {
-      //   console.log("error in result: ", error);
-      // }
+      console.log("data ", data)
+      router.push(data.url)
     } catch (error) {
       console.error(error);
+      // window alert
+      window.alert("Checkout Error")
     } finally {
       setLoading(false);
     }
   }
 
-  // function createCheckout(cartItems: any) {
-  const createCheckout = async () => {
-    setLoading(true);
-    // TODO: next.js api routing - checkout
-    // await fetch(ROUTES.CHECKOUT_SESSION, {
-    await fetch('http://localhost:8080/create-checkout-session', {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-  cors, *cors, same-origin
-      // credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      redirect: 'follow', // manual, *follow, error
-      // referrerPolicy: 'no-referrer', // no-referrer, *client
-      body: JSON.stringify({
-        items: getItemsFromCart(items),
-      }),
-    })
-      .then((response) => response)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  // const createCheckout = async () => {
+  //   setLoading(true);
+  //   // TODO: next.js api routing - checkout
+  //   // await fetch(ROUTES.CHECKOUT_SESSION, {
+  //   await fetch('http://localhost:8080/create-checkout-session', {
+  //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+  //     mode: 'cors', // no-  cors, *cors, same-origin
+  //     // credentials: 'omit', // include, *same-origin, omit
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     redirect: 'follow', // manual, *follow, error
+  //     // referrerPolicy: 'no-referrer', // no-referrer, *client
+  //     body: JSON.stringify({
+  //       items: getItemsFromCart(items),
+  //     }),
+  //   })
+  //     .then((data) => {
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }
 
   function getTotalPrice(cartItems: any): number {
     let totalCart: number = 0;
