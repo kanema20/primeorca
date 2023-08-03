@@ -560,6 +560,11 @@ export const siteSettings = {
         path: '/off-white',
         label: 'menu-off-white',
       },
+      {
+        id: 8,
+        path: '/purple',
+        label: 'menu-purple',
+      },
       // {
       //   id: 9,
       //   path: '/search',
@@ -710,31 +715,41 @@ export const siteSettings = {
         subMenu: [
           {
             id: 1,
-            path: '/search?q=kobe-5',
+            path: `${ROUTES.KOBE5}`,
             label: 'menu-kobe-5',
           },
           {
             id: 2,
-            path: '/search?q=kobe-6',
+            path: `${ROUTES.KOBE6}`,
             label: 'menu-kobe-6',
+          },
+          {
+            id: 3,
+            path: `${ROUTES.KOBE8}`,
+            label: 'menu-kobe-8',
           },
         ],
       },
       {
         id: 5,
-        path: '/ja-1',
-        label: 'menu-ja-1',
+        path: '/balenciaga',
+        label: 'menu-balenciaga',
       },
       {
         id: 6,
-        path: '/gt',
-        label: 'menu-gt',
+        path: '/eybl',
+        label: 'menu-eybl',
       },
       {
         id: 7,
-        path: '/search',
-        label: 'menu-search',
-      }
+        path: '/off-white',
+        label: 'menu-off-white',
+      },
+      {
+        id: 8,
+        path: '/purple',
+        label: 'menu-purple',
+      },
     ],
     languageMenu: [
       {

@@ -41,3 +41,19 @@ export const useSingleProdQuery = (slug: string) => {
     // return useQuery<any, Error>([slug], fetchIndividualProduct);
     return useQuery<any, Error>(slug, fetchIndividualProduct);
 }
+
+// url:\'${_params}\' AND  
+const fetchIndividualProductSize = async ({ queryKey }: any) => {
+    const [_key, _params] = queryKey;
+    const product = await stripe.products.search({
+        query: `active:\'true\' AND metadata[\'size\']:\'${queryKey}\'`,
+        // limit: 1,
+    });
+    console.log(`queryKey ${queryKey}`);
+    return product.data;
+};
+
+export const useSingleProdSizeQuery = (size: string) => {
+    // return useQuery<any, Error>([slug], fetchIndividualProduct);
+    return useQuery<any, Error>(size, fetchIndividualProductSize);
+}

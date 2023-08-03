@@ -51,7 +51,6 @@ export default function Cart() {
   console.log("cartDetails: ", cartDetails)
 
   const handleCheckout = async () => {
-
     try {
       setLoading(true);
       const session_ = await axios

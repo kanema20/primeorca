@@ -12,7 +12,16 @@ import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
-import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes } from '@framework/product/get-product-sizes';
+import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
+import { useSingleProdSizeQuery } from '@framework/product/get-single-product'
+import Stripe from "stripe";
+import dotenv from 'dotenv'
+dotenv.config()
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST
+const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP', {
+  apiVersion: '2022-11-15',
+}) // PO
+
 export default function ProductPopup() {
   const { t } = useTranslation('common');
   const {
@@ -33,7 +42,6 @@ export default function ProductPopup() {
     return data;
   }
   console.log('data ', data);
-  console.log('data.images', data.images);
 
   const { price, basePrice, discount } = usePrice({
     // amount: data.sale_price ? data.sale_price : data.price,
@@ -157,15 +165,18 @@ export default function ProductPopup() {
     ]
   }
 
-  function getSizes(prod_id: any) {
-    const { data } = useFetchItemSizes(prod_id)
-    return data;
-  }
-
   function getProductSizes(prod_slug: string) {
     const { data } = useFetchProductSizes(prod_slug)
     return data;
   }
+
+  function getProdSize(slug: string, attr: string) {
+    const { data } = useFetchProductSize(slug, attr);
+    return data;
+  }
+  console.log('attributes: ', typeof attributes['Sizes (US - M)'])
+  const prodSize_ = getProdSize(data.url, attributes['Sizes (US - M)'])
+  console.log('getProdSize: ', prodSize_)
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
@@ -182,21 +193,29 @@ export default function ProductPopup() {
       setAddToCartLoader(false);
       setViewCartBtn(true);
     }, 600);
+    // const item_data = getProdSize(data.url, attributes['Sizes (US - M)']);
+    // const item = generateCartItem(item_data[0]!);
     const item = generateCartItem(data!, attributes);
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
 
-  console.log('attributes ', attributes);
-  console.log('data ', data);
   console.log('getProductSizes', getProductSizes(data.url));
+  // console.log('mapSize: ', mapSize(attributes['Sizes (US - M)'], data.url))
 
+  // async function mapSize(attr: string, url_: string) {
+  //   const { data } = await useSingleProdSizeQuery(attr);
+  //   console.log(`length: ${data.length}`)
+  //   for (let i = 0; i < data.length; i++) {
+  //     if (data[i].url == url_) {
+  //       return data[i]
+  //     }
+  //   }
+  //   return data;
+  // }
 
   function navigateToProductPage() {
     closeModal();
-    // router.push(`${metadata.category}/${metadata.collection}/${name}`, undefined, {
-    // const collection_ = metadata.collection
-    // router.push(`${metadata.collection}/${metadata.slug}`, undefined, {
     router.push(`/products/${metadata.slug}`, undefined, {
       locale: router.locale,
     });

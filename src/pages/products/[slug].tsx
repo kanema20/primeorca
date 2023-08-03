@@ -9,7 +9,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
 import { useSingleProdQuery } from '@framework/product/get-single-product';
 import Stripe from "stripe";
-const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP', {
+import dotenv from 'dotenv'
+dotenv.config()
+const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST
+const stripe = new Stripe(STRIPE_PRIV, {
 	apiVersion: '2022-11-15',
 }) // PO
 

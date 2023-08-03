@@ -46,9 +46,6 @@ const CartItem: React.FC<Item> = ({ item }) => {
     currencyCode: 'USD',
   });
 
-  console.log("getProductImage", getProductImage((item.id).split(".")[0]));
-  console.log("item.id", (item.id).split(".")[0]);
-
   console.log("item: ", item);
   return (
     <motion.div

@@ -15,30 +15,30 @@ import {
 import { useTranslation } from 'next-i18next';
 
 const social = [
+  // {
+  //   id: 0,
+  //   link: 'https://www.facebook.com/redqinc/',
+  //   icon: <IoLogoFacebook />,
+  //   className: 'facebook',
+  //   title: 'text-facebook',
+  // },
+  // {
+  //   id: 1,
+  //   link: 'https://twitter.com/redqinc',
+  //   icon: <IoLogoTwitter />,
+  //   className: 'twitter',
+  //   title: 'text-twitter',
+  // },
+  // {
+  //   id: 2,
+  //   link: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+  //   icon: <IoLogoYoutube />,
+  //   className: 'youtube',
+  //   title: 'text-youtube',
+  // },
   {
     id: 0,
-    link: 'https://www.facebook.com/redqinc/',
-    icon: <IoLogoFacebook />,
-    className: 'facebook',
-    title: 'text-facebook',
-  },
-  {
-    id: 1,
-    link: 'https://twitter.com/redqinc',
-    icon: <IoLogoTwitter />,
-    className: 'twitter',
-    title: 'text-twitter',
-  },
-  {
-    id: 2,
-    link: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
-    icon: <IoLogoYoutube />,
-    className: 'youtube',
-    title: 'text-youtube',
-  },
-  {
-    id: 3,
-    link: 'https://www.instagram.com/redqinc/',
+    link: 'https://www.instagram.com/prime.orca/',
     icon: <IoLogoInstagram />,
     className: 'instagram',
     title: 'text-instagram',
@@ -90,9 +90,8 @@ export default function MobileMenu() {
               onClick={() => handleArrowClick(menuName)}
             >
               <IoIosArrowDown
-                className={`transition duration-200 ease-in-out transform text-heading ${
-                  activeMenus.includes(menuName) ? '-rotate-180' : 'rotate-0'
-                }`}
+                className={`transition duration-200 ease-in-out transform text-heading ${activeMenus.includes(menuName) ? '-rotate-180' : 'rotate-0'
+                  }`}
               />
             </div>
           )}
