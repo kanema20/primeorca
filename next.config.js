@@ -25,4 +25,12 @@ module.exports = withPWA({
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/create-checkout-session",
+        destination: "http://localhost:8080/create-checkout-session",
+      },
+    ];
+  },
 });

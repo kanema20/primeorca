@@ -1,12 +1,15 @@
 // import { stripe } from './stripe';
 const Stripe = require('stripe');
-const stripe = Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
+const dotenv = require('dotenv');
+dotenv.config();
+
+const stripe = Stripe(process.env.STRIPE_PRIV_PO_TEST);
 // const stripe = Stripe(STRIPE_PRIV);
 
 const makeUnavailable = async () => {
     let allProducts = [];
     let hasMore = true;
-    let startingAfter = "prod_OJS058hE1MW2G3";
+    let startingAfter = "prod_ONGjsn2MQPcsqK";
     const products = await stripe.products.list({
         limit: 100,
         starting_after: startingAfter,

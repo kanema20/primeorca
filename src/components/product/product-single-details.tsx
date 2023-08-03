@@ -62,9 +62,8 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
   const { price, basePrice, discount } = usePrice(
     data &&
     {
-      // amount: data.sale_price ? data.sale_price : data.price,
-      // amount: getProductPrice(data[0].default_price),
-      amount: 15000,
+      amount: data.price,
+      // amount: getProductPrice(data.default_price),
       baseAmount: 9000,
       currencyCode: 'USD',
     }
@@ -199,7 +198,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
       setAddToCartLoader(false);
     }, 600);
 
-    const item = generateCartItem(data[0]!, attributes);
+    const item = generateCartItem(data!, attributes);
     addItemToCart(item, quantity);
     toast('Added to cart', {
       progressClassName: 'fancy-progress-bar',

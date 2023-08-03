@@ -24,24 +24,23 @@ import ContactInfoBlock from '@containers/contact-info';
 import InquiryForm from '@components/common/form/inquiry';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { Elements, PaymentElement } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+import { CartProvider } from 'use-shopping-cart'
 
 
-const flashSaleCarouselBreakpoint = {
-  '1280': {
-    slidesPerView: 1,
-    spaceBetween: 28,
-  },
-  '768': {
-    slidesPerView: 2,
-    spaceBetween: 20,
-  },
-  '0': {
-    slidesPerView: 1,
-    spaceBetween: 12,
-  },
-};
+// const flashSaleCarouselBreakpoint = {
+//   '1280': {
+//     slidesPerView: 1,
+//     spaceBetween: 28,
+//   },
+//   '768': {
+//     slidesPerView: 2,
+//     spaceBetween: 20,
+//   },
+//   '0': {
+//     slidesPerView: 1,
+//     spaceBetween: 12,
+//   },
+// };
 
 export default function Home() {
   const { t } = useTranslation('common');

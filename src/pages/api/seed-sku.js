@@ -1,10 +1,15 @@
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 const kobe6Products = require('./catalogues/kobe6.js');
 
 dotenv.config();
 // // dotenv.config({ path: `./env.local`, override: true });
-// // let STRIPE_PRIV = process.env.STRIPE_PRIVATE_KEY;// as string;
-import { stripe } from './stripe';
+// import { stripe } from './stripe';
+import Stripe from 'stripe';
+
+const stripe = new Stripe(process.env.STRIPE_PRIV_PO_TEST, {
+    apiVersion: '2022-11-15',
+});
 
 export default function handler(req, res) {
     res.status(200).json({ name: 'John Doe' })

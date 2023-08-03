@@ -20,9 +20,8 @@ import Router from 'next/router';
 import { forEach } from 'lodash';
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import axios, { Axios } from 'axios';
-
-const stripe = require('stripe')('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom');
+import axios from 'axios';
+import { useShoppingCart } from 'use-shopping-cart';
 
 export interface CheckoutItems {
   id?: string | number;
@@ -33,6 +32,7 @@ export interface CheckoutItems {
 }
 
 export default function Cart() {
+  const { cartCount, cartDetails, formattedTotalPrice, clearCart, redirectToCheckout } = useShoppingCart();
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
@@ -48,25 +48,41 @@ export default function Cart() {
     return data;
   }
 
-  // const handleClick = async () => {
-  //   try {
-  //     const { data } = await axios.post('http://localhost:8080/create-checkout-session/',
-  //       {
-  //         default_price: items[0].default_price,
-  //         quantity: items[0].quantity,
-  //       },
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //       }
-  //     );
-  //     window.location.assign(data)
-  //     console.log(data);
-  //   } catch (error: any) {
-  //     console.error(error);
-  //   }
-  // }
+  console.log("cartDetails: ", cartDetails)
+
+  const handleCheckout = async () => {
+
+    try {
+      setLoading(true);
+      const session_ = await axios
+        .post("/api/checkout", {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          // // mode: 'no-cors', // no-  cors, *cors, same-origin
+          // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          // // credentials: 'omit', // include, *same-origin, omit
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+          },
+          // redirect: 'follow', // manual, *follow, error
+          // referrerPolicy: 'no-referrer', // no-referrer, *client
+          data: JSON.stringify({
+            items: getItemsFromCart(items),
+          }),
+        })
+        .then((res) => res.data);
+      const result = await redirectToCheckout();
+      if (result?.error) {
+        console.log("error in result: ", error);
+      }
+    } catch (error) {
+      console.error(error.response.data);
+    } finally {
+      setLoading(false);
+    }
+
+  }
 
   // function createCheckout(cartItems: any) {
   const createCheckout = async () => {
@@ -75,13 +91,10 @@ export default function Cart() {
     // await fetch(ROUTES.CHECKOUT_SESSION, {
     await fetch('http://localhost:8080/create-checkout-session', {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      // mode: 'no-cors', // no-  cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      mode: 'cors', // no-  cors, *cors, same-origin
       // credentials: 'omit', // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
       },
       redirect: 'follow', // manual, *follow, error
       // referrerPolicy: 'no-referrer', // no-referrer, *client
@@ -98,8 +111,6 @@ export default function Cart() {
       });
   }
 
-  // console.log("items[0].default_price: ", items[0].default_price);
-
   function getTotalPrice(cartItems: any): number {
     let totalCart: number = 0;
     cartItems?.map((cartItem: any) => (
@@ -108,19 +119,6 @@ export default function Cart() {
     ))
     return totalCart;
   }
-
-  // function getItemsFromCart(cartItems: any): CheckoutItems[] {
-  //   let cart_: CheckoutItems[] = [];
-
-  //   cartItems?.map((cartItem: any) => (
-  //     cart_.push({
-  //       default_price: cartItem.default_price,
-  //       quantity: cartItem.quantity
-  //     })
-  //   ))
-  //   console.log("create stripe checkout", cart_)
-  //   return cart_;
-  // }
 
   function getItemsFromCart(cartItems: any): CheckoutItems[] {
     let cart_: CheckoutItems[] = [];

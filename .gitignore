@@ -36,3 +36,7 @@ yarn-error.log*
 # PWA
 workbox-*.js
 sw.js
+
+# ENV 
+.env
+.env.local

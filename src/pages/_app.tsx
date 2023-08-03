@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 // import { ReactQueryDevtools } from "react-query/devtools";
 import { appWithTranslation } from 'next-i18next';
 import { DefaultSeo } from '@components/common/default-seo';
+import { CartProvider } from 'use-shopping-cart'
 
 // Load Open Sans and satisfy typeface font
 import '@fontsource/open-sans';
@@ -50,24 +51,31 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 	const Layout = (Component as any).Layout || Noop;
 
 	return (
-		<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-			<QueryClientProvider client={queryClientRef.current}>
-				{/* @ts-ignore */}
-				<Hydrate state={pageProps.dehydratedState}>
+		<CartProvider
+			cartMode="checkout-session"
+			stripe=""
+			currency="USD"
+			shouldPersist={true}
+		>
+			<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+				<QueryClientProvider client={queryClientRef.current}>
 					{/* @ts-ignore */}
-					<ManagedUIContext>
-						<Layout pageProps={pageProps}>
-							<DefaultSeo />
-							<Component {...pageProps} key={router.route} />
-							<ToastContainer />
-						</Layout>
-						<ManagedModal />
-						<ManagedDrawer />
-					</ManagedUIContext>
-				</Hydrate>
-				{/* <ReactQueryDevtools /> */}
-			</QueryClientProvider>
-		</AnimatePresence>
+					<Hydrate state={pageProps.dehydratedState}>
+						{/* @ts-ignore */}
+						<ManagedUIContext>
+							<Layout pageProps={pageProps}>
+								<DefaultSeo />
+								<Component {...pageProps} key={router.route} />
+								<ToastContainer />
+							</Layout>
+							<ManagedModal />
+							<ManagedDrawer />
+						</ManagedUIContext>
+					</Hydrate>
+					{/* <ReactQueryDevtools /> */}
+				</QueryClientProvider>
+			</AnimatePresence>
+		</CartProvider>
 	);
 };
 

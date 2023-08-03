@@ -55,8 +55,10 @@
     "react-sticky-box": "2.0.4",
     "react-toastify": "9.1.2",
     "react-use": "17.4.0",
+    "stripe": "^12.16.0",
     "swiper": "8.4.7",
     "ts-node": "^10.9.1",
+    "use-shopping-cart": "^3.1.8",
     "vercel": "^31.0.3"
   },
   "devDependencies": {

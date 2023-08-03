@@ -17,8 +17,8 @@ export const collectionData = [
   },
   {
     id: 3,
-    slug: ROUTES.JA1,
-    image: '/assets/images/collection/nike-ja-1-5.jpeg',
+    slug: ROUTES.KOBE8,
+    image: '/assets/images/collection/kobe-8.jpg',
     title: 'collection-title-three',
     description: 'collection-description-three',
   },

@@ -3,7 +3,13 @@ import http from '@framework/utils/http';
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import { useQuery } from 'react-query';
 import Stripe from 'stripe';
-import { stripe } from 'src/pages/api/stripe';
+// import { stripe } from 'src/pages/api/stripe';
+
+const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP', {
+    apiVersion: '2022-11-15',
+});
+
+
 import { useInfiniteQuery } from "react-query";
 type PaginatedProduct = {
     data: Product[];

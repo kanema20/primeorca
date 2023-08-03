@@ -10,12 +10,36 @@ dotenv.config({ path: `./env.local`, override: true });
 // let STRIPE_PRIV = process.env.STRIPE_PRIVATE_KEY;// as string;
 
 // const stripe = Stripe(STRIPE_PRIV);
-const stripe = new Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom')
-// const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP') // PO
+// const stripe = new Stripe('sk_test_51NODKeBHHcQnL99CmcNwjHO1sLVoJ9uCkqv5GHgQbdt9ZCFZzI6ndJ5JLAzn9k6siG4OPjKy7XDds3rXiXzkFV1q00EMNPiMom')
+const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP') // PO
 // , {
 //     apiVersion: '2022-11-15',
 // });
-
+const kobe_prod = [
+    {
+        "_id": "64a3210b5d8fce08b7d5d724",
+        "name": "Nike Kobe 6 Protro Chaos",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe6/Product-Placeholder-Default-20210415.png",
+        "description": "Kobe Bryant",
+        "url": "nike-kobe-6-protro-chaos",
+        "currency": "USD",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-6-protro-chaos",
+        "make": "Nike Kobe 6 Protro",
+        "retailPrice": "190",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe6",
+            "slug": "nike-kobe-6-protro-chaos"
+        },
+        "releaseDate": ""
+    },
+]
 
 // const eybl = [
 //     {

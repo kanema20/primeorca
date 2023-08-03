@@ -234,7 +234,7 @@ export const siteSettings = {
             ],
           },
           {
-            id: 2,
+            id: 3,
             columnItems: [
               {
                 id: 1,

@@ -3,29 +3,12 @@ import http from '@framework/utils/http';
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import { useQuery } from 'react-query';
 import Stripe from 'stripe';
-import { stripe } from 'src/pages/api/stripe';
+import dotenv from 'dotenv';
+dotenv.config();
 
-// const stripe = loadStripe('pk_test_51NODKeBHHcQnL99C1aRpVHrkczyPHhGeH5i2ZYhfLW7NGCXTtC3wgJusSintO9atIXnO2reRhwgEHAa5RYZ6L2Xt008Z1sORpQ');
-
-
-// export const listProducts = async () => {
-//   try {
-//     // Retrieve a list of products
-//     const products = await stripe.products.list({
-//       limit: 10,
-//     });
-
-//     // Print each product to the console
-//     products.data.forEach((product: Stripe.Product) => {
-//       console.log(`Product ID: ${product.id}`);
-//       console.log(`Product Name: ${product.name}`);
-//       console.log(`Product Description: ${product.description}`);
-//       console.log('----------------------');
-//     });
-//   } catch (error) {
-//     console.error('Error retrieving products:', error);
-//   }
-// };
+const stripe = new Stripe('sk_test_51Na8pPCrveYCAKISo4oqLMDaS6go9XHno4IYnj8y0q9qThK4tLb6G4j4dqq8d6cDXmM1ZGVj2CJCIfX8aQkAytLK00biWg9kfP', {
+  apiVersion: '2022-11-15',
+});
 
 export const fetchFlashSaleProducts = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
@@ -43,7 +26,6 @@ const fetchNewKobeArrivals = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
   const products = await stripe.products.search({
     query: `active:\'true\' AND metadata[\'type\']:\'Replica\'`,
-    // query: `metadata[\'collection\']:\'kobe5\'`,
     limit: 10,
   });
 
@@ -52,17 +34,7 @@ const fetchNewKobeArrivals = async ({ queryKey }: any) => {
   //   active: true,
   // });
   // console.log(`products.data: ${products.data}`)
-
-  // data.forEach((product: Stripe.Product) => {
-  //   console.log(`product info: ${product}`)
-  // });
   return products.data;
-};
-
-const fetchKobeItem = async ({ queryKey }: any) => {
-  const [_key, _params] = queryKey;
-  const { data } = await stripe.products.retrieve({});
-
 };
 
 export const useFlashSaleProductsQuery = (options: QueryOptionsType) => {
@@ -75,8 +47,4 @@ export const useFlashSaleProductsQuery = (options: QueryOptionsType) => {
 
 export const useKobeArrivalsQuery = (options: QueryOptionsType) => {
   return useQuery<any, Error>(['kobe-new', options], fetchNewKobeArrivals);
-};
-
-export const useFetchKobeItem = (options: QueryKobeItem) => {
-  return useQuery<any, Error>(['kobe-item', options], fetchKobeItem);
 };
