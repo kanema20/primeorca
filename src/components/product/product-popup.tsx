@@ -34,7 +34,8 @@ export default function ProductPopup() {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
-
+  console.log("attributes: ", attributes['Sizes (US - M)'])
+  console.log("data: ", data)
   const { price, basePrice, discount } = usePrice({
     // amount: data.sale_price ? data.sale_price : data.price,
     amount: getProductPrice(default_price)?.unit_amount,
@@ -161,6 +162,9 @@ export default function ProductPopup() {
     const { data } = useFetchProductSizes(prod_slug)
     return data;
   }
+
+  console.log("getProductSizes: ", getProductSizes(data.url))
+  console.log("prod_data[0] ", prod_data[0])
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
