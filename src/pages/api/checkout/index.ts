@@ -19,8 +19,8 @@ async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreatePar
     payment_method_types: ['card', 'cashapp'], // 'google_pay', 'apple_pay'],
     mode: 'payment',
     line_items: lineItems,
-    success_url: 'https://staging.primeorca.com/success?session_id={CHECKOUT_SESSION_ID}',
-    cancel_url: 'https://staging.primeorca.com',
+    success_url: 'https://primeorca.com/success?session_id={CHECKOUT_SESSION_ID}',
+    cancel_url: 'https://primeorca.com',
     shipping_address_collection: {
       allowed_countries: ['US', 'JP', 'GB', 'FR', 'SG', 'CA'],
     },
