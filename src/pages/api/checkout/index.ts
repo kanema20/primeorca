@@ -44,10 +44,33 @@ async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreatePar
     // },
     // },
     // automatic_tax: { enabled: true },
-    shipping_options: [{
-      // shipping_rate: 'shr_1NauvTCrveYCAKISIyvsu4ez',
-      shipping_rate: 'shr_1NbB2aCrveYCAKISFdxZMTb4', // live
-    }],
+    shipping_options: [
+      //   {
+      //   // shipping_rate: 'shr_1NauvTCrveYCAKISIyvsu4ez',
+      //   shipping_rate: 'shr_1NbB2aCrveYCAKISFdxZMTb4', // live
+      // },
+      {
+        shipping_rate_data: {
+          type: 'fixed_amount',
+          fixed_amount: {
+            amount: (lineItems.length < 3) ? 3000 * (lineItems.length) : 2500 * (lineItems.length),
+            currency: 'usd',
+          },
+          display_name: 'Universal Ground Shipping',
+          delivery_estimate: {
+            minimum: {
+              unit: 'day',
+              value: 10,
+            },
+            maximum: {
+              unit: 'day',
+              value: 14,
+            },
+          },
+        },
+      },
+    ],
+
   });
 
   return session;
