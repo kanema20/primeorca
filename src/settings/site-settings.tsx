@@ -748,7 +748,7 @@ export const siteSettings = {
       },
       {
         id: 5,
-        path: '/balenciaga',
+        path: '/balenciaga/balenciaga',
         label: 'menu-balenciaga',
       },
       {
