@@ -27,6 +27,7 @@ import '@styles/custom-plugins.css';
 import '@styles/tailwind.css';
 import '@styles/rc-drawer.css';
 import { getDirection } from '@utils/get-direction';
+import Script from 'next/script';
 
 function handleExitComplete() {
 	if (typeof window !== 'undefined') {
@@ -51,31 +52,48 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 	const Layout = (Component as any).Layout || Noop;
 
 	return (
-		<CartProvider
-			cartMode="checkout-session"
-			stripe=""
-			currency="USD"
-			shouldPersist={true}
-		>
-			<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-				<QueryClientProvider client={queryClientRef.current}>
-					{/* @ts-ignore */}
-					<Hydrate state={pageProps.dehydratedState}>
+		<>
+			<Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-T3HQD193DC"></Script>
+			<Script
+				id='google-analytics'
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-T3HQD193DC', {
+            page_path: window.location.pathname,
+          });
+        `,
+				}}
+			/>
+			<CartProvider
+				cartMode="checkout-session"
+				stripe=""
+				currency="USD"
+				shouldPersist={true}
+			>
+				<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+					<QueryClientProvider client={queryClientRef.current}>
 						{/* @ts-ignore */}
-						<ManagedUIContext>
-							<Layout pageProps={pageProps}>
-								<DefaultSeo />
-								<Component {...pageProps} key={router.route} />
-								<ToastContainer />
-							</Layout>
-							<ManagedModal />
-							<ManagedDrawer />
-						</ManagedUIContext>
-					</Hydrate>
-					{/* <ReactQueryDevtools /> */}
-				</QueryClientProvider>
-			</AnimatePresence>
-		</CartProvider>
+						<Hydrate state={pageProps.dehydratedState}>
+							{/* @ts-ignore */}
+							<ManagedUIContext>
+								<Layout pageProps={pageProps}>
+									<DefaultSeo />
+									<Component {...pageProps} key={router.route} />
+									<ToastContainer />
+								</Layout>
+								<ManagedModal />
+								<ManagedDrawer />
+							</ManagedUIContext>
+						</Hydrate>
+						{/* <ReactQueryDevtools /> */}
+					</QueryClientProvider>
+				</AnimatePresence>
+			</CartProvider>
+		</>
 	);
 };
 
