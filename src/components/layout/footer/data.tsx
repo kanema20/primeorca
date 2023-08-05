@@ -14,7 +14,7 @@ export const footer = {
         {
           id: 1,
           title: 'link-instagram',
-          path: 'https://www.instagram.com/primeorca/',
+          path: 'https://www.instagram.com/prime.orca/',
           icon: <IoLogoInstagram />,
         },
         // {
@@ -29,12 +29,12 @@ export const footer = {
         //   path: 'https://www.facebook.com/redqinc/',
         //   icon: <IoLogoFacebook />,
         // },
-        {
-          id: 4,
-          title: 'link-youtube',
-          path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
-          icon: <IoLogoYoutube />,
-        },
+        // {
+        //   id: 4,
+        //   title: 'link-youtube',
+        //   path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+        //   icon: <IoLogoYoutube />,
+        // },
       ],
     },
     {
@@ -158,7 +158,12 @@ export const footer = {
         {
           id: 2,
           title: 'Kobe 6',
-          path: '/kobe/kobe-5',
+          path: '/kobe/kobe-6',
+        },
+        {
+          id: 3,
+          title: 'Kobe 8',
+          path: '/kobe/kobe-8',
         },
         // {
         //   id: 3,
@@ -229,27 +234,27 @@ export const footerContemporary = {
         {
           id: 1,
           title: 'link-instagram',
-          path: 'https://www.instagram.com/redqinc/',
+          path: 'https://www.instagram.com/prime.orca/',
           icon: <IoLogoInstagram />,
         },
-        {
-          id: 2,
-          title: 'link-twitter',
-          path: 'https://twitter.com/redqinc',
-          icon: <IoLogoTwitter />,
-        },
-        {
-          id: 3,
-          title: 'link-facebook',
-          path: 'https://www.facebook.com/redqinc/',
-          icon: <IoLogoFacebook />,
-        },
-        {
-          id: 4,
-          title: 'link-youtube',
-          path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
-          icon: <IoLogoYoutube />,
-        },
+        // {
+        //   id: 2,
+        //   title: 'link-twitter',
+        //   path: 'https://twitter.com/redqinc',
+        //   icon: <IoLogoTwitter />,
+        // },
+        // {
+        //   id: 3,
+        //   title: 'link-facebook',
+        //   path: 'https://www.facebook.com/redqinc/',
+        //   icon: <IoLogoFacebook />,
+        // },
+        // {
+        //   id: 4,
+        //   title: 'link-youtube',
+        //   path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+        //   icon: <IoLogoYoutube />,
+        // },
       ],
     },
     {

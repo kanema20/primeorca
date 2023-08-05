@@ -756,16 +756,16 @@ export const siteSettings = {
         path: '/eybl',
         label: 'menu-eybl',
       },
-      {
-        id: 7,
-        path: '/off-white',
-        label: 'menu-off-white',
-      },
-      {
-        id: 8,
-        path: '/purple',
-        label: 'menu-purple',
-      },
+      // {
+      //   id: 7,
+      //   path: '/off-white',
+      //   label: 'menu-off-white',
+      // },
+      // {
+      //   id: 8,
+      //   path: '/purple',
+      //   label: 'menu-purple',
+      // },
     ],
     languageMenu: [
       {

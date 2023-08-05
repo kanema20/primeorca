@@ -2,14 +2,15 @@ const Stripe = require('stripe');
 const dotenv = require('dotenv');
 dotenv.config();
 const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
-const stripe = require('stripe')(process.env.process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 // const kobe5Products = require('./mvp/kobe5.js');
 // const kobe5_1Products = require('./mvp/kobe5_1.js');
 // const kobe6Products = require('./mvp/kobe6.js');
 // const kobe6_1Products = require('./mvp/kobe6_1.js');
 // const kobe8Products = require('./mvp/kobe8.js');
-const kobe8_1Products = require('./mvp/kobe8_1.js');
+// const kobe8_1Products = require('./mvp/kobe8_1.js');
+const kobe5offwhite = require('./mvp/kobe-off-white.js');
 // const balenciProducts = require('./mvp/balenciaga.js');
 
 // const kobe8Products = [
@@ -99,7 +100,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of kobe8_1Products) {
+for (const product of kobe5offwhite) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)
