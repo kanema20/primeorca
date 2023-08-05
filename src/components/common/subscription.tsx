@@ -3,7 +3,8 @@ import Input from '@components/ui/input';
 import Button from '@components/ui/button';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
-import { withFirestore } from 'react-firestore';
+// import { withFirestore } from 'react-firestore';
+import { init, sendForm } from 'emailjs-com';
 
 const data = {
   title: 'common:text-subscribe-heading',
