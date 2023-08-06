@@ -42,7 +42,7 @@ export default function Collections() {
           </div>
 
           <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
-            <CollectionTopBar />
+            {/* <CollectionTopBar /> */}
             <ProductGrid />
           </div>
         </div>

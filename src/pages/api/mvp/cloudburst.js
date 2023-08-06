@@ -17,7 +17,7 @@ const cloudburst = [
     //     "metadata_": {
     //         "brand": "prada",
     //         "category": "prada",
-    //         "collection": "cloudburst",
+    //         "collection": "cloudbust",
     //         "slug": "prada-cloudbust-thunder-knit-black"
     //     },
     //     "releaseDate": "2019-08-01"
@@ -86,7 +86,7 @@ const cloudburst = [
         "metadata_": {
             "brand": "prada",
             "category": "prada",
-            "collection": "cloudburst",
+            "collection": "cloudbust",
             "slug": "prada-cloudbust-thunder-red-black"
         },
         "releaseDate": "2020-02-05"

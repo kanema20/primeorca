@@ -578,7 +578,7 @@ export const siteSettings = {
       // },
       {
         id: 8,
-        path: '/prada/cloudburst',
+        path: '/prada/cloudbust',
         label: 'menu-prada',
       },
       {
@@ -768,13 +768,13 @@ export const siteSettings = {
       // },
       {
         id: 8,
-        path: '/prada/cloudburst',
+        path: '/prada/cloudbust',
         label: 'menu-prada',
       },
       {
         id: 9,
-        path: '/nike/gtcuts',
-        label: 'GT Cut',
+        path: '/nike/GT-Cuts',
+        label: 'menu-gtcuts',
       },
     ],
     languageMenu: [

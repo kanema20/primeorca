@@ -13,6 +13,7 @@ import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
+import { slice } from 'lodash';
 
 export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticPaths>) {
     const router = useRouter();
@@ -45,9 +46,9 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                             {/* <CollectionFilters /> */}
                         </StickyBox>
                     </div>
-
                     <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
-                        <CollectionTopBar />
+                        {/* <CollectionTopBar /> */}
+                        <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1>
                         <ProductGrid slug={slug} />
                     </div>
                 </div>

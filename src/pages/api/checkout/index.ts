@@ -13,6 +13,10 @@ const cors = Cors({
   methods: ['POST', 'GET', 'HEAD'],
 })
 
+function calculateShipping() {
+
+}
+
 async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]): Promise<Stripe.Checkout.Session> {
 
   const session = await stripe.checkout.sessions.create({
