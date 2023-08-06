@@ -603,6 +603,12 @@ export const siteSettings = {
         path: '/nike/gtcuts',
         label: 'GT Cuts',
       },
+      {
+        id: 10,
+        path: '/mcqueen/oversized',
+        label: 'McQueen',
+      },
+
       // {
       //   id: 9,
       //   path: '/search',
@@ -792,6 +798,11 @@ export const siteSettings = {
         id: 9,
         path: '/nike/GT-Cuts',
         label: 'menu-gtcuts',
+      },
+      {
+        id: 10,
+        path: '/mcqueen/oversized',
+        label: 'McQueen',
       },
     ],
     languageMenu: [

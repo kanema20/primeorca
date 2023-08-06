@@ -18,8 +18,8 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const kobe5offwhite = require('./mvp/kobe-off-white.js');
 // const balenciaga2 = require('./mvp/balenciaga-2.js');
 // const cloudburst = require('./mvp/cloudburst.js');
-const gtcuts = require('./mvp/gt-cuts.js');
-
+// const gtcuts = require('./mvp/gt-cuts.js');
+const mcqueen = require('./mvp/mcqueen.js');
 
 
 // dotenv.config({ path: `./env.local`, override: true });
@@ -129,7 +129,7 @@ const createProduct = async (product) => {
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of gtcuts) {
+for (const product of mcqueen) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {
