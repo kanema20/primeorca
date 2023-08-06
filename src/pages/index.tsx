@@ -66,7 +66,6 @@ export default function Home() {
       {/* <NewArrivalsProductFeed /> */}
       {/* <Divider /> */}
       {/* <BrandBlock sectionHeading="text-top-brands" /> */}
-      <FeatureBlock />
       {/* <DownloadApps /> */}
       {/* <Support /> */}
       <Container>
@@ -80,8 +79,9 @@ export default function Home() {
             <InquiryForm />
           </div>
         </div>
-        <Subscription />
+        {/* <Subscription /> */}
       </Container>
+      <FeatureBlock />
       {/* </Elements> */}
     </Container >
   )
