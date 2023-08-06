@@ -156,60 +156,77 @@ export const siteSettings = {
       // },
       {
         id: 2,
-        path: `${ROUTES.KOBE}`,
+        path: '/',
+        // path: `${ROUTES.KOBE}`,
         label: 'menu-kobe',
         columns: [
           {
             id: 1,
             columnItems: [
+              // {
+              //   id: 1,
+              //   // path: `${ROUTES.KOBE5}`,
+              //   path: "/",
+              //   label: 'Kobe',
               {
                 id: 1,
-                // path: `${ROUTES.KOBE5}`,
-                path: "/",
-                label: 'Kobe',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: `${ROUTES.KOBE5}`,
-                    label: 'Kobe 5',
-                  },
-                  {
-                    id: 2,
-                    path: `${ROUTES.KOBE6}`,
-                    label: 'Kobe 6',
-                  },
-                  {
-                    id: 3,
-                    path: `${ROUTES.KOBE8}`,
-                    label: 'Kobe 8',
-                  },
-                  // {
-                  //   id: 1,
-                  //   path: `/products/nike-kobe-5-protro-2k-gamer-exclusive`,
-                  //   label: 'Nike-Kobe-5-Protro-2K',
-                  // },
-                  // {
-                  //   id: 2,
-                  //   path: `/products/kobe-5-joker-chaos`,
-                  //   label: 'Nike-Kobe-5-Joker-Chaos',
-                  // },
-                  // {
-                  //   id: 3,
-                  //   path: `/products/nike-kobe-5-usa`,
-                  //   label: 'Nike-Kobe-5-USA',
-                  // },
-                  // {
-                  //   id: 4,
-                  //   path: `/products/nike-kobe-5-protro-lakers`,
-                  //   label: 'Nike-Kobe-5-Protro-Lakers',
-                  // },
-                  // {
-                  //   id: 5,
-                  //   path: `/products/kobe-5-bruce-lee`,
-                  //   label: 'Nike-Kobe-5-Bruce-Lee',
-                  // },
-                ],
+                path: `${ROUTES.KOBE5}`,
+                label: 'Kobe 5',
               },
+              {
+                id: 2,
+                path: `${ROUTES.KOBE6}`,
+                label: 'Kobe 6',
+              },
+              {
+                id: 3,
+                path: `${ROUTES.KOBE8}`,
+                label: 'Kobe 8',
+              },
+
+              // columnItemItems: [
+              //   {
+              //     id: 1,
+              //     path: `${ROUTES.KOBE5}`,
+              //     label: 'Kobe 5',
+              //   },
+              //   {
+              //     id: 2,
+              //     path: `${ROUTES.KOBE6}`,
+              //     label: 'Kobe 6',
+              //   },
+              //   {
+              //     id: 3,
+              //     path: `${ROUTES.KOBE8}`,
+              //     label: 'Kobe 8',
+              //   },
+              // {
+              //   id: 1,
+              //   path: `/products/nike-kobe-5-protro-2k-gamer-exclusive`,
+              //   label: 'Nike-Kobe-5-Protro-2K',
+              // },
+              // {
+              //   id: 2,
+              //   path: `/products/kobe-5-joker-chaos`,
+              //   label: 'Nike-Kobe-5-Joker-Chaos',
+              // },
+              // {
+              //   id: 3,
+              //   path: `/products/nike-kobe-5-usa`,
+              //   label: 'Nike-Kobe-5-USA',
+              // },
+              // {
+              //   id: 4,
+              //   path: `/products/nike-kobe-5-protro-lakers`,
+              //   label: 'Nike-Kobe-5-Protro-Lakers',
+              // },
+              // {
+              //   id: 5,
+              //   path: `/products/kobe-5-bruce-lee`,
+              //   label: 'Nike-Kobe-5-Bruce-Lee',
+              // },
+              // ],
+              // },
             ],
           },
           // {

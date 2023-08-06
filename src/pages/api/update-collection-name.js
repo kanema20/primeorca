@@ -12,7 +12,7 @@ const updateAllProducts = async () => {
     // const products = await stripe.products.list();
     const prada = await stripe.products.list({
         // url: 'prada-cloudbust-thunder-red-black'
-        url: "prada-cloudbust-thunder-knit-black"
+        url: "prada-cloudbust-neon-yellow"
     })
 
     for (const product of prada.data) {
