@@ -576,11 +576,11 @@ export const siteSettings = {
       //   path: '/off-white',
       //   label: 'menu-off-white',
       // },
-      // {
-      //   id: 8,
-      //   path: '/purple',
-      //   label: 'menu-purple',
-      // },
+      {
+        id: 8,
+        path: '/prada/cloudburst',
+        label: 'menu-prada',
+      },
       // {
       //   id: 9,
       //   path: '/search',
@@ -761,11 +761,11 @@ export const siteSettings = {
       //   path: '/off-white',
       //   label: 'menu-off-white',
       // },
-      // {
-      //   id: 8,
-      //   path: '/purple',
-      //   label: 'menu-purple',
-      // },
+      {
+        id: 8,
+        path: '/prada/cloudburst',
+        label: 'menu-prada',
+      },
     ],
     languageMenu: [
       {

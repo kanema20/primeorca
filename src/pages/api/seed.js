@@ -15,7 +15,12 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const kobe8Products = require('./mvp/kobe8.js');
 // const kobe8_1Products = require('./mvp/kobe8_1.js');
 // const  = require('./mvp/balenciaga.js');
-const kobe5offwhite = require('./mvp/kobe-off-white.js');
+// const kobe5offwhite = require('./mvp/kobe-off-white.js');
+// const balenciaga2 = require('./mvp/balenciaga-2.js');
+const cloudburst = require('./mvp/cloudburst.js');
+
+
+
 // dotenv.config({ path: `./env.local`, override: true });
 const kobe_prod = [
     {
@@ -137,7 +142,7 @@ size_kv = {
     "size-14": 14,
 }
 
-for (const product of kobe5offwhite) {
+for (const product of cloudburst) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {
