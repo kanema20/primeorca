@@ -581,6 +581,11 @@ export const siteSettings = {
         path: '/prada/cloudburst',
         label: 'menu-prada',
       },
+      {
+        id: 9,
+        path: '/nike/gtcuts',
+        label: 'GT Cuts',
+      },
       // {
       //   id: 9,
       //   path: '/search',
@@ -765,6 +770,11 @@ export const siteSettings = {
         id: 8,
         path: '/prada/cloudburst',
         label: 'menu-prada',
+      },
+      {
+        id: 9,
+        path: '/nike/gtcuts',
+        label: 'GT Cut',
       },
     ],
     languageMenu: [

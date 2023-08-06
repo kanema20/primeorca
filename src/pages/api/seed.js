@@ -17,7 +17,8 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const  = require('./mvp/balenciaga.js');
 // const kobe5offwhite = require('./mvp/kobe-off-white.js');
 // const balenciaga2 = require('./mvp/balenciaga-2.js');
-const cloudburst = require('./mvp/cloudburst.js');
+// const cloudburst = require('./mvp/cloudburst.js');
+const gtcuts = require('./mvp/gt-cuts.js');
 
 
 
@@ -127,22 +128,8 @@ const createProduct = async (product) => {
 
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
-size_kv = {
-    "size-7": 7,
-    "size-7-5": 7.5,
-    "size-8": 8,
-    "size-8-5": 8.5,
-    "size-9": 9,
-    "size-9-5": 9.5,
-    "size-10": 10,
-    "size-10-5": 10.5,
-    "size-11": 11,
-    "size-12": 12,
-    "size-13": 13,
-    "size-14": 14,
-}
 
-for (const product of cloudburst) {
+for (const product of gtcuts) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {
