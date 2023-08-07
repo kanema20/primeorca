@@ -17,8 +17,8 @@ const cors = Cors({
 
 function calculateShipping(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]) {
   let total = 0;
-  console.log("total items: ", lineItems.length)
-  console.log("lineItems[1].quantity: ", lineItems[1].quantity)
+  // console.log("total items: ", lineItems.length)
+  // console.log("lineItems[1].quantity: ", lineItems[1].quantity)
 
   // for (let lineItem in lineItems) {
   //   lineItem = JSON.stringify(lineItem)
