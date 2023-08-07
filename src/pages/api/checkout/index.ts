@@ -6,6 +6,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import Cors from 'cors'
 import { validateCartItems } from 'use-shopping-cart/utilities'
+import { CheckoutItems } from '@components/cart/cart';
+import { forEach } from 'lodash';
 
 // Initializing the cors middleware
 // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
@@ -13,8 +15,30 @@ const cors = Cors({
   methods: ['POST', 'GET', 'HEAD'],
 })
 
-function calculateShipping() {
+function calculateShipping(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]) {
+  let total = 0;
+  console.log("total items: ", lineItems.length)
+  console.log("lineItems[1].quantity: ", lineItems[1].quantity)
 
+  // for (let lineItem in lineItems) {
+  //   lineItem = JSON.stringify(lineItem)
+  //   if (lineItem.quantity == 1) {
+  //     total = total + 1;
+  //   } else {
+  //     total = total + lineItem.quantity
+  //   }
+  // }
+
+
+
+  for (let i = 0; i < lineItems.length; i++) {
+    if (lineItems[i].quantity == 1) {
+      total = total + 1;
+    } else {
+      total = total + lineItems[i].quantity
+    }
+  }
+  return total;
 }
 
 async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]): Promise<Stripe.Checkout.Session> {
@@ -57,10 +81,11 @@ async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreatePar
         shipping_rate_data: {
           type: 'fixed_amount',
           fixed_amount: {
-            amount: (lineItems.length < 3) ? 3000 * (lineItems.length) : 2500 * (lineItems.length),
+            amount: (calculateShipping(lineItems) < 3) ? 3000 * (calculateShipping(lineItems)) : 2500 * (calculateShipping(lineItems)),
+            // amount: (lineItems.length < 3) ? 3000 * (lineItems.length) : 2500 * (lineItems.length),
             currency: 'usd',
           },
-          display_name: 'Universal Ground Shipping',
+          display_name: `Universal Ground Shipping (${calculateShipping(lineItems)})`,
           delivery_estimate: {
             minimum: {
               unit: 'day',
