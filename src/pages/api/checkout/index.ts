@@ -54,22 +54,22 @@ async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreatePar
     },
     invoice_creation: {
       enabled: true,
-      // invoice_data: {
-      // description: 'Invoice from Prime Orca LLC',
-      //   metadata: {
-      //     order: 'order-xyz',
-      //   },
-      //   custom_fields: [
-      //     {
-      //       name: 'Purchase Order',
-      //       value: 'PO-XYZ',
-      //     },
-      //   ],
-      //   rendering_options: {
-      //     amount_tax_display: 'include_inclusive_tax',
-      //   },
-      //   footer: 'Prime Orca LLC',
-      // },
+      invoice_data: {
+        description: 'Invoice from Prime Orca LLC',
+        //   metadata: {
+        //     order: 'order-xyz',
+        //   },
+        custom_fields: [
+          //     {
+          // name: 'Purchase Order',
+          // value: 'PO-XYZ',
+          //     },
+        ],
+        //   rendering_options: {
+        //     amount_tax_display: 'include_inclusive_tax',
+        //   },
+        footer: 'Prime Orca LLC',
+      },
     },
     // automatic_tax: { enabled: true },
     shipping_options: [

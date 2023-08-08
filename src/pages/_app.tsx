@@ -28,6 +28,7 @@ import '@styles/tailwind.css';
 import '@styles/rc-drawer.css';
 import { getDirection } from '@utils/get-direction';
 import Script from 'next/script';
+import Drift from 'react-driftjs';
 
 function handleExitComplete() {
 	if (typeof window !== 'undefined') {
@@ -93,6 +94,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 					</QueryClientProvider>
 				</AnimatePresence>
 			</CartProvider>
+			<Drift appId="r2s7deavw4m3" />
 		</>
 	);
 };

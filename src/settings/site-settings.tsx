@@ -608,6 +608,11 @@ export const siteSettings = {
         path: '/mcqueen/oversized',
         label: 'McQueen',
       },
+      {
+        id: 11,
+        path: '/eybl',
+        label: 'EYBL',
+      },
 
       // {
       //   id: 9,
@@ -803,6 +808,11 @@ export const siteSettings = {
         id: 10,
         path: '/mcqueen/oversized',
         label: 'McQueen',
+      },
+      {
+        id: 11,
+        path: '/eybl',
+        label: 'EYBL',
       },
     ],
     languageMenu: [
