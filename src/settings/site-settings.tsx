@@ -641,6 +641,11 @@ export const siteSettings = {
         path: '/dior/b22',
         label: 'DIOR',
       },
+      {
+        id: 13,
+        path: '/adidas/yeezy',
+        label: 'Yeezy',
+      },
 
       // {
       //   id: 9,
@@ -860,9 +865,14 @@ export const siteSettings = {
         label: 'Dior',
       },
       {
-        id: 12,
+        id: 13,
         path: '/nike/travis',
         label: 'Travis Scott',
+      },
+      {
+        id: 14,
+        path: '/adidas/yeezy',
+        label: 'Yeezy',
       },
     ],
     languageMenu: [

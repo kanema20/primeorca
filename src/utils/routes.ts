@@ -16,6 +16,7 @@ export const ROUTES = {
   OFF: "/off",
   PURPLE: "/purple",
   JA1: "/ja1",
+  YEEZY: "/adidas/yeezy",
   CHECKOUT: "/checkout",
   CHECKOUT_SESSION: "/api/checkout/session",
   CONTACT: "/contact-us",
