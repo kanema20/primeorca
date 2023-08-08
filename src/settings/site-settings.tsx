@@ -643,10 +643,14 @@ export const siteSettings = {
       },
       {
         id: 13,
-        path: '/adidas/yeezy',
+        path: '/adidas/yeezy-slide',
         label: 'Yeezy',
       },
-
+      // {
+      //   id: 14,
+      //   path: '/lv/trainers',
+      //   label: 'Louis Vuitton'
+      // }
       // {
       //   id: 9,
       //   path: '/search',
@@ -871,9 +875,14 @@ export const siteSettings = {
       },
       {
         id: 14,
-        path: '/adidas/yeezy',
+        path: '/adidas/yeezy-slide',
         label: 'Yeezy',
       },
+      // {
+      //   id: 15,
+      //   path: '/lv/trainers',
+      //   label: 'Louis Vuitton'
+      // }
     ],
     languageMenu: [
       {
