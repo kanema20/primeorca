@@ -615,7 +615,7 @@ export const siteSettings = {
       },
       {
         id: 12,
-        path: '/dior/dior',
+        path: '/dior/b22',
         label: 'DIOR',
       },
 
@@ -816,7 +816,7 @@ export const siteSettings = {
       },
       {
         id: 12,
-        path: '/dior/dior',
+        path: '/dior/b22',
         label: 'DIOR',
       },
     ],
