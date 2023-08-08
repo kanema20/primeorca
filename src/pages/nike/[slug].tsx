@@ -34,7 +34,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                                         <a>{t('breadcrumb-home')}</a>
                                     </ActiveLink>
                                     <ActiveLink
-                                        href={`${ROUTES.BALENCI}`}
+                                        href={`${ROUTES.NIKE}`}
                                         activeClassName="font-semibold text-heading"
                                     >
                                         {/* <a className="capitalize">{t('breadcrumb-collection')}</a> */}

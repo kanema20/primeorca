@@ -610,8 +610,13 @@ export const siteSettings = {
       },
       {
         id: 11,
-        path: '/eybl',
+        path: '/nike/eybl',
         label: 'EYBL',
+      },
+      {
+        id: 12,
+        path: '/dior/dior',
+        label: 'DIOR',
       },
 
       // {
@@ -786,8 +791,8 @@ export const siteSettings = {
       },
       {
         id: 6,
-        path: '/eybl',
-        label: 'menu-eybl',
+        path: '/nike/eybl',
+        label: 'EYBL',
       },
       // {
       //   id: 7,
@@ -810,9 +815,9 @@ export const siteSettings = {
         label: 'McQueen',
       },
       {
-        id: 11,
-        path: '/eybl',
-        label: 'EYBL',
+        id: 12,
+        path: '/dior/dior',
+        label: 'DIOR',
       },
     ],
     languageMenu: [

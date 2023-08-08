@@ -76,7 +76,7 @@ const eybl = [
         "brand": "Nike",
         "price": "150",
         "lowestResellPrice.stockX": "292",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-KD-12-EYBL-Product.",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-KD-12-EYBL-Product.jpg",
         "description": "The Nike KD 12 NRG Peach Jam is a special-edition colorway of the NBA star Kevin Durant's 12th signature shoe with Nike.",
         "currency": "USD",
         "shippable": true,

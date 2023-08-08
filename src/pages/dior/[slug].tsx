@@ -34,7 +34,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                                         <a>{t('breadcrumb-home')}</a>
                                     </ActiveLink>
                                     <ActiveLink
-                                        href={`${ROUTES.EYBL}`}
+                                        href={`${ROUTES.DIOR}`}
                                         activeClassName="font-semibold text-heading"
                                     >
                                         {/* <a className="capitalize">{t('breadcrumb-collection')}</a> */}
@@ -63,7 +63,7 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "eybl" } },
+            { params: { slug: "dior" } },
             // Add more paths as needed
         ],
         fallback: true,
