@@ -325,18 +325,18 @@ const travis =
             "retailPrice": "160",
             "releaseDate": "2022-05-23"
         },
-        {
-            "_id": "64d24327e50a880b29447ff0",
-            "name": "Jordan 1 Retro Low OG SP Travis Scott Reverse Mocha (PS)",
-            "brand": "Jordan",
-            "lowestResellPrice.stockX": "210",
-            "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-SP-Travis-Scott-Reverse-Mocha-PS-Product.jpg",
-            "description": "The Travis Scott x Air Jordan 1 Low OG PS ‘Reverse Mocha’ renews a memorable color scheme with this version of the rapper's 2019 'Mocha.' Made for little kids, brown nubuck with leather overlays in off-white are accented on the upper by an exaggerated Swoosh in reverse. Branding pairs 'Nike Air' and Cactus Jack on the tongue, while the heel has the signature TS face sketch on the left and Jordan wings logo on the right, both in scarlet-red stitching. Underfoot, a brown rubber outsole enhances grip and traction beneath the midsole in an vintage-feel off-white.",
-            "url": "air-jordan-1-retro-low-og-sp-travis-scott-reverse-mocha-ps",
-            "resellLinks.stockX": "https://stockx.com/air-jordan-1-retro-low-og-sp-travis-scott-reverse-mocha-ps",
-            "make": "Jordan 1 Retro Low OG SP",
-            "retailPrice": "60",
-            "releaseDate": "2022-07-21"
-        }
+        // {
+        //     "_id": "64d24327e50a880b29447ff0",
+        //     "name": "Jordan 1 Retro Low OG SP Travis Scott Reverse Mocha (PS)",
+        //     "brand": "Jordan",
+        //     "lowestResellPrice.stockX": "210",
+        //     "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-SP-Travis-Scott-Reverse-Mocha-PS-Product.jpg",
+        //     "description": "The Travis Scott x Air Jordan 1 Low OG PS ‘Reverse Mocha’ renews a memorable color scheme with this version of the rapper's 2019 'Mocha.' Made for little kids, brown nubuck with leather overlays in off-white are accented on the upper by an exaggerated Swoosh in reverse. Branding pairs 'Nike Air' and Cactus Jack on the tongue, while the heel has the signature TS face sketch on the left and Jordan wings logo on the right, both in scarlet-red stitching. Underfoot, a brown rubber outsole enhances grip and traction beneath the midsole in an vintage-feel off-white.",
+        //     "url": "air-jordan-1-retro-low-og-sp-travis-scott-reverse-mocha-ps",
+        //     "resellLinks.stockX": "https://stockx.com/air-jordan-1-retro-low-og-sp-travis-scott-reverse-mocha-ps",
+        //     "make": "Jordan 1 Retro Low OG SP",
+        //     "retailPrice": "60",
+        //     "releaseDate": "2022-07-21"
+        // }
     ]
 module.exports = travis

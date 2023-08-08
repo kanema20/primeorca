@@ -631,11 +631,11 @@ export const siteSettings = {
         path: '/mcqueen/oversized',
         label: 'McQueen',
       },
-      // {
-      //   id: 11,
-      //   path: '/nike/eybl',
-      //   label: 'EYBL',
-      // },
+      {
+        id: 11,
+        path: '/nike/travis',
+        label: 'Travis Scott',
+      },
       {
         id: 12,
         path: '/dior/b22',
@@ -861,7 +861,7 @@ export const siteSettings = {
       },
       {
         id: 12,
-        path: '/nike/travis-scott',
+        path: '/nike/travis',
         label: 'Travis Scott',
       },
     ],
