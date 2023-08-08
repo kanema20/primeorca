@@ -15,7 +15,7 @@ const nikeOffWhite = [
         "make": "OFF WHITE x Nike 005 CL",
         "retailPrice": "55",
         "metadata_": {
-            "brand": "nike-off-white",
+            "brand": "nike",
             "category": "off-white",
             "collection": "off-white",
             "slug": "off-white-x-nike-005-t-shirts-beige"
@@ -38,7 +38,7 @@ const nikeOffWhite = [
         "make": "OFF WHITE x Nike 005",
         "retailPrice": "55",
         "metadata_": {
-            "brand": "nike-off-white",
+            "brand": "nike",
             "category": "off-white",
             "collection": "off-white",
             "slug": "off-white-x-nike-005-t-shirts-black"

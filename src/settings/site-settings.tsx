@@ -305,6 +305,29 @@ export const siteSettings = {
           // },
         ],
       },
+      {
+        id: 3,
+        path: '/',
+        // path: `${ROUTES.KOBE}`,
+        label: 'menu-nike',
+        columns: [
+          {
+            id: 1,
+            columnItems: [
+              {
+                id: 1,
+                path: '/nike/gtcuts',
+                label: 'GT Cuts',
+              },
+              {
+                id: 2,
+                path: '/nike/eybl',
+                label: 'EYBL',
+              },
+            ]
+          }
+        ]
+      },
       // {
       //   id: 2,
       //   path: '/search?q=men-wear',
@@ -598,21 +621,21 @@ export const siteSettings = {
         path: '/prada/cloudbust',
         label: 'menu-prada',
       },
-      {
-        id: 9,
-        path: '/nike/gtcuts',
-        label: 'GT Cuts',
-      },
+      // {
+      // id: 9,
+      // path: '/nike/gtcuts',
+      // label: 'GT Cuts',
+      // },
       {
         id: 10,
         path: '/mcqueen/oversized',
         label: 'McQueen',
       },
-      {
-        id: 11,
-        path: '/nike/eybl',
-        label: 'EYBL',
-      },
+      // {
+      //   id: 11,
+      //   path: '/nike/eybl',
+      //   label: 'EYBL',
+      // },
       {
         id: 12,
         path: '/dior/b22',
@@ -764,7 +787,7 @@ export const siteSettings = {
       },
       {
         id: 2,
-        path: '/search?q=kobe',
+        path: '/',
         label: 'menu-kobe',
         subMenu: [
           {
@@ -781,6 +804,23 @@ export const siteSettings = {
             id: 3,
             path: `${ROUTES.KOBE8}`,
             label: 'menu-kobe-8',
+          },
+        ],
+      },
+      {
+        id: 3,
+        path: '/',
+        label: 'menu-nike',
+        subMenu: [
+          {
+            id: 1,
+            path: `${ROUTES.EYBL}`,
+            label: 'menu-eybl',
+          },
+          {
+            id: 2,
+            path: `${ROUTES.GT}`,
+            label: 'menu-gt',
           },
         ],
       },
@@ -817,7 +857,12 @@ export const siteSettings = {
       {
         id: 12,
         path: '/dior/b22',
-        label: 'DIOR',
+        label: 'Dior',
+      },
+      {
+        id: 12,
+        path: '/nike/travis-scott',
+        label: 'Travis Scott',
       },
     ],
     languageMenu: [
