@@ -5,6 +5,7 @@ import LoginForm from '@components/auth/login-form';
 import PageHeader from '@components/ui/page-header';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
+import InquiryForm from '@components/common/form/inquiry';
 
 export default function SignInPage() {
   return (
@@ -14,7 +15,7 @@ export default function SignInPage() {
         <div className="py-16 lg:py-20">
           <LoginForm />
         </div>
-        <Subscription />
+        <InquiryForm />
       </Container>
     </>
   );

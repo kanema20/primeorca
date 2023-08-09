@@ -11,7 +11,7 @@ import { useTranslation } from 'next-i18next';
 import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps } from 'next';
-
+import InquiryForm from '@components/common/form/inquiry';
 export default function Collections() {
   const { t } = useTranslation('common');
 
@@ -46,7 +46,7 @@ export default function Collections() {
             <ProductGrid />
           </div>
         </div>
-        <Subscription />
+        <InquiryForm />
       </Container>
     </div>
   );

@@ -12,6 +12,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
 import { GetStaticProps } from 'next';
+import InquiryForm from '@components/common/form/inquiry';
 
 export default function Shop() {
   const { t } = useTranslation('common');
@@ -48,7 +49,7 @@ export default function Shop() {
             <ProductGrid />
           </div>
         </div>
-        <Subscription />
+        <InquiryForm />
       </Container>
     </>
   );

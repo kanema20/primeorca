@@ -13,6 +13,7 @@ import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
+import InquiryForm from '@components/common/form/inquiry';
 
 export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticProps>) {
     const router = useRouter();
@@ -52,7 +53,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                         <ProductGrid slug={slug} />
                     </div>
                 </div>
-                <Subscription />
+                <InquiryForm />
             </Container>
         </div>
     );

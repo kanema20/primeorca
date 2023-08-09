@@ -5,6 +5,7 @@ import PageHeader from '@components/ui/page-header';
 import Subscription from '@components/common/subscription';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
+import InquiryForm from '@components/common/form/inquiry';
 
 export default function SignUpPage() {
   return (
@@ -14,7 +15,7 @@ export default function SignUpPage() {
         <div className="py-16 lg:py-20">
           <SignUpForm />
         </div>
-        <Subscription />
+        <InquiryForm />
       </Container>
     </>
   );

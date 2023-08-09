@@ -25,10 +25,10 @@ https://stockx.com/balenciaga-triple-s-clear-sole-triple-black
 ---
 
 Louis Vuitton LV Trainer White Black
-https://stockx.com/louis-vuitton-lv-trainer-white-black-white
+// https://stockx.com/louis-vuitton-lv-trainer-white-black-white
 
 Louis Vuitton LV Trainer White
-https://stockx.com/louis-vuitton-lv-trainer-white
+// https://stockx.com/louis-vuitton-lv-trainer-white
 
 Louis Vuitton Trainer Red White
 https://stockx.com/louis-vuitton-trainer-red-white
@@ -57,7 +57,8 @@ Nike Air Zoom G.T. Cut University Red White Yellow
 // https://stockx.com/nike-air-zoom-gt-cut-university-red-white-yellow
 
 ---
-
+ALL ADDED:
+-----
 Yeezy slides ONYX
 https://stockx.com/adidas-yeezy-slide-black-onyx
 

@@ -29,10 +29,8 @@ function calculateShipping(lineItems: Stripe.Checkout.SessionCreateParams.LineIt
   //   }
   // }
 
-
-
   for (let i = 0; i < lineItems.length; i++) {
-    if (lineItems[i].quantity == 1) {
+    if (lineItems[i].quantity <= 2) {
       total = total + 1;
     } else {
       total = total + lineItems[i].quantity

@@ -14,6 +14,7 @@ import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
 import { slice } from 'lodash';
+import InquiryForm from '@components/common/form/inquiry';
 
 export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticPaths>) {
     const router = useRouter();
@@ -52,7 +53,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                         <ProductGrid slug={slug} />
                     </div>
                 </div>
-                <Subscription />
+                <InquiryForm />
             </Container>
         </div>
     );
