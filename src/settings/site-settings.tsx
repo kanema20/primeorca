@@ -154,179 +154,217 @@ export const siteSettings = {
       //     },
       //   ],
       // },
+      // {
+      // id: 2,
+      // path: '/',
+      // path: `${ROUTES.KOBE}`,
+      // label: 'menu-kobe',
+      // columns: [
+      // {
+      // id: 1,
+      // columnItems: [
+      //   // {
+      //   //   id: 1,
+      //   //   // path: `${ROUTES.KOBE5}`,
+      //   //   path: "/",
+      //   //   label: 'Kobe',
+      //   {
+      //     id: 1,
+      //     path: `${ROUTES.KOBE5}`,
+      //     label: 'Kobe 5',
+      //   },
+      //   {
+      //     id: 2,
+      //     path: `${ROUTES.KOBE6}`,
+      //     label: 'Kobe 6',
+      //   },
+      //   {
+      //     id: 3,
+      //     path: `${ROUTES.KOBE8}`,
+      //     label: 'Kobe 8',
+      //   },
+
+      // columnItemItems: [
+      //   {
+      //     id: 1,
+      //     path: `${ROUTES.KOBE5}`,
+      //     label: 'Kobe 5',
+      //   },
+      //   {
+      //     id: 2,
+      //     path: `${ROUTES.KOBE6}`,
+      //     label: 'Kobe 6',
+      //   },
+      //   {
+      //     id: 3,
+      //     path: `${ROUTES.KOBE8}`,
+      //     label: 'Kobe 8',
+      //   },
+      // {
+      //   id: 1,
+      //   path: `/products/nike-kobe-5-protro-2k-gamer-exclusive`,
+      //   label: 'Nike-Kobe-5-Protro-2K',
+      // },
+      // {
+      //   id: 2,
+      //   path: `/products/kobe-5-joker-chaos`,
+      //   label: 'Nike-Kobe-5-Joker-Chaos',
+      // },
+      // {
+      //   id: 3,
+      //   path: `/products/nike-kobe-5-usa`,
+      //   label: 'Nike-Kobe-5-USA',
+      // },
+      // {
+      //   id: 4,
+      //   path: `/products/nike-kobe-5-protro-lakers`,
+      //   label: 'Nike-Kobe-5-Protro-Lakers',
+      // },
+      // {
+      //   id: 5,
+      //   path: `/products/kobe-5-bruce-lee`,
+      //   label: 'Nike-Kobe-5-Bruce-Lee',
+      // },
+      // ],
+      // },
+      // ],
+      // },
+      // {
+      //   id: 2,
+      //   columnItems: [
+      //     {
+      //       id: 1,
+      //       path: `${ROUTES.KOBE6}`,
+      //       label: 'menu-kobe-6',
+      //       columnItemItems: [
+      //         {
+      //           id: 1,
+      //           path: `/products/nike-kobe-6-protro-grinch`,
+      //           label: 'kobe-6-grinch',
+      //         },
+      //         {
+      //           id: 2,
+      //           path: `/products/nike-kobe-6-reverse-grinch`,
+      //           label: 'kobe-6-reverse-grinch',
+      //         },
+      //         {
+      //           id: 3,
+      //           path: `/products/nike-kobe-protro-6-think-pink`,
+      //           label: 'kobe-6-think-pink',
+      //         },
+      //         {
+      //           id: 4,
+      //           path: `/products/nike-kobe-6-protro-mambacita-sweet-16`,
+      //           label: 'kobe-6-mambacita',
+      //         },
+      //         {
+      //           id: 5,
+      //           path: `/products/kobe-6-asg-west-challenge-red`,
+      //           label: 'kobe-6-asg',
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 3,
+      //   columnItems: [
+      //     {
+      //       id: 1,
+      //       path: `${ROUTES.KOBE8}`,
+      //       label: 'menu-kobe-8',
+      //       columnItemItems: [
+      //         {
+      //           id: 1,
+      //           path: `/products/kobe-8-sulfur-electric`,
+      //           label: 'kobe-8-sulfur-electric',
+      //         },
+      //         {
+      //           id: 2,
+      //           path: `/products/kobe-8-easter`,
+      //           label: 'kobe-8-easter',
+      //         },
+      //         {
+      //           id: 3,
+      //           path: `/products/kobe-8-milk-snake`,
+      //           label: 'kobe-8-milk-snake',
+      //         },
+      //         {
+      //           id: 4,
+      //           path: `/products/nike-kobe-8-system-green-glow-laser-orange`,
+      //           label: 'kobe-8-green-glow',
+      //         },
+      //         {
+      //           id: 5,
+      //           path: `/products/kobe-8-black-history-month`,
+      //           label: 'kobe-8-bhm',
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
+      // ],
+      // },
       {
         id: 2,
         path: '/',
-        // path: `${ROUTES.KOBE}`,
         label: 'menu-kobe',
-        columns: [
+        subMenu: [
           {
             id: 1,
-            columnItems: [
-              // {
-              //   id: 1,
-              //   // path: `${ROUTES.KOBE5}`,
-              //   path: "/",
-              //   label: 'Kobe',
-              {
-                id: 1,
-                path: `${ROUTES.KOBE5}`,
-                label: 'Kobe 5',
-              },
-              {
-                id: 2,
-                path: `${ROUTES.KOBE6}`,
-                label: 'Kobe 6',
-              },
-              {
-                id: 3,
-                path: `${ROUTES.KOBE8}`,
-                label: 'Kobe 8',
-              },
-
-              // columnItemItems: [
-              //   {
-              //     id: 1,
-              //     path: `${ROUTES.KOBE5}`,
-              //     label: 'Kobe 5',
-              //   },
-              //   {
-              //     id: 2,
-              //     path: `${ROUTES.KOBE6}`,
-              //     label: 'Kobe 6',
-              //   },
-              //   {
-              //     id: 3,
-              //     path: `${ROUTES.KOBE8}`,
-              //     label: 'Kobe 8',
-              //   },
-              // {
-              //   id: 1,
-              //   path: `/products/nike-kobe-5-protro-2k-gamer-exclusive`,
-              //   label: 'Nike-Kobe-5-Protro-2K',
-              // },
-              // {
-              //   id: 2,
-              //   path: `/products/kobe-5-joker-chaos`,
-              //   label: 'Nike-Kobe-5-Joker-Chaos',
-              // },
-              // {
-              //   id: 3,
-              //   path: `/products/nike-kobe-5-usa`,
-              //   label: 'Nike-Kobe-5-USA',
-              // },
-              // {
-              //   id: 4,
-              //   path: `/products/nike-kobe-5-protro-lakers`,
-              //   label: 'Nike-Kobe-5-Protro-Lakers',
-              // },
-              // {
-              //   id: 5,
-              //   path: `/products/kobe-5-bruce-lee`,
-              //   label: 'Nike-Kobe-5-Bruce-Lee',
-              // },
-              // ],
-              // },
-            ],
+            path: `${ROUTES.KOBE5}`,
+            label: 'Kobe 5',
           },
-          // {
-          //   id: 2,
-          //   columnItems: [
-          //     {
-          //       id: 1,
-          //       path: `${ROUTES.KOBE6}`,
-          //       label: 'menu-kobe-6',
-          //       columnItemItems: [
-          //         {
-          //           id: 1,
-          //           path: `/products/nike-kobe-6-protro-grinch`,
-          //           label: 'kobe-6-grinch',
-          //         },
-          //         {
-          //           id: 2,
-          //           path: `/products/nike-kobe-6-reverse-grinch`,
-          //           label: 'kobe-6-reverse-grinch',
-          //         },
-          //         {
-          //           id: 3,
-          //           path: `/products/nike-kobe-protro-6-think-pink`,
-          //           label: 'kobe-6-think-pink',
-          //         },
-          //         {
-          //           id: 4,
-          //           path: `/products/nike-kobe-6-protro-mambacita-sweet-16`,
-          //           label: 'kobe-6-mambacita',
-          //         },
-          //         {
-          //           id: 5,
-          //           path: `/products/kobe-6-asg-west-challenge-red`,
-          //           label: 'kobe-6-asg',
-          //         },
-          //       ],
-          //     },
-          //   ],
-          // },
-          // {
-          //   id: 3,
-          //   columnItems: [
-          //     {
-          //       id: 1,
-          //       path: `${ROUTES.KOBE8}`,
-          //       label: 'menu-kobe-8',
-          //       columnItemItems: [
-          //         {
-          //           id: 1,
-          //           path: `/products/kobe-8-sulfur-electric`,
-          //           label: 'kobe-8-sulfur-electric',
-          //         },
-          //         {
-          //           id: 2,
-          //           path: `/products/kobe-8-easter`,
-          //           label: 'kobe-8-easter',
-          //         },
-          //         {
-          //           id: 3,
-          //           path: `/products/kobe-8-milk-snake`,
-          //           label: 'kobe-8-milk-snake',
-          //         },
-          //         {
-          //           id: 4,
-          //           path: `/products/nike-kobe-8-system-green-glow-laser-orange`,
-          //           label: 'kobe-8-green-glow',
-          //         },
-          //         {
-          //           id: 5,
-          //           path: `/products/kobe-8-black-history-month`,
-          //           label: 'kobe-8-bhm',
-          //         },
-          //       ],
-          //     },
-          //   ],
-          // },
+          {
+            id: 2,
+            path: `${ROUTES.KOBE6}`,
+            label: 'Kobe 6',
+          },
+          {
+            id: 3,
+            path: `${ROUTES.KOBE8}`,
+            label: 'Kobe 8',
+          },
         ],
       },
       {
         id: 3,
         path: '/',
-        // path: `${ROUTES.KOBE}`,
         label: 'menu-nike',
-        columns: [
+        subMenu: [
           {
             id: 1,
-            columnItems: [
-              {
-                id: 1,
-                path: '/nike/gtcuts',
-                label: 'GT Cuts',
-              },
-              {
-                id: 2,
-                path: '/nike/eybl',
-                label: 'EYBL',
-              },
-            ]
-          }
-        ]
+            path: '/nike/gtcuts',
+            label: 'GT Cuts',
+          },
+          {
+            id: 2,
+            path: '/nike/eybl',
+            label: 'EYBL',
+          },
+        ],
+      },
+      {
+        id: 4,
+        path: '/',
+        label: 'menu-adidas',
+        subMenu: [
+          {
+            id: 1,
+            path: `${ROUTES.YEEZY350}`,
+            label: 'Yeezy 350',
+          },
+          {
+            id: 2,
+            path: `${ROUTES.YEEZY700}`,
+            label: 'Yeezy 700',
+          },
+          {
+            id: 3,
+            path: `${ROUTES.YEEZYSLIDE}`,
+            label: 'Yeezy Slide',
+          },
+        ],
       },
       // {
       //   id: 2,
@@ -516,33 +554,6 @@ export const siteSettings = {
       //             },
       //           ],
       //         },
-      //         {
-      //           id: 2,
-      //           path: '/search?q=belt-scarves',
-      //           label: 'menu-belt-scarves',
-      //           columnItemItems: [
-      //             {
-      //               id: 1,
-      //               path: '/search?q=makeup',
-      //               label: 'menu-makeup',
-      //             },
-      //             {
-      //               id: 2,
-      //               path: '/search?q=skincare',
-      //               label: 'menu-skincare',
-      //             },
-      //             {
-      //               id: 3,
-      //               path: '/search?q=premium-beauty',
-      //               label: 'menu-premium-beauty',
-      //             },
-      //             {
-      //               id: 4,
-      //               path: '/search?q=lipsticks',
-      //               label: 'menu-lipsticks',
-      //             },
-      //           ],
-      //         },
       //       ],
       //     },
       //     {
@@ -607,11 +618,6 @@ export const siteSettings = {
         label: 'menu-balenciaga',
       },
       // {
-      //   id: 6,
-      //   path: '/eybl',
-      //   label: 'menu-eybl',
-      // },
-      // {
       //   id: 7,
       //   path: '/off-white',
       //   label: 'menu-off-white',
@@ -641,21 +647,11 @@ export const siteSettings = {
         path: '/dior/b22',
         label: 'DIOR',
       },
-      {
-        id: 13,
-        path: '/adidas/yeezy-slide',
-        label: 'Yeezy',
-      },
       // {
       //   id: 14,
       //   path: '/lv/trainers',
       //   label: 'Louis Vuitton'
       // }
-      // {
-      //   id: 9,
-      //   path: '/search',
-      //   label: 'menu-search',
-      // },
     ],
     mobileMenu: [
       // {
@@ -767,31 +763,6 @@ export const siteSettings = {
             path: '/contact-us',
             label: 'menu-contact-us',
           },
-          // {
-          //   id: 6,
-          //   path: '/checkout',
-          //   label: 'menu-checkout',
-          // },
-          // {
-          //   id: 7,
-          //   path: '/collections/mens-collection',
-          //   label: 'menu-collection',
-          // },
-          // {
-          //   id: 8,
-          //   path: '/category/man',
-          //   label: 'menu-category',
-          // },
-          // {
-          //   id: 9,
-          //   path: '/order',
-          //   label: 'menu-order',
-          // },
-          // {
-          //   id: 10,
-          //   path: '/404',
-          //   label: 'menu-404',
-          // },
         ],
       },
       {
@@ -834,14 +805,31 @@ export const siteSettings = {
         ],
       },
       {
+        id: 4,
+        path: '/',
+        label: 'menu-adidas',
+        subMenu: [
+          {
+            id: 1,
+            path: `${ROUTES.YEEZY350}`,
+            label: 'Yeezy 350',
+          },
+          {
+            id: 2,
+            path: `${ROUTES.YEEZY700}`,
+            label: 'Yeezy 700',
+          },
+          {
+            id: 3,
+            path: `${ROUTES.YEEZYSLIDE}`,
+            label: 'Yeezy Slide',
+          },
+        ],
+      },
+      {
         id: 5,
         path: '/balenciaga/balenciaga',
         label: 'menu-balenciaga',
-      },
-      {
-        id: 6,
-        path: '/nike/eybl',
-        label: 'EYBL',
       },
       // {
       //   id: 7,
@@ -872,11 +860,6 @@ export const siteSettings = {
         id: 13,
         path: '/nike/travis',
         label: 'Travis Scott',
-      },
-      {
-        id: 14,
-        path: '/adidas/yeezy-slide',
-        label: 'Yeezy',
       },
       // {
       //   id: 15,

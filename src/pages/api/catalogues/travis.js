@@ -234,19 +234,19 @@ const travis =
             "retailPrice": "250",
             "releaseDate": "2019-10-11"
         },
-        {
-            "_id": "64d24327e50a880b29447fe9",
-            "name": "Jordan 1 Retro High OG SP Travis Scott Mocha",
-            "brand": "Jordan",
-            "lowestResellPrice.stockX": "1210",
-            "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-High-Travis-Scott-Product.jpg",
-            "description": "A collaboration between Travis Scott and Jordan brand, the Travis Scott x Air Jordan 1 Retro High OG 'Mocha' features an oversized backward Swoosh on the lateral side. The tumbled white leather and Dark Mocha suede construction is accented by University Red Cactus Jack and Nike branding on the tongue, while the heel sports Scott's face logo in a debossed fashion.",
-            "url": "air-jordan-1-retro-high-travis-scott",
-            "resellLinks.stockX": "https://stockx.com/air-jordan-1-retro-high-travis-scott",
-            "make": "Jordan 1 Retro High OG SP",
-            "retailPrice": "175",
-            "releaseDate": "2019-05-11"
-        },
+        // {
+        //     "_id": "64d24327e50a880b29447fe9",
+        //     "name": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+        //     "brand": "Jordan",
+        //     "lowestResellPrice.stockX": "1210",
+        //     "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-High-Travis-Scott-Product.jpg",
+        //     "description": "A collaboration between Travis Scott and Jordan brand, the Travis Scott x Air Jordan 1 Retro High OG 'Mocha' features an oversized backward Swoosh on the lateral side. The tumbled white leather and Dark Mocha suede construction is accented by University Red Cactus Jack and Nike branding on the tongue, while the heel sports Scott's face logo in a debossed fashion.",
+        //     "url": "air-jordan-1-retro-high-travis-scott",
+        //     "resellLinks.stockX": "https://stockx.com/air-jordan-1-retro-high-travis-scott",
+        //     "make": "Jordan 1 Retro High OG SP",
+        //     "retailPrice": "175",
+        //     "releaseDate": "2019-05-11"
+        // },
         {
             "_id": "64d24327e50a880b29447fea",
             "name": "Nike Air Force 1 Low Travis Scott Cactus Jack",
