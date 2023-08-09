@@ -165,6 +165,11 @@ export const footer = {
           title: 'Kobe 8',
           path: '/kobe/kobe-8',
         },
+        {
+          id: 4,
+          title: 'Balenciaga',
+          path: '/balenciaga/balenciaga',
+        },
         // {
         //   id: 3,
         //   title: 'link-kids-wear',

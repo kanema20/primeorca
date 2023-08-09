@@ -120,7 +120,7 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
   bgGray,
 }) => {
   const { data, isLoading, error } = useKobeArrivalsQuery({
-    limit: limit || 10,
+    limit: limit || 20,
     // demoVariant,
   });
 

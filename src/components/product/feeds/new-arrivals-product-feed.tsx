@@ -1,5 +1,6 @@
 import ProductsBlock from '@containers/products-block';
 import { useNewArrivalProductsQuery } from '@framework/product/get-all-new-arrival-products';
+import { useBestSellersQuery } from '@framework/product/get-all-flash-sale-products';
 
 interface Props {
   hideProductDescription?: boolean;
@@ -18,9 +19,7 @@ export default function NewArrivalsProductFeed({
   disableBorderRadius = false,
   className = 'mb-9 md:mb-10 xl:mb-12',
 }: Props) {
-  const { data, isLoading, error } = useNewArrivalProductsQuery({
-    limit: 10,
-    demoVariant,
+  const { data, isLoading, error } = useBestSellersQuery({
   });
 
   return (
@@ -29,7 +28,7 @@ export default function NewArrivalsProductFeed({
       hideProductDescription={hideProductDescription}
       showCategory={showCategory}
       showRating={showRating}
-      sectionHeading="text-new-arrivals"
+      sectionHeading="text-best-sellers"
       products={data}
       loading={isLoading}
       error={error?.message}

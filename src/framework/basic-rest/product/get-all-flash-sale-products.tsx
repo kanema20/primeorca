@@ -25,7 +25,7 @@ const fetchNewKobeArrivals = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
   const products = await stripe.products.search({
     query: `active:\'true\' AND metadata[\'type\']:\'Replica\'`,
-    limit: 15,
+    limit: 20,
   });
 
   // const { data } = await stripe.products.list({
@@ -46,4 +46,19 @@ export const useFlashSaleProductsQuery = (options: QueryOptionsType) => {
 
 export const useKobeArrivalsQuery = (options: QueryOptionsType) => {
   return useQuery<any, Error>(['kobe-new', options], fetchNewKobeArrivals);
+};
+
+const best_sellers: string[] = ["prod_ONum3IV1GU6T9V", "prod_ONumhCfPoYOiKu", "prod_OOlTBjTuEyi11j", "prod_OPXHJZvOn9eQ2J", "prod_ONvrmbYdNjiXrX", "prod_ONukvI2JcnCfcj", "prod_OOk6Bl9kCUMzIJ", "prod_OPmsC5aV8Y0wNm", "prod_OPX96nUa0AbiUF", "prod_OP0Izp6grSc3Cl", "prod_ONumPrbEispTtw", "prod_OOjI4qhEj03bDP"]
+
+const fetchBestSellers = async ({ queryKey }: any) => {
+  const [_key, _params] = queryKey;
+  const products = await stripe.products.list({
+    limit: 12,
+    ids: best_sellers
+  })
+  return products.data;
+};
+
+export const useBestSellersQuery = (options: QueryOptionsType) => {
+  return useQuery<any, Error>(['best-sellers', options], fetchBestSellers);
 };
