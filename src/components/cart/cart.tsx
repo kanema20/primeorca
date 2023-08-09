@@ -105,11 +105,11 @@ export default function Cart() {
       cart_.push({
         price: item.default_price,
         quantity: item.quantity,
-        adjustable_quantity: {
-          enabled: true,
-          minimum: 1,
-          maximum: 100,
-        },
+        // adjustable_quantity: {
+        //   enabled: true,
+        //   minimum: 1,
+        //   maximum: 100,
+        // },
       })
     })
     console.log("cart_: ", cart_);
