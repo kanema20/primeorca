@@ -76,7 +76,16 @@ export default function Home() {
                 {t('text-inquiry')}
               </h4>
             </div>
-            <InquiryForm />
+            <div className="my-14 lg:my-16 xl:my-20 px-0 pb-2 lg: xl:max-w-screen-xl mx-auto flex flex-col md:flex-row w-full">
+              <div className="md:w-full lg:full 2xl:full flex h-full  flex-col">
+                <div className="flex pb-7 md:pb-9 mt-7 md:-mt-1.5">
+                  <h4 className="text-2xl 2xl:text-3xl font-bold text-heading">
+                    {t('text-inquiry')}
+                  </h4>
+                </div>
+                <InquiryForm />
+              </div>
+            </div>
           </div>
         </div>
         {/* <Subscription /> */}

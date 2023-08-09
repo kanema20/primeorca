@@ -17,7 +17,7 @@ export const ROUTES = {
   LV: "/lv",
   PURPLE: "/purple",
   JA1: "/ja1",
-  YEEZY: "/adidas/yeezy-slide",
+  YEEZY: "/adidas",
   CHECKOUT: "/checkout",
   CHECKOUT_SESSION: "/api/checkout/session",
   CONTACT: "/contact-us",
