@@ -21,6 +21,7 @@ import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-produc
 import { ROUTES } from '@utils/routes';
 import { Item } from '@contexts/cart/cart.utils';
 import { useFetchItemImage } from '@framework/product/get-product-image';
+import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
 
 const productGalleryCarouselResponsive = {
   '768': {
@@ -59,6 +60,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [quantity, setQuantity] = useState(1);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
+  const { data: prod_data } = useFetchProductSize(data.url, attributes['Sizes (US - M)']);
   const { price, basePrice, discount } = usePrice(
     data &&
     {
@@ -183,6 +185,66 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
     ]
   }
 
+  const clothingVariations =
+  {
+    "Sizes (US)": [
+      {
+        "id": 1,
+        "value": "S",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 2,
+        "value": "M",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 3,
+        "value": "L",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 4,
+        "value": "XL",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 5,
+        "value": "XXL",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 6,
+        "value": "XXXL",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+    ]
+  }
+
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
@@ -190,6 +252,8 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
       attributes.hasOwnProperty(variation)
     )
     : true;
+
+  console.log("data: ", data)
   function addToCart() {
     if (!isSelected) return;
     // to show btn feedback while product carting
@@ -198,7 +262,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
       setAddToCartLoader(false);
     }, 600);
 
-    const item = generateCartItem(data!, attributes);
+    const item = generateCartItem(prod_data[0]!);
     addItemToCart(item, quantity);
     toast('Added to cart', {
       progressClassName: 'fancy-progress-bar',
@@ -346,7 +410,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
                 Collection:
               </span>
               <Link
-                href={ROUTES.KOBE5}
+                href={`/${data.metadata.brand}/${data.metadata.collection}`}
                 className="transition hover:underline hover:text-heading"
               >
                 {data.metadata.collection}

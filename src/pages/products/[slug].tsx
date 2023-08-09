@@ -8,7 +8,6 @@ import Breadcrumb from "@components/common/breadcrumb";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
 import { useSingleProdQuery } from '@framework/product/get-single-product';
-import Stripe from "stripe";
 import dotenv from 'dotenv'
 dotenv.config()
 const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST
