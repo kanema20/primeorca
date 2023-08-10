@@ -30,12 +30,12 @@ async function createProduct(product, size_) {
         name: `${product.name} - ${size_}`,
         description: product.description ? product.description : product.name,
         default_price_data: {
-            currency: product.currency,
+            currency: "USD",
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),
         },
         images: [product.image],
-        shippable: product.shippable,
-        statement_descriptor: product.statement_descriptor,
+        shippable: "shippable",
+        statement_descriptor: "PRIME ORCA LLC",
         url: product.url,
         metadata: {
             slug: product.url,

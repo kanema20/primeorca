@@ -60,7 +60,6 @@ const balTripleS = [
         "make": "Balenciaga Triple S",
         "retailPrice": "795",
         "metadata_": {
-            "price": "205",
             "brand": "Balenciaga",
             "category": "balenciaga",
             "collection": "balenciaga",

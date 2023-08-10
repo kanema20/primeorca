@@ -816,7 +816,7 @@ export const siteSettings = {
           },
           {
             id: 2,
-            path: '/nike/GT-Cuts',
+            path: `${ROUTES.GT}`,
             label: 'menu-gt',
           },
         ],
@@ -828,12 +828,12 @@ export const siteSettings = {
         subMenu: [
           {
             id: 1,
-            path: '/balenciaga/track',
+            path: `${ROUTES.TRACK}`,
             label: 'Track',
           },
           {
             id: 2,
-            path: '/balenciaga/triple-s',
+            path: `${ROUTES.TRIPLES}`,
             label: 'Triple S',
           },
         ],
