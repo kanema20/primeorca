@@ -22,9 +22,9 @@ const fetchKobeCollection = async ({ queryKey }: any) => {
     const [_key, _params, slug] = queryKey;
     let slug_ = slug;
     if (slug.includes("-")) {
-        slug_ = slug.replace(/-/g, "");
         console.log(slug_);
     } else {
+        slug_ = slug.replace(/-/g, "");
         console.log(slug_);
     }
 
