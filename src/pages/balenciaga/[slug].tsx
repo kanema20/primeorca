@@ -73,7 +73,7 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "track" } },
+            { params: { slug: "balenciaga" } },
             { params: { slug: "triple-s" } },
             // Add more paths as needed
         ],

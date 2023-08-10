@@ -25,7 +25,9 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const travis = require('./mvp/travis.js')
 // const balenci3 = require('./mvp/balenci-3.js');
 // const yeezy = require('./mvp/yeezy-slide.js');
-const balenciTriple = require('./mvp/bal-triple-s.js');
+// const balenciTriple = require('./mvp/bal-triple-s.js');
+// const y350 = require('./mvp/350.js');
+const y700 = require('./mvp/700.js');
 // dotenv.config({ path: `./env.local`, override: true });
 
 function isEmpty(field) {
@@ -38,13 +40,15 @@ function isEmpty(field) {
 const createProduct = async (product) => {
     const stripeProduct = await stripe.products.create({
         name: product.name,
-        description: product.description ? product.description : product.name,
+        // description: product.description ? product.description : "The Prime Orca God Tier Replicas Batch - " + product.name,
+        description: "The Prime Orca God Tier Replicas Batch - " + product.name,
         default_price_data: {
             currency: "USD",
-            unit_amount_decimal: (parseInt(product.price) * 100).toString(),
+            // unit_amount_decimal: (parseInt(product.price) * 100).toString(),
+            unit_amount_decimal: (170 * 100).toString(),
         },
         images: [product.image],
-        shippable: "shippable",
+        shippable: true,
         statement_descriptor: "PRIME ORCA LLC",
         url: product.url,
         metadata: {
@@ -63,7 +67,7 @@ const createProduct = async (product) => {
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of balenciTriple) {
+for (const product of y700) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

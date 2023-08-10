@@ -20,8 +20,13 @@ type Product = Stripe.Product;
 
 const fetchKobeCollection = async ({ queryKey }: any) => {
     const [_key, _params, slug] = queryKey;
-    const slug_ = slug.replace(/-/g, "");
-    console.log(slug_);
+    let slug_ = slug;
+    if (slug.includes("-")) {
+        slug_ = slug.replace(/-/g, "");
+        console.log(slug_);
+    } else {
+        console.log(slug_);
+    }
 
     const products = await stripe.products.search({
         query: `active:\'true\' AND metadata[\'collection\']:\'${slug_}\' AND metadata[\'type\']:\'Replica\'`,
