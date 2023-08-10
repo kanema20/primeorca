@@ -19,12 +19,11 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const eybl = require('./mvp/eybl.js')
 // const dior = require('./mvp/dior.js')
 // const travis = require('./mvp/travis.js')
-const balenci3 = require('./mvp/balenci-3.js');
+// const balenci3 = require('./mvp/balenci-3.js');
 // const yeezy = require('./mvp/yeezy-slide.js');
-
+const balenciTriple = require('./mvp/bal-triple-s.js');
 
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
-
 
 async function createProduct(product, size_) {
     const stripeProduct = await stripe.products.create({
@@ -49,19 +48,10 @@ async function createProduct(product, size_) {
         }
     });
 
-    // for (const size of sizes) {
-    //     await stripe.prices.create({
-    //         product: product.id,
-    //         unit_amount: (parseInt(product.price) * 100), // Replace with your desired price in cents
-    //         currency: 'usd',
-    //         attributes: { size },
-    //     });
-    // }
-
     return stripeProduct;
 }
 
-for (const product of balenci3) {
+for (const product of balenciTriple) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

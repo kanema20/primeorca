@@ -75,6 +75,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         paths: [
             { params: { slug: "kobe-5" } },
             { params: { slug: "kobe-6" } },
+            { params: { slug: "kobe-8" } },
             // Add more paths as needed
         ],
         fallback: true,

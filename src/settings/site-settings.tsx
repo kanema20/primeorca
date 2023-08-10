@@ -824,6 +824,23 @@ export const siteSettings = {
       {
         id: 4,
         path: '/',
+        label: 'menu-balenciaga',
+        subMenu: [
+          {
+            id: 1,
+            path: '/balenciaga/track',
+            label: 'Track',
+          },
+          {
+            id: 2,
+            path: '/balenciaga/triple-s',
+            label: 'Triple S',
+          },
+        ],
+      },
+      {
+        id: 5,
+        path: '/',
         label: 'menu-adidas',
         subMenu: [
           {
@@ -842,11 +859,6 @@ export const siteSettings = {
             label: 'Yeezy Slide',
           },
         ],
-      },
-      {
-        id: 5,
-        path: '/balenciaga/balenciaga',
-        label: 'menu-balenciaga',
       },
       // {
       //   id: 7,

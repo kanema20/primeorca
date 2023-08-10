@@ -16,6 +16,7 @@ const updateAllProducts = async () => {
     // })
     const products = await stripe.products.search({
         query: 'active:\'true\' AND metadata[\'collection\']:\'balenciaga\'',
+        limit: 100,
     });
 
     for (const product of products.data) {

@@ -73,7 +73,9 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "adidas" } },
+            { params: { slug: "yeezy-350" } },
+            { params: { slug: "yeezy-700" } },
+            { params: { slug: "yeezy-slide" } },
             // Add more paths as needed
         ],
         fallback: true,
