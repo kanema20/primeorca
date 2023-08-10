@@ -168,7 +168,7 @@ export const footer = {
         {
           id: 4,
           title: 'Balenciaga',
-          path: '/balenciaga/balenciaga',
+          path: '/balenciaga/track',
         },
         // {
         //   id: 3,
