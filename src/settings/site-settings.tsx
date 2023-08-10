@@ -87,8 +87,8 @@ export const siteSettings = {
           },
           {
             id: 4,
-            path: '/terms',
-            label: 'menu-terms-condition',
+            path: '/about-us',
+            label: 'menu-about',
           },
           {
             id: 5,
@@ -346,6 +346,23 @@ export const siteSettings = {
       },
       {
         id: 4,
+        path: '/',
+        label: 'menu-balenciaga',
+        subMenu: [
+          {
+            id: 1,
+            path: '/balenciaga/track',
+            label: 'Track',
+          },
+          {
+            id: 2,
+            path: '/balenciaga/triple-s',
+            label: 'Triple S',
+          },
+        ],
+      },
+      {
+        id: 5,
         path: '/',
         label: 'menu-adidas',
         subMenu: [
@@ -608,15 +625,10 @@ export const siteSettings = {
       //   ],
       // },
       // {
-      //   id: 5,
+      //   id: 6,
       //   path: '/ja-1',
       //   label: 'menu-ja-1',
       // },
-      {
-        id: 5,
-        path: '/balenciaga/balenciaga',
-        label: 'menu-balenciaga',
-      },
       // {
       //   id: 7,
       //   path: '/off-white',
@@ -753,10 +765,15 @@ export const siteSettings = {
             path: '/privacy',
             label: 'menu-privacy-policy',
           },
+          // {
+          //   id: 4,
+          //   path: '/terms',
+          //   label: 'menu-terms-condition',
+          // },
           {
             id: 4,
-            path: '/terms',
-            label: 'menu-terms-condition',
+            path: '/about-us',
+            label: 'menu-about',
           },
           {
             id: 5,

@@ -22,9 +22,10 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const mcqueen = require('./mvp/mcqueen.js');
 // const eybl = require('./mvp/eybl.js')
 // const dior = require('./mvp/dior.js')
-const travis = require('./mvp/travis.js')
+// const travis = require('./mvp/travis.js')
+// const balenci3 = require('./mvp/balenci-3.js');
 // const yeezy = require('./mvp/yeezy-slide.js');
-
+const balenciTriple = require('./mvp/bal-triple-s.js');
 // dotenv.config({ path: `./env.local`, override: true });
 const kobe_prod = [
     {
@@ -103,11 +104,17 @@ const kobe_prod = [
 
 // ]
 
+function isEmpty(field) {
+    if (field == null || field == undefined || field == "") {
+        return true;
+    }
+}
+
 // const createProduct = async (product, sizes) => {
 const createProduct = async (product) => {
     const stripeProduct = await stripe.products.create({
         name: product.name,
-        description: product.description,
+        description: product.description ? product.description : product.name,
         default_price_data: {
             currency: product.currency,
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),
@@ -117,7 +124,7 @@ const createProduct = async (product) => {
         statement_descriptor: product.statement_descriptor,
         url: product.url,
         metadata: {
-            slug: product.metadata_.slug,
+            slug: product.url,
             brand: product.metadata_.brand,
             category: product.metadata_.category,
             collection: product.metadata_.collection,
@@ -132,7 +139,7 @@ const createProduct = async (product) => {
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of travis) {
+for (const product of balenciTriple) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

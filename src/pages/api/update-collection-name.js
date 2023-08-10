@@ -10,17 +10,20 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 const updateAllProducts = async () => {
     // const products = await stripe.products.list();
-    const prada = await stripe.products.list({
-        // url: 'prada-cloudbust-thunder-red-black'
-        url: "prada-cloudbust-neon-yellow"
-    })
+    // const balenci = await stripe.products.list({
+    // url: 'prada-cloudbust-thunder-red-black'
+    // url: "prada-cloudbust-neon-yellow"
+    // })
+    const products = await stripe.products.search({
+        query: 'active:\'true\' AND metadata[\'collection\']:\'balenciaga\'',
+    });
 
-    for (const product of prada.data) {
+    for (const product of products.data) {
         const updatedProduct = await stripe.products.update(product.id, {
             // Update the existing attributes of the product
             // attributes: 'shoe_size',
             // Add the new attribute 'shoe_size' to the product
-            metadata: { collection: 'cloudbust' }
+            metadata: { collection: 'track' }
         });
         console.log('Updated product:', updatedProduct);
 

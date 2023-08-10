@@ -18,7 +18,8 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const mcqueen = require('./mvp/mcqueen.js');
 // const eybl = require('./mvp/eybl.js')
 // const dior = require('./mvp/dior.js')
-const travis = require('./mvp/travis.js')
+// const travis = require('./mvp/travis.js')
+const balenci3 = require('./mvp/balenci-3.js');
 // const yeezy = require('./mvp/yeezy-slide.js');
 
 
@@ -28,7 +29,7 @@ const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '1
 async function createProduct(product, size_) {
     const stripeProduct = await stripe.products.create({
         name: `${product.name} - ${size_}`,
-        description: product.description,
+        description: product.description ? product.description : product.name,
         default_price_data: {
             currency: product.currency,
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),
@@ -38,7 +39,7 @@ async function createProduct(product, size_) {
         statement_descriptor: product.statement_descriptor,
         url: product.url,
         metadata: {
-            slug: product.metadata_.slug,
+            slug: product.url,
             brand: product.metadata_.brand,
             category: product.metadata_.category,
             collection: product.metadata_.collection,
@@ -60,7 +61,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of travis) {
+for (const product of balenci3) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)
