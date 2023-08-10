@@ -816,7 +816,7 @@ export const siteSettings = {
           },
           {
             id: 2,
-            path: `${ROUTES.GT}`,
+            path: '/nike/GT-Cuts',
             label: 'menu-gt',
           },
         ],
@@ -870,11 +870,11 @@ export const siteSettings = {
         path: '/prada/cloudbust',
         label: 'menu-prada',
       },
-      {
-        id: 9,
-        path: '/nike/GT-Cuts',
-        label: 'menu-gtcuts',
-      },
+      // {
+      //   id: 9,
+      //   path: '/nike/GT-Cuts',
+      //   label: 'menu-gtcuts',
+      // },
       {
         id: 10,
         path: '/mcqueen/oversized',
