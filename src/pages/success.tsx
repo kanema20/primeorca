@@ -6,10 +6,12 @@ import OrderSuccess from "@components/order/order-success";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 import InquiryForm from '@components/common/form/inquiry';
-
+import { useTranslation } from 'next-i18next';
 import { useCart } from "@contexts/cart/cart.context";
+
 export default function Order() {
     const { items, total, isEmpty } = useCart();
+    const { t } = useTranslation('common');
     const { clearItemFromCart } = useCart();
     items?.map((cartItem: any) => {
         clearItemFromCart(cartItem.id)
