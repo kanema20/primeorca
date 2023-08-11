@@ -31,9 +31,9 @@ export default function Zigzag() {
                             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
                                     {/* <div className="font-architects-daughter text-xl text-purple-600 mb-2">More speed. Less spend</div> */}
-                                    <h4 className="text-l md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Order Intake</h4>
-                                    <p className="text-l text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul className="text-lg text-gray-600 -mb-2">
+                                    <h4 className="text-xl md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Order Intake</h4>
+                                    <p className="text-md text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <ul className="text-sm text-gray-600 -mb-2">
                                         <li className="flex items-center mt-2 mb-2">
                                             <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
@@ -67,9 +67,9 @@ export default function Zigzag() {
                             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
                                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
                                     {/* <div className="font-architects-daughter text-xl text-purple-600 mb-2">More speed. Less spend</div> */}
-                                    <h4 className="text-l md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Sizing and Measurements</h4>
-                                    <p className="text-l text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul className="text-lg text-gray-600 -mb-2">
+                                    <h4 className="text-xl md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Sizing and Measurements</h4>
+                                    <p className="text-md text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <ul className="text-sm text-gray-600 -mb-2">
                                         <li className="flex items-center mt-2 mb-2">
                                             <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
@@ -103,9 +103,9 @@ export default function Zigzag() {
                             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
                                     {/* <div className="font-architects-daughter text-xl text-purple-600 mb-2">More speed. Less spend</div> */}
-                                    <h4 className="text-l md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Constructive Design</h4>
-                                    <p className="text-l text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul className="text-lg text-gray-600 -mb-2">
+                                    <h4 className="text-xl md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Constructive Design</h4>
+                                    <p className="text-md text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <ul className="text-sm text-gray-600 -mb-2">
                                         <li className="flex items-center mt-2 mb-2">
                                             <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
@@ -139,9 +139,9 @@ export default function Zigzag() {
                             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
                                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
                                     {/* <div className="font-architects-daughter text-xl text-purple-600 mb-2">More speed. Less spend</div> */}
-                                    <h4 className="text-l md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">QA and Finishing Touches</h4>
-                                    <p className="text-l text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul className="text-lg text-gray-600 -mb-2">
+                                    <h4 className="text-xl md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">QA and Finishing Touches</h4>
+                                    <p className="text-md text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <ul className="text-sm text-gray-600 -mb-2">
                                         <li className="flex items-center mt-2 mb-2">
                                             <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
@@ -175,9 +175,9 @@ export default function Zigzag() {
                             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
                                     {/* <div className="font-architects-daughter text-xl text-purple-600 mb-2">More speed. Less spend</div> */}
-                                    <h4 className="text-l md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Packaging and Shipment</h4>
-                                    <p className="text-l text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul className="text-lg text-gray-600 -mb-2">
+                                    <h4 className="text-xl md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-1.5 lg:mb-2.5 2xl:mb-3 3xl:mb-3.5">Packaging and Shipment</h4>
+                                    <p className="text-md text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <ul className="text-sm text-gray-600 -mb-2">
                                         <li className="flex items-center mt-2 mb-2">
                                             <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
