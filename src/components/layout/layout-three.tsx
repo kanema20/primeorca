@@ -22,9 +22,9 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 				]}
 				title="Prime Orca | Best Reps in the Game"
 				description="Premium replica basketball and street sneakers for the go getter."
-				canonical="https://chawkbazar.vercel.app/"
+				canonical="https://primeorca.com"
 				openGraph={{
-					url: 'https://chawkbazar.vercel.app',
+					url: 'https://primeorca.com',
 					title: 'Prime Orca | Best Reps in the Game',
 					description:
 						'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
