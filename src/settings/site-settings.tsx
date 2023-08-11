@@ -819,6 +819,11 @@ export const siteSettings = {
             path: `${ROUTES.GT}`,
             label: 'menu-gt',
           },
+          {
+            id: 3,
+            path: `${ROUTES.TRAVIS}`,
+            label: 'Travis Scott',
+          },
         ],
       },
       {

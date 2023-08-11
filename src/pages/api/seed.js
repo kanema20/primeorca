@@ -27,7 +27,8 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const yeezy = require('./mvp/yeezy-slide.js');
 // const balenciTriple = require('./mvp/bal-triple-s.js');
 // const y350 = require('./mvp/350.js');
-const y700 = require('./mvp/700.js');
+const y3502 = require('./mvp/350-2.js');
+// const y700 = require('./mvp/700.js');
 // dotenv.config({ path: `./env.local`, override: true });
 
 function isEmpty(field) {
@@ -67,7 +68,7 @@ const createProduct = async (product) => {
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of y700) {
+for (const product of y3502) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

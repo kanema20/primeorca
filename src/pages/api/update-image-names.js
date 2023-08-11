@@ -15,23 +15,26 @@ const updateAllProducts = async () => {
     // url: "prada-cloudbust-neon-yellow"
     // })
     // const products = await stripe.products.search({
-    //     query: 'active:\'true\' AND metadata[\'collection\']:\'kobe8\'',
+    //     query: 'active:\'true\' AND metadata[\'collection\']:\'yeezy-700\'',
     //     limit: 100,
+    //     starting_after: 'prod_OQYfsjksBDWBmR'
     // });
 
     const products = await stripe.products.list({
         limit: 100,
+        starting_after: 'prod_OQYfsjksBDWBmR',
     });
 
-    const filteredProducts = products.data.filter(product => product.metadata.collection === 'kobe8');
-
+    const filteredProducts = products.data.filter(product => product.metadata.collection === 'yeezy-700');
 
     for (const product of filteredProducts) {
+        const updatedImage = product.images[0].replace('https://images.stockx.com/images', 'https://po-prod.s3.us-west-1.amazonaws.com/yeezy-700');
         const updatedProduct = await stripe.products.update(product.id, {
             // Update the existing attributes of the product
             // attributes: 'shoe_size',
             // Add the new attribute 'shoe_size' to the product
-            metadata: { collection: 'kobe-8' }
+            // metadata: { collection: 'track' }
+            images: [updatedImage]
         });
         console.log('Updated product:', updatedProduct);
 

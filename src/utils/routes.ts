@@ -12,7 +12,7 @@ export const ROUTES = {
   NIKE: "/nike",
   EYBL: "/nike/EYBL",
   GT: "/nike/gtcuts",
-  TRAVIS: "/travis",
+  TRAVIS: "/nike/travis",
   PRADA: "/prada",
   DIOR: "/dior",
   OFF: "/off",

@@ -73,9 +73,10 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "kobe-5" } },
-            { params: { slug: "kobe-6" } },
-            { params: { slug: "kobe-8" } },
+            { params: { slug: "kobe" } },
+            // { params: { slug: "kobe-5" } },
+            // { params: { slug: "kobe-6" } },
+            // { params: { slug: "kobe-8" } },
             // Add more paths as needed
         ],
         fallback: true,
