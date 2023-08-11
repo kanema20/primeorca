@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import { appWithTranslation } from 'next-i18next';
 import { DefaultSeo } from '@components/common/default-seo';
 import { CartProvider } from 'use-shopping-cart'
+import Head from 'next/head';
 
 // Load Open Sans and satisfy typeface font
 import '@fontsource/open-sans';
@@ -54,7 +55,27 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 
 	return (
 		<>
-			<Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-T3HQD193DC"></Script>
+			<Head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+						j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+						'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+						})(window,document,'script','dataLayer','GTM-T36FNKR2');`,
+					}}
+				/>
+				{/* <!-- Google tag (gtag.js) -->
+				<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3HQD193DC"></script>
+				<script>
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', 'G-T3HQD193DC');
+				</script> */}
+			</Head>
+			{/* <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-T3HQD193DC"></Script>
 			<Script
 				id='google-analytics'
 				strategy="afterInteractive"
@@ -68,33 +89,42 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
           });
         `,
 				}}
-			/>
-			<CartProvider
-				cartMode="checkout-session"
-				stripe=""
-				currency="USD"
-				shouldPersist={true}
-			>
-				<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-					<QueryClientProvider client={queryClientRef.current}>
-						{/* @ts-ignore */}
-						<Hydrate state={pageProps.dehydratedState}>
+			/> */}
+
+			<body>
+				<noscript
+					dangerouslySetInnerHTML={{
+						__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T36FNKR2"
+						height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+					}}
+				/>
+				<CartProvider
+					cartMode="checkout-session"
+					stripe=""
+					currency="USD"
+					shouldPersist={true}
+				>
+					<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+						<QueryClientProvider client={queryClientRef.current}>
 							{/* @ts-ignore */}
-							<ManagedUIContext>
-								<Layout pageProps={pageProps}>
-									<DefaultSeo />
-									<Component {...pageProps} key={router.route} />
-									<ToastContainer />
-								</Layout>
-								<ManagedModal />
-								<ManagedDrawer />
-							</ManagedUIContext>
-						</Hydrate>
-						{/* <ReactQueryDevtools /> */}
-					</QueryClientProvider>
-				</AnimatePresence>
-			</CartProvider>
-			<Drift appId="r2s7deavw4m3" />
+							<Hydrate state={pageProps.dehydratedState}>
+								{/* @ts-ignore */}
+								<ManagedUIContext>
+									<Layout pageProps={pageProps}>
+										<DefaultSeo />
+										<Component {...pageProps} key={router.route} />
+										<ToastContainer />
+									</Layout>
+									<ManagedModal />
+									<ManagedDrawer />
+								</ManagedUIContext>
+							</Hydrate>
+							{/* <ReactQueryDevtools /> */}
+						</QueryClientProvider>
+					</AnimatePresence>
+				</CartProvider>
+				<Drift appId="r2s7deavw4m3" />
+			</body >
 		</>
 	);
 };
