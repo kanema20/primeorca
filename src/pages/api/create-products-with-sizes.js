@@ -23,8 +23,9 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const yeezy = require('./mvp/yeezy-slide.js');
 // const balenciTriple = require('./mvp/bal-triple-s.js');
 // const y700 = require('./mvp/700.js');
-const y3502 = require('./mvp/350-2.js');
-
+const kobe8halo = require('./mvp/kobe-8-halo.js');
+// const y3502 = require('./mvp/350-2.js');
+// 
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 async function createProduct(product, size_) {
@@ -34,8 +35,8 @@ async function createProduct(product, size_) {
         description: "The Prime Orca God Tier Replicas Batch - " + product.name,
         default_price_data: {
             currency: "USD",
-            // unit_amount_decimal: (parseInt(product.price) * 100).toString(),
-            unit_amount_decimal: (170 * 100).toString(),
+            unit_amount_decimal: (parseInt(product.price) * 100).toString(),
+            // unit_amount_decimal: (170 * 100).toString(),
         },
         images: [product.image],
         shippable: true,
@@ -55,7 +56,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of y3502) {
+for (const product of kobe8halo) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

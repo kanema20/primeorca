@@ -28,7 +28,6 @@ import '@styles/custom-plugins.css';
 import '@styles/tailwind.css';
 import '@styles/rc-drawer.css';
 import { getDirection } from '@utils/get-direction';
-import Script from 'next/script';
 import Drift from 'react-driftjs';
 
 function handleExitComplete() {
@@ -65,66 +64,39 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 						})(window,document,'script','dataLayer','GTM-T36FNKR2');`,
 					}}
 				/>
-				{/* <!-- Google tag (gtag.js) -->
-				<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3HQD193DC"></script>
-				<script>
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-
-					gtag('config', 'G-T3HQD193DC');
-				</script> */}
 			</Head>
-			{/* <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-T3HQD193DC"></Script>
-			<Script
-				id='google-analytics'
-				strategy="afterInteractive"
+			<noscript
 				dangerouslySetInnerHTML={{
-					__html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-T3HQD193DC', {
-            page_path: window.location.pathname,
-          });
-        `,
-				}}
-			/> */}
-
-			<body>
-				<noscript
-					dangerouslySetInnerHTML={{
-						__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T36FNKR2"
+					__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T36FNKR2"
 						height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-					}}
-				/>
-				<CartProvider
-					cartMode="checkout-session"
-					stripe=""
-					currency="USD"
-					shouldPersist={true}
-				>
-					<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-						<QueryClientProvider client={queryClientRef.current}>
+				}}
+			/>
+			<CartProvider
+				cartMode="checkout-session"
+				stripe=""
+				currency="USD"
+				shouldPersist={true}
+			>
+				<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+					<QueryClientProvider client={queryClientRef.current}>
+						{/* @ts-ignore */}
+						<Hydrate state={pageProps.dehydratedState}>
 							{/* @ts-ignore */}
-							<Hydrate state={pageProps.dehydratedState}>
-								{/* @ts-ignore */}
-								<ManagedUIContext>
-									<Layout pageProps={pageProps}>
-										<DefaultSeo />
-										<Component {...pageProps} key={router.route} />
-										<ToastContainer />
-									</Layout>
-									<ManagedModal />
-									<ManagedDrawer />
-								</ManagedUIContext>
-							</Hydrate>
-							{/* <ReactQueryDevtools /> */}
-						</QueryClientProvider>
-					</AnimatePresence>
-				</CartProvider>
-				<Drift appId="r2s7deavw4m3" />
-			</body >
+							<ManagedUIContext>
+								<Layout pageProps={pageProps}>
+									<DefaultSeo />
+									<Component {...pageProps} key={router.route} />
+									<ToastContainer />
+								</Layout>
+								<ManagedModal />
+								<ManagedDrawer />
+							</ManagedUIContext>
+						</Hydrate>
+						{/* <ReactQueryDevtools /> */}
+					</QueryClientProvider>
+				</AnimatePresence>
+			</CartProvider>
+			<Drift appId="r2s7deavw4m3" />
 		</>
 	);
 };

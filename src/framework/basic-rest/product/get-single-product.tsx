@@ -5,6 +5,7 @@ import { useQuery } from 'react-query';
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
 dotenv.config();
+import { StripeProduct } from "@framework/types";
 
 const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
 
@@ -22,7 +23,19 @@ const fetchIndividualProduct = async ({ queryKey }: any) => {
     return product.data;
 };
 
+const fetchFeatureProduct = async (url: string) => {
+    const product = await stripe.products.search({
+        query: `active:\'true\' AND url:\'${url}\' AND metadata[\'type\']:\'Replica\'`,
+        limit: 1,
+    });
+    return product.data[0];
+}
 
+export const useFetchFeatureProduct = (url: string) => {
+    return useQuery<StripeProduct, Error>(['feature_prod', url], () =>
+        fetchFeatureProduct(url)
+    );
+}
 // export const useSingleProdQuery = (options: QueryOptionsType) => {
 //     return useQuery<any, Error>(['single-product', options], fetchIndividualProduct);
 
@@ -31,6 +44,7 @@ export const useSingleProdQuery = (slug: string) => {
     // return useQuery<any, Error>([slug], fetchIndividualProduct);
     return useQuery<any, Error>(slug, fetchIndividualProduct);
 }
+
 
 // url:\'${_params}\' AND  
 const fetchIndividualProductSize = async ({ queryKey }: any) => {

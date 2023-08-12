@@ -1,4 +1,5 @@
 import BannerCard from '@components/common/banner-card';
+import BannerCardFeature from '@components/common/banner-card-feature';
 import Container from '@components/ui/container';
 import BrandBlock from '@containers/brand-block';
 import CategoryGridBlock from '@containers/category-grid-block';
@@ -17,6 +18,7 @@ import NewArrivalsProductFeed from '@components/product/feeds/new-arrivals-produ
 import Subscription from '@components/common/subscription';
 import { homeTwoHeroBanner as heroBanner } from '@framework/static/banner';
 import { homeOneBanner as banner } from '@framework/static/banner';
+import { featureBanner as featureBanner } from '@framework/static/banner';
 import { collectionData as collection } from '@framework/static/collection';
 import { ROUTES } from '@utils/routes';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -25,7 +27,7 @@ import InquiryForm from '@components/common/form/inquiry';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { CartProvider } from 'use-shopping-cart'
-
+import { useFetchFeatureProduct } from '@framework/product/get-single-product';
 
 // const flashSaleCarouselBreakpoint = {
 //   '1280': {
@@ -42,8 +44,13 @@ import { CartProvider } from 'use-shopping-cart'
 //   },
 // };
 
+
 export default function Home() {
   const { t } = useTranslation('common');
+  const { data, isLoading } = useFetchFeatureProduct('kobe-8-triple-white-halo');
+  isLoading && console.log("feature product loading", isLoading)
+  console.log("feature product data", data)
+
 
   return (
     <Container>
@@ -52,6 +59,14 @@ export default function Home() {
       <BannerCard
         key={`banner--key${banner.id}`}
         banner={banner}
+        // href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
+        href={``}
+        className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
+      />
+      <BannerCardFeature
+        key={`banner--key${featureBanner.id}`}
+        banner={featureBanner}
+        product={data}
         // href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
         href={``}
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"

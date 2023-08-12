@@ -42,8 +42,6 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
   // const {
   //   query: { slug },
   // } = useRouter();
-  // retrieve product details based on product slug
-  // const { data, isLoading } = useSingleProdQuery(slug as string);
   function getProductPrice(prod_price: any) {
     const { data, isLoading } = useFetchItemPrice(prod_price)
     if (isLoading) return <p>Loading...</p>;
@@ -65,7 +63,6 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
     data &&
     {
       amount: data.price,
-      // amount: getProductPrice(data.default_price),
       baseAmount: 9000,
       currencyCode: 'USD',
     }

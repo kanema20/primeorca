@@ -16,6 +16,24 @@ export const homeOneBanner = {
   },
 };
 
+export const featureBanner = {
+  id: 2,
+  title: 'Nike Kobe 8 Protro Halo',
+  slug: 'just-do-it',
+  image: {
+    mobile: {
+      url: '/assets/images/banner/Kobe-Protro-8-Halo.png',
+      width: 450,
+      height: 300,
+    },
+    desktop: {
+      url: '/assets/images/banner/Kobe-Protro-8-Halo.png',
+      width: 1800,
+      height: 540,
+    },
+  },
+};
+
 export const homeOneHeroBanner = [
   {
     id: 1,
