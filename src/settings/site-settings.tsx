@@ -308,7 +308,29 @@ export const siteSettings = {
       {
         id: 2,
         path: '/',
-        label: 'menu-kobe',
+        label: 'DRIP 🌊',
+        subMenu: [
+          {
+            id: 1,
+            path: `/`,
+            label: 'COMING SOON',
+          },
+          // {
+          //   id: 2,
+          //   path: `${ROUTES.OFF}`,
+          //   label: 'OFF WHITE ✖',
+          // },
+          // {
+          //   id: 3,
+          //   path: `${ROUTES.RHUDE}`,
+          //   label: 'Rhude',
+          // },
+        ],
+      },
+      {
+        id: 6,
+        path: '/',
+        label: 'Kobe 🐍',
         subMenu: [
           {
             id: 1,
@@ -330,7 +352,7 @@ export const siteSettings = {
       {
         id: 3,
         path: '/',
-        label: 'menu-nike',
+        label: 'Nike ✔',
         subMenu: [
           {
             id: 1,
@@ -340,7 +362,7 @@ export const siteSettings = {
           {
             id: 2,
             path: '/nike/eybl',
-            label: 'EYBL',
+            label: 'EYBL 🍊',
           },
         ],
       },
@@ -364,7 +386,7 @@ export const siteSettings = {
       {
         id: 5,
         path: '/',
-        label: 'menu-adidas',
+        label: 'Yeezy 🐐',
         subMenu: [
           {
             id: 1,
@@ -637,7 +659,7 @@ export const siteSettings = {
       {
         id: 8,
         path: '/prada/cloudbust',
-        label: 'menu-prada',
+        label: 'Prada 🌫',
       },
       // {
       // id: 9,
@@ -647,23 +669,18 @@ export const siteSettings = {
       {
         id: 10,
         path: '/mcqueen/oversized',
-        label: 'McQueen',
+        label: 'McQueen 👑',
       },
       {
         id: 11,
         path: '/nike/travis',
-        label: 'Travis Scott',
+        label: 'Travis Scott 🌵',
       },
       {
         id: 12,
         path: '/dior/b22',
-        label: 'DIOR',
+        label: 'DIOR 💎',
       },
-      // {
-      //   id: 14,
-      //   path: '/lv/trainers',
-      //   label: 'Louis Vuitton'
-      // }
     ],
     mobileMenu: [
       // {
@@ -785,7 +802,29 @@ export const siteSettings = {
       {
         id: 2,
         path: '/',
-        label: 'menu-kobe',
+        label: 'DRIP 🌊',
+        subMenu: [
+          {
+            id: 1,
+            path: `/`,
+            label: 'COMING SOON',
+          },
+          // {
+          //   id: 2,
+          //   path: `${ROUTES.OFF}`,
+          //   label: 'OFF WHITE ✖',
+          // },
+          // {
+          //   id: 3,
+          //   path: `${ROUTES.RHUDE}`,
+          //   label: 'Rhude',
+          // },
+        ],
+      },
+      {
+        id: 6,
+        path: '/',
+        label: 'Kobe 🐍',
         subMenu: [
           {
             id: 1,
@@ -807,12 +846,12 @@ export const siteSettings = {
       {
         id: 3,
         path: '/',
-        label: 'menu-nike',
+        label: 'Nike ✔',
         subMenu: [
           {
             id: 1,
             path: `${ROUTES.EYBL}`,
-            label: 'menu-eybl',
+            label: 'EYBL 🍊',
           },
           {
             id: 2,
@@ -822,7 +861,7 @@ export const siteSettings = {
           {
             id: 3,
             path: `${ROUTES.TRAVIS}`,
-            label: 'Travis Scott',
+            label: 'Travis Scott 🌵',
           },
         ],
       },
@@ -846,7 +885,7 @@ export const siteSettings = {
       {
         id: 5,
         path: '/',
-        label: 'menu-adidas',
+        label: 'Yeezy 🐐',
         subMenu: [
           {
             id: 1,
@@ -873,7 +912,7 @@ export const siteSettings = {
       {
         id: 8,
         path: '/prada/cloudbust',
-        label: 'menu-prada',
+        label: 'Prada 🌫',
       },
       // {
       //   id: 9,
@@ -883,17 +922,17 @@ export const siteSettings = {
       {
         id: 10,
         path: '/mcqueen/oversized',
-        label: 'McQueen',
+        label: 'McQueen 👑',
       },
       {
         id: 12,
         path: '/dior/b22',
-        label: 'Dior',
+        label: 'Dior 💎',
       },
       {
         id: 13,
         path: '/nike/travis',
-        label: 'Travis Scott',
+        label: 'Travis Scott 🌵',
       },
       // {
       //   id: 14,
