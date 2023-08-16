@@ -364,6 +364,11 @@ export const siteSettings = {
             path: '/nike/eybl',
             label: 'EYBL 🍊',
           },
+          {
+            id: 3,
+            path: '/nike/travis',
+            label: 'Travis Scott 🌵',
+          }
         ],
       },
       {
