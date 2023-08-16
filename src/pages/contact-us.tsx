@@ -21,7 +21,8 @@ export default function ContactUsPage() {
           <div className="md:w-full lg:w-3/5 2xl:w-4/6 flex h-full ltr:md:ml-7 rtl:md:mr-7 flex-col ltr:lg:pl-7 rtl:lg:pr-7">
             <div className="flex pb-7 md:pb-9 mt-7 md:-mt-1.5">
               <h4 className="text-2xl 2xl:text-3xl font-bold text-heading">
-                {t('text-get-in-touch')}
+                {/* {t('text-get-in-touch')} */}
+                Request an item or get in touch with our team
               </h4>
             </div>
             <ContactForm />

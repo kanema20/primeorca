@@ -895,11 +895,11 @@ export const siteSettings = {
         path: '/nike/travis',
         label: 'Travis Scott',
       },
-      // {
-      //   id: 15,
-      //   path: '/lv/trainers',
-      //   label: 'Louis Vuitton'
-      // }
+      {
+        id: 14,
+        path: '/contact-us',
+        label: 'Request An Item',
+      }
     ],
     languageMenu: [
       {
