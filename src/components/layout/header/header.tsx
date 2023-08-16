@@ -9,6 +9,8 @@ import { addActiveScroll } from '@utils/add-active-scroll';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
 import LanguageSwitcher from '@components/ui/language-switcher';
+import Button from '@components/ui/button';
+
 const AuthMenu = dynamic(() => import('./auth-menu'), { ssr: false });
 const CartButton = dynamic(() => import('@components/cart/cart-button'), {
   ssr: false,
@@ -69,7 +71,8 @@ const Header: React.FC = () => {
                 {t('text-account')}
 
               </AuthMenu> */}
-              <span><a href="/contact-us">Request an item</a></span>
+              {/* <span><a href="/contact-us">Request an item</a></span> */}
+              <Button><a href="/contact-us">Request an item</a></Button>
             </div>}
             <CartButton />
           </div>

@@ -5,6 +5,8 @@ import Scrollbar from '@components/common/scrollbar';
 import { IoIosArrowDown } from 'react-icons/io';
 import Logo from '@components/ui/logo';
 import { useUI } from '@contexts/ui.context';
+import Button from '@components/ui/button';
+
 import {
   IoLogoInstagram,
   IoLogoTwitter,
@@ -169,6 +171,9 @@ export default function MobileMenu() {
                 );
               })}
             </ul>
+            {<div className="-mt-0.5 flex-shrink-0 ml-2">
+              <Button><a href="/contact-us">Request an item</a></Button>
+            </div>}
           </div>
         </Scrollbar>
 
