@@ -92,7 +92,7 @@ module.exports = {
       avatar: '0px 15px 30px rgba(0, 0, 0, 0.16)',
     },
     fontFamily: {
-      body: ["'Open Sans', sans-serif"],
+      body: ["'Esteban', sans-serif"],
       satisfy: ["'Satisfy', cursive"],
       segoe: ["'Segoe UI', sans-serif"],
     },

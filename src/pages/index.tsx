@@ -19,6 +19,7 @@ import Subscription from '@components/common/subscription';
 import { homeTwoHeroBanner as heroBanner } from '@framework/static/banner';
 import { homeOneBanner as banner } from '@framework/static/banner';
 import { featureBanner as featureBanner } from '@framework/static/banner';
+import { processBanner as processBanner } from '@framework/static/banner';
 import { collectionData as collection } from '@framework/static/collection';
 import { ROUTES } from '@utils/routes';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -69,6 +70,13 @@ export default function Home() {
         product={data}
         // href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
         href={``}
+        className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
+      />
+      <BannerCard
+        key={`banner--key${banner.id}`}
+        banner={processBanner}
+        // href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
+        href={`/process`}
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
       />
       <CollectionBlock data={collection} />

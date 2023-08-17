@@ -77,8 +77,8 @@ export const siteSettings = {
           // },
           {
             id: 2,
-            path: '/faq',
-            label: 'menu-faq',
+            path: '/process',
+            label: 'menu-our-process',
           },
           {
             id: 3,
@@ -94,7 +94,12 @@ export const siteSettings = {
             id: 5,
             path: '/contact-us',
             label: 'menu-contact-us',
-          }
+          },
+          {
+            id: 6,
+            path: '/faq',
+            label: 'menu-faq',
+          },
         ],
       },
       // {
@@ -779,8 +784,8 @@ export const siteSettings = {
           // },
           {
             id: 2,
-            path: '/faq',
-            label: 'menu-faq',
+            path: '/process',
+            label: 'menu-our-process',
           },
           {
             id: 3,
@@ -801,6 +806,11 @@ export const siteSettings = {
             id: 5,
             path: '/contact-us',
             label: 'menu-contact-us',
+          },
+          {
+            id: 6,
+            path: '/faq',
+            label: 'menu-faq',
           },
         ],
       },
@@ -2743,8 +2753,8 @@ export const siteSettings = {
       },
       {
         id: 3,
-        path: '/faq',
-        label: 'menu-faq',
+        path: '/process',
+        label: 'menu-our-process',
       },
       {
         id: 4,

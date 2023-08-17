@@ -34,6 +34,24 @@ export const featureBanner = {
   },
 };
 
+export const processBanner = {
+  id: 3,
+  title: 'Our Process',
+  slug: 'our-process',
+  image: {
+    mobile: {
+      url: '/assets/images/banner/process.png',
+      width: 450,
+      height: 150,
+    },
+    desktop: {
+      url: '/assets/images/banner/process.png',
+      width: 1800,
+      height: 360,
+    },
+  },
+};
+
 export const homeOneHeroBanner = [
   {
     id: 1,
