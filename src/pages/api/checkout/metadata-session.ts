@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_TEST);
 
 
 async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]): Promise<Stripe.Checkout.Session> {

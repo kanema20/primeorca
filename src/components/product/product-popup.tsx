@@ -160,7 +160,7 @@ export default function ProductPopup() {
 
   const clothingVariations =
   {
-    "Sizes (US)": [
+    "Sizes (US - M)": [
       {
         "id": 1,
         "value": "S",
@@ -224,12 +224,22 @@ export default function ProductPopup() {
     return data;
   }
 
+  const productAttributes = () => {
+    if (data.metadata.type == "Replica") {
+      return variations;
+    } else {
+      return clothingVariations;
+    }
+  }
+
+  console.log("productAttributes: ", productAttributes());
+  console.log("shoe variations: ", variations)
   // console.log("getProductSizes: ", getProductSizes(data.url))
   // console.log("prod_data[0] ", prod_data[0])
 
-  const isSelected = !isEmpty(variations)
+  const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&
-    Object.keys(variations).every((variation) =>
+    Object.keys(productAttributes()).every((variation) =>
       attributes.hasOwnProperty(variation)
     )
     : true;
@@ -315,12 +325,12 @@ export default function ProductPopup() {
             </div>
           </div>
 
-          {Object.keys(variations).map((variation) => {
+          {Object.keys(productAttributes()).map((variation) => {
             return (
               <ProductAttributes
                 key={`popup-attribute-key${variation}`}
                 title={variation}
-                attributes={variations[variation]}
+                attributes={productAttributes()[variation]}
                 active={attributes[variation]}
                 onClick={handleAttribute}
               />
