@@ -2,7 +2,7 @@ const Stripe = require('stripe');
 const dotenv = require('dotenv');
 dotenv.config();
 const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
-const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_TEST);
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 
 // const kobe5Products = require('./mvp/kobe5.js');
 // const kobe5_1Products = require('./mvp/kobe5_1.js');
