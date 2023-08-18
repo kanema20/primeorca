@@ -27,8 +27,12 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 // const yeezy = require('./mvp/yeezy-slide.js');
 // const balenciTriple = require('./mvp/bal-triple-s.js');
 // const y350 = require('./mvp/350.js');
-const kobe8halo = require('./mvp/kobe-8-halo.js');
+// const kobe8halo = require('./mvp/kobe-8-halo.js');
 // const y700 = require('./mvp/700.js');
+const lv = require('./mvp/lv.js');
+const rickOwens = require('./mvp/rick-owens.js');
+
+
 // dotenv.config({ path: `./env.local`, override: true });
 
 function isEmpty(field) {
