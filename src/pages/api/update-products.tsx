@@ -10,7 +10,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 const updateAllProducts = async () => {
     const products = await stripe.products.list({
         // url: 'prada-cloudbust-thunder-red-black'
-        url: "nike-kd-12-eybl",
+        url: "louis-vuitton-lv-skate-sneaker-grey-green",
         limit: "15"
     })
 
@@ -19,7 +19,7 @@ const updateAllProducts = async () => {
             // Update the existing attributes of the product
             // attributes: 'shoe_size',
             // Add the new attribute 'shoe_size' to the product
-            "images": ["https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-KD-12-EYBL-Product.jpg"],
+            "images": ["https://po-prod.s3.us-west-1.amazonaws.com/lv/Louis-Vuitton-LV-Skate-Sneaker-Grey-Green.jpg"],
             metadata: {
                 ...product.metadata,
 

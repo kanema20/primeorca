@@ -57,15 +57,15 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 			<Footer />
 			<MobileNavigation />
 			<Search />
-			<CookieBar
+			{/* <CookieBar
 				title={t('text-cookies-title')}
-				hide={acceptedCookies}
-				action={
+				hide={acceptedCookies} */}
+			{/* action={
 					<Button onClick={() => onAcceptCookies()} variant="slim">
 						{t('text-accept-cookies')}
 					</Button>
-				}
-			/>
+				// } */}
+			{/* // /> */}
 		</div>
 	);
 }

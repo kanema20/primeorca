@@ -120,7 +120,7 @@ const lv = [
         "brand": "Louis Vuitton",
         "price": 190,
         "lowestResellPrice.stockX": "1092",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/lv/Louis-Vuitton-LV-Skate-Sneaker-Grey-Green.jpg0",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/lv/Louis-Vuitton-LV-Skate-Sneaker-Grey-Green.jpg",
         "description": "Premium S Tier Replica Batch - Louis Vuitton LV Skate Sneaker Grey Green",
         "url": "louis-vuitton-lv-skate-sneaker-grey-green",
         "currency": "USD",

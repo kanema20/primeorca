@@ -60,8 +60,6 @@ const offShirts = [
 ]
 
 
-
-
 function isEmpty(field) {
     if (field == null || field == undefined || field == "") {
         return true;
@@ -72,8 +70,8 @@ function isEmpty(field) {
 const createProduct = async (product) => {
     const stripeProduct = await stripe.products.create({
         name: product.name,
-        // description: product.description ? product.description : "The Prime Orca God Tier Replicas Batch - " + product.name,
-        description: "The Prime Orca God Tier Replicas Batch - " + product.name,
+        // description: "**IMPORTANT** These sizes are for clothing in China. It is advised to size up 1-2 sizes depending on bodily girth. The Prime Orca God Tier Replicas Batch - " + product.name,
+        description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Prime Orca God Tier Replicas Batch - " + product.name,
         default_price_data: {
             currency: "USD",
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),
@@ -90,16 +88,17 @@ const createProduct = async (product) => {
             collection: product.metadata_.collection,
             make: product.make,
             release: product.releaseDate,
-            type: "Replica Clothing",
+            // type: "Replica Clothing",
+            type: "Replica",
         }
     });
     return stripeProduct;
 };
 
-const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
+// const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of offShirts) {
+for (const product of rickOwens) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {
