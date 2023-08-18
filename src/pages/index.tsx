@@ -29,6 +29,7 @@ import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { CartProvider } from 'use-shopping-cart'
 import { useFetchFeatureProduct } from '@framework/product/get-single-product';
+import ModalVideo from '@components/common/modal-video';
 
 // const flashSaleCarouselBreakpoint = {
 //   '1280': {
@@ -72,14 +73,22 @@ export default function Home() {
         href={``}
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
       />
-      <BannerCard
+      {/* <BannerCard
         key={`banner--key${banner.id}`}
         banner={processBanner}
         // href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
         href={`/process`}
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
-      />
-      <CollectionBlock data={collection} />
+      /> */}
+      <ModalVideo
+        className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
+        thumb='https://po-prod.s3.us-west-1.amazonaws.com/_app/Process-Video-Thumbnail.png'
+        thumbWidth={1024}
+        thumbHeight={576}
+        thumbAlt="Modal video thumbnail"
+        video="https://www.youtube.com/embed/qvCFHpb_EYY?si=btlT2mxtU5ebdyIz"
+        videoWidth={1920}
+        videoHeight={1080} />      <CollectionBlock data={collection} />
       <BestSellerProductFeed />
       <ProductsFlashSaleBlock date={'2023-03-01T01:02:03'} />
       {/* <ProductsWithFlashSale carouselBreakpoint={flashSaleCarouselBreakpoint} /> */}

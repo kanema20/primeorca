@@ -33,7 +33,7 @@ export default function ModalVideo({
 
             {/* Video thumbnail */}
             <div>
-                <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
+                <div className="relative flex justify-center items-center mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5" data-aos="fade-up" data-aos-delay="200">
                     <Image src={thumb} width={thumbWidth} height={thumbHeight} alt={thumbAlt} />
                     <button className="absolute group" onClick={() => { setModalOpen(true) }} aria-label="Watch the video">
                         <svg className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
