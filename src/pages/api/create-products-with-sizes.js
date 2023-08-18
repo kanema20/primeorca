@@ -2,7 +2,7 @@ const Stripe = require('stripe');
 const dotenv = require('dotenv');
 dotenv.config();
 const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
-const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 // const kobe5Products = require('./mvp/kobe5.js');
 // const kobe5_1Products = require('./mvp/kobe5_1.js');
@@ -26,6 +26,10 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const kobe8halo = require('./mvp/kobe-8-halo.js');
 // const y3502 = require('./mvp/350-2.js');
 // 
+const lv = require('./mvp/lv.js');
+const rickOwens = require('./mvp/rick-owens.js');
+
+
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 async function createProduct(product, size_) {
@@ -47,7 +51,7 @@ async function createProduct(product, size_) {
             brand: product.metadata_.brand,
             category: product.metadata_.category,
             collection: product.metadata_.collection,
-            make: product.make,
+            make: product.metadata_.make,
             release: product.releaseDate,
             size: size_,
         }
@@ -57,6 +61,19 @@ async function createProduct(product, size_) {
 }
 
 for (const product of offShirts) {
+    // createProduct(product, sizes_)
+    for (const size of sizes_) {
+        createProduct(product, size)
+            .then(product => {
+                console.log(product);
+                console.log(`${product.name}: ${product.id}`);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+}
+for (const product of kobe8halo) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

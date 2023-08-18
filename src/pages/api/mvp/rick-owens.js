@@ -2,7 +2,7 @@ const rickOwens = [
     {
         "_id": "64cfe93d03e7973baa66e212",
         "name": "Rick Owens DRKSHDW Canvas Low Top Black Milk",
-        "price": 170,
+        "price": 235,
         "brand": "Rick Owens",
         "lowestResellPrice.stockX": "989",
         "image": "https://po-prod.s3.us-west-1.amazonaws.com/rick-owens/Rick-Owens-DRKSHDW-Canvas-Low-Top-Black-Milk-2.jpg",
@@ -21,7 +21,7 @@ const rickOwens = [
     {
         "_id": "64cfe93d03e7973baa66e212",
         "name": "Rick Owens Jumbo Lace Padded Sneaks Low Black Milk",
-        "price": 170,
+        "price": 225,
         "brand": "Rick Owens",
         "lowestResellPrice.stockX": "989",
         "image": "https://po-prod.s3.us-west-1.amazonaws.com/rick-owens/Rick-Owens-Jumbo-Lace-Padded-Sneaks-Low-Black-Milk.jpg",

@@ -29,7 +29,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const y350 = require('./mvp/350.js');
 // const kobe8halo = require('./mvp/kobe-8-halo.js');
 // const y700 = require('./mvp/700.js');
-const lv = require('./mvp/lv.js');
+const lv = require('./mvp/lv-kicks.js');
 const rickOwens = require('./mvp/rick-owens.js');
 
 
