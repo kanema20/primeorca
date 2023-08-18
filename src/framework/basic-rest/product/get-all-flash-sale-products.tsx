@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import dotenv from 'dotenv';
 dotenv.config();
 const STRIPE_PRIV = process.env.STRIPE_PRIV_PO_TEST;
-const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 
 
 export const fetchFlashSaleProducts = async ({ queryKey }: any) => {
@@ -48,7 +48,7 @@ export const useKobeArrivalsQuery = (options: QueryOptionsType) => {
   return useQuery<any, Error>(['kobe-new', options], fetchNewKobeArrivals);
 };
 
-const best_sellers: string[] = ["prod_ONum3IV1GU6T9V", "prod_ONumhCfPoYOiKu", "prod_OOlTBjTuEyi11j", "prod_OPXHJZvOn9eQ2J", "prod_ONvrmbYdNjiXrX", "prod_ONukvI2JcnCfcj", "prod_OOk6Bl9kCUMzIJ", "prod_OPmsC5aV8Y0wNm", "prod_OPX96nUa0AbiUF", "prod_OP0Izp6grSc3Cl", "prod_ONumPrbEispTtw", "prod_OOjI4qhEj03bDP"]
+const best_sellers: string[] = ["prod_OSrhKxpb2Av6pu", "prod_ONum3IV1GU6T9V", "prod_ONumhCfPoYOiKu", "prod_OOlTBjTuEyi11j", "prod_OPXHJZvOn9eQ2J", "prod_ONvrmbYdNjiXrX", "prod_ONukvI2JcnCfcj", "prod_OOk6Bl9kCUMzIJ", "prod_OPmsC5aV8Y0wNm", "prod_OPX96nUa0AbiUF", "prod_OP0Izp6grSc3Cl", "prod_ONumPrbEispTtw", "prod_OOjI4qhEj03bDP"]
 
 const fetchBestSellers = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;

@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';

@@ -1400,6 +1400,16 @@
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.10.1.tgz#60bb2aaf129f9e00621f8d698722ddba6ee1f8ac"
   integrity sha512-Dq5rYfEpdeel0bLVN+nfD1VWmzCkK+pJbSjIawGE+RY4+NIJqhbUDDQjvV0NUK84fMfwxvtFoCtEe70HfZjFcw==
 
+"@fontsource-variable/lora@^5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/lora/-/lora-5.0.9.tgz#d8ba13ceac867ce19fa53f4365f30875e625922d"
+  integrity sha512-AeTqrMIay4QXkLeGs0JDgc2RBnR6Hgkj3OLZjkAusauMmz03Z7SAz8FsuT2vfpUpjkrLeU52AFwF21EeBn3+7g==
+
+"@fontsource/esteban@^5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/esteban/-/esteban-5.0.9.tgz#0ab203959a9b86c5d7782f636126de869c86864f"
+  integrity sha512-m0R0eDLPm7doEBYYFto1QfkVczdH2L8d3LH4NIDx4N9rR8IL/2wSFI1TneJEJTCepSNTVwW2LVZfW/yPSV2sMQ==
+
 "@fontsource/open-sans@4.5.14":
   version "4.5.14"
   resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.5.14.tgz#b3e1665c0b3fdfc1f030ded2843749e3cf3a5900"

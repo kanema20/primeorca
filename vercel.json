@@ -1,7 +1,7 @@
 {
 	"env": {
 		"NEXT_PUBLIC_REST_API_ENDPOINT": "http://primeorca.com/api",
-		"NEXT_PUBLIC_STRIPE_API_KEY": "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"
+		"NEXT_PUBLIC_STRIPE_API": "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"
 	},
 	"build": {
 		"env": {
