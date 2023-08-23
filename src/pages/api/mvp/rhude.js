@@ -13,8 +13,8 @@ const rhude = [
         "retailPrice": "495",
         "metadata_": {
             "brand": "rhude",
-            "category": "rhude",
-            "collection": "rhude-pique",
+            "category": "rhude-shorts",
+            "collection": "rhude",
             "slug": "rhude-pique-racer-shorts-cream"
         },
         "releaseDate": "08-15-2021"

@@ -28,7 +28,22 @@ const fetchKobeCollection = async ({ queryKey }: any) => {
         // query: `metadata[\'collection\']:\'kobe5\'`,
         limit: 100,
     });
-    return products.data;
+
+    const clothingProducts = await stripe.products.search({
+        query: `active:\'true\' AND metadata[\'collection\']:\'${slug}\' AND metadata[\'type\']:\'Replica Clothing\'`,
+        // query: `metadata[\'collection\']:\'kobe5\'`,
+        limit: 100,
+    });
+
+    const combinedProducts = [...clothingProducts.data, ...products.data];
+
+    // const { data } = await stripe.products.list({
+    //   limit: 10,
+    //   active: true,
+    // });
+    console.log(`combinedProducts.data: ${combinedProducts}`)
+    // return clothingProducts.data;
+    return combinedProducts;
 };
 
 export const useKobeCollectionQuery = (options: QueryOptionsType, slug: string) => {
