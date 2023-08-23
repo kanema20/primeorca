@@ -97,13 +97,13 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
 		expand: ["data.default_price"],
 	});
 	const products = inventory.data.map((product: any) => {
-		const price = product.default_price;
+		const price_ = product.default_price;
 		return {
 			id: product.id,
 			name: product.name,
 			description: product.description,
-			price: price.unit_amount,
-			currency: price.currency,
+			price: price_.unit_amount,
+			currency: price_.currency,
 			image: product.images[0],
 			metadata: product.metadata,
 			url: product.url,

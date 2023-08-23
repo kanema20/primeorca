@@ -84,7 +84,7 @@ export default function ModalVideo({
                                     Your browser does not support the video tag.
                                 </video> */
                                 }
-                                <iframe width="1060" height="615" src="https://www.youtube.com/embed/qvCFHpb_EYY?si=5TOg4tlsjdvFP1Oe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe width="1060" height="615" src="https://www.youtube.com/embed/jzCcXDhdplw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </Dialog.Panel>
                         </div>
                     </Transition.Child>

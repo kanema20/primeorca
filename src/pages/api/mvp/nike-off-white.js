@@ -2,10 +2,10 @@ const nikeOffWhite = [
     {
         "_id": "64c3610366cd87ff51884162",
         "name": "OFF WHITE x Nike 005 CL T-Shirts Beige",
-        "price": "50",
+        "price": "39",
         "brand": "OFF WHITE",
         "lowestResellPrice.stockX": "100",
-        "images": "https://po-prod.s3.us-west-1.amazonaws.com/off-white/Off-White-x-Nike-005-T-Shirts-Beige.jpg",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/off-white/Off-White-x-Nike-005-T-Shirts-Beige.jpg",
         "description": "",
         "currency": "USD",
         "shippable": true,
@@ -17,7 +17,8 @@ const nikeOffWhite = [
         "metadata_": {
             "brand": "nike",
             "category": "off-white",
-            "collection": "off-white",
+            "collection": "off-white-nike",
+            // "collection2": "drip",
             "slug": "off-white-x-nike-005-t-shirts-beige"
         },
         "releaseDate": "2022-12-21"
@@ -25,10 +26,10 @@ const nikeOffWhite = [
     {
         "_id": "64c3610366cd87ff51884145",
         "name": "OFF WHITE x Nike 005 T-Shirts Black",
-        "price": "50",
+        "price": "39",
         "brand": "OFF-WHITE",
         "lowestResellPrice.stockX": "107",
-        "images": "https://po-prod.s3.us-west-1.amazonaws.com/off-white/Off-White-x-Nike-005-T-Shirts-Black.jpg",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/off-white/Off-White-x-Nike-005-T-Shirts-Black.jpg",
         "description": "",
         "currency": "USD",
         "shippable": true,
@@ -40,7 +41,8 @@ const nikeOffWhite = [
         "metadata_": {
             "brand": "nike",
             "category": "off-white",
-            "collection": "off-white",
+            "collection": "off-white-nike",
+            // "collection2": "drip",
             "slug": "off-white-x-nike-005-t-shirts-black"
         },
         "releaseDate": "2022-12-21"

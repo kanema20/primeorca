@@ -29,8 +29,9 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const y350 = require('./mvp/350.js');
 // const kobe8halo = require('./mvp/kobe-8-halo.js');
 // const y700 = require('./mvp/700.js');
-const lv = require('./mvp/lv-kicks.js');
-const rickOwens = require('./mvp/rick-owens.js');
+// const lv = require('./mvp/lv-kicks.js');
+// const rickOwens = require('./mvp/rick-owens.js');
+const nikeOffWhite = require('./mvp/nike-off-white.js');
 
 
 // dotenv.config({ path: `./env.local`, override: true });
@@ -70,7 +71,7 @@ function isEmpty(field) {
 const createProduct = async (product) => {
     const stripeProduct = await stripe.products.create({
         name: product.name,
-        // description: "**IMPORTANT** These sizes are for clothing in China. It is advised to size up 1-2 sizes depending on bodily girth. The Prime Orca God Tier Replicas Batch - " + product.name,
+        // description: "**IMPORTANT** Clothing sizes are in Asian sizes. It is advised to size up 1 (or 2) sizes from US size depending on bodily girth (ex. US Large = Asian XL). The Prime Orca God Tier Replicas Batch - " + product.name,
         description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Prime Orca God Tier Replicas Batch - " + product.name,
         default_price_data: {
             currency: "USD",
@@ -98,7 +99,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of rickOwens) {
+for (const product of nikeOffWhite) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

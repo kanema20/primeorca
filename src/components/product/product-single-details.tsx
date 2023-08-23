@@ -184,7 +184,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
 
   const clothingVariations =
   {
-    "Sizes (US)": [
+    "Sizes (US - M)": [
       {
         "id": 1,
         "value": "S",

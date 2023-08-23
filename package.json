@@ -8,9 +8,11 @@
     "build": "next build",
     "start": "next start",
     "seed": "node ./src/pages/api/seed.js",
+    "seed-clothes": "node ./src/pages/api/seed-clothes.js",
     "server": "node ./src/pages/api/server.js",
     "delete": "node ./src/pages/api/delete-products.tsx",
-    "seed-sizes": "node ./src/pages/api/create-products-with-sizes.js"
+    "seed-sizes": "node ./src/pages/api/create-products-with-sizes.js",
+    "seed-clothes-sizes": "node ./src/pages/api/create-clothes-with-sizes.js"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

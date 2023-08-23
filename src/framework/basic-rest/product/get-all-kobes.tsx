@@ -29,7 +29,7 @@ const fetchKobeCollection = async ({ queryKey }: any) => {
     }
 
     const products = await stripe.products.search({
-        query: `active:\'true\' AND metadata[\'collection\']:\'${slug_}\' AND metadata[\'type\']:\'Replica\'`,
+        query: `active:\'true\' AND metadata[\'collection\']:\'${slug_}\' AND (metadata[\'type\']:\'Replica\')`,
         // query: `metadata[\'collection\']:\'kobe5\'`,
         limit: 100,
     });

@@ -80,7 +80,7 @@ async function createCheckoutSession(lineItems: Stripe.Checkout.SessionCreatePar
         shipping_rate_data: {
           type: 'fixed_amount',
           fixed_amount: {
-            amount: (calculateShipping(lineItems) < 3) ? 3000 * (calculateShipping(lineItems)) : 2500 * (calculateShipping(lineItems)),
+            amount: (calculateShipping(lineItems) < 2) ? 3000 * (calculateShipping(lineItems)) : ((calculateShipping(lineItems) < 4) ? 2500 * (calculateShipping(lineItems)) : 2000 * (calculateShipping(lineItems))),
             // amount: (lineItems.length < 3) ? 3000 * (lineItems.length) : 2500 * (lineItems.length),
             currency: 'usd',
           },
