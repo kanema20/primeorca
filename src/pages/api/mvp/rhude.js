@@ -1,11 +1,11 @@
 const rhude = [
     {
         "_id": "64e63bf5677dbada5da6f097",
-        "shoe": "Rhude Pique Racer Shorts Cream",
+        "name": "Rhude Pique Racer Shorts Cream",
         "price": 49,
         "brand": "Rhude",
-        "lowestResellPrice.stockX": "500",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/rhude/Rhude-Court-Logo-Shorts-Black-White.jpg",
+        "lowestResellPrice.stockX": "553",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/rhude/Rhude-Pique-Racer-Shorts-Cream.jpg",
         "description": "",
         "url": "rhude-pique-racer-shorts-cream",
         "resellLinks.stockX": "https://stockx.com/rhude-pique-racer-shorts-cream",
@@ -15,7 +15,7 @@ const rhude = [
             "brand": "rhude",
             "category": "rhude",
             "collection": "rhude-pique",
-            "slug": "kobe-8-sulfur-electric"
+            "slug": "rhude-pique-racer-shorts-cream"
         },
         "releaseDate": "08-15-2021"
     },
