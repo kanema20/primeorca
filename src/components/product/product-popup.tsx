@@ -28,13 +28,22 @@ export default function ProductPopup() {
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
   const { url, images, name, description, default_price, metadata } = data;
-  const { data: prod_data } = useFetchProductSize(data.url, attributes['Sizes (US - M)']);
+
+  const productType = () => {
+    if (data.metadata.type == "Replica") {
+      return "Sizes (US - Men)";
+    }
+    else {
+      return "Sizes (Asia - Men)";
+    }
+  }
+  const { data: prod_data } = useFetchProductSize(data.url, attributes[productType()]);
 
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
-  console.log("attributes: ", attributes['Sizes (US - M)'])
+  console.log("attributes: ", attributes[productType()])
   console.log("data: ", data)
   const { price, basePrice, discount } = usePrice({
     // amount: data.sale_price ? data.sale_price : data.price,
@@ -46,7 +55,7 @@ export default function ProductPopup() {
   // const variations = getVariations(data.variations);
   const variations =
   {
-    "Sizes (US - M)": [
+    "Sizes (US - Men)": [
       {
         "id": 1,
         "value": "7",
@@ -160,7 +169,7 @@ export default function ProductPopup() {
 
   const clothingVariations =
   {
-    "Sizes (US - M)": [
+    "Sizes (Asia - Men)": [
       {
         "id": 1,
         "value": "S",
@@ -246,7 +255,7 @@ export default function ProductPopup() {
 
   function addToCart() {
     if (!isSelected) return;
-    if (attributes['Sizes (US - M)'] == undefined) return;
+    if (attributes['Sizes (US - Men)'] == undefined) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
     setTimeout(() => {

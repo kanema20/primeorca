@@ -70,7 +70,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
 
   const variations =
   {
-    "Sizes (US - M)": [
+    "Sizes (US - Men)": [
       {
         "id": 1,
         "value": "7",
@@ -184,7 +184,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
 
   const clothingVariations =
   {
-    "Sizes (US - M)": [
+    "Sizes (Asia - Men)": [
       {
         "id": 1,
         "value": "S",
