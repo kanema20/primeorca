@@ -49,7 +49,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
 
                     <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
                         {/* <CollectionTopBar /> */}
-                        {/* <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1> */}
+                        <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1>
                         <ProductGrid slug={slug} />
                     </div>
                 </div>
@@ -73,8 +73,10 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
+            { params: { slug: "kobe" } },
             { params: { slug: "kobe-5" } },
             { params: { slug: "kobe-6" } },
+            { params: { slug: "kobe-8" } },
             // Add more paths as needed
         ],
         fallback: true,
