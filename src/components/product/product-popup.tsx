@@ -255,7 +255,7 @@ export default function ProductPopup() {
 
   function addToCart() {
     if (!isSelected) return;
-    if (attributes['Sizes (US - Men)'] == undefined) return;
+    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)']) == undefined) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
     setTimeout(() => {

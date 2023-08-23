@@ -20,7 +20,7 @@ type Product = Stripe.Product;
 const fetchKobeCollection = async ({ queryKey }: any) => {
     const [_key, _params, slug] = queryKey;
 
-    // const slug_ = slug.replace(/-/g, "");
+    // const slug_ = slug.replace(/- vc/g, "");
     console.log(slug);
 
     const products = await stripe.products.search({
@@ -48,7 +48,6 @@ const fetchKobeCollection = async ({ queryKey }: any) => {
 
 export const useKobeCollectionQuery = (options: QueryOptionsType, slug: string) => {
     return useQuery<any, Error>(['kobe-collection', options, slug], fetchKobeCollection);
-
 };
 
 const fetchKobeItem = async ({ queryKey }: any) => {

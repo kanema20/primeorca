@@ -13,7 +13,6 @@ interface ProductGridProps {
 	className?: string;
 	slug: string;
 }
-// export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
 	const { query } = useRouter();
 	const {
@@ -23,7 +22,6 @@ export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
 		// hasNextPage,
 		data,
 		error,
-		// } = useKobeCollectionQuery({ ...query });
 	} = useKobeCollectionQuery({ ...query }, slug);
 	console.log("data ", data)
 	if (error) return <p>{error.message}</p>;
