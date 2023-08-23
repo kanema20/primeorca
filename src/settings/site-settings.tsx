@@ -819,21 +819,21 @@ export const siteSettings = {
         path: '/',
         label: 'DRIP 🌊',
         subMenu: [
+          // {
+          //   id: 1,
+          //   path: `/`,
+          //   label: 'COMING SOON',
+          // },
           {
-            id: 1,
-            path: `/`,
-            label: 'COMING SOON',
+            id: 2,
+            path: `${ROUTES.OFFNIKE}`,
+            label: 'OFF WHITE ✖ NIKE',
           },
-          // {
-          //   id: 2,
-          //   path: `${ROUTES.OFF}`,
-          //   label: 'OFF WHITE ✖',
-          // },
-          // {
-          //   id: 3,
-          //   path: `${ROUTES.RHUDE}`,
-          //   label: 'Rhude',
-          // },
+          {
+            id: 3,
+            path: `${ROUTES.RHUDE}`,
+            label: 'Rhude',
+          },
         ],
       },
       {

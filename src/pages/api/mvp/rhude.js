@@ -5,7 +5,7 @@ const rhude = [
         "price": 49,
         "brand": "Rhude",
         "lowestResellPrice.stockX": "500",
-        "image": "https://images.stockx.com/images/Rhude-Court-Logo-Shorts-Black-White.jpg",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/rhude/Rhude-Court-Logo-Shorts-Black-White.jpg",
         "description": "",
         "url": "rhude-pique-racer-shorts-cream",
         "resellLinks.stockX": "https://stockx.com/rhude-pique-racer-shorts-cream",

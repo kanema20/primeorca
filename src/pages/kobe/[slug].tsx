@@ -13,6 +13,7 @@ import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
+import InquiryForm from '@components/common/form/inquiry';
 
 export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticProps>) {
     const router = useRouter();
@@ -48,11 +49,20 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
 
                     <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
                         {/* <CollectionTopBar /> */}
-                        {/* <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1> */}
+                        <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1>
                         <ProductGrid slug={slug} />
                     </div>
                 </div>
-                <Subscription />
+                <div className="my-14 lg:my-16 xl:my-20 px-0 pb-2 lg: xl:max-w-screen-xl mx-auto flex flex-col md:flex-row w-full">
+                    <div className="md:w-full lg:full 2xl:full flex h-full  flex-col">
+                        <div className="flex pb-7 md:pb-9 mt-7 md:-mt-1.5">
+                            <h4 className="text-2xl 2xl:text-3xl font-bold text-heading">
+                                {t('text-inquiry')}
+                            </h4>
+                        </div>
+                        <InquiryForm />
+                    </div>
+                </div>
             </Container>
         </div>
     );
@@ -63,6 +73,7 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
+            { params: { slug: "kobe" } },
             { params: { slug: "kobe-5" } },
             { params: { slug: "kobe-6" } },
             { params: { slug: "kobe-8" } },

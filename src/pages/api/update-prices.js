@@ -38,13 +38,13 @@ const updateAllProducts = async () => {
     // }
 
 
-    for (kobe of kobe8.data) {
-        const updatedPrice = await stripe.products.update(kobe, {
-            default_price.unit_amount: 16000,
-        });
-        console.log('Updated product:', updatedPrice);
+    // for (kobe of kobe8.data) {
+    //     const updatedPrice = await stripe.products.update(kobe, {
+    //         default_price: 16000,
+    //     });
+    //     console.log('Updated product:', updatedPrice);
 
-    };
+    // };
 };
 
 updateAllProducts()
