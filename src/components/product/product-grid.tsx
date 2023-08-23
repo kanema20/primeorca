@@ -2,12 +2,13 @@ import ProductCard from "@components/product/product-card";
 import Button from "@components/ui/button";
 import type { FC } from "react";
 import { useProductsQuery } from "@framework/product/get-all-products";
-import { useKobeCollectionQuery } from "@framework/product/get-all-kobes";
+import { useCollectionQuery } from "@framework/product/get-collection";
 import { useRouter } from "next/router";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
 import { useTranslation } from "next-i18next";
 import { Product } from "@framework/types";
 import Stripe from 'stripe';
+import { useRelatedKobeQuery } from "@framework/product/get-related-product";
 
 interface ProductGridProps {
 	className?: string;
@@ -15,6 +16,7 @@ interface ProductGridProps {
 }
 // export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
+	console.log("collection slug: ", slug)
 	const { query } = useRouter();
 	const {
 		isFetching: isLoading,
@@ -23,8 +25,9 @@ export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
 		// hasNextPage,
 		data,
 		error,
-		// } = useKobeCollectionQuery({ ...query });
-	} = useKobeCollectionQuery({ ...query }, slug);
+		// } = useRelatedKobeQuery({ ...query });
+	} = useCollectionQuery({ ...query }, slug);
+	isLoading && console.log("products loading ", isLoading)
 	console.log("data ", data)
 	if (error) return <p>{error.message}</p>;
 

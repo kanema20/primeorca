@@ -31,7 +31,8 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const y700 = require('./mvp/700.js');
 // const lv = require('./mvp/lv-kicks.js');
 // const rickOwens = require('./mvp/rick-owens.js');
-const nikeOffWhite = require('./mvp/nike-off-white.js');
+// const nikeOffWhite = require('./mvp/nike-off-white.js');
+const rhude = require('./mvp/rhude.js');
 
 
 // dotenv.config({ path: `./env.local`, override: true });
@@ -99,7 +100,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of nikeOffWhite) {
+for (const product of rhude) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

@@ -29,34 +29,23 @@ const updateAllProducts = async () => {
     // const filteredProducts = products.data.filter(product => product.metadata.collection === 'kobe');
     // const filteredProducts = products.data.filter(product => product.metadata.type === 'Replica');
 
-    kobe8_prices = []
-    for (kobe of kobe8) {
-        const price = await stripe.prices.retrieve(
-            kobe.default_price
-        );
-        kobe8_prices.push(price)
-    }
+    // kobe8_prices = []
+    // for (kobe of kobe8.data) {
+    //     const price = await stripe.prices.retrieve(
+    //         kobe.default_price
+    //     );
+    //     kobe8_prices.push(price.id)
+    // }
 
 
-    for (kobe of kobe8_prices) {
-        const updatedPrice = await stripe.prices.update(kobe);
+    for (kobe of kobe8.data) {
+        const updatedPrice = await stripe.products.update(kobe, {
+            default_price.unit_amount: 16000,
+        });
         console.log('Updated product:', updatedPrice);
 
     };
 };
-
-//     for (const product of kobe8) {
-//         const updatedProduct = await stripe.products.update(product.id, {
-//             // Update the existing attributes of the product
-//             // attributes: 'shoe_size',
-//             // Add the new attribute 'shoe_size' to the product
-//             // metadata: { collection: 'kobe-8' }
-//             // description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Prime Orca God Tier Replicas Batch - " + product.name,
-//         });
-//         console.log('Updated product:', updatedProduct);
-
-//     };
-// };
 
 updateAllProducts()
     .then(() => {

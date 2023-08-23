@@ -13,11 +13,11 @@ import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
+import { slice } from 'lodash';
 import InquiryForm from '@components/common/form/inquiry';
 
 export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticPaths>) {
     const router = useRouter();
-    console.log("slug: ", slug);
 
     const { t } = useTranslation('common');
 
@@ -36,7 +36,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                                         <a>{t('breadcrumb-home')}</a>
                                     </ActiveLink>
                                     <ActiveLink
-                                        href={`${ROUTES.NIKE}`}
+                                        href={`${ROUTES.RHUDE}`}
                                         activeClassName="font-semibold text-heading"
                                     >
                                         {/* <a className="capitalize">{t('breadcrumb-collection')}</a> */}
@@ -47,7 +47,6 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                             {/* <CollectionFilters /> */}
                         </StickyBox>
                     </div>
-
                     <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
                         {/* <CollectionTopBar /> */}
                         {/* <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1> */}
@@ -74,7 +73,7 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "nike" } },
+            { params: { slug: "rhude" } },
             // Add more paths as needed
         ],
         fallback: true,
