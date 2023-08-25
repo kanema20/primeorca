@@ -330,6 +330,11 @@ export const siteSettings = {
             path: `${ROUTES.RHUDE}`,
             label: 'Rhude',
           },
+          {
+            id: 4,
+            path: `${ROUTES.GALLERY}`,
+            label: 'Gallery Dept.',
+          },
         ],
       },
       {
@@ -838,6 +843,11 @@ export const siteSettings = {
             id: 3,
             path: `${ROUTES.RHUDE}`,
             label: 'Rhude',
+          },
+          {
+            id: 4,
+            path: `${ROUTES.GALLERY}`,
+            label: 'Gallery Dept.',
           },
         ],
       },

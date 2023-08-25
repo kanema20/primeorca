@@ -22,7 +22,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const mcqueen = require('./mvp/mcqueen.js');
 // const eybl = require('./mvp/eybl.js')
 // const dior = require('./mvp/dior.js')
-// const travis = require('./mvp/travis.js')
+const travis = require('./mvp/travis.js')
 // const balenci3 = require('./mvp/balenci-3.js');
 // const yeezy = require('./mvp/yeezy-slide.js');
 // const balenciTriple = require('./mvp/bal-triple-s.js');
@@ -32,8 +32,8 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const lv = require('./mvp/lv-kicks.js');
 // const rickOwens = require('./mvp/rick-owens.js');
 // const nikeOffWhite = require('./mvp/nike-off-white.js');
-const nikeDunks = require('./mvp/nike-dunks.js');
-
+// const nikeDunks = require('./mvp/nike-dunks.js');
+// const nikeDunks = require('./mvp/nike-dunks.js');
 
 // dotenv.config({ path: `./env.local`, override: true });
 
@@ -100,7 +100,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of nikeDunks) {
+for (const product of travis) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

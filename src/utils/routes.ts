@@ -24,6 +24,7 @@ export const ROUTES = {
   PURPLE: "/purple",
   JA1: "/ja1",
   ADIDAS: "/adidas",
+  GALLERY: "/drip/gallery-dept",
   YEEZYSLIDE: "/adidas/yeezy-slide",
   YEEZY700: "/adidas/yeezy-700",
   YEEZY350: "/adidas/yeezy-350",

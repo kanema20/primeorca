@@ -18,7 +18,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const mcqueen = require('./mvp/mcqueen.js');
 // const eybl = require('./mvp/eybl.js')
 // const dior = require('./mvp/dior.js')
-// const travis = require('./mvp/travis.js')
+const travis = require('./mvp/travis.js')
 // const balenci3 = require('./mvp/balenci-3.js');
 // const yeezy = require('./mvp/yeezy-slide.js');
 // const balenciTriple = require('./mvp/bal-triple-s.js');
@@ -80,7 +80,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of nikeDunks) {
+for (const product of travis) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

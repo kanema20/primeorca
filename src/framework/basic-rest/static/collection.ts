@@ -3,10 +3,10 @@ import { ROUTES } from '@utils/routes';
 export const collectionData = [
   {
     id: 1,
-    slug: ROUTES.KOBE5,
-    image: '/assets/images/collection/kobe-5-bruce-lee-2.jpg',
-    title: 'collection-title-one',
-    description: 'collection-description-one',
+    slug: ROUTES.BALENCI,
+    image: '/assets/images/collection/balenciaga-closeup.png',
+    title: 'Balenciaga Track',
+    description: 'Balenci balenci balenci !',
   },
   {
     id: 2,
@@ -17,10 +17,10 @@ export const collectionData = [
   },
   {
     id: 3,
-    slug: ROUTES.KOBE8,
-    image: '/assets/images/collection/kobe-8.jpg',
-    title: 'collection-title-three',
-    description: 'collection-description-three',
+    slug: ROUTES.GALLERY,
+    image: '/assets/images/collection/Gallery-Dept-Painted-Flare-Sweat-Pants-Orange.jpg',
+    title: 'Gallery Dept.',
+    description: 'Shop the latest Flare Sweats.',
   },
 ]
 
