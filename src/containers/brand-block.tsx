@@ -3,7 +3,7 @@ import SectionHeader from '@components/common/section-header';
 import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from 'swiper/react';
 import CardRoundedLoader from '@components/ui/loaders/card-rounded-loader';
-import { useBrandsQuery } from '@framework/brand/get-all-brands';
+import { useBrandsQuery, useCategoriesQuery } from '@framework/brand/get-all-brands';
 import { ROUTES } from '@utils/routes';
 import Alert from '@components/ui/alert';
 import { Brand } from '@framework/types';
@@ -50,11 +50,18 @@ const BrandBlock: React.FC<BrandProps> = ({
     },
   };
 
-  const { data, isLoading, error } = useBrandsQuery({
+  // const { data, isLoading, error } = useBrandsQuery({
+  //   limit: 8,
+  //   demoVariant,
+  // });
+  // const brands = data?.brands;
+
+  const { data, isLoading, error } = useCategoriesQuery({
     limit: 8,
     demoVariant,
   });
   const brands = data?.brands;
+
 
   return (
     <div className={className}>
@@ -73,26 +80,27 @@ const BrandBlock: React.FC<BrandProps> = ({
         >
           {isLoading && !data
             ? Array.from({ length: 10 }).map((_, idx) => (
-                <SwiperSlide key={idx}>
-                  <CardRoundedLoader uniqueKey={`category-${idx}`} />
-                </SwiperSlide>
-              ))
+              <SwiperSlide key={idx}>
+                <CardRoundedLoader uniqueKey={`category-${idx}`} />
+              </SwiperSlide>
+            ))
             : brands?.map((brand: Brand) => (
-                <SwiperSlide key={`brand--key${brand.id}`}>
-                  <Card
-                    showName={showName}
-                    item={brand}
-                    variant="rounded"
-                    size="medium"
-                    href={{
-                      pathname: ROUTES.SEARCH,
-                      query: { brand: brand.slug },
-                    }}
-                    imgSize="large"
-                    disableBorderRadius={disableBorderRadius}
-                  />
-                </SwiperSlide>
-              ))}
+              <SwiperSlide key={`brand--key${brand.id}`}>
+                <Card
+                  showName={showName}
+                  item={brand}
+                  variant="rounded"
+                  size="medium"
+                  href={{
+                    pathname: ROUTES.SEARCH,
+                    query: { brand: brand.slug },
+                  }}
+                  // href={brand.slug}
+                  imgSize="large"
+                  disableBorderRadius={disableBorderRadius}
+                />
+              </SwiperSlide>
+            ))}
         </Carousel>
       )}
     </div>

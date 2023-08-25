@@ -51,8 +51,7 @@ export default function Home() {
   const { t } = useTranslation('common');
   const { data, isLoading } = useFetchFeatureProduct('kobe-8-triple-white-halo');
   isLoading && console.log("feature product loading", isLoading)
-  console.log("feature product data", data)
-
+  // console.log("feature product data", data)
 
   return (
     <Container>
@@ -89,6 +88,8 @@ export default function Home() {
         video="https://www.youtube.com/embed/jzCcXDhdplw"
         videoWidth={1920}
         videoHeight={1080} />      <CollectionBlock data={collection} />
+      <Divider />
+      {/* <BrandBlock sectionHeading="text-top-brands" /> */}
       <BestSellerProductFeed />
       <ProductsFlashSaleBlock date={'2023-03-01T01:02:03'} />
       {/* <ProductsWithFlashSale carouselBreakpoint={flashSaleCarouselBreakpoint} /> */}
@@ -96,8 +97,6 @@ export default function Home() {
       <CategoryGridBlock sectionHeading="text-featured-categories" /> */}
       {/* <Divider /> */}
       {/* <NewArrivalsProductFeed /> */}
-      {/* <Divider /> */}
-      {/* <BrandBlock sectionHeading="text-top-brands" /> */}
       {/* <DownloadApps /> */}
       {/* <Support /> */}
       <Container>

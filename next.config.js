@@ -19,7 +19,8 @@ module.exports = withPWA({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'po-prod.s3.us-west-1.amazonaws.com',
+        hostname: '**.amazonaws.com',
+        // hostname: 'po-prod.s3.us-west-1.amazonaws.com',
         // port: '',
         // pathname: '/links/**',
       },

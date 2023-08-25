@@ -17,17 +17,6 @@ const cors = Cors({
 
 function calculateShipping(lineItems: Stripe.Checkout.SessionCreateParams.LineItem[]) {
   let total = 0;
-  // console.log("total items: ", lineItems.length)
-  // console.log("lineItems[1].quantity: ", lineItems[1].quantity)
-
-  // for (let lineItem in lineItems) {
-  //   lineItem = JSON.stringify(lineItem)
-  //   if (lineItem.quantity == 1) {
-  //     total = total + 1;
-  //   } else {
-  //     total = total + lineItem.quantity
-  //   }
-  // }
 
   for (let i = 0; i < lineItems.length; i++) {
     if (lineItems[i].quantity <= 2) {

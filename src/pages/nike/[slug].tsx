@@ -67,6 +67,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
             { params: { slug: "eybl" } },
             { params: { slug: "gtcuts" } },
             { params: { slug: "travis" } },
+            { params: { slug: "dunks" } },
             // Add more paths as needed
         ],
         fallback: true,

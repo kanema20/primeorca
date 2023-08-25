@@ -373,7 +373,12 @@ export const siteSettings = {
             id: 3,
             path: '/nike/travis',
             label: 'Travis Scott 🌵',
-          }
+          },
+          {
+            id: 4,
+            path: `${ROUTES.DUNKS}`,
+            label: 'SB Dunks',
+          },
         ],
       },
       {
@@ -877,6 +882,11 @@ export const siteSettings = {
             id: 3,
             path: `${ROUTES.TRAVIS}`,
             label: 'Travis Scott 🌵',
+          },
+          {
+            id: 4,
+            path: `${ROUTES.DUNKS}`,
+            label: 'SB Dunks ',
           },
         ],
       },
