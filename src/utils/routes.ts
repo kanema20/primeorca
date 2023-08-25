@@ -17,7 +17,7 @@ export const ROUTES = {
   PRADA: "/prada",
   DIOR: "/dior",
   DRIP: "/drip",
-  OFF: "/off",
+  OFF: "/drip/off-white",
   OFFNIKE: "/drip/off-white-nike",
   RHUDE: "/drip/rhude",
   LV: "/lv",

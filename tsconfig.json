@@ -63,7 +63,8 @@
     "src/pages/api/get-available-products.js",
     "src/pages/api/make-unavailable.js",
     "src/pages/api/checkout/index.ts",
-    "src/pages/api/create-products-with-sizes.js"
+    "src/pages/api/create-products-with-sizes.js",
+    "src/pages/api/update-products.js"
   ],
   "exclude": [
     "node_modules"

@@ -10,7 +10,8 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 
 const updateAllProducts = async () => {
     const rhude = await stripe.products.list({
-        url: 'rhude-pique-racer-shorts-cream'
+        //url: 'gallery-dept-painted-flare-sweat-pants-heather-grey'
+        url: 'gallery-dept-sun-faded-english-logo-hoodie-black',
     })
     // const products = await stripe.products.search({
     //     query: 'active:\'true\' AND metadata[\'type\']:\'Replica\'',
@@ -31,7 +32,8 @@ const updateAllProducts = async () => {
             // Update the existing attributes of the product
             // attributes: 'shoe_size',
             // Add the new attribute 'shoe_size' to the product
-            metadata: { collection: 'rhude' }
+            "images": ["https://prime-orca.s3.us-east-2.amazonaws.com/gallery-dept/Gallery-Dept-Sun-Faded-English-Logo-Hoodie-Black.jpg"],
+            // metadata: { collection: 'rhude' }
             // description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Prime Orca God Tier Replicas Batch - " + product.name,
         });
         console.log('Updated product:', updatedProduct);

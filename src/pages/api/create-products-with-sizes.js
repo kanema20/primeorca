@@ -28,26 +28,29 @@ const travis = require('./mvp/travis.js')
 // const lv = require('./mvp/lv-kicks.js');
 // const rickOwens = require('./mvp/rick-owens.js');
 const nikeDunks = require('./mvp/nike-dunks.js');
-
-const offShirts = [
+const kobe5eybl = [
     {
-        "_id": "64dc52e51589d91dd641ee06",
-        "name": "OFF-WHITE x Nike 005 T-Shirts Black",
-        "price": 49,
-        "brand": "OFF-WHITE",
-        "lowestResellPrice.stockX": "100",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/off-white-shirts/Off-White-x-Nike-005-T-Shirts-Black.jpg",
-        "description": "The Off-White x Nike 005 T-Shirts Black is a highly sought creation made available by the partnership between Nike, the sportswear icon, and OFF-WHITE, the streetwear brand by late Virgil Abloh. The creative teams opted went for a black hue for this garment. In terms of its design, the Off-White x Nike 005 T-Shirts Black boasts a simple, minimalist design. the designers of this garment opted for a blend of polyester and cotton when crafting them, making them soft, comfortable, and long-lasting garments. The signature OFF-WHITE logo is on the front, giving them a strikingly bold appearance. The design's versatility makes it a perfect everyday wear that can be paired with numerous outfits. What our experts love most about this creation is the perfect combination of OFF-WHITE's urban style and Nike's sportswear functionality. The Off-White x Nike 005 T-Shirts Black was released at a retail price of $55 on December 21st, 2020.",
-        "url": "off-white-x-nike-005-t-shirts-black",
-        "resellLinks.stockX": "https://stockx.com/off-white-x-nike-005-t-shirts-black",
-        "make": "OFF-WHITE x Nike 005",
-        "retailPrice": "55",
+        "_id": "64c3501cd5108ecc23fa0e3e",
+        "name": "Nike Kobe 5 Protro EYBL Girls (2020)",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "360",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-Kobe-5-Protro-EYBL-Forest-Green-2020-Product.jpg",
+        "description": "Part of a collection that released for Mamba Week, the Zoom Kobe 5 Protro 'EYBL' dropped in August 2020. Inspired by Greek mythology, the shoe's synthetic upper includes a scaly texture modeled after Medusa. The left tongue sports an EYBL logo, with Kobe branding on the right shoe. The collar lining and heel accent the look, while underfoot, Zoom in the midsole provides cushioning.",
+        "currency": "USD",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "url": "nike-kobe-5-protro-eybl-forest-green-2020",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-eybl-forest-green-2020",
+        "retailPrice": "180",
+        "releaseDate": "2020-08-29",
         "metadata_": {
-            "brand": "off-white",
-            "category": "off-white",
-            "collection": "off-white",
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe-5",
+            // "collection2": "kobe5",
+            "slug": "nike-kobe-5-protro-eybl-forest-green-2020",
         },
-        "releaseDate": "2022-12-21"
     },
 ]
 
@@ -80,7 +83,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of travis) {
+for (const product of kobe5eybl) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

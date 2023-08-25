@@ -836,8 +836,8 @@ export const siteSettings = {
           // },
           {
             id: 2,
-            path: `${ROUTES.OFFNIKE}`,
-            label: 'OFF WHITE ✖ NIKE',
+            path: `${ROUTES.OFF}`,
+            label: 'OFF WHITE',
           },
           {
             id: 3,
