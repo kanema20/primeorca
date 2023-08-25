@@ -37,7 +37,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of moncler) {
+for (const product of galleryDept) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

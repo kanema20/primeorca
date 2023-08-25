@@ -101,7 +101,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of moncler) {
+for (const product of galleryDept) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

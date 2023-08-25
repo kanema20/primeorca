@@ -56,7 +56,7 @@ export const useKobeArrivalsQuery = (options: QueryOptionsType) => {
   return useQuery<any, Error>(['kobe-new', options], fetchNewKobeArrivals);
 };
 
-const best_sellers: string[] = ["prod_OPXHJZvOn9eQ2J", "prod_ONvrmbYdNjiXrX", "prod_ONukvI2JcnCfcj", "prod_OVO8CO9lqK7EWb", "prod_OPmsC5aV8Y0wNm", "prod_OP0Izp6grSc3Cl", "prod_OOk6Bl9kCUMzIJ", "prod_OOjI4qhEj03bDP", "prod_OVtiaMmzaefBbM", "prod_OVt4cQuhy3gO6F", "prod_OSrhKxpb2Av6pu", "prod_ONumhCfPoYOiKu", "prod_OVtiSwDtV0DSkB", "prod_OVtiSwDtV0DSkB"]
+const best_sellers: string[] = ["prod_OPXHJZvOn9eQ2J", "prod_ONvrmbYdNjiXrX", "prod_ONukvI2JcnCfcj", "prod_OVO8CO9lqK7EWb", "prod_OVuihwTEtYq6zF", "prod_OPmsC5aV8Y0wNm", "prod_OP0Izp6grSc3Cl", "prod_OOk6Bl9kCUMzIJ", "prod_OOjI4qhEj03bDP", "prod_OVtiaMmzaefBbM", "prod_OVt4cQuhy3gO6F", "prod_OSrhKxpb2Av6pu", "prod_ONumhCfPoYOiKu", "prod_OVtiSwDtV0DSkB", "prod_OVtiSwDtV0DSkB"]
 
 const fetchBestSellers = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
