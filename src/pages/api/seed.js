@@ -13,7 +13,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const kobe6Products = require('./mvp/kobe6.js');
 // const kobe6_1Products = require('./mvp/kobe6_1.js');
 // const kobe8Products = require('./mvp/kobe8.js');
-// const kobe8_1Products = require('./mvp/kobe8_1.js');
+const kobe8_1Products = require('./mvp/kobe8_1.js');
 // const  = require('./mvp/balenciaga.js');
 // const kobe5offwhite = require('./mvp/kobe-off-white.js');
 // const balenciaga2 = require('./mvp/balenciaga-2.js');
@@ -104,7 +104,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of kobe5eybl) {
+for (const product of kobe8_1Products) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

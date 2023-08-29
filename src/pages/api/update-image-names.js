@@ -22,19 +22,21 @@ const updateAllProducts = async () => {
 
     const products = await stripe.products.list({
         limit: 100,
-        starting_after: 'prod_OQYfsjksBDWBmR',
+        active: false,
+        // starting_after: 'prod_OWB4OGcDIjiJW6',
     });
 
-    const filteredProducts = products.data.filter(product => product.metadata.collection === 'yeezy-700');
+    const filteredProducts = products.data.filter(product => product.metadata.category === 'shirts');
 
     for (const product of filteredProducts) {
-        const updatedImage = product.images[0].replace('https://images.stockx.com/images', 'https://po-prod.s3.us-west-1.amazonaws.com/yeezy-700');
+        // const updatedImage = product.images[0].replace('https://images.stockx.com/images', 'https://po-prod.s3.us-west-1.amazonaws.com/yeezy-700');
         const updatedProduct = await stripe.products.update(product.id, {
             // Update the existing attributes of the product
             // attributes: 'shoe_size',
             // Add the new attribute 'shoe_size' to the product
             // metadata: { collection: 'track' }
-            images: [updatedImage]
+            // images: [updatedImage]
+            active: true,
         });
         console.log('Updated product:', updatedProduct);
 

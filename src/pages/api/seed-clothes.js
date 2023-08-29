@@ -38,6 +38,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 const offWhiteShirts = require('./mvp/off-white-shirts.js');
 // dotenv.config({ path: `./env.local`, override: true });
 
+const moncler = require('./mvp/moncler.js')
 
 
 const offShirts = [
@@ -101,7 +102,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of offWhiteShirts) {
+for (const product of moncler) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

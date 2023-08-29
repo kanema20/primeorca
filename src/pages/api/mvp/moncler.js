@@ -2,7 +2,7 @@ const moncler = [
     {
         "_id": "64cfe93d03e7973baa66e233",
         "name": "Moncler Maya Short Down Jacket Black",
-        "price": "199",
+        "price": "249",
         "brand": "Moncler",
         "lowestResellPrice.stockX": "1020",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/moncler/moncler-jacket.jpg",

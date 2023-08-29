@@ -7,7 +7,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const nikeOffWhite = require('./mvp/nike-off-white.js');
 // const rhude = require('./mvp/rhude.js');
 // const galleryDept = require('./mvp/gallery-dept.js');
-// const moncler = require('./mvp/moncler.js');
+const moncler = require('./mvp/moncler.js');
 const offWhiteShirts = require('./mvp/off-white-shirts.js');
 
 const sizes_ = ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
@@ -38,7 +38,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of offWhiteShirts) {
+for (const product of moncler) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

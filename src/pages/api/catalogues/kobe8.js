@@ -237,6 +237,7 @@ const kobe8Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
+            "": "",
             "collection": "kobe8",
             "slug": "nike-zoom-kobe-6-white-del-sol"
         },

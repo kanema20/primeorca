@@ -155,15 +155,15 @@ export default function ProductPopup() {
           "slug": "size"
         }
       },
-      {
-        "id": 12,
-        "value": "14",
-        "attribute": {
-          "id": 1,
-          "name": "Size",
-          "slug": "size"
-        }
-      }
+      // {
+      //   "id": 12,
+      //   "value": "14",
+      //   "attribute": {
+      //     "id": 1,
+      //     "name": "Size",
+      //     "slug": "size"
+      //   }
+      // }
     ]
   }
 
@@ -215,15 +215,15 @@ export default function ProductPopup() {
           "slug": "size"
         }
       },
-      {
-        "id": 6,
-        "value": "XXXL",
-        "attribute": {
-          "id": 1,
-          "name": "Size",
-          "slug": "size"
-        }
-      },
+      // {
+      //   "id": 6,
+      //   "value": "XXXL",
+      //   "attribute": {
+      //     "id": 1,
+      //     "name": "Size",
+      //     "slug": "size"
+      //   }
+      // },
     ]
   }
 
