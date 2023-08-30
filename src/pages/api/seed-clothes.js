@@ -37,29 +37,31 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const moncler = require('./mvp/moncler.js');
 const offWhiteShirts = require('./mvp/off-white-shirts.js');
 // dotenv.config({ path: `./env.local`, override: true });
+const offWhiteUpdated = require('./mvp/off-white-updated.js');
 
 const moncler = require('./mvp/moncler.js')
 
 
-const offShirts = [
+const offHoodie = [
     {
-        "_id": "64dc52e51589d91dd641ee06",
-        "name": "OFF-WHITE x Nike 005 T-Shirts Black",
-        "price": 49,
+        "_id": "64dc52e51589d91dd641ee36",
+        "price": "79",
+        "name": "OFF-WHITE Galaxy Brushed Zip Up Hoodie Black/Blue",
         "brand": "OFF-WHITE",
-        "lowestResellPrice.stockX": "100",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/off-white-shirts/Off-White-x-Nike-005-T-Shirts-Black.jpg",
-        "description": "The Off-White x Nike 005 T-Shirts Black is a highly sought creation made available by the partnership between Nike, the sportswear icon, and OFF-WHITE, the streetwear brand by late Virgil Abloh. The creative teams opted went for a black hue for this garment. In terms of its design, the Off-White x Nike 005 T-Shirts Black boasts a simple, minimalist design. the designers of this garment opted for a blend of polyester and cotton when crafting them, making them soft, comfortable, and long-lasting garments. The signature OFF-WHITE logo is on the front, giving them a strikingly bold appearance. The design's versatility makes it a perfect everyday wear that can be paired with numerous outfits. What our experts love most about this creation is the perfect combination of OFF-WHITE's urban style and Nike's sportswear functionality. The Off-White x Nike 005 T-Shirts Black was released at a retail price of $55 on December 21st, 2020.",
-        "url": "off-white-x-nike-005-t-shirts-black",
-        "resellLinks.stockX": "https://stockx.com/off-white-x-nike-005-t-shirts-black",
-        "make": "OFF-WHITE x Nike 005",
-        "retailPrice": "55",
+        "lowestResellPrice.stockX": "312",
+        "image": "https://prime-orca.s3.us-east-2.amazonaws.com/off-white-updated/OFF-WHITE-Galaxy-Brushed-Zip-Up-Hoodie-Black.jpg",
+        "description": "",
+        "url": "off-white-galaxy-brushed-zip-up-hoodie-black",
+        "resellLinks.stockX": "https://stockx.com/off-white-galaxy-brushed-zip-up-hoodie-black",
+        "make": "OFF-WHITE Galaxy Brushed Zip Up Hoodie",
+        "retailPrice": "335",
         "metadata_": {
             "brand": "off-white",
-            "category": "off-white",
+            "category": "hoodies",
             "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
         },
-        "releaseDate": "2022-12-21"
+        "releaseDate": ""
     },
 ]
 
@@ -102,7 +104,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of moncler) {
+for (const product of offHoodie) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

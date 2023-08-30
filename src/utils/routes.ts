@@ -6,6 +6,7 @@ export const ROUTES = {
   KOBE5: "/kobe/kobe-5",
   KOBE6: "/kobe/kobe-6",
   KOBE8: "/kobe/kobe-8",
+  MONCLER: "/drip/moncler",
   BALENCI: "/balenciaga",
   TRACK: "/balenciaga/track",
   TRIPLES: "/balenciaga/triple-s",

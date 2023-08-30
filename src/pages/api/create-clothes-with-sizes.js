@@ -9,8 +9,33 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 // const galleryDept = require('./mvp/gallery-dept.js');
 const moncler = require('./mvp/moncler.js');
 const offWhiteShirts = require('./mvp/off-white-shirts.js');
+const offWhiteUpdated = require('./mvp/off-white-updated.js');
+const sizes_ = ['S', 'M', 'L', 'XL', 'XXL']; //, 'XXXL'];
 
-const sizes_ = ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+
+const offHoodie = [
+    {
+        "_id": "64dc52e51589d91dd641ee36",
+        "price": "79",
+        "name": "OFF-WHITE Galaxy Brushed Zip Up Hoodie Black/Blue",
+        "brand": "OFF-WHITE",
+        "lowestResellPrice.stockX": "312",
+        "image": "https://prime-orca.s3.us-east-2.amazonaws.com/off-white-updated/OFF-WHITE-Galaxy-Brushed-Zip-Up-Hoodie-Black.jpg",
+        "description": "",
+        "url": "off-white-galaxy-brushed-zip-up-hoodie-black",
+        "resellLinks.stockX": "https://stockx.com/off-white-galaxy-brushed-zip-up-hoodie-black",
+        "make": "OFF-WHITE Galaxy Brushed Zip Up Hoodie",
+        "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "hoodies",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
+        "releaseDate": ""
+    },
+]
+
 
 async function createProduct(product, size_) {
     const stripeProduct = await stripe.products.create({
@@ -38,7 +63,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of moncler) {
+for (const product of offHoodie) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

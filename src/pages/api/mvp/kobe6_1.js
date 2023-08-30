@@ -68,6 +68,30 @@ kobe6product = [
         },
         "releaseDate": "2021-12-28"
     },
+    {
+        "_id": "64c3501cd5108ecc23fa0e41",
+        "name": "Nike Kobe 6 Protro EYBL",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "2108",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/nike-kobe-6-protro-eybl.png",
+        "description": "Premium S Tier Batch - Nike Kobe 6 Protro EYBL",
+        "currency": "USD",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "url": "nike-kobe-6-protro-eybl",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-6-protro-eybl",
+        "make": "Nike Kobe 6 Protro",
+        "retailPrice": "225",
+        "releaseDate": "2022-05-01",
+        "metadata_": {
+            "brand": "nike",
+            "category": "kobe",
+            "collection": "kobe-6",
+            // "collection2": "kobe6",
+            "slug": "nike-kobe-6-protro-eybl",
+        },
+    },
 ]
 
 module.exports = kobe6product;

@@ -39,28 +39,29 @@ const travis = require('./mvp/travis.js')
 
 
 
-const kobe5eybl = [
+const kobe6eybl = [
     {
-        "_id": "64c3501cd5108ecc23fa0e3e",
-        "name": "Nike Kobe 5 Protro EYBL Girls (2020)",
+        "_id": "64c3501cd5108ecc23fa0e41",
+        "name": "Nike Kobe 6 Protro EYBL",
         "brand": "Nike",
         "price": "150",
-        "lowestResellPrice.stockX": "360",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-Kobe-5-Protro-EYBL-Forest-Green-2020-Product.jpg",
-        "description": "Part of a collection that released for Mamba Week, the Zoom Kobe 5 Protro 'EYBL' dropped in August 2020. Inspired by Greek mythology, the shoe's synthetic upper includes a scaly texture modeled after Medusa. The left tongue sports an EYBL logo, with Kobe branding on the right shoe. The collar lining and heel accent the look, while underfoot, Zoom in the midsole provides cushioning.",
+        "lowestResellPrice.stockX": "2108",
+        "image": "https://prime-orca.s3.us-east-2.amazonaws.com/kobe6/Nike-Kobe-6-Protro-EYBL.png",
+        "description": "Premium S Tier Batch - Nike Kobe 6 Protro EYBL",
         "currency": "USD",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "url": "nike-kobe-5-protro-eybl-forest-green-2020",
-        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-eybl-forest-green-2020",
-        "retailPrice": "180",
-        "releaseDate": "2020-08-29",
+        "url": "nike-kobe-6-protro-eybl",
+        "resellLinks.stockX": "https://stockx.com/nike-kobe-6-protro-eybl",
+        "make": "Nike Kobe 6 Protro",
+        "retailPrice": "225",
+        "releaseDate": "2022-05-01",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe-5",
-            // "collection2": "kobe5",
-            "slug": "nike-kobe-5-protro-eybl-forest-green-2020",
+            "collection": "kobe-6",
+            // "collection2": "kobe6",
+            "slug": "nike-kobe-6-protro-eybl",
         },
     },
 ]
@@ -104,7 +105,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of kobe8_1Products) {
+for (const product of kobe6eybl) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

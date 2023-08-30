@@ -11,6 +11,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-oversized-fit-airport-tape-t-shirt-white",
         "make": "OFF-WHITE Oversized Fit Airport Tape",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -25,6 +31,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-oversized-fit-airport-tape-t-shirt-black-multicolor",
         "make": "OFF-WHITE Oversized Fit Airport Tape",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -39,6 +51,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-diag-print-zip-up-hoodie-white-multicolor",
         "make": "OFF-WHITE Diag Print Zip Up Hoodie ",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "hoodies",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -53,6 +71,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-oversized-diag-arrows-t-shirt-black-multicolor",
         "make": "OFF-WHITE Oversized Diag Arrows T-shirt",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -67,6 +91,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-oversized-diag-arrows-t-shirt-white-multicolor",
         "make": "OFF-WHITE Oversized Diag Arrows T-shirt",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -81,6 +111,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-galaxy-brushed-t-shirt-black-blue",
         "make": "OFF-WHITE Galaxy Brushed T-shirt",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -89,12 +125,18 @@ const offWhiteUpdated = [
         "name": "OFF-WHITE Galaxy Brushed Zip Up Hoodie Black/Blue",
         "brand": "OFF-WHITE",
         "lowestResellPrice.stockX": "312",
-        "image": "https://prime-orca.s3.us-east-2.amazonaws.com/off-white-updated/Off-White-Galaxy-Brushed-T-shirt-Black-Blue.jpg",
+        "image": "https://prime-orca.s3.us-east-2.amazonaws.com/off-white-updated/OFF-WHITE-Galaxy-Brushed-Zip-Up-Hoodie-Black.jpg",
         "description": "",
-        "url": "off-white-galaxy-brushed-t-shirt-black-blue",
+        "url": "off-white-galaxy-brushed-zip-up-hoodie-black",
         "resellLinks.stockX": "https://stockx.com/off-white-galaxy-brushed-zip-up-hoodie-black",
         "make": "OFF-WHITE Galaxy Brushed Zip Up Hoodie",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "hoodies",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -109,6 +151,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-galaxy-brushed-zip-up-hoodie-black",
         "make": "OFF-WHITE Galaxy Brushed Sweatshirt",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "sweatshirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -123,6 +171,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-diag-arrows-sweatshirt-off-white-multicolor",
         "make": "OFF-WHITE Galaxy Brushed Sweatshirt",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "sweatshirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -137,6 +191,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-diag-arrows-sweatshirt-black-multicolor",
         "make": "OFF-WHITE Diag Arrows Sweatshirt",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "sweatshirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -151,6 +211,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-diag-arrows-sweatshirt-black-multicolor",
         "make": "OFF-WHITE Diag Arrows Sweatshirt",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "sweatshirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -165,6 +231,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-diag-arrows-zip-up-hoodie-black-multicolor",
         "make": "OFF-WHITE Diag Arrows Zip Up Hoodie",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "hoodies",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -179,6 +251,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-arrow-carav-mercy-skat-s-s-tee-black-white",
         "make": "OFF-WHITE Arrow Carav Mercy Skat S/S Tee",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
     {
@@ -193,6 +271,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-brush-arrows-slim-skate-s-s-tee-white-multi",
         "make": "OFF-WHITE Brush Arrows Slim Skate S/S Tee",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
 
@@ -208,6 +292,12 @@ const offWhiteUpdated = [
         "resellLinks.stockX": "https://stockx.com/off-white-brush-arrows-over-skate-s-s-tee-black-multi",
         "make": "OFF-WHITE Brush Arrows Slim Skate S/S Tee",
         "retailPrice": "335",
+        "metadata_": {
+            "brand": "off-white",
+            "category": "shirts",
+            "collection": "off-white",
+            "slug": "off-white-x-nike-005-t-shirts-beige"
+        },
         "releaseDate": ""
     },
 

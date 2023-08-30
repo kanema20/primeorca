@@ -336,6 +336,11 @@ export const siteSettings = {
             path: `${ROUTES.GALLERY}`,
             label: 'Gallery Dept.',
           },
+          {
+            id: 5,
+            path: `${ROUTES.MONCLER}`,
+            label: 'Moncler',
+          },
         ],
       },
       {
@@ -849,6 +854,11 @@ export const siteSettings = {
             id: 4,
             path: `${ROUTES.GALLERY}`,
             label: 'Gallery Dept.',
+          },
+          {
+            id: 5,
+            path: `${ROUTES.MONCLER}`,
+            label: 'Moncler',
           },
         ],
       },
