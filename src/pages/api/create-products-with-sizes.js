@@ -28,31 +28,33 @@ const travis = require('./mvp/travis.js')
 // const lv = require('./mvp/lv-kicks.js');
 // const rickOwens = require('./mvp/rick-owens.js');
 const nikeDunks = require('./mvp/nike-dunks.js');
-const kobe5eybl = [
+
+const kobe8 = [
     {
-        "_id": "64c3501cd5108ecc23fa0e3e",
-        "name": "Nike Kobe 5 Protro EYBL Girls (2020)",
+        "_id": "64c9d60c64ce863dd80f3c8d",
+        "name": "Nike Kobe 8 Sulfur / Electric",
         "brand": "Nike",
-        "price": "150",
-        "lowestResellPrice.stockX": "360",
-        "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-Kobe-5-Protro-EYBL-Forest-Green-2020-Product.jpg",
-        "description": "Part of a collection that released for Mamba Week, the Zoom Kobe 5 Protro 'EYBL' dropped in August 2020. Inspired by Greek mythology, the shoe's synthetic upper includes a scaly texture modeled after Medusa. The left tongue sports an EYBL logo, with Kobe branding on the right shoe. The collar lining and heel accent the look, while underfoot, Zoom in the midsole provides cushioning.",
+        "price": "160",
+        "lowestResellPrice.stockX": "1312",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe8/Nike-Kobe-8-Sulfer-Electric-Product.jpg",
+        "description": "The Kobe 8 System 'Sulfur Electric' puts a vibrant contrasting look on the snakeskin-inspired pattern on its Engineered Mesh upper. Finished in a mix of black and Vivid Sulfer, an anatomical heel counter supports the fit. Vivid Grey adds a subtle accent to the Swoosh and heel, while full-length Lunarlon, reinforced with a glass composite shank, provides cushioning and stability underfoot. A thin web rubber outsole in further Vivid Sulfer provides traction.",
         "currency": "USD",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "url": "nike-kobe-5-protro-eybl-forest-green-2020",
-        "resellLinks.stockX": "https://stockx.com/nike-kobe-5-protro-eybl-forest-green-2020",
-        "retailPrice": "180",
-        "releaseDate": "2020-08-29",
+        "url": "kobe-8-sulfur-electric",
+        "resellLinks.stockX": "https://stockx.com/kobe-8-sulfur-electric",
+        "make": "Nike Kobe 8",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe-5",
-            // "collection2": "kobe5",
-            "slug": "nike-kobe-5-protro-eybl-forest-green-2020",
+            "collection": "kobe-8",
+            "slug": "kobe-8-sulfur-electric"
         },
+        "releaseDate": "2012-12-20"
     },
 ]
+
 
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
@@ -83,7 +85,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of kobe8_1Products) {
+for (const product of kobe8) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

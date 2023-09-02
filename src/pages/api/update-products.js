@@ -9,7 +9,7 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 const updateAllProducts = async () => {
     const products = await stripe.products.list({
         // url: "nike-kobe-protro-6-think-pink",
-        ids: ["prod_ONx8LHiHradQyR"],
+        ids: ["prod_OXOST63Wiy02QE"],
         // url: "off-white-galaxy-brushed-t-shirt-black-blue",
         // url: "",
         // created: { lt: 10 },
@@ -35,11 +35,11 @@ const updateAllProducts = async () => {
             // Update the existing attributes of the product
             // attributes: 'shoe_size',
             // Add the new attribute 'shoe_size' to the product
-            "images": [orig],
-            // metadata: {
-            //     ...product.metadata,
-            //     collection: 'kobe-6'
-            // },
+            // "images": [orig],
+            metadata: {
+                ...product.metadata,
+                collection: 'kobe-8'
+            },
         });
         console.log('Updated product:', updatedProduct);
 

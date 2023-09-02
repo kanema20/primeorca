@@ -39,30 +39,29 @@ const travis = require('./mvp/travis.js')
 
 
 
-const kobe6eybl = [
+const kobe8 = [
     {
-        "_id": "64c3501cd5108ecc23fa0e41",
-        "name": "Nike Kobe 6 Protro EYBL",
+        "_id": "64c9d60c64ce863dd80f3c8d",
+        "name": "Nike Kobe 8 Sulfur / Electric",
         "brand": "Nike",
-        "price": "150",
-        "lowestResellPrice.stockX": "2108",
-        "image": "https://prime-orca.s3.us-east-2.amazonaws.com/kobe6/Nike-Kobe-6-Protro-EYBL.png",
-        "description": "Premium S Tier Batch - Nike Kobe 6 Protro EYBL",
+        "price": "160",
+        "lowestResellPrice.stockX": "1312",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/kobe8/Nike-Kobe-8-Sulfer-Electric-Product.jpg",
+        "description": "The Kobe 8 System 'Sulfur Electric' puts a vibrant contrasting look on the snakeskin-inspired pattern on its Engineered Mesh upper. Finished in a mix of black and Vivid Sulfer, an anatomical heel counter supports the fit. Vivid Grey adds a subtle accent to the Swoosh and heel, while full-length Lunarlon, reinforced with a glass composite shank, provides cushioning and stability underfoot. A thin web rubber outsole in further Vivid Sulfer provides traction.",
         "currency": "USD",
         "shippable": true,
         "statement_descriptor": "PRIME ORCA LLC",
-        "url": "nike-kobe-6-protro-eybl",
-        "resellLinks.stockX": "https://stockx.com/nike-kobe-6-protro-eybl",
-        "make": "Nike Kobe 6 Protro",
-        "retailPrice": "225",
-        "releaseDate": "2022-05-01",
+        "url": "kobe-8-sulfur-electric",
+        "resellLinks.stockX": "https://stockx.com/kobe-8-sulfur-electric",
+        "make": "Nike Kobe 8",
+        "retailPrice": "140",
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe-6",
-            // "collection2": "kobe6",
-            "slug": "nike-kobe-6-protro-eybl",
+            "collection": "kobe-8",
+            "slug": "kobe-8-sulfur-electric"
         },
+        "releaseDate": "2012-12-20"
     },
 ]
 
@@ -105,7 +104,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of kobe6eybl) {
+for (const product of kobe8) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

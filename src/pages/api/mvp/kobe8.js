@@ -40,7 +40,7 @@ kobe8product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe8",
+            "collection": "kobe-8",
             "slug": "kobe-8-sulfur-electric"
         },
         "releaseDate": "2012-12-20"
