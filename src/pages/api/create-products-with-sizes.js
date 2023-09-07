@@ -28,6 +28,7 @@ const travis = require('./mvp/travis.js')
 // const lv = require('./mvp/lv-kicks.js');
 // const rickOwens = require('./mvp/rick-owens.js');
 const nikeDunks = require('./mvp/nike-dunks.js');
+const jordan4 = require('./mvp/jordan4.js');
 
 const kobe8 = [
     {
@@ -85,7 +86,7 @@ async function createProduct(product, size_) {
     return stripeProduct;
 }
 
-for (const product of kobe8) {
+for (const product of jordan4) {
     // createProduct(product, sizes_)
     for (const size of sizes_) {
         createProduct(product, size)

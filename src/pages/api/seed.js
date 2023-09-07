@@ -34,6 +34,7 @@ const travis = require('./mvp/travis.js')
 // const nikeOffWhite = require('./mvp/nike-off-white.js');
 // const nikeDunks = require('./mvp/nike-dunks.js');
 // const nikeDunks = require('./mvp/nike-dunks.js');
+const jordan4 = require('./mvp/jordan4.js');
 
 // dotenv.config({ path: `./env.local`, override: true });
 
@@ -104,7 +105,7 @@ const createProduct = async (product) => {
 // const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 
-for (const product of kobe8) {
+for (const product of jordan4) {
     // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {

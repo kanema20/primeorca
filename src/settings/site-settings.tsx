@@ -390,6 +390,11 @@ export const siteSettings = {
             path: `${ROUTES.DUNKS}`,
             label: 'SB Dunks',
           },
+          {
+            id: 5,
+            path: `${ROUTES.JORDAN4}`,
+            label: 'Jordan 4',
+          },
         ],
       },
       {
@@ -908,6 +913,11 @@ export const siteSettings = {
             id: 4,
             path: `${ROUTES.DUNKS}`,
             label: 'SB Dunks ',
+          },
+          {
+            id: 5,
+            path: `${ROUTES.JORDAN4}`,
+            label: 'Jordan 4',
           },
         ],
       },

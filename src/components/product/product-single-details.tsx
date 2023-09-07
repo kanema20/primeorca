@@ -3,7 +3,7 @@ import Button from '@components/ui/button';
 import Counter from '@components/common/counter';
 import { useRouter } from 'next/router';
 import { useProductQuery } from '@framework/product/get-product';
-import { useSingleProdQuery } from '@framework/product/get-single-product';
+import { useFetchFeatureProduct } from '@framework/product/get-single-product';
 import { getVariations } from '@framework/utils/get-variations';
 import usePrice from '@framework/product/use-price';
 import { useCart } from '@contexts/cart/cart.context';
@@ -39,6 +39,8 @@ interface IndividualProdProps {
 
 // const ProductSingleDetails: React.FC = () => {
 const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
+  const { data: prodData, isLoading } = useFetchFeatureProduct(data);
+  console.log("prodData: ", prodData)
   // const {
   //   query: { slug },
   // } = useRouter();
@@ -230,15 +232,15 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
           "slug": "size"
         }
       },
-      {
-        "id": 6,
-        "value": "XXXL",
-        "attribute": {
-          "id": 1,
-          "name": "Size",
-          "slug": "size"
-        }
-      },
+      // {
+      //   "id": 6,
+      //   "value": "XXXL",
+      //   "attribute": {
+      //     "id": 1,
+      //     "name": "Size",
+      //     "slug": "size"
+      //   }
+      // },
     ]
   }
 
@@ -406,12 +408,13 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
                 Collection:
               </span>
-              <Link
+              {data.metadata.collection}
+              {/* <Link
                 href={`/${data.metadata.brand}/${data.metadata.collection}`}
                 className="transition hover:underline hover:text-heading"
               >
                 {data.metadata.collection}
-              </Link>
+              </Link> */}
             </li>
             {data?.tags && Array.isArray(data.tags) && (
               <li className="productTags">

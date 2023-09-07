@@ -23,7 +23,7 @@ export default function ProductPage({ individualProduct }: InferGetServerSidePro
 				<div className="pt-8">
 					<Breadcrumb />
 				</div>
-				{/* <ProductSingleDetails data={data} /> */}
+				{/* <ProductSingleDetails data={slug} /> */}
 				<ProductSingleDetails data={individualProduct} />
 				<RelatedProducts sectionHeading="text-related-products" />
 				<Subscription />
@@ -40,37 +40,36 @@ ProductPage.Layout = Layout;
 // 		params: { slug: prod.metadata.slug },
 // 	}));
 // 	return {
-// 		paths,
-// 		// : [
-// 		// { params: { slug: "kobe-5" } },
-// 		// { params: { slug: "kobe-6" } },
-// 		// Add more paths as needed
-// 		// ],
+// 		paths: [
+// 			// { params: { slug: "kobe-5" } },
+// 			// { params: { slug: "kobe-6" } },
+// 			// Add more paths as needed
+// 		],
 // 		fallback: true,
 // 	};
 // };
 
 // export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
-// const { slug } = params;
-// const { data, isLoading } = useSingleProdQuery(slug as string);
-// const inventory = await stripe.products.list({
-// 	expand: ["data.default_price"],
-// });
-// const products = inventory.data.map((product: any) => {
-// 	const price = product.default_price;
-// 	return {
-// 		id: product.id,
-// 		name: product.name,
-// 		description: product.description,
-// 		price: price.unit_amount,
-// 		currency: price.currency,
-// 		image: product.images[0],
-// 		metadata: product.metadata,
-// 		url: product.url,
-// 	}
-// })
-// const _product = products.find(product => product.url === slug)
-// const individualProduct = JSON.stringify(_product);
+// 	const { slug } = params;
+// 	const { data, isLoading } = useSingleProdQuery(slug as string);
+// 	const inventory = await stripe.products.list({
+// 		expand: ["data.default_price"],
+// 	});
+// 	const products = inventory.data.map((product: any) => {
+// 		const price = product.default_price;
+// 		return {
+// 			id: product.id,
+// 			name: product.name,
+// 			description: product.description,
+// 			price: price.unit_amount,
+// 			currency: price.currency,
+// 			image: product.images[0],
+// 			metadata: product.metadata,
+// 			url: product.url,
+// 		}
+// 	})
+// 	const _product = products.find(product => product.url === slug)
+// 	const individualProduct = JSON.stringify(_product);
 
 // 	return {
 // 		props: {
@@ -110,8 +109,9 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
 		}
 	})
 	const _product = await products.find(product => product.url === slug)
-	const individualProduct = JSON.parse(JSON.stringify(_product))
-
+	const individualProduct = JSON.stringify(_product)
+	console.log("individualProduct: ", individualProduct)
+	// const individualProduct = JSON.parse(JSON.stringify(_product))
 	return {
 		props: {
 			individualProduct,
