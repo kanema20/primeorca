@@ -20,12 +20,12 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 						content: 'width=device-width, initial-scale=1.0',
 					},
 				]}
-				title="Prime Orca | Best Reps in the Game"
-				description="Premium replica basketball and street sneakers for the go getter."
+				title="Prime Orca"
+				description="Premium basketball and streetwear."
 				canonical="https://primeorca.com"
 				openGraph={{
 					url: 'https://primeorca.com',
-					title: 'Prime Orca | Best Reps in the Game',
+					title: 'Prime Orca',
 					description:
 						'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
 					images: [

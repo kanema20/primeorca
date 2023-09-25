@@ -62,7 +62,7 @@ const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '1
 async function createProduct(product, size_) {
     const stripeProduct = await stripe.products.create({
         name: `${product.name} - ${size_}`,
-        description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Prime Orca God Tier Replicas Batch - " + product.name,
+        description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Orca Tier Batch - " + product.name,
         default_price_data: {
             currency: "USD",
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),

@@ -22,6 +22,7 @@ export const ROUTES = {
   OFF: "/drip/off-white",
   OFFNIKE: "/drip/off-white-nike",
   RHUDE: "/drip/rhude",
+  RICKOWENS: "/drip/rick-owens",
   LV: "/lv",
   PURPLE: "/purple",
   JA1: "/ja1",

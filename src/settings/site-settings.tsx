@@ -26,7 +26,7 @@ import { SneakerIcon } from '@components/icons/sneaker-icon';
 
 export const siteSettings = {
   name: 'Prime Orca',
-  description: 'The source for premium replica basketball shoes, including exclusive Kobe, Jordan, Kyrie and more.',
+  description: 'The source for premium quality basketball shoes, designer, and street wear.',
   author: {
     name: 'Prime Orca',
     websiteUrl: 'https://primeorca.com',
@@ -75,21 +75,21 @@ export const siteSettings = {
           //     },
           //   ],
           // },
-          {
-            id: 2,
-            path: '/process',
-            label: 'menu-our-process',
-          },
+          // {
+          //   id: 2,
+          //   path: '/process',
+          //   label: 'menu-our-process',
+          // },
           {
             id: 3,
             path: '/privacy',
             label: 'menu-privacy-policy',
           },
-          {
-            id: 4,
-            path: '/about-us',
-            label: 'menu-about',
-          },
+          // {
+          //   id: 4,
+          //   path: '/about-us',
+          //   label: 'menu-about',
+          // },
           {
             id: 5,
             path: '/contact-us',
@@ -340,6 +340,11 @@ export const siteSettings = {
             id: 5,
             path: `${ROUTES.MONCLER}`,
             label: 'Moncler',
+          },
+          {
+            id: 6,
+            path: `${ROUTES.RICKOWENS}`,
+            label: 'Rick Owens',
           },
         ],
       },
@@ -803,11 +808,11 @@ export const siteSettings = {
           //     },
           //   ],
           // },
-          {
-            id: 2,
-            path: '/process',
-            label: 'menu-our-process',
-          },
+          // {
+          //   id: 2,
+          //   path: '/process',
+          //   label: 'menu-our-process',
+          // },
           {
             id: 3,
             path: '/privacy',
@@ -818,11 +823,11 @@ export const siteSettings = {
           //   path: '/terms',
           //   label: 'menu-terms-condition',
           // },
-          {
-            id: 4,
-            path: '/about-us',
-            label: 'menu-about',
-          },
+          // {
+          //   id: 4,
+          //   path: '/about-us',
+          //   label: 'menu-about',
+          // },
           {
             id: 5,
             path: '/contact-us',
@@ -864,6 +869,11 @@ export const siteSettings = {
             id: 5,
             path: `${ROUTES.MONCLER}`,
             label: 'Moncler',
+          },
+          {
+            id: 6,
+            path: `${ROUTES.RICKOWENS}`,
+            label: 'Rick Owens',
           },
         ],
       },

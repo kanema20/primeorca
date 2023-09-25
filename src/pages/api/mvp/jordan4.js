@@ -2,7 +2,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de0286d",
         "name": "Jordan 4 Retro Black Cat (2020)",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "780",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-Black-Cat-2020-Product.jpg",
@@ -22,7 +22,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de02888",
         "name": "Jordan 4 Retro White Oreo (2021) (GS)",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "342",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-White-Oreo-2021-GS-Product.jpg",
@@ -42,7 +42,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de02875",
         "name": "Jordan 4 Retro Travis Scott Cactus Jack",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "780",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-Travis-Scott-Cactus-Jack-Product.jpg",
@@ -62,7 +62,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de02883",
         "name": "Jordan 4 Retro Union Guava Ice",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "579",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-Union-Guava-Ice-Product.jpg",
@@ -82,7 +82,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de02880",
         "name": "Jordan 4 Retro Union Off Noir",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "527",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-Union-Off-Noir-Product.jpg",
@@ -102,7 +102,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de028a1",
         "name": "Jordan 4 Retro Thunder (2012)",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "300",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-Thunder-2012-Product.jpg",
@@ -122,7 +122,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de02869",
         "name": "Jordan 4 Retro Red Thunder",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "380",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-Red-Thunder-Product.jpg",
@@ -142,7 +142,7 @@ const jordan4 = [
     {
         "_id": "64f94a57c4f8b7434de02874",
         "name": "Jordan 4 Retro Taupe Haze",
-        "price": 135,
+        "price": 160,
         "brand": "Jordan",
         "lowestResellPrice.stockX": "354",
         "image": "https://prime-orca.s3.us-east-2.amazonaws.com/jordan4/Air-Jordan-4-Retro-Taupe-Haze-Product.jpg",

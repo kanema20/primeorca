@@ -34,7 +34,7 @@ const updateAllProducts = async () => {
             // Add the new attribute 'shoe_size' to the product
             "images": ["https://prime-orca.s3.us-east-2.amazonaws.com/gallery-dept/Gallery-Dept-Sun-Faded-English-Logo-Hoodie-Black.jpg"],
             // metadata: { collection: 'rhude' }
-            // description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Prime Orca God Tier Replicas Batch - " + product.name,
+            // description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Orca Tier Batch - " + product.name,
         });
         console.log('Updated product:', updatedProduct);
     }

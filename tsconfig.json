@@ -64,7 +64,9 @@
     "src/pages/api/make-unavailable.js",
     "src/pages/api/checkout/index.ts",
     "src/pages/api/create-products-with-sizes.js",
-    "src/pages/api/update-products.js"
+    "src/pages/api/update-products.js",
+    "src/pages/api/firebase/init.ts",
+    "src/pages/api/firebase/getProducts.js"
   ],
   "exclude": [
     "node_modules"

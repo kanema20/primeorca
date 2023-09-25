@@ -40,7 +40,7 @@ const offHoodie = [
 async function createProduct(product, size_) {
     const stripeProduct = await stripe.products.create({
         name: `${product.name} - ${size_}`,
-        description: "**IMPORTANT** Clothing sizes are in Asian sizes. It is advised to size up 1 (or 2) sizes from US size depending on bodily girth (ex. US Large = Asian XL). The Prime Orca God Tier Replicas Batch - " + product.name,
+        description: "**IMPORTANT** Clothing sizes are in Asian sizes. It is advised to size up 1 (or 2) sizes from US size depending on bodily girth (ex. US Large = Asian XL). The Orca Tier Batch - " + product.name,
         default_price_data: {
             currency: "USD",
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),

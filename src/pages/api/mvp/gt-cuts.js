@@ -23,6 +23,29 @@ const gtcuts = [
         "releaseDate": "2022-04-06"
     },
     {
+        "_id": "64c3501cd5108ecc23fa0e42",
+        "name": "Nike Air Zoom G.T. Cut EYBL Black",
+        "brand": "Nike",
+        "price": "150",
+        "lowestResellPrice.stockX": "399",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/eybl/Nike-Air-Zoom-GT-Cut-EYBL-Black.jpg",
+        "description": "Premium S Tier Batch - Nike Air Zoom G.T. Cut EYBL Black",
+        "currency": "USD",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "url": "nike-air-zoom-gt-cut-eybl-black",
+        "resellLinks.stockX": "https://stockx.com/nike-air-zoom-gt-cut-eybl-black",
+        "make": "Nike Air Zoom G.T. Cut",
+        "retailPrice": "140",
+        "releaseDate": "2022-02-13",
+        "metadata_": {
+            "brand": "nike",
+            "category": "nike",
+            "collection": "gtcuts",
+            "slug": "nike-air-zoom-gt-cut-eybl-black",
+        },
+    },
+    {
         "_id": "64cf14d6f7204deafca94481",
         "name": "Nike Air Zoom G.T. Cut Black Crimson Green",
         "price": "135",
@@ -91,52 +114,52 @@ const gtcuts = [
         },
         "releaseDate": "2021-05-26"
     },
-    // {
-    //     "_id": "64cf14d6f7204deafca94488",
-    //     "name": "Nike Air Zoom G.T. Cut Think Pink",
-    //     "price": "108",
-    //     "brand": "Nike",
-    //     "lowestResellPrice.stockX": "479",
-    //     "image": "https://po-prod.s3.us-west-1.amazonaws.com/gtcuts/Nike-Air-Zoom-GT-Cut-Think-Pink-Product.jpg",
-    //     "description": "Nike Air Zoom G.T. Cut Think Pink",
-    //     "url": "nike-air-zoom-gt-cut-think-pink",
-    //     "resellLinks.stockX": "https://stockx.com/nike-air-zoom-gt-cut-think-pink",
-    // "currency": "USD",
-    // "shippable": true,
-    // "statement_descriptor": "PRIME ORCA LLC",
-    //     "make": "Nike Air Zoom G.T. Cut",
-    //     "retailPrice": "170",
-    //     "metadata_": {
-    //         "brand": "nike",
-    //         "category": "nike",
-    //         "collection": "gtcuts",
-    //         "slug": "nike-air-zoom-gt-cut-think-pink"
-    //     },
-    //     "releaseDate": "2022-02-22"
-    // },
-    // {
-    //     "_id": "64cf14d6f7204deafca94485",
-    //     "name": "Nike Air Zoom G.T. Cut Violet Crimson",
-    //     "price": "108",
-    //     "brand": "Nike",
-    //     "lowestResellPrice.stockX": "175",
-    //     "image": "https://po-prod.s3.us-west-1.amazonaws.com/gtcuts/Nike-Air-Zoom-GT-Cut-Violet-Crimson-Product.jpg",
-    //     "description": "Nike Air Zoom G.T. Cut Violet Crimson",
-    //     "url": "nike-air-zoom-gt-cut-violet-crimson",
-    //     "resellLinks.stockX": "https://stockx.com/nike-air-zoom-gt-cut-violet-crimson",
-    //     "currency": "USD",
-    //     "shippable": true,
-    //     "statement_descriptor": "PRIME ORCA LLC",
-    //     "make": "Nike Air Zoom G.T. Cut",
-    //     "retailPrice": "170",
-    //     "metadata_": {
-    //         "brand": "nike",
-    //         "category": "nike",
-    //         "collection": "gtcuts",
-    //         "slug": "nike-air-zoom-gt-cut-violet-crimson"
-    //     },
-    //     "releaseDate": "2021-12-01"
-    // },
+    {
+        "_id": "64cf14d6f7204deafca94488",
+        "name": "Nike Air Zoom G.T. Cut Think Pink",
+        "price": "108",
+        "brand": "Nike",
+        "lowestResellPrice.stockX": "479",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/gtcuts/Nike-Air-Zoom-GT-Cut-Think-Pink-Product.jpg",
+        "description": "Nike Air Zoom G.T. Cut Think Pink",
+        "url": "nike-air-zoom-gt-cut-think-pink",
+        "resellLinks.stockX": "https://stockx.com/nike-air-zoom-gt-cut-think-pink",
+        "currency": "USD",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "make": "Nike Air Zoom G.T. Cut",
+        "retailPrice": "170",
+        "metadata_": {
+            "brand": "nike",
+            "category": "nike",
+            "collection": "gtcuts",
+            "slug": "nike-air-zoom-gt-cut-think-pink"
+        },
+        "releaseDate": "2022-02-22"
+    },
+    {
+        "_id": "64cf14d6f7204deafca94485",
+        "name": "Nike Air Zoom G.T. Cut Violet Crimson",
+        "price": "108",
+        "brand": "Nike",
+        "lowestResellPrice.stockX": "175",
+        "image": "https://po-prod.s3.us-west-1.amazonaws.com/gtcuts/Nike-Air-Zoom-GT-Cut-Violet-Crimson-Product.jpg",
+        "description": "Nike Air Zoom G.T. Cut Violet Crimson",
+        "url": "nike-air-zoom-gt-cut-violet-crimson",
+        "resellLinks.stockX": "https://stockx.com/nike-air-zoom-gt-cut-violet-crimson",
+        "currency": "USD",
+        "shippable": true,
+        "statement_descriptor": "PRIME ORCA LLC",
+        "make": "Nike Air Zoom G.T. Cut",
+        "retailPrice": "170",
+        "metadata_": {
+            "brand": "nike",
+            "category": "nike",
+            "collection": "gtcuts",
+            "slug": "nike-air-zoom-gt-cut-violet-crimson"
+        },
+        "releaseDate": "2021-12-01"
+    },
 ]
 
 module.exports = gtcuts;

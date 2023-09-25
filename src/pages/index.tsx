@@ -57,13 +57,13 @@ export default function Home() {
     <Container>
       {/* <Elements stripe={stripePromise} options={options}> */}
       {/* <HeroWithCategory bannerData={heroBanner} /> */}
-      <BannerCard
+      {/* <BannerCard
         key={`banner--key${banner.id}`}
         banner={banner}
         // href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
         href={``}
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
-      />
+      /> */}
       <BannerCardFeature
         key={`banner--key${featureBanner.id}`}
         banner={featureBanner}
