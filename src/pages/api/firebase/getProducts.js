@@ -43,9 +43,9 @@ async function getProductsByCollection(query_) {
     });
 }
 
-async function  {
+// async function  {
 
-}
+// }
 
 initializeApp(getFirebaseConfig());
 
