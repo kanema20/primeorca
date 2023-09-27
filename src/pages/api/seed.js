@@ -73,16 +73,13 @@ function isEmpty(field) {
     }
 }
 
-// const createProduct = async (product, sizes) => {
 const createProduct = async (product) => {
     const stripeProduct = await stripe.products.create({
         name: product.name,
-        // description: "**IMPORTANT** Clothing sizes are in Asian sizes. It is advised to size up 1 (or 2) sizes from US size depending on bodily girth (ex. US Large = Asian XL). The Prime Orca God Tier Replicas Batch - " + product.name,
         description: "**IMPORTANT** For US Size 12, 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Orca Tier Batch - " + product.name,
         default_price_data: {
             currency: "USD",
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),
-            // unit_amount_decimal: (170 * 100).toString(),
         },
         images: [product.image],
         shippable: true,
@@ -101,11 +98,7 @@ const createProduct = async (product) => {
     return stripeProduct;
 };
 
-// const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
-
-
 for (const product of jordan4) {
-    // createProduct(product, sizes_)
     createProduct(product)
         .then(product => {
             console.log(product);

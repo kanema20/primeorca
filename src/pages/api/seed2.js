@@ -51,12 +51,10 @@ const offShirts = [
 async function createProduct(product, size_) {
     const stripeProduct = await stripe.products.create({
         name: `${product.name} - ${size_}`,
-        // description: product.description ? product.description : "The Prime Orca God Tier Replicas Batch - " + product.name,
-        description: "The Prime Orca God Tier Replicas Batch - " + product.name,
+        description: "The Prime Orca God Tier Batch - " + product.name,
         default_price_data: {
             currency: "USD",
             unit_amount_decimal: (parseInt(product.price) * 100).toString(),
-            // unit_amount_decimal: (170 * 100).toString(),
         },
         images: [product.image],
         shippable: true,

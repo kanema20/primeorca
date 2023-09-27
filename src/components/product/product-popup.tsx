@@ -30,7 +30,7 @@ export default function ProductPopup() {
   const { url, images, name, description, default_price, metadata } = data;
 
   const productType = () => {
-    if (data.metadata.type == "Replica") {
+    if (data.metadata.type == "Replica" || data.metadata.type == "Refurbished") {
       return "Sizes (US - Men)";
     }
     else {
@@ -234,7 +234,7 @@ export default function ProductPopup() {
   }
 
   const productAttributes = () => {
-    if (data.metadata.type == "Replica") {
+    if (data.metadata.type == "Replica" || data.metadata.type == "Refurbished") {
       return variations;
     } else {
       return clothingVariations;

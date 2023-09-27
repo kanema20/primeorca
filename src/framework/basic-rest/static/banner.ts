@@ -1,6 +1,6 @@
 export const homeOneBanner = {
   id: 1,
-  title: 'Top Replica Shoes in the Market',
+  title: 'Top Replica Shoes and Apparel in the Market',
   slug: 'just-do-it',
   image: {
     mobile: {
