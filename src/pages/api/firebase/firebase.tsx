@@ -1,3 +1,8 @@
+// src/firebase.js
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getFirebaseConfig } from './config';
+
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -8,11 +13,6 @@ const config = {
     appId: process.env.FIREBASE_APP_ID
 } as const;
 
-type Config = typeof config;
+const firebase = initializeApp(config);
 
-export function getFirebaseConfig(): Config {
-    if (Object.values(config).some((value) => !value))
-        throw new Error('Firebase config is not set or incomplete');
-
-    return config;
-}
+export const firestore = getFirestore(firebase);
