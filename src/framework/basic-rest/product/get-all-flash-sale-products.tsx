@@ -24,16 +24,21 @@ const fetchAncientFlashSaleProducts = async ({ queryKey }: any) => {
 const fetchNewKobeArrivals = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
   const products = await stripe.products.search({
-    query: `active:\'true\' AND (metadata[\'type\']:\'Replica\' OR metadata[\'type\']:\'Refurbished\')`,
+    query: `active:\'true\' AND metadata[\'type\']:\'Replica\'`,
+    limit: 15,
+  });
+
+  const refurbishedProducts = await stripe.products.search({
+    query: `active:\'true\' AND metadata[\'type\']:\'Refurbished\'`,
     limit: 15,
   });
 
   const clothingProducts = await stripe.products.search({
-    query: `active:\'true\' AND (metadata[\'type\']:\'Replica Clothing\' OR metadata[\'type\']:\'Refurbished Clothing\')`,
+    query: `active:\'true\' AND metadata[\'type\']:\'Replica Clothing\'`,
     limit: 15,
   });
 
-  const combinedProducts = [...clothingProducts.data, ...products.data];
+  const combinedProducts = [...clothingProducts.data, ...refurbishedProducts, ...products.data];
 
   // const { data } = await stripe.products.list({
   //   limit: 10,
