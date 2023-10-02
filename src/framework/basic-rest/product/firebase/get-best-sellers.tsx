@@ -13,11 +13,10 @@ import {
 
 import { firestore } from '../../../../pages/api/firebase/firebase';
 
-
 const fetchNewArrivals = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
     // Define a query reference using the Firebase SDK
-    const ref = query(collection(firestore, "products"), where("available", "==", "true"), limit(20));
+    const ref = query(collection(firestore, "products"), limit(20)); // where("available", "==", "true"),
 
     // Provide the query to the hook
     const query_ = useFirestoreQuery(["products"], ref);
@@ -26,17 +25,6 @@ const fetchNewArrivals = async ({ queryKey }: any) => {
     return snapshot;
 };
 
-
 export const useNewArrivalsQuery = (options: QueryOptionsType) => {
     return useQuery<any, Error>(['new-arrivals', options], fetchNewArrivals);
 };
-
-// const fetchBestSellers = async ({ queryKey }: any) => {
-//     const [_key, _params] = queryKey;
-
-//     return products.data;
-// };
-
-// export const useBestSellersQuery = (options: QueryOptionsType) => {
-//     return useQuery<any, Error>(['best-sellers', options], fetchBestSellers);
-// };
