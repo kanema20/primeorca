@@ -4,6 +4,7 @@ import ProductCardGridLoader from '@components/ui/loaders/product-card-grid-load
 import { useKobeArrivalsQuery } from '@framework/product/get-all-flash-sale-products';
 import Alert from '@components/ui/alert';
 import dynamic from 'next/dynamic';
+import { useNewArrivalsQuery } from '@framework/product/firebase/get-best-sellers';
 
 const Countdown = dynamic(() => import('react-countdown'), { ssr: false });
 
@@ -119,10 +120,15 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
   disableBorderRadius = false,
   bgGray,
 }) => {
-  const { data, isLoading, error } = useKobeArrivalsQuery({
+  const { data, isLoading, error } = useNewArrivalsQuery({
     limit: limit || 20,
     // demoVariant,
   });
+
+  const { isFetching: newArrivalsLoading, data: firebaseArrivals, error: firebaseError } = useNewArrivalsQuery({
+    limit: limit || 20,
+  });
+  console.log("firebaseArrivals: ", firebaseArrivals)
 
   if (isLoading) {
     return (

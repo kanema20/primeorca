@@ -3,7 +3,6 @@ import Button from "@components/ui/button";
 import type { FC } from "react";
 import { useProductsQuery } from "@framework/product/get-all-products";
 import { useKobeCollectionQuery } from "@framework/product/get-collection";
-import { useNewArrivalsQuery } from "@framework/product/firebase/get-best-sellers";
 import { useRouter } from "next/router";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
 import { useTranslation } from "next-i18next";
@@ -18,15 +17,9 @@ export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
 	const { query } = useRouter();
 	const {
 		isFetching: isLoading,
-		// isFetchingNextPage: loadingMore,
-		// fetchNextPage,
-		// hasNextPage,
 		data,
 		error,
 	} = useKobeCollectionQuery({ ...query }, slug);
-
-	const { isFetching: newArrivalsLoading, data: firebaseArrivals, error: firebaseError } = useNewArrivalsQuery({ ...query });
-	console.log("firebaseArrivals: ", firebaseArrivals)
 	if (error) return <p>{error.message}</p>;
 
 	const { t } = useTranslation("common");

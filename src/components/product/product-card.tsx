@@ -12,8 +12,8 @@ import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-produc
 import Stripe from 'stripe';
 
 interface ProductProps {
-  product: Stripe.Product;
-  // product: StripeProduct;
+  // product: Stripe.Product;
+  product: StripeProduct;
   className?: string;
   contactClassName?: string;
   imageContentClassName?: string;
@@ -127,7 +127,7 @@ const ProductCard: FC<ProductProps> = ({
         )}
       >
         <Image
-          src={product?.images[0] ?? placeholderImage}
+          src={product?.images ?? placeholderImage}
           // src={placeholderImage}
           width={demoVariant === 'ancient' ? 352 : imgWidth}
           // height={demoVariant === 'ancient' ? 452 : imgHeight}

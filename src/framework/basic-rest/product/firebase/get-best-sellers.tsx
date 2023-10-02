@@ -9,19 +9,26 @@ import {
     QuerySnapshot,
     DocumentData,
     where,
+    getDocs
 } from "firebase/firestore";
 
-import { firestore } from '../../../../pages/api/firebase/firebase';
+// import { firestore } from '../../../../pages/api/firebase/firebase';
+import { db, storage } from '@firebase/app';
 
 const fetchNewArrivals = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
-    // Define a query reference using the Firebase SDK
-    const ref = query(collection(firestore, "products"), limit(20)); // where("available", "==", "true"),
 
-    // Provide the query to the hook
-    const query_ = useFirestoreQuery(["products"], ref);
+    // const ref = query(collection(firestore, "products"), limit(20)); // where("available", "==", "true"),
+    const query_ref = getDocs(query(collection(db, "products"), limit(20)));
 
-    const snapshot = query_.data;
+    let query_data = [];
+    const snapshot = (await query_ref).docs;
+    snapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        query_data.push(doc.data());
+    });
+
+    console.log("snapshot: ", snapshot)
     return snapshot;
 };
 

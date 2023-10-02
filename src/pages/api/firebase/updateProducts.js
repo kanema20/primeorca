@@ -3,7 +3,6 @@ const { useFirestoreCollectionMutation, useFirestoreDocumentMutation } = require
 // import { firestore } from '@firebase/firebase';
 const { initializeApp } = require('firebase/app');
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyB7H6KvluxP9pqi2raDp1e6tfcIIUQhsR4",
     authDomain: "prime-orca-701ba.firebaseapp.com",

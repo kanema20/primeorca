@@ -28,13 +28,9 @@ async function getProductsByCollection(query_) {
             kobe6_.push(doc.data().name);
             kobe6_.push(doc.data().price);
         });
-        console.log("current kobe 6: ", kobe6_.join(", "));
+        console.log(`current ${kobe6_}: ${kobe6_.join(", ")}`);
     });
 }
-
-// async function  {
-
-// }
 
 initializeApp(getFirebaseConfig());
 
@@ -42,4 +38,4 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-getProductsByCollection("kobe6");
+getProductsByCollection('kobe6');
