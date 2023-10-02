@@ -38,7 +38,12 @@ const fetchNewKobeArrivals = async ({ queryKey }: any) => {
     limit: 15,
   });
 
-  const combinedProducts = [...clothingProducts.data, ...refurbishedProducts, ...products.data];
+  const refurbishedClothingProducts = await stripe.products.search({
+    query: `active:\'true\' AND metadata[\'type\']:\'Refurbished Clothing\'`,
+    limit: 15,
+  });
+
+  const combinedProducts = [...clothingProducts.data, ...refurbishedProducts.data, ...refurbishedClothingProducts.data, ...products.data];
 
   // const { data } = await stripe.products.list({
   //   limit: 10,
