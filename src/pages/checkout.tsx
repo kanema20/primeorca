@@ -76,7 +76,7 @@ export default function CheckoutPage() {
             <CheckoutCard />
           </div>
         </div>
-        <InquiryForm />
+        {/* <InquiryForm /> */}
       </Container >
       {/* </Elements> */}
     </>

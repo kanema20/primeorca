@@ -9,7 +9,6 @@ import ProductWishIcon from '@components/icons/product-wish-icon';
 import ProductCompareIcon from '@components/icons/product-compare-icon';
 import RatingDisplay from '@components/common/rating-display';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
-import Stripe from 'stripe';
 
 interface ProductProps {
   // product: Stripe.Product;

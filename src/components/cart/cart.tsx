@@ -66,29 +66,6 @@ export default function Cart() {
     }
   }
 
-  // const createCheckout = async () => {
-  //   setLoading(true);
-  //   // TODO: next.js api routing - checkout
-  //   // await fetch(ROUTES.CHECKOUT_SESSION, {
-  //   await fetch('http://localhost:8080/create-checkout-session', {
-  //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-  //     mode: 'cors', // no-  cors, *cors, same-origin
-  //     // credentials: 'omit', // include, *same-origin, omit
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     redirect: 'follow', // manual, *follow, error
-  //     // referrerPolicy: 'no-referrer', // no-referrer, *client
-  //     body: JSON.stringify({
-  //       items: getItemsFromCart(items),
-  //     }),
-  //   })
-  //     .then((data) => {
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
 
   function getTotalPrice(cartItems: any): number {
     let totalCart: number = 0;
@@ -189,6 +166,8 @@ export default function Cart() {
               : 'bg-heading hover:bg-gray-600'
           )}
         >
+          <a href="/checkout">View Cart</a>
+
           <span className="w-full ltr:pr-5 rtl:pl-5 -mt-0.5 py-0.5">
             {/* @ts-ignore */}
             {loading ? "Loading Checkout... " : t('text-proceed-to-checkout')}
