@@ -16,6 +16,7 @@ export function formatPrice({
   });
 
   return formatCurrency.format(amount / 100);
+  // return formatCurrency.format(amount);
 }
 
 export function formatVariantPrice({

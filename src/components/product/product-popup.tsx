@@ -27,7 +27,7 @@ export default function ProductPopup() {
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
-  const { url, images, name, description, default_price, metadata } = data;
+  const { url, image, name, description, default_price, metadata } = data;
 
   const productType = () => {
     if (data.metadata.type == "Replica" || data.metadata.type == "Refurbished") {
@@ -43,12 +43,14 @@ export default function ProductPopup() {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
+
   console.log("attributes: ", attributes[productType()])
   console.log("data: ", data)
   const { price, basePrice, discount } = usePrice({
     // amount: data.sale_price ? data.sale_price : data.price,
-    amount: getProductPrice(default_price)?.unit_amount,
-    baseAmount: data.default_price,
+    // amount: getProductPrice(default_price)?.unit_amount,
+    amount: data.data().price * 100,
+    baseAmount: data.data().price * 100,
     currencyCode: 'USD',
   });
 
@@ -298,7 +300,7 @@ export default function ProductPopup() {
         >
           <img
             src={
-              images[0] ??
+              data.data().image ??
               '/assets/placeholder/products/product-thumbnail.svg'
             }
             alt={name}
@@ -314,11 +316,11 @@ export default function ProductPopup() {
               role="button"
             >
               <h2 className="text-heading text-lg md:text-xl lg:text-2xl font-semibold hover:text-black">
-                {name}
+                {data.data().name}
               </h2>
             </div>
             <p className="text-sm leading-6 md:text-body md:leading-7">
-              {description}
+              {data.data().description}
             </p>
 
             <div className="flex items-center mt-3">

@@ -80,14 +80,15 @@ export default function Home() {
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
       /> */}
 
-      <ModalVideo
+      {/* <ModalVideo
         thumb='https://po-prod.s3.us-west-1.amazonaws.com/_app/Process-Video-Thumbnail.png'
         thumbWidth={1024}
         thumbHeight={576}
         thumbAlt="Modal video thumbnail"
         video="https://www.youtube.com/embed/jzCcXDhdplw"
         videoWidth={1920}
-        videoHeight={1080} />      <CollectionBlock data={collection} />
+        videoHeight={1080} /> */}
+      <CollectionBlock data={collection} />
       <Divider />
       {/* <BrandBlock sectionHeading="text-top-brands" /> */}
       <BestSellerProductFeed />

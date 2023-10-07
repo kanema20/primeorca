@@ -3,11 +3,12 @@ import Button from "@components/ui/button";
 import type { FC } from "react";
 import { useProductsQuery } from "@framework/product/get-all-products";
 import { useKobeCollectionQuery } from "@framework/product/get-collection";
+import { useGetCollectionQuery } from "@framework/product/firebase/get-by-collection";
 import { useRouter } from "next/router";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
 import { useTranslation } from "next-i18next";
 import { Product } from "@framework/types";
-import Stripe from 'stripe';
+
 
 interface ProductGridProps {
 	className?: string;
@@ -15,12 +16,21 @@ interface ProductGridProps {
 }
 export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
 	const { query } = useRouter();
+	// const {
+	// 	isFetching: isLoading,
+	// 	data,
+	// 	error,
+	// } = useKobeCollectionQuery({ ...query }, slug);
+	// if (error) return <p>{error.message}</p>;
+
 	const {
-		isFetching: isLoading,
-		data,
-		error,
-	} = useKobeCollectionQuery({ ...query }, slug);
-	if (error) return <p>{error.message}</p>;
+		// isFetching: isFirestoreLoading,
+		data: firestoreData,
+		error: firestoreError,
+	} = useGetCollectionQuery({ ...query }, slug);
+	if (firestoreError) return <p>{firestoreError.message}</p>;
+
+	console.log("firestoreData: ", firestoreData);
 
 	const { t } = useTranslation("common");
 
@@ -42,7 +52,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ slug, className = "" }) => {
 						));
 					})
 				)} */}
-				{data?.map((product: any) => (
+				{firestoreData?.map((product: any) => (
 					<ProductCard
 						key={`product--key${product.id}`}
 						product={product}

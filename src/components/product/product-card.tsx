@@ -58,13 +58,15 @@ const ProductCard: FC<ProductProps> = ({
   const { openModal, setModalView, setModalData } = useUI();
   const placeholderImage = `/assets/placeholder/products/product-${variant}.svg`;
 
-  function getProductPrice(prod_price: any) {
-    const { data } = useFetchItemPrice(prod_price)
-    return data;
-  }
+  // function getProductPrice(prod_price: any) {
+  //   const { data } = useFetchItemPrice(prod_price)
+  //   return data;
+  // }
+
   const { price, basePrice, discount } = usePrice({
-    // amount: product?.sale_price || product.price,
-    amount: getProductPrice(product.default_price)?.unit_amount,
+    amount: product?.data().price * 100,
+    // amount: product?.price * 100,
+    // amount: getProductPrice(product.default_price)?.unit_amount,
     // baseAmount: product.sale_price,
     // baseAmount: getProductPrice(product.default_price)?.unit_amount,
     currencyCode: 'USD',
@@ -108,6 +110,7 @@ const ProductCard: FC<ProductProps> = ({
       onClick={handlePopupView}
       role="button"
       title={product?.name}
+    // title={product?.data().name}
     >
       <div
         className={cn(
@@ -126,14 +129,14 @@ const ProductCard: FC<ProductProps> = ({
         )}
       >
         <Image
-          src={product?.images ?? placeholderImage}
+          src={product?.data().image ?? placeholderImage}
           // src={placeholderImage}
           width={demoVariant === 'ancient' ? 352 : imgWidth}
           // height={demoVariant === 'ancient' ? 452 : imgHeight}
           height={222}
           loading={imgLoading}
           quality={100}
-          alt={product?.name || 'Product Image'}
+          alt={product?.data().name || 'Product Image'}
           className={cn(
             `bg-gray-300 object-cover ${!disableBorderRadius && 'rounded-s-md'
             }`,
@@ -264,11 +267,11 @@ const ProductCard: FC<ProductProps> = ({
             'text-heading': !bgTransparent,
           })}
         >
-          {product?.name}
+          {product?.data().name}
         </h2>
-        {!hideProductDescription && product?.description && (
+        {!hideProductDescription && product?.data().description && (
           <p className="text-body text-xs lg:text-sm leading-normal xl:leading-relaxed max-w-[250px] truncate">
-            {product?.description}
+            {product?.data().description}
           </p>
         )}
         <div
@@ -288,7 +291,7 @@ const ProductCard: FC<ProductProps> = ({
               }`}
           >
             {price}
-            {/* {"$" + data?.unit_amount / 100 + ".00"} */}
+            {/* {"$" + data?.  / 100 + ".00"} */}
           </span>
           {discount && (
             <del
