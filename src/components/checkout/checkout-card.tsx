@@ -43,11 +43,11 @@ const CheckoutCard: React.FC = () => {
     if (qty <= 3) {
       return qty * 30;
     } else if (qty > 3 && qty <= 6) {
-      return qty * 28;
-    } else if (qty > 6 && qty <= 9) {
-      return qty * 26;
-    } else {
       return qty * 25;
+    } else if (qty > 6 && qty <= 9) {
+      return qty * 20;
+    } else {
+      return qty * 2;
     }
   }
 
@@ -72,14 +72,14 @@ const CheckoutCard: React.FC = () => {
     },
   ];
   return (
-    <div className="pt-12 md:pt-0 ltr:2xl:pl-4 rtl:2xl:pr-4">
+    <div className="pt-12 md:pt-0 ltr:2xl:pl-4 rtl:2xl:pr-4 mb-10">
       <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
         {t('text-your-order')}
       </h2>
       <div className="flex p-4 rounded-md mt-6 md:mt-7 xl:mt-9 bg-gray-150 text-sm font-semibold text-heading">
         <span>{t('text-product')}</span>
         <span className="ltr:ml-auto rtl:mr-auto flex-shrink-0">
-          {t('text-sub-total')}
+          {/* {t('text-sub-total')} */}
         </span>
       </div>
       {!isEmpty ? (

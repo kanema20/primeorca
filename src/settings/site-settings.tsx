@@ -43,65 +43,65 @@ export const siteSettings = {
   currencyCode: 'USD',
   site_header: {
     menu: [
-      {
-        id: 1,
-        path: '/',
-        label: 'menu-about',
-        subMenu: [
-          // {
-          //   id: 1,
-          //   path: '/',
-          //   label: 'menu-users',
-          //   subMenu: [
-          //     {
-          //       id: 1,
-          //       path: '/my-account',
-          //       label: 'menu-my-account',
-          //     },
-          //     {
-          //       id: 2,
-          //       path: '/signin',
-          //       label: 'menu-sign-in',
-          //     },
-          //     {
-          //       id: 3,
-          //       path: '/signup',
-          //       label: 'menu-sign-up',
-          //     },
-          //     {
-          //       id: 4,
-          //       path: '/forget-password',
-          //       label: 'menu-forget-password',
-          //     },
-          //   ],
-          // },
-          // {
-          //   id: 2,
-          //   path: '/process',
-          //   label: 'menu-our-process',
-          // },
-          {
-            id: 3,
-            path: '/privacy',
-            label: 'menu-privacy-policy',
-          },
-          // {
-          //   id: 4,
-          //   path: '/about-us',
-          //   label: 'menu-about',
-          // },
-          {
-            id: 5,
-            path: '/contact-us',
-            label: 'menu-contact-us',
-          },
-          {
-            id: 6,
-            path: '/faq',
-            label: 'menu-faq',
-          },
-        ],
-      },
+      // {
+      //   id: 1,
+      //   path: '/',
+      //   label: 'menu-about',
+      //   subMenu: [
+      //     // {
+      //     //   id: 1,
+      //     //   path: '/',
+      //     //   label: 'menu-users',
+      //     //   subMenu: [
+      //     //     {
+      //     //       id: 1,
+      //     //       path: '/my-account',
+      //     //       label: 'menu-my-account',
+      //     //     },
+      //     //     {
+      //     //       id: 2,
+      //     //       path: '/signin',
+      //     //       label: 'menu-sign-in',
+      //     //     },
+      //     //     {
+      //     //       id: 3,
+      //     //       path: '/signup',
+      //     //       label: 'menu-sign-up',
+      //     //     },
+      //     //     {
+      //     //       id: 4,
+      //     //       path: '/forget-password',
+      //     //       label: 'menu-forget-password',
+      //     //     },
+      //     //   ],
+      //     // },
+      //     // {
+      //     //   id: 2,
+      //     //   path: '/process',
+      //     //   label: 'menu-our-process',
+      //     // },
+      //     {
+      //       id: 3,
+      //       path: '/privacy',
+      //       label: 'menu-privacy-policy',
+      //     },
+      //     // {
+      //     //   id: 4,
+      //     //   path: '/about-us',
+      //     //   label: 'menu-about',
+      //     // },
+      //     {
+      //       id: 5,
+      //       path: '/contact-us',
+      //       label: 'menu-contact-us',
+      //     },
+      //     {
+      //       id: 6,
+      //       path: '/faq',
+      //       label: 'menu-faq',
+      //     },
+      //   ],
+      // },
       // {
       //   id: 1,
       //   path: '/',
@@ -776,70 +776,70 @@ export const siteSettings = {
       //     },
       //   ],
       // },
-      {
-        id: 5,
-        path: '/',
-        label: 'menu-about',
-        subMenu: [
-          // {
-          //   id: 1,
-          //   path: '/',
-          //   label: 'menu-users',
-          //   subMenu: [
-          //     {
-          //       id: 1,
-          //       path: '/my-account',
-          //       label: 'menu-my-account',
-          //     },
-          //     {
-          //       id: 2,
-          //       path: '/signin',
-          //       label: 'menu-sign-in',
-          //     },
-          //     {
-          //       id: 3,
-          //       path: '/signup',
-          //       label: 'menu-sign-up',
-          //     },
-          //     {
-          //       id: 4,
-          //       path: '/forget-password',
-          //       label: 'menu-forget-password',
-          //     },
-          //   ],
-          // },
-          // {
-          //   id: 2,
-          //   path: '/process',
-          //   label: 'menu-our-process',
-          // },
-          {
-            id: 3,
-            path: '/privacy',
-            label: 'menu-privacy-policy',
-          },
-          // {
-          //   id: 4,
-          //   path: '/terms',
-          //   label: 'menu-terms-condition',
-          // },
-          // {
-          //   id: 4,
-          //   path: '/about-us',
-          //   label: 'menu-about',
-          // },
-          {
-            id: 5,
-            path: '/contact-us',
-            label: 'menu-contact-us',
-          },
-          {
-            id: 6,
-            path: '/faq',
-            label: 'menu-faq',
-          },
-        ],
-      },
+      // {
+      //   id: 5,
+      //   path: '/',
+      //   label: 'menu-about',
+      //   subMenu: [
+      //     // {
+      //     //   id: 1,
+      //     //   path: '/',
+      //     //   label: 'menu-users',
+      //     //   subMenu: [
+      //     //     {
+      //     //       id: 1,
+      //     //       path: '/my-account',
+      //     //       label: 'menu-my-account',
+      //     //     },
+      //     //     {
+      //     //       id: 2,
+      //     //       path: '/signin',
+      //     //       label: 'menu-sign-in',
+      //     //     },
+      //     //     {
+      //     //       id: 3,
+      //     //       path: '/signup',
+      //     //       label: 'menu-sign-up',
+      //     //     },
+      //     //     {
+      //     //       id: 4,
+      //     //       path: '/forget-password',
+      //     //       label: 'menu-forget-password',
+      //     //     },
+      //     //   ],
+      //     // },
+      //     // {
+      //     //   id: 2,
+      //     //   path: '/process',
+      //     //   label: 'menu-our-process',
+      //     // },
+      //     {
+      //       id: 3,
+      //       path: '/privacy',
+      //       label: 'menu-privacy-policy',
+      //     },
+      //     // {
+      //     //   id: 4,
+      //     //   path: '/terms',
+      //     //   label: 'menu-terms-condition',
+      //     // },
+      //     // {
+      //     //   id: 4,
+      //     //   path: '/about-us',
+      //     //   label: 'menu-about',
+      //     // },
+      //     {
+      //       id: 5,
+      //       path: '/contact-us',
+      //       label: 'menu-contact-us',
+      //     },
+      //     {
+      //       id: 6,
+      //       path: '/faq',
+      //       label: 'menu-faq',
+      //     },
+      //   ],
+      // },
       {
         id: 2,
         path: '/',

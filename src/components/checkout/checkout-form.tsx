@@ -9,9 +9,9 @@ import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
 
 interface CheckoutInputType {
-  firstName: string;
-  lastName: string;
-  phone: string;
+  name: string;
+  // lastName: string;
+  // phone: string;
   email: string;
   address: string;
   city: string;
@@ -44,47 +44,8 @@ const CheckoutForm: React.FC = () => {
         className="w-full mx-auto flex flex-col justify-center "
         noValidate
       >
-        <div className="flex flex-col space-y-4 lg:space-y-5">
+        <div className="flex flex-col space-y-3 lg:space-y-3">
           <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
-            <Input
-              labelKey="forms:label-first-name"
-              {...register('firstName', {
-                required: 'forms:first-name-required',
-              })}
-              errorKey={errors.firstName?.message}
-              variant="solid"
-              className="w-full lg:w-1/2 "
-            />
-            <Input
-              labelKey="forms:label-last-name"
-              {...register('lastName', {
-                required: 'forms:last-name-required',
-              })}
-              errorKey={errors.lastName?.message}
-              variant="solid"
-              className="w-full lg:w-1/2 ltr:lg:ml-3 rtl:lg:mr-3 mt-2 md:mt-0"
-            />
-          </div>
-          <Input
-            labelKey="forms:label-address"
-            {...register('address', {
-              required: 'forms:address-required',
-            })}
-            errorKey={errors.address?.message}
-            variant="solid"
-          />
-          <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
-            <Input
-              type="tel"
-              labelKey="forms:label-phone"
-              {...register('phone', {
-                required: 'forms:phone-required',
-              })}
-              errorKey={errors.phone?.message}
-              variant="solid"
-              className="w-full lg:w-1/2 "
-            />
-
             <Input
               type="email"
               labelKey="forms:label-email-star"
@@ -98,10 +59,38 @@ const CheckoutForm: React.FC = () => {
               })}
               errorKey={errors.email?.message}
               variant="solid"
-              className="w-full lg:w-1/2 ltr:lg:ml-3 rtl:lg:mr-3 mt-2 md:mt-0"
+              className="w-full lg:w-1/2"
             />
           </div>
           <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
+            <Input
+              labelKey="forms:label-name-star"
+              {...register('name', {
+                required: 'forms:name-required',
+              })}
+              errorKey={errors.name?.message}
+              variant="solid"
+              className="w-full lg:w-1/2 "
+            />
+            {/* <Input
+              labelKey="forms:label-last-name"
+              {...register('lastName', {
+                required: 'forms:last-name-required',
+              })}
+              errorKey={errors.lastName?.message}
+              variant="solid"
+              className="w-full lg:w-1/2 ltr:lg:ml-3 rtl:lg:mr-3 mt-2 md:mt-0"
+            /> */}
+          </div>
+          <Input
+            labelKey="forms:label-address"
+            {...register('address', {
+              required: 'forms:address-required',
+            })}
+            errorKey={errors.address?.message}
+            variant="solid"
+          />
+          <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0">
             <Input
               labelKey="forms:label-city"
               {...register('city')}
@@ -110,26 +99,26 @@ const CheckoutForm: React.FC = () => {
             />
 
             <Input
-              labelKey="forms:label-postcode"
+              labelKey="forms:label-zip"
               {...register('zipCode')}
               variant="solid"
               className="w-full lg:w-1/2 ltr:lg:ml-3 rtl:lg:mr-3 mt-2 md:mt-0"
             />
           </div>
           <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-            {'Billing Address'}
+            {'Payment'}
           </h2>
           <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
             <Input
-              labelKey="forms:label-first-name"
-              {...register('firstName', {
-                required: 'forms:first-name-required',
+              labelKey="forms:label-name-on-card"
+              {...register('name', {
+                required: 'forms:name-required',
               })}
-              errorKey={errors.firstName?.message}
+              errorKey={errors.name?.message}
               variant="solid"
               className="w-full lg:w-1/2 "
             />
-            <Input
+            {/* <Input
               labelKey="forms:label-last-name"
               {...register('lastName', {
                 required: 'forms:last-name-required',
@@ -137,7 +126,7 @@ const CheckoutForm: React.FC = () => {
               errorKey={errors.lastName?.message}
               variant="solid"
               className="w-full lg:w-1/2 ltr:lg:ml-3 rtl:lg:mr-3 mt-2 md:mt-0"
-            />
+            /> */}
           </div>
           <Input
             labelKey="forms:label-address"
@@ -157,7 +146,7 @@ const CheckoutForm: React.FC = () => {
             />
 
             <Input
-              labelKey="forms:label-postcode"
+              labelKey="forms:label-zip"
               {...register('zipCode')}
               variant="solid"
               className="w-full lg:w-1/2 ltr:lg:ml-3 rtl:lg:mr-3 mt-2 md:mt-0"
@@ -180,6 +169,7 @@ const CheckoutForm: React.FC = () => {
             >
               {t('common:button-place-order')}
             </Button>
+            { /* TODO: Add Paypal Checkout button*/}
           </div>
         </div>
       </form>
