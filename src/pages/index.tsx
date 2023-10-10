@@ -30,7 +30,7 @@ import { useTranslation } from 'next-i18next';
 import { CartProvider } from 'use-shopping-cart'
 import { useFetchFeatureProduct } from '@framework/product/get-single-product';
 import ModalVideo from '@components/common/modal-video';
-
+import ModalPopup from '@components/common/modal-update';
 // const flashSaleCarouselBreakpoint = {
 //   '1280': {
 //     slidesPerView: 1,
@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <Container>
-      {/* <Elements stripe={stripePromise} options={options}> */}
+      <ModalPopup />
       {/* <HeroWithCategory bannerData={heroBanner} /> */}
       {/* <BannerCard
         key={`banner--key${banner.id}`}
@@ -80,14 +80,15 @@ export default function Home() {
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
       /> */}
 
-      <ModalVideo
+      {/* <ModalVideo
         thumb='https://po-prod.s3.us-west-1.amazonaws.com/_app/Process-Video-Thumbnail.png'
         thumbWidth={1024}
         thumbHeight={576}
         thumbAlt="Modal video thumbnail"
         video="https://www.youtube.com/embed/jzCcXDhdplw"
         videoWidth={1920}
-        videoHeight={1080} />      <CollectionBlock data={collection} />
+        videoHeight={1080} /> */}
+      <CollectionBlock data={collection} />
       <Divider />
       {/* <BrandBlock sectionHeading="text-top-brands" /> */}
       <BestSellerProductFeed />

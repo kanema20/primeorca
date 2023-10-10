@@ -21,7 +21,7 @@
     "@fontsource/esteban": "^5.0.9",
     "@fontsource/open-sans": "4.5.14",
     "@fontsource/satisfy": "4.5.6",
-    "@headlessui/react": "1.7.14",
+    "@headlessui/react": "^1.7.17",
     "@paypal/paypal-js": "^7.0.2",
     "@reach/portal": "0.18.0",
     "@stripe/react-stripe-js": "^2.1.1",
