@@ -20,7 +20,7 @@ const best_sellers: string[] = ["64cefc861f6b94bc194e5a8d", "64cf14d6f7204deafca
 const fetchBestSellers = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
 
-    const query_ref = getDocs(query(collection(db, "products")));
+    const query_ref = getDocs(query(collection(db, "products"), where("metadata_.type", "==", "Sample")));
 
     let query_data: any = [];
     const snapshot = (await query_ref).docs;

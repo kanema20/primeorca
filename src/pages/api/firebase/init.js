@@ -4,13 +4,25 @@ const { getFirestore, doc, setDoc } = require('firebase/firestore');
 const { getStorage } = require('firebase/storage');
 
 // const kobe5Products = require('../mvp/kobe5');
+// const kobe5Products = require('../mvp/kobe5_1');
 // const kobe6Products = require('../mvp/kobe6');
 // const kobe8Products = require('../mvp/kobe8');
 // const balenci = require('../mvp/balenciaga');
 // const kobeoffwhite = require('../mvp/kobe-off-white');
-// const cloudburst = require('../mvp/cloudburst');
+// const cloudburst = require('../mvp/cloudburst'); // PRADA
 // const eybl = require('../mvp/eybl');
-const gtcuts = require('../mvp/gt-cuts');
+// const gtcuts = require('../mvp/gt-cuts');
+// TRAVIS
+// const travis = require('../mvp/travis');
+// const dunks = require('../mvp/nike-dunks');
+// const balTripleS = require('../mvp/bal-triple-s');
+
+// YEEZY
+const yeezy350 = require('../mvp/350');
+const yeezy700 = require('../mvp/700');
+const yeezyslide = require('../mvp/yeezy-slide');
+
+const mcqueen = require('../mvp/mcqueen');
 
 const firebaseConfig = {
     apiKey: "AIzaSyB7H6KvluxP9pqi2raDp1e6tfcIIUQhsR4",
@@ -64,8 +76,8 @@ const db = getFirestore();
 const storage = getStorage();
 
 // upload data
-// uploadData(eybl);
-uploadDataWithSizes(gtcuts);
+uploadData(mcqueen);
+// uploadDataWithSizes(gtcuts);
 
 module.exports = {
     auth, db, storage

@@ -35,6 +35,7 @@
   "label-display-name": "Display Name *",
   "label-postcode": "Zip Code",
   "label-zip": "Zip",
+  "label-country": "Country",
   "label-order-notes": "Order Notes (Optional)",
   "label-remember-me": "Remember me",
   "label-save-information": "Save this information for next time",

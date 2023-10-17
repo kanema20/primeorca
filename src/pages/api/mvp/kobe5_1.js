@@ -19,7 +19,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "kobe-5-bruce-lee",
         },
         "releaseDate": "2010-02-06"
@@ -43,7 +43,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "nike-kobe-5-protro-pj-tucker",
         },
         "releaseDate": "2020-09-25"
@@ -67,7 +67,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "nike-kobe-5-protro-2k-gamer-exclusive",
         },
         "releaseDate": "2019-12-26"
@@ -91,7 +91,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "nike-kobe-5-usa"
         },
         "releaseDate": "2010-08-06"
@@ -115,7 +115,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "kobe-5-5-rings"
         },
         "releaseDate": "2010-10-15"

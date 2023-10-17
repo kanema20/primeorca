@@ -10,6 +10,7 @@ export interface CheckoutInputType {
   address: string;
   city: string;
   zipCode: string;
+  country: string;
   save: boolean;
   note: string;
 }

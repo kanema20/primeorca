@@ -17,7 +17,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "nike-kobe-6-reverse-grinch"
         },
         "releaseDate": "2023-12-16"
@@ -40,7 +40,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "nike-kobe-6-protro-grinch"
         },
         "releaseDate": "2020-12-24"
@@ -63,7 +63,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "kobe-6-asg-west-challenge-red"
         },
         "releaseDate": "2011-02-17"
@@ -86,7 +86,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "kobe-6-black-del-sol"
         },
         "releaseDate": "2010-12-26"
@@ -109,7 +109,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "nike-zoom-kobe-6-white-del-sol"
         },
         "releaseDate": "2011-07-15"
@@ -132,7 +132,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "nike-kobe-6-protro-chaos"
         },
         "releaseDate": ""
@@ -155,7 +155,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "nike-kobe-6-protro-mamba-forever"
         },
         "releaseDate": "2022-05-01"
@@ -178,7 +178,7 @@ kobe6product = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe6",
+            "collection": "kobe-6",
             "slug": "nike-kobe-protro-6-think-pink"
         },
         "releaseDate": "2021-12-28"

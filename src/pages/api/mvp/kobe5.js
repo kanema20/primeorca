@@ -18,7 +18,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "kobe-5-dark-knight"
         },
         "releaseDate": "2010-01-22"
@@ -42,7 +42,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "nike-kobe-5-protro-lakers",
         },
         "releaseDate": "2020-08-24"
@@ -66,7 +66,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "kobe-5-joker-chaos"
         },
         "releaseDate": "2009-12-26"
@@ -90,7 +90,7 @@ const kobe5Products = [
         "metadata_": {
             "brand": "nike",
             "category": "kobe",
-            "collection": "kobe5",
+            "collection": "kobe-5",
             "slug": "nike-kobe-5-protro-bruce-lee-alternate",
         },
         "releaseDate": "2020-11-24"
