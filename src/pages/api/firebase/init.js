@@ -1,10 +1,10 @@
 const { initializeApp } = require('firebase/app');
 const { getAuth } = require('firebase/auth');
-const { getFirestore, doc, setDoc } = require('firebase/firestore');
+const { collection, query, where, onSnapshot, getFirestore, doc, setDoc } = require('firebase/firestore');
 const { getStorage } = require('firebase/storage');
+const { v4 } = require('uuid');
 
-// const kobe5Products = require('../mvp/kobe5');
-// const kobe5Products = require('../mvp/kobe5_1');
+const kobe5Products = require('../mvp/kobe5');
 // const kobe6Products = require('../mvp/kobe6');
 // const kobe8Products = require('../mvp/kobe8');
 // const balenci = require('../mvp/balenciaga');
@@ -12,17 +12,19 @@ const { getStorage } = require('firebase/storage');
 // const cloudburst = require('../mvp/cloudburst'); // PRADA
 // const eybl = require('../mvp/eybl');
 // const gtcuts = require('../mvp/gt-cuts');
+
 // TRAVIS
 // const travis = require('../mvp/travis');
 // const dunks = require('../mvp/nike-dunks');
 // const balTripleS = require('../mvp/bal-triple-s');
 
 // YEEZY
-const yeezy350 = require('../mvp/350');
-const yeezy700 = require('../mvp/700');
-const yeezyslide = require('../mvp/yeezy-slide');
+// const yeezy350 = require('../mvp/350');
+// const yeezy700 = require('../mvp/700');
+// const yeezyslide = require('../mvp/yeezy-slide');
 
-const mcqueen = require('../mvp/mcqueen');
+// const mcqueen = require('../mvp/mcqueen');
+// const dior = require("../mvp/dior")
 
 const firebaseConfig = {
     apiKey: "AIzaSyB7H6KvluxP9pqi2raDp1e6tfcIIUQhsR4",
@@ -43,6 +45,20 @@ function getFirebaseConfig() {
     return firebaseConfig;
 }
 
+async function getProductsByCollection(query_) {
+    let collection_ = [];
+    const q = query(collection(db, "products"), where("metadata_.collection", "==", `${query_}`));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            collection_.push(doc.data());
+            // console.log(doc.data().name)
+            console.log("collection_: ", collection_)
+        });
+    });
+    console.log("collection_: ", collection_)
+    return collection_;
+}
+
 function fetchData(product_catalogue) { // local path
     let data = fetch(product_catalogue)
         .then(response => response.json())
@@ -57,16 +73,49 @@ async function uploadData(data) {
     }
 }
 
-async function uploadDataWithSizes(data) {
+async function getSizeArray(data) {
+    updatedArray = [];
+    // Add a new field to each object
+    for (let j = 0; j < data.length; j++) {
+        let updatedData;
+        for (let i = 0; i < sizes_.length; i++) {
+            console.log("sizes_[i]: ", sizes_[i])
+            updatedData = data[j];
+            updatedData._id = v4();
+            // updatedData.name = data[j].name + " - " + sizes_[i];
+            // updatedData.metadata_.size = sizes_[i];
+            updatedArray.push(updatedData);
+        }
+        console.log("updatedArray: ", updatedArray)
+    }
+    return updatedArray;
+}
+
+async function uploadSubcollection(data) {
     for (let i = 0; i < data.length; i++) {
+        const sizeArray = getSizeArray(data[i])
         for (let j = 0; j < sizes_.length; j++) {
-            const name_ = data[i].name;
-            data[i].name = `${data[i].name} - ${sizes_[j]}`;
-            await setDoc(doc(db, "products", `${data[i]._id}`), data[i]);
-            console.log(`${data[i].name} uploaded successfully!`)
-            data[i].name = name_;
+            console.log("sizeArray[j]: ", sizeArray[j])
+            await setDoc(doc(db, "products", "prime-orca-701ba", data[i]._id, sizeArray[j]._id), sizeArray[j]);
         }
     }
+}
+
+async function uploadDataWithSizes(query) {
+    const data = await getProductsByCollection(query)
+    // for (let i = 0; i < data.length; i++) {
+    //     for (let j = 0; j < sizes_.length; j++) {
+    //         const dataSize = data;
+    //         dataSize[i]._id = data.id + 1;
+    //         dataSize[i].name = `${data[i].name} - ${sizes_[j]}`;
+    //         dataSize[i].metadata_.type = null;
+    //         console.log(dataSize[i])
+    //         await setDoc(doc(db, "products", dataSize[i]._id), dataSize[i]);
+    //         // await setDoc(doc(db, "products", data[i]._id), data[i]);
+
+    //         console.log(`${dataSize[i].name} uploaded successfully!`)
+    //     }
+    // }
 }
 
 initializeApp(getFirebaseConfig());
@@ -76,8 +125,11 @@ const db = getFirestore();
 const storage = getStorage();
 
 // upload data
-uploadData(mcqueen);
-// uploadDataWithSizes(gtcuts);
+// uploadData(kobe5Products);
+// uploadDataWithSizes('kobe-5');
+// uploadSubcollection(kobe5Products)
+getSizeArray(kobe5Products)
+
 
 module.exports = {
     auth, db, storage

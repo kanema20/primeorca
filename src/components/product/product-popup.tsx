@@ -30,7 +30,7 @@ export default function ProductPopup() {
   const { url, image, name, description, default_price, metadata } = data;
 
   const productType = () => {
-    if (data.metadata.type == "Replica" || data.metadata.type == "Refurbished") {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
       return "Sizes (US - Men)";
     }
     else {
@@ -38,7 +38,6 @@ export default function ProductPopup() {
     }
   }
   const { data: prod_data } = useFetchProductSize(data.url, attributes[productType()]);
-
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
     return data;
@@ -217,15 +216,6 @@ export default function ProductPopup() {
           "slug": "size"
         }
       },
-      // {
-      //   "id": 6,
-      //   "value": "XXXL",
-      //   "attribute": {
-      //     "id": 1,
-      //     "name": "Size",
-      //     "slug": "size"
-      //   }
-      // },
     ]
   }
 
@@ -236,7 +226,7 @@ export default function ProductPopup() {
   }
 
   const productAttributes = () => {
-    if (data.metadata.type == "Replica" || data.metadata.type == "Refurbished") {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
       return variations;
     } else {
       return clothingVariations;

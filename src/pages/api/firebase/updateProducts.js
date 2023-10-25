@@ -25,15 +25,15 @@ async function updateData(firestore) {
     //     await setDoc(doc(db, "products", data[i]._id), data[i]);
     //     console.log(`${data[i].name} uploaded successfully!`)
     // }
-    const querySnapshot = await getDocs(collection(firestore, "products"), where("metadata_.collection", "==", "yeezy-700"));
+    const querySnapshot = await getDocs(collection(firestore, "products")); //, where("metadata_.collection", "==", "yeezy-700"));
 
     querySnapshot.forEach((doc) => {
         updateDoc(doc.ref, {
-            // metadata_: {
-            //     ...doc.data().metadata_,
-            //     type: "Sample" // new fields to update
-            // },
-            price: 150,
+            metadata_: {
+                ...doc.data().metadata_,
+                type: "Sample" // new fields to update
+            },
+            // price: 150,
         })
         console.log(`${doc.data().name}: ${doc.data().price, doc.data().available}`)
     });

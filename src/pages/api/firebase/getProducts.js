@@ -21,15 +21,17 @@ function getFirebaseConfig() {
 }
 
 async function getProductsByCollection(query_) {
+    const collection_ = [];
     const q = query(collection(db, "products"), where("metadata_.collection", "==", `${query_}`));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        const kobe6_ = [];
         querySnapshot.forEach((doc) => {
-            kobe6_.push(doc.data().name);
-            kobe6_.push(doc.data().price);
+            collection_.push(doc.data());
+            console.log(doc.data().name)
+            // console.log("collection_: ", collection_)
         });
-        console.log(`current ${kobe6_}: ${kobe6_.join(", ")}`);
+        console.log("collection_: ", collection_)
     });
+    return collection_;
 }
 
 initializeApp(getFirebaseConfig());
@@ -38,4 +40,4 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-getProductsByCollection('kobe6');
+getProductsByCollection('kobe-5');

@@ -3,8 +3,8 @@ dotenv.config();
 import { NextApiRequest, NextApiResponse } from 'next';
 import Cors from 'cors'
 import { CheckoutItems } from '@components/cart/cart';
-import { forEach } from 'lodash';
 import fetch from "node-fetch";
+import { CreateOrderActions, CreateOrderData, OnApproveData } from '@paypal/paypal-js';
 
 const cors = Cors({
     methods: ['POST', 'GET', 'HEAD'],
@@ -17,8 +17,8 @@ const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_PROD_URL, PAYPAL_SANDBOX_
  * Create an order
  * @see https://developer.paypal.com/docs/api/orders/v2/#orders_create
  */
-export async function createOrder() {
-    const purchaseAmount = "100.00"; // TODO: pull prices from a database
+export async function createOrder(data: CreateOrderData, actions: CreateOrderActions) {
+    // const purchaseAmount = "69.00"; // TODO: pull prices from a database
     const accessToken = await generateAccessToken();
     const url = `${PAYPAL_SANDBOX_URL}/v2/checkout/orders`;
     const response = await fetch(url, {
@@ -33,7 +33,7 @@ export async function createOrder() {
                 {
                     amount: {
                         currency_code: "USD",
-                        value: purchaseAmount,
+                        value: data,
                     },
                 },
             ],
@@ -41,6 +41,31 @@ export async function createOrder() {
     });
     return handleResponse(response);
 }
+
+export async function onApprove(data: OnApproveData) {//, actions: OnApproveActions) {
+    //TODO: init firebase, add record to firebase, then finish with firestore <-> airtable Zapier integration    // replace this url with your server
+
+    location.href = "/success";
+    // return fetch("https://react-paypal-js-storybook.fly.dev/api/paypal/capture-order", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //         orderID: data.orderID,
+    //     }),
+    // })
+    //     .then((response) => response.json())
+    //     .then((orderData) => {
+    //         // Your code here after capture the order
+    //         location.href = "/success";
+    //     });
+}
+
+export function onCancel() {
+    window.alert("Payment not captured, please try again")
+}
+
 
 /**
  * Capture payment for an order
@@ -112,7 +137,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         try {
 
             // Create Checkout Sessions from body params.
-            const session = await capturePayment(req.body);
+            // const session = await capturePayment(req.body);
+            const session = await createOrder(req.body);
+            console.log("req.body: ", req.body);
             res.status(200).json({ url: session.url });
             // res.redirect(303, session.url);
         } catch (err) {

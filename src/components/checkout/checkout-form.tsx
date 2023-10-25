@@ -5,6 +5,11 @@ import { useCheckoutMutation } from '@framework/checkout/use-checkout';
 import { CheckBox } from '@components/ui/checkbox';
 import Button from '@components/ui/button';
 import Router from 'next/router';
+import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import usePrice from '@framework/product/use-price';
+import { Item } from '@contexts/cart/cart.utils';
+import { useRouter } from 'next/router'
+
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
 import {
@@ -12,6 +17,8 @@ import {
   PayPalButtons,
   usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
+import { useCart } from '@contexts/cart/cart.context';
+import { createOrder, onApprove, onCancel } from 'src/pages/api/paypal';
 
 interface CheckoutInputType {
   name: string;
@@ -27,7 +34,8 @@ interface CheckoutInputType {
 }
 
 const CheckoutForm: React.FC = () => {
-
+  const { items, total, isEmpty } = useCart();
+  const router = useRouter()
   const { t } = useTranslation();
   const { mutate: updateUser, isLoading } = useCheckoutMutation();
   const {
@@ -40,13 +48,64 @@ const CheckoutForm: React.FC = () => {
     Router.push(ROUTES.ORDER);
   }
 
-
   // This value is from the props in the UI
   const style = { "layout": "vertical" };
 
+  console.log("items: ", items)
+  console.log(`total price: $${(getTotalPrice(items) / 100) + (totalShipping(items))}.00`)
+
+  function getTotalPrice(cartItems: any): number {
+    let totalCart: number = 0;
+    cartItems?.map((cartItem: any) => (
+      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      //useFetchItemPrice(cartItem.prod_price) * item.quantity
+    ))
+    return totalCart;
+  }
+  const { price: subtotal } = usePrice({
+    amount: getTotalPrice(items), currencyCode: 'USD',
+  });
+
+  function getProductPrice(prod_price: any) {
+    const { data } = useFetchItemPrice(prod_price)
+    return data;
+  }
+
+  function getItemsFromCart(cartItems: any): Item[] {
+    let cart_: Item[] = [];
+    cartItems?.map((cartItem: any) => (
+      cart_.push(cartItem)
+    ))
+    return cart_;
+  }
+
+  function totalShipping(cartItems: any): number {
+    let qty: number = 0;
+    cartItems?.map((cartItem: any) => (
+      qty += cartItem.quantity
+    ))
+    if (qty <= 3) {
+      return qty * 30;
+    } else if (qty > 3 && qty <= 6) {
+      return qty * 25;
+    } else if (qty > 6 && qty <= 9) {
+      return qty * 20;
+    } else {
+      return qty * 2;
+    }
+  }
+
+  getItemsFromCart(items);
+
+
+
+  function createPaypalOrderAmount(): number {
+    return (getTotalPrice(items) / 100) + (totalShipping(items))
+  }
+
   function createOrder() {
     // replace this url with your server
-    return fetch("https://react-paypal-js-storybook.fly.dev/api/paypal/create-order", {
+    return fetch('/api/checkout', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,13 +113,10 @@ const CheckoutForm: React.FC = () => {
       // use the "body" param to optionally pass additional order information
       // like product ids and quantities
       body: JSON.stringify({
-        cart: [
-          {
-            sku: "1blwyeo8",
-            quantity: 2,
-          },
-        ],
-      }),
+        // cart: getItemsFromCart(items),
+        amount: createPaypalOrderAmount()
+      })
+      // body: JSON.stringify({ "intent": "CAPTURE", "purchase_units": [{ "reference_id": "d9f80740-38f0-11e8-b467-0ed5f89f718b", "amount": { "currency_code": "USD", "value": "100.00" } }], "payment_source": { "paypal": { "experience_context": { "payment_method_preference": "IMMEDIATE_PAYMENT_REQUIRED", "brand_name": "EXAMPLE INC", "locale": "en-US", "landing_page": "LOGIN", "shipping_preference": "SET_PROVIDED_ADDRESS", "user_action": "PAY_NOW", "return_url": "https://example.com/returnUrl", "cancel_url": "https://example.com/cancelUrl" } } } })
     })
       .then((response) => response.json())
       .then((order) => {
@@ -68,22 +124,18 @@ const CheckoutForm: React.FC = () => {
         return order.id;
       });
   }
-  function onApprove(data) {
-    // replace this url with your server
-    return fetch("https://react-paypal-js-storybook.fly.dev/api/paypal/capture-order", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        orderID: data.orderID,
-      }),
-    })
-      .then((response) => response.json())
-      .then((orderData) => {
-        // Your code here after capture the order
-      });
+
+  const handleApprove = (orderId) => {
+    // TODO: Add document to firebase Payment Collection
+    // use query hook
+    // return data (show on success page?)
+    const href_ = "/success";
+    router.push(href_)
+
+    console.log("orderId: ", orderId)
   }
+
+
   // Custom component to wrap the PayPalButtons and show loading spinner
   const ButtonWrapper = ({ showSpinner }) => {
     const [{ isPending }] = usePayPalScriptReducer();
@@ -91,13 +143,47 @@ const CheckoutForm: React.FC = () => {
     return (
       <>
         {(showSpinner && isPending) && <div className="spinner" />}
-        <PayPalButtons
+        {/* <PayPalButtons
           style={style}
           disabled={false}
           forceReRender={[style]}
           fundingSource={undefined}
           createOrder={createOrder}
           onApprove={onApprove}
+          // onClick={addRecordToFirebase}
+          onCancel={onCancel}
+        /> */}
+        <PayPalButtons
+          style={style}
+          disabled={false}
+          forceReRender={[style]}
+          createOrder={(data, actions) => {
+            return actions.order.create({
+              purchase_units: [
+                {
+                  description: "PRIME ORCA",
+                  amount: {
+                    currency_code: "USD",
+                    // value: createPaypalOrderAmount().toString(),
+                    value: "0.69",
+                  },
+                },
+              ],
+            });
+          }}
+          onApprove={async (data, actions) => {
+            const order_ = await actions.order.capture();
+            console.log("order", order_);
+
+            handleApprove(data.orderID);
+          }}
+          onCancel={() => {
+            alert("Checkout not complete")
+          }}
+          onError={(err) => {
+            alert(err);
+            console.log("PayPal Checkout onError", err);
+          }}
         />
       </>
     );
