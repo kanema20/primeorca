@@ -13,7 +13,7 @@ import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
-
+import { useFetchFirebaseProductSize } from "@framework/product/firebase/get-product-sizes";
 export default function ProductPopup() {
   const { t } = useTranslation('common');
   const {
@@ -27,7 +27,7 @@ export default function ProductPopup() {
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
-  const { url, image, name, description, default_price, metadata } = data;
+  const { _id, url, image, name, description, default_price, metadata } = data;
 
   const productType = () => {
     if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
@@ -42,6 +42,11 @@ export default function ProductPopup() {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
+
+  console.log("data.data()._id: ", data.data()._id)
+
+  const { data: firebaseProdData } = useFetchFirebaseProductSize(data.data()._id, attributes[productType()]);
+  console.log("firebaseProdData: ", firebaseProdData)
 
   console.log("attributes: ", attributes[productType()])
   console.log("data: ", data)
@@ -256,7 +261,8 @@ export default function ProductPopup() {
     }, 600);
 
     // const item_data = getProdSize(data.url, attributes['Sizes (US - M)']);
-    const item = generateCartItem(prod_data[0]!);
+    // const item = generateCartItem(prod_data[0]!);
+    const item = generateCartItem(firebaseProdData!);
     // const item = generateCartItem(data!, attributes);
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);

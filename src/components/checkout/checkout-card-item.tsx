@@ -31,7 +31,8 @@ export const CheckoutItem: React.FC<{ item: Item }> = ({ item }) => {
 
   const { price } = usePrice({
     // amount: item.itemTotal,
-    amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,
+    // amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,
+    amount: item.price * 100 * item.quantity,
     currencyCode: 'USD',
   });
   return (
@@ -39,7 +40,7 @@ export const CheckoutItem: React.FC<{ item: Item }> = ({ item }) => {
       <div className="flex border rounded-md border-gray-300 w-16 h-16 flex-shrink-0">
         <Image
           // src={getProductImage((item.id).split(".")[0]) ?? placeholderImage}
-          src={getProductImage(item.id) ?? placeholderImage}
+          src={item.images ?? placeholderImage}
 
           // src={item.images[0] ?? placeholderImage}
           width="64"
@@ -48,7 +49,7 @@ export const CheckoutItem: React.FC<{ item: Item }> = ({ item }) => {
         />
       </div>
       <h6 className="text-sm ltr:pl-3 rtl:pr-3 font-regular text-heading">
-        {generateCartItemName(item.name, item.attributes)}
+        {generateCartItemName(item.name, item.attributes)} x {item.quantity}
       </h6>
       <div className="flex ltr:ml-auto rtl:mr-auto text-heading text-sm ltr:pl-2 rtl:pr-2 flex-shrink-0">
         {price}

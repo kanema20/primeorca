@@ -73,50 +73,6 @@ async function uploadData(data) {
     }
 }
 
-async function getSizeArray(data) {
-    updatedArray = [];
-    // Add a new field to each object
-    for (let j = 0; j < data.length; j++) {
-        let updatedData;
-        for (let i = 0; i < sizes_.length; i++) {
-            console.log("sizes_[i]: ", sizes_[i])
-            updatedData = data[j];
-            updatedData._id = v4();
-            // updatedData.name = data[j].name + " - " + sizes_[i];
-            // updatedData.metadata_.size = sizes_[i];
-            updatedArray.push(updatedData);
-        }
-        console.log("updatedArray: ", updatedArray)
-    }
-    return updatedArray;
-}
-
-async function uploadSubcollection(data) {
-    for (let i = 0; i < data.length; i++) {
-        const sizeArray = getSizeArray(data[i])
-        for (let j = 0; j < sizes_.length; j++) {
-            console.log("sizeArray[j]: ", sizeArray[j])
-            await setDoc(doc(db, "products", "prime-orca-701ba", data[i]._id, sizeArray[j]._id), sizeArray[j]);
-        }
-    }
-}
-
-async function uploadDataWithSizes(query) {
-    const data = await getProductsByCollection(query)
-    // for (let i = 0; i < data.length; i++) {
-    //     for (let j = 0; j < sizes_.length; j++) {
-    //         const dataSize = data;
-    //         dataSize[i]._id = data.id + 1;
-    //         dataSize[i].name = `${data[i].name} - ${sizes_[j]}`;
-    //         dataSize[i].metadata_.type = null;
-    //         console.log(dataSize[i])
-    //         await setDoc(doc(db, "products", dataSize[i]._id), dataSize[i]);
-    //         // await setDoc(doc(db, "products", data[i]._id), data[i]);
-
-    //         console.log(`${dataSize[i].name} uploaded successfully!`)
-    //     }
-    // }
-}
 
 initializeApp(getFirebaseConfig());
 
@@ -126,10 +82,6 @@ const storage = getStorage();
 
 // upload data
 // uploadData(kobe5Products);
-// uploadDataWithSizes('kobe-5');
-// uploadSubcollection(kobe5Products)
-getSizeArray(kobe5Products)
-
 
 module.exports = {
     auth, db, storage

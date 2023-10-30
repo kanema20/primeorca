@@ -1,6 +1,7 @@
 import http from '@framework/utils/http';
 import { useQuery } from 'react-query';
 import { StripeProduct } from "@framework/types";
+import { IProduct } from "@firebase/types/types";
 import dotenv from 'dotenv';
 dotenv.config();
 // const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
@@ -43,9 +44,10 @@ export const fetchProductSize = async (url: string, attr: string) => {
     return products.data;
 }
 
-export const useFetchProductSize = (url: string, attr: string) => {
-    return useQuery<StripeProduct, Error>(['product_size', url, attr], () =>
-        fetchProductSize(url, attr)
+
+export const useFetchProductSize = (parentCollectionId_: string, attr: string) => {
+    return useQuery<IProduct, Error>(['product_size', parentCollectionId_, attr], () =>
+        fetchProductSize(parentCollectionId_, attr)
     );
 }
 

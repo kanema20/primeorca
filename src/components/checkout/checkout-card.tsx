@@ -12,7 +12,8 @@ const CheckoutCard: React.FC = () => {
   function getTotalPrice(cartItems: any): number {
     let totalCart: number = 0;
     cartItems?.map((cartItem: any) => (
-      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      // totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      totalCart += (cartItem.price * 100) * cartItem.quantity
       //useFetchItemPrice(cartItem.prod_price) * item.quantity
     ))
     return totalCart;

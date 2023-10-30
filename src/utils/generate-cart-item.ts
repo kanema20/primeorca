@@ -1,4 +1,5 @@
 import isEmpty from "lodash/isEmpty";
+import { DocumentData } from "firebase/firestore";
 
 export interface Item {
   id: string | number;
@@ -15,23 +16,19 @@ export interface Item {
 
 
 // export function generateCartItem(item: Item, attributes: object) {
-export function generateCartItem(item: Item) {
+export function generateCartItem(item: DocumentData) {
 
-  const { id, name, url, image, default_price, price, sale_price } = item;
+  const { _id, name, url, images, default_price, price, sale_price } = item;
   // function getProductPrice(prod_price: any) {
   //   const { data } = useFetchItemPrice(prod_price)
   //   return data;
   // }
   return {
-    id,
-    // : !isEmpty(attributes)
-    //   ? `${id}.${Object.values(attributes).join(".")}`
-    //   : id,
+    // _id,
     name,
     url,
-    // image: image.thumbnail,
-    image,
-    default_price: default_price,
+    images,
+    // default_price: default_price,
     price: sale_price ? sale_price : price,
     // attributes,
   };

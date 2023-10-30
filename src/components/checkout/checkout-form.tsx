@@ -57,7 +57,8 @@ const CheckoutForm: React.FC = () => {
   function getTotalPrice(cartItems: any): number {
     let totalCart: number = 0;
     cartItems?.map((cartItem: any) => (
-      totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      // totalCart += getProductPrice(cartItem.default_price)?.unit_amount * cartItem.quantity
+      totalCart += (cartItem.price * 100) * cartItem.quantity
       //useFetchItemPrice(cartItem.prod_price) * item.quantity
     ))
     return totalCart;
@@ -165,7 +166,7 @@ const CheckoutForm: React.FC = () => {
                   amount: {
                     currency_code: "USD",
                     // value: createPaypalOrderAmount().toString(),
-                    value: "0.69",
+                    value: createPaypalOrderAmount().toString(),
                   },
                 },
               ],
@@ -317,7 +318,7 @@ const CheckoutForm: React.FC = () => {
             </Button> */}
             { /* TODO: Add Paypal Checkout button*/}
           </div>
-          <PayPalScriptProvider options={{ clientId: "test", components: "buttons", currency: "USD" }}>
+          <PayPalScriptProvider options={{ clientId: "AYqPtOjgPKFkNAgu5zPCXKZdX2P9nt38CZMtuCEtexw91qT-CXZ58Uesjwvmc34naubEkvJSBnMG4RSI", components: "buttons", currency: "USD" }}>
             <ButtonWrapper showSpinner={false} />
           </PayPalScriptProvider>
         </div>
