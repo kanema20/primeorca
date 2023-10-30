@@ -157,6 +157,7 @@ const CheckoutForm: React.FC = () => {
         <PayPalButtons
           style={style}
           disabled={false}
+
           forceReRender={[style]}
           createOrder={(data, actions) => {
             return actions.order.create({
@@ -318,7 +319,7 @@ const CheckoutForm: React.FC = () => {
             </Button> */}
             { /* TODO: Add Paypal Checkout button*/}
           </div>
-          <PayPalScriptProvider options={{ clientId: "AYqPtOjgPKFkNAgu5zPCXKZdX2P9nt38CZMtuCEtexw91qT-CXZ58Uesjwvmc34naubEkvJSBnMG4RSI", components: "buttons", currency: "USD" }}>
+          <PayPalScriptProvider options={{ clientId: "AYqPtOjgPKFkNAgu5zPCXKZdX2P9nt38CZMtuCEtexw91qT-CXZ58Uesjwvmc34naubEkvJSBnMG4RSI", components: "buttons", "enable-funding": "venmo", currency: "USD" }}>
             <ButtonWrapper showSpinner={false} />
           </PayPalScriptProvider>
         </div>
