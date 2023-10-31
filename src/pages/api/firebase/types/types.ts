@@ -32,10 +32,10 @@ export type IProduct = {
     id: string;
     name: string;
     description?: string;
-    // price: number;
-    default_price: string;
+    price: number;
+    // default_price: string;
     active: boolean;
-    image: string[];
+    images: string;
     statement_descriptor: string;
     url: string;
     metadata: {
@@ -47,8 +47,8 @@ export type IProduct = {
         string?: string;
         release_date?: string;
     }
-    created_at: number;
-    updated_at: number;
+    created_at?: number;
+    updated_at?: number;
 }
 
 export interface ICustomer {
@@ -82,17 +82,22 @@ export interface IOrders {
 
 export interface IPayments {
     id: string;
-    seller_messege: string;
+    customer_name?: string;
+    customer_email?: string;
+    addedToAirtable: boolean;
     amount: number;
-    amount_refunded: number;
-    current_status: string;
-    fee: number;
+    fee?: number;
+    net_amount?: number;
+    lineItem: string[];
+    quantity: number[]; // or lineItemMapping? { lineItem: string, quantity: number}
+    shipping_address?: string;
+    shipping_address_city?: string;
+    shipping_address_state?: string;
+    shipping_address_country?: string;
+    shipping_address_zip?: string;
     status: string;
     statement_descriptor: string;
-    customer_id: string;
-    invoice_id: string;
-    created_at: number;
-    updated_at: number;
+    created_date?: number;
 }
 
 export interface IInvoices {

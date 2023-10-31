@@ -56,85 +56,9 @@ function createSubCollection(parentDocId) {
     return subCollectionRef;
 }
 
-async function getSubCollection(parentDocPath) {
-
-}
-
 async function addDocToSubCollection(subCollectionRef, docData) {
     const newDocRef = await addDoc(subCollectionRef, docData);
     console.log("newDocRef.id: ", newDocRef.id)
-}
-// async function getProductsByCollection(query_) {
-//     let collection_ = [];
-//     const q = query(collection(db, "products"), where("metadata_.collection", "==", `${query_}`));
-//     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             collection_.push(doc.data());
-//             // console.log(doc.data().name)
-//             console.log("collection_: ", collection_)
-//         });
-//     });
-//     console.log("collection_: ", collection_)
-//     return collection_;
-// }
-
-function fetchData(product_catalogue) { // local path
-    let data = fetch(product_catalogue)
-        .then(response => response.json())
-    return data;
-}
-
-async function uploadData(data) {
-    // const res = await db.collection('products').add(data);
-    for (let i = 0; i < data.length; i++) {
-        await setDoc(doc(db, "products", data[i]._id), data[i]);
-        console.log(`${data[i].name} uploaded successfully!`)
-    }
-}
-
-async function getSizeArray(data) {
-    updatedArray = [];
-    // Add a new field to each object
-    for (let j = 0; j < data.length; j++) {
-        let updatedData;
-        for (let i = 0; i < sizes_.length; i++) {
-            console.log("sizes_[i]: ", sizes_[i])
-            updatedData = data[j];
-            updatedData._id = v4();
-            // updatedData.name = data[j].name + " - " + sizes_[i];
-            // updatedData.metadata_.size = sizes_[i];
-            updatedArray.push(updatedData);
-        }
-        console.log("updatedArray: ", updatedArray)
-    }
-    return updatedArray;
-}
-
-async function uploadSubcollection(data) {
-    for (let i = 0; i < data.length; i++) {
-        const sizeArray = getSizeArray(data[i])
-        for (let j = 0; j < sizes_.length; j++) {
-            console.log("sizeArray[j]: ", sizeArray[j])
-            await setDoc(doc(db, "products", "prime-orca-701ba", data[i]._id, sizeArray[j]._id), sizeArray[j]);
-        }
-    }
-}
-
-async function uploadDataWithSizes(query) {
-    const data = await getProductsByCollection(query)
-    // for (let i = 0; i < data.length; i++) {
-    //     for (let j = 0; j < sizes_.length; j++) {
-    //         const dataSize = data;
-    //         dataSize[i]._id = data.id + 1;
-    //         dataSize[i].name = `${data[i].name} - ${sizes_[j]}`;
-    //         dataSize[i].metadata_.type = null;
-    //         console.log(dataSize[i])
-    //         await setDoc(doc(db, "products", dataSize[i]._id), dataSize[i]);
-    //         // await setDoc(doc(db, "products", data[i]._id), data[i]);
-
-    //         console.log(`${dataSize[i].name} uploaded successfully!`)
-    //     }
-    // }
 }
 
 initializeApp(getFirebaseConfig());
@@ -142,12 +66,6 @@ initializeApp(getFirebaseConfig());
 const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
-
-// upload data
-// uploadData(kobe5Products);
-// uploadDataWithSizes('kobe-5');
-// uploadSubcollection(kobe5Products)
-// getSizeArray(kobe5Products)
 
 for (const product of kobe5Products) {
     console.log("product: ", product)

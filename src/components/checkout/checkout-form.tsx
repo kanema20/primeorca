@@ -9,6 +9,7 @@ import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-produc
 import usePrice from '@framework/product/use-price';
 import { Item } from '@contexts/cart/cart.utils';
 import { useRouter } from 'next/router'
+import { useAddNewPaymentRecord } from "@framework/product/firebase/post-payment-capture";
 
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
@@ -19,6 +20,7 @@ import {
 } from "@paypal/react-paypal-js";
 import { useCart } from '@contexts/cart/cart.context';
 import { createOrder, onApprove, onCancel } from 'src/pages/api/paypal';
+import { IPayments } from '@firebase/types/types';
 
 interface CheckoutInputType {
   name: string;
@@ -126,10 +128,15 @@ const CheckoutForm: React.FC = () => {
       });
   }
 
-  const handleApprove = (orderId) => {
-    // TODO: Add document to firebase Payment Collection
+  const { mutate } = useAddNewPaymentRecord();
+
+  const handleApprove = (orderData: IPayments) => {
     // use query hook
     // return data (show on success page?)
+    mutate(orderData);
+
+    // TODO: send 
+
     const href_ = "/success";
     router.push(href_)
 
@@ -177,7 +184,26 @@ const CheckoutForm: React.FC = () => {
             const order_ = await actions.order.capture();
             console.log("order", order_);
 
-            handleApprove(data.orderID);
+            const orderData: IPayments = {
+              id: order_.id,
+              addedToAirtable: true,
+              amount: parseInt(order_.purchase_units[0].amount.value),
+              // fee: order_.purchase_units[0].payments.captures[0].seller_receivable_breakdown.paypal_fee.value,
+              // net_amount: order_.purchase_units[0].payments.captures[0].seller_receivable_breakdown.net_amount.value,
+              lineItem: [(items[0].price).toString()],
+              quantity: [items[0].quantity],
+              shipping_address: order_.purchase_units[0].shipping.address.address_line_1,
+              shipping_address_city: order_.purchase_units[0].shipping.address.admin_area_2,
+              shipping_address_state: order_.purchase_units[0].shipping.address.admin_area_1,
+              shipping_address_zip: order_.purchase_units[0].shipping.address.postal_code,
+              shipping_address_country: order_.purchase_units[0].shipping.address.country_code,
+              status: order_.status,
+              statement_descriptor: "PRIME ORCA",
+              customer_name: order_.payer.name.given_name + " " + order_.payer.name.surname,
+              customer_email: order_.payer.email_address,
+
+            }
+            handleApprove(orderData);
           }}
           onCancel={() => {
             alert("Checkout not complete")
