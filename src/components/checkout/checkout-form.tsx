@@ -10,7 +10,6 @@ import usePrice from '@framework/product/use-price';
 import { Item } from '@contexts/cart/cart.utils';
 import { useRouter } from 'next/router'
 import { useAddNewPaymentRecord } from "@framework/product/firebase/post-payment-capture";
-
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
 import {

@@ -11,8 +11,6 @@ import { generateCartItem } from '@utils/generate-cart-item';
 import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
-import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
-import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
 import { useFetchFirebaseProductSize } from "@framework/product/firebase/get-product-sizes";
 export default function ProductPopup() {
   const { t } = useTranslation('common');
@@ -37,28 +35,17 @@ export default function ProductPopup() {
       return "Sizes (Asia - Men)";
     }
   }
-  const { data: prod_data } = useFetchProductSize(data.url, attributes[productType()]);
-  function getProductPrice(prod_price: any) {
-    const { data } = useFetchItemPrice(prod_price)
-    return data;
-  }
-
-  console.log("data.data()._id: ", data.data()._id)
 
   const { data: firebaseProdData } = useFetchFirebaseProductSize(data.data()._id, attributes[productType()]);
   console.log("firebaseProdData: ", firebaseProdData)
-
   console.log("attributes: ", attributes[productType()])
-  console.log("data: ", data)
   const { price, basePrice, discount } = usePrice({
-    // amount: data.sale_price ? data.sale_price : data.price,
     // amount: getProductPrice(default_price)?.unit_amount,
     amount: data.data().price * 100,
     baseAmount: data.data().price * 100,
     currencyCode: 'USD',
   });
 
-  // const variations = getVariations(data.variations);
   const variations =
   {
     "Sizes (US - Men)": [
@@ -224,12 +211,6 @@ export default function ProductPopup() {
     ]
   }
 
-
-  function getProductSizes(prod_slug: string) {
-    const { data } = useFetchProductSizes(prod_slug)
-    return data;
-  }
-
   const productAttributes = () => {
     if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
       return variations;
@@ -239,9 +220,6 @@ export default function ProductPopup() {
   }
 
   console.log("productAttributes: ", productAttributes());
-  console.log("shoe variations: ", variations)
-  // console.log("getProductSizes: ", getProductSizes(data.url))
-  // console.log("prod_data[0] ", prod_data[0])
 
   const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&

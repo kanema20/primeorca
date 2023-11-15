@@ -1,35 +1,19 @@
 import isEmpty from "lodash/isEmpty";
 import { DocumentData } from "firebase/firestore";
+import { Item, getItem } from "src/contexts/cart/cart.utils";
+import { IProduct } from "@firebase/types/types"
 
-export interface Item {
-  id: string | number;
-  name: string;
-  url: string;
-  image: string;
-  default_price: string;
-  price: number;
-  sale_price?: number;
-  [key: string]: unknown;
-  quantity?: number;
-  // attributes: any;
-}
-
-
-// export function generateCartItem(item: Item, attributes: object) {
+// export function generateCartItem(item: IProduct, attributes: object) {
 export function generateCartItem(item: DocumentData) {
 
-  const { _id, name, url, images, default_price, price, sale_price } = item;
-  // function getProductPrice(prod_price: any) {
-  //   const { data } = useFetchItemPrice(prod_price)
-  //   return data;
-  // }
+  const { name, url, images, price, sale_price, metadata } = item;
+
   return {
-    // _id,
     name,
     url,
     images,
-    // default_price: default_price,
-    price: sale_price ? sale_price : price,
-    // attributes,
+    // price: sale_price ? sale_price : price,
+    price: price,
+    size: metadata.size,
   };
 }

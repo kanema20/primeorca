@@ -28,6 +28,7 @@ function getFirebaseConfig() {
 
 function createProductObject(productArray, size_) {
     return {
+        // id: v4(),
         name: `${productArray.name} - ${size_}`,
         description: "**IMPORTANT** For US Size 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Orca Tier Batch - " + productArray.name,
         currency: "USD",

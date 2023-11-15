@@ -12,8 +12,10 @@ import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { Item } from '@contexts/cart/cart.utils';
 import { useFetchItemImage } from '@framework/product/get-product-image';
+import { DocumentData } from 'firebase/firestore';
 
-const CartItem: React.FC<Item> = ({ item }) => {
+const CartItem: React.FC<DocumentData> = ({ item }) => {
+  // const CartItem: React.FC<Item> = ({ item }) => {
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
     return data;
@@ -31,11 +33,7 @@ const CartItem: React.FC<Item> = ({ item }) => {
 
   const { t } = useTranslation('common');
   const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
-  const { price } = usePrice({
-    amount: getProductPrice(item.default_price)?.unit_amount,
-    // amount: item.price,
-    currencyCode: 'USD',
-  });
+
   const { price: totalPrice } = usePrice({
     // amount: item.itemTotal,
     // amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,

@@ -24,8 +24,10 @@ export const fetchFirebaseProductSize = async (parentCollectionId: string, attr:
     const subcollectionQuery = query(collection(parentDocRef, parentDocRef.id + 'size'), where('metadata.size', '==', attr));
     const subcollectionSnapshot = await getDocs(subcollectionQuery);
     const snapshot = (await subcollectionSnapshot).docs;
-    console.log("snapshot: ", snapshot[0].data())
-    return snapshot[0].data();
+    return {
+        data: snapshot[0].data(),
+        id: snapshot[0].id
+    }
 }
 
 
