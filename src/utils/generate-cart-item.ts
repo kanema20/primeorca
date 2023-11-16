@@ -4,9 +4,9 @@ import { Item, getItem } from "src/contexts/cart/cart.utils";
 import { IProduct } from "@firebase/types/types"
 
 // export function generateCartItem(item: IProduct, attributes: object) {
-export function generateCartItem(item: DocumentData) {
+export function generateCartItem(item: DocumentData, id: string) {
 
-  const { id, name, url, images, price, metadata } = item;
+  const { name, url, images, price, metadata } = item;
   
   return {
     id,

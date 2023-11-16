@@ -239,7 +239,14 @@ export default function ProductPopup() {
       setViewCartBtn(true);
     }, 600);
 
-    const item = generateCartItem(firebaseProdData!.data);
+    const item = generateCartItem(firebaseProdData!.data, firebaseProdData!.id);
+
+    try {
+      console.log("generated cart item ", item, quantity)
+      } catch {
+        console.log("undefined generated cart item")
+      }
+
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
