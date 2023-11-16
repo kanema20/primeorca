@@ -21,7 +21,6 @@ import { forEach } from 'lodash';
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
-import { useShoppingCart } from 'use-shopping-cart';
 
 export interface CheckoutItems {
   id?: string | number;
@@ -32,7 +31,6 @@ export interface CheckoutItems {
 }
 
 export default function Cart() {
-  const { cartCount, cartDetails, formattedTotalPrice, clearCart, redirectToCheckout } = useShoppingCart();
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
@@ -48,7 +46,6 @@ export default function Cart() {
     return data;
   }
 
-  console.log("cartDetails: ", cartDetails)
 
   const handleCheckout = async () => {
     try {
@@ -185,7 +182,7 @@ export default function Cart() {
           className={cn(
             'w-full px-5 py-3 md:py-4 flex items-center justify-center rounded-md text-sm sm:text-base text-white focus:outline-none transition duration-300 ',
             isEmpty
-              ? 'cursor-not-allowed bg-gray-400 hover:bg-gray-400'
+              ? 'cursor-not-allowed bg-gray-400 hover:bg-hgray-400'
               : 'bg-heading hover:bg-gray-600'
           )}
         >

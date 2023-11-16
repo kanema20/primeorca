@@ -242,9 +242,12 @@ export default function ProductPopup() {
   }
 
   console.log("productAttributes: ", productAttributes());
-  console.log("shoe variations: ", variations)
-  // console.log("getProductSizes: ", getProductSizes(data.url))
-  // console.log("prod_data[0] ", prod_data[0])
+
+  try {
+  console.log("prod_data[0] ", prod_data[0])
+  } catch {
+    console.log("undefined")
+  }
 
   const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&
@@ -266,6 +269,12 @@ export default function ProductPopup() {
     // const item_data = getProdSize(data.url, attributes['Sizes (US - M)']);
     const item = generateCartItem(prod_data[0]!);
     // const item = generateCartItem(data!, attributes);
+    try {
+      console.log("generated cart item ", item, quantity)
+      } catch {
+        console.log("undefined generated cart item")
+      }
+    
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
