@@ -21,6 +21,7 @@ import { forEach } from 'lodash';
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
+import usePoofScript from '@utils/use-poof-script';
 import { useShoppingCart } from 'use-shopping-cart';
 
 export interface CheckoutItems {
@@ -32,7 +33,8 @@ export interface CheckoutItems {
 }
 
 export default function Cart() {
-  const { cartCount, cartDetails, formattedTotalPrice, clearCart, redirectToCheckout } = useShoppingCart();
+  usePoofScript('https://www.poof.io/static/api/checkout_v2.js')
+  usePoofScript('https://www.poof.io/static/api/sdk.js')
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
@@ -43,12 +45,43 @@ export default function Cart() {
     currencyCode: 'USD',
   });
 
+  const payload = { "username": "Poof", "amount": "10" }
+
+
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
 
-  console.log("cartDetails: ", cartDetails)
+  const handlePoofCheckout = async () => {
+    if (total == 0) {
+      window.alert("Cart is empty");
+      return;
+    }
+    const options = {
+      method: 'POST',
+      url: 'https://www.poof.io/api/v1/checkout',
+      headers: {'content-type': 'application/json'},
+      data: {
+        username: 'Prime Orca Guest',
+        amount: total,
+        fields: ['eafesafd', 'fasdfa', 'dasfadfaf'],
+        success_url: 'https://www.Poof.io/success',
+      }
+    };
+    
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        router.push(response.data)
+
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+
+  }
 
   const handleCheckout = async () => {
     try {
@@ -158,7 +191,8 @@ export default function Cart() {
         {/* </span> */}
         {/* </Link> } */}
         <Button
-          onClick={handleCheckout}
+          // onClick={handleCheckout}
+          onClick={handlePoofCheckout}
           className={cn(
             'w-full px-5 py-3 md:py-4 flex items-center justify-center rounded-md text-sm sm:text-base text-white focus:outline-none transition duration-300 ',
             isEmpty
