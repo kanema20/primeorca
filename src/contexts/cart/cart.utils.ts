@@ -3,12 +3,13 @@ export interface Item {
   name: string;
   slug: string;
   image: string;
-  default_price?: string;
+  // default_price?: string;
   price: number;
-  sale_price?: number;
+  // sale_price?: number;
   [key: string]: unknown;
-  quantity?: number;
+  quantity: number;
   attributes: any;
+  size: any;
   // image: {
   //   [key: string]: unknown;
   // };

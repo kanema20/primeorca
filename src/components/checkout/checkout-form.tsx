@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 import { useAddNewPaymentRecord } from "@framework/product/firebase/post-payment-capture";
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
+import usePoofScript from '@utils/use-poof-script';
 import {
   PayPalScriptProvider,
   PayPalButtons,
@@ -35,6 +36,9 @@ interface CheckoutInputType {
 }
 
 const CheckoutForm: React.FC = () => {
+  usePoofScript('https://www.poof.io/static/api/checkout_v2.js');
+  usePoofScript('https://www.poof.io/static/api/sdk.js');
+
   const { items, total, isEmpty } = useCart();
   const router = useRouter()
   const { t } = useTranslation();

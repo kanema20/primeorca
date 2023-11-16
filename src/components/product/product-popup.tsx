@@ -37,8 +37,9 @@ export default function ProductPopup() {
   }
 
   const { data: firebaseProdData } = useFetchFirebaseProductSize(data.data()._id, attributes[productType()]);
-  console.log("firebaseProdData: ", firebaseProdData)
-  console.log("attributes: ", attributes[productType()])
+  console.log("firebaseProdData: ", firebaseProdData);
+
+  // console.log("attributes: ", attributes[productType()])
   const { price, basePrice, discount } = usePrice({
     // amount: getProductPrice(default_price)?.unit_amount,
     amount: data.data().price * 100,
@@ -219,7 +220,7 @@ export default function ProductPopup() {
     }
   }
 
-  console.log("productAttributes: ", productAttributes());
+  // console.log("productAttributes: ", productAttributes());
 
   const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&
@@ -238,10 +239,7 @@ export default function ProductPopup() {
       setViewCartBtn(true);
     }, 600);
 
-    // const item_data = getProdSize(data.url, attributes['Sizes (US - M)']);
-    // const item = generateCartItem(prod_data[0]!);
-    const item = generateCartItem(firebaseProdData!);
-    // const item = generateCartItem(data!, attributes);
+    const item = generateCartItem(firebaseProdData!.data);
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
