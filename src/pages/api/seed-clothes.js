@@ -94,7 +94,7 @@ const createProduct = async (product) => {
             collection: product.metadata_.collection,
             make: product.make,
             release: product.releaseDate,
-            type: "Replica Clothing",
+            type: "Sample Clothing",
         }
     });
     return stripeProduct;

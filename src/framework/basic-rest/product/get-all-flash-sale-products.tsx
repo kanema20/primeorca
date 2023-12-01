@@ -38,19 +38,22 @@ const fetchNewKobeArrivals = async ({ queryKey }: any) => {
     limit: 15,
   });
 
+<<<<<<< HEAD
   const refurbishedClothingProducts = await stripe.products.search({
+=======
+  const clothingRefurbished = await stripe.products.search({
+>>>>>>> paypal
     query: `active:\'true\' AND metadata[\'type\']:\'Refurbished Clothing\'`,
     limit: 15,
   });
 
+<<<<<<< HEAD
   const combinedProducts = [...clothingProducts.data, ...refurbishedProducts.data, ...refurbishedClothingProducts.data, ...products.data];
+=======
+  const combinedProducts = [...clothingProducts.data, ...refurbishedProducts.data, ...clothingRefurbished.data, ...products.data];
+>>>>>>> paypal
 
-  // const { data } = await stripe.products.list({
-  //   limit: 10,
-  //   active: true,
-  // });
   console.log(`combinedProducts.data: ${combinedProducts}`)
-  // return clothingProducts.data;
   return combinedProducts;
 };
 

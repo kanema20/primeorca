@@ -2,8 +2,9 @@ import React from "react";
 import { cartReducer, State, initialState } from "./cart.reducer";
 import { Item, getItem } from "./cart.utils";
 import { useLocalStorage } from "@utils/use-local-storage";
+import { DocumentData } from "firebase/firestore";
 interface CartProviderState extends State {
-  addItemToCart: (item: Item, quantity: number) => void;
+  addItemToCart: (item: DocumentData, quantity: number) => void;
   removeItemFromCart: (id: Item["id"]) => void;
   // updateItem: (id: Item["id"], payload: object) => void;
   // updateItemQuantity: (id: Item["id"], quantity: number) => void;

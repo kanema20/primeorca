@@ -13,6 +13,7 @@ import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
+import InquiryForm from '@components/common/form/inquiry';
 
 export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticPaths>) {
     const router = useRouter();
@@ -34,7 +35,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                                         <a>{t('breadcrumb-home')}</a>
                                     </ActiveLink>
                                     <ActiveLink
-                                        href={`${ROUTES.NIKE}`}
+                                        href={`${ROUTES.ADIDAS}`}
                                         activeClassName="font-semibold text-heading"
                                     >
                                         {/* <a className="capitalize">{t('breadcrumb-collection')}</a> */}
@@ -48,11 +49,20 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
 
                     <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
                         {/* <CollectionTopBar /> */}
-                        <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-hea    ding">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1>
+                        <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1>
                         <ProductGrid slug={slug} />
                     </div>
                 </div>
-                <Subscription />
+                <div className="my-14 lg:my-16 xl:my-20 px-0 pb-2 lg: xl:max-w-screen-xl mx-auto flex flex-col md:flex-row w-full">
+                    <div className="md:w-full lg:full 2xl:full flex h-full  flex-col">
+                        <div className="flex pb-7 md:pb-9 mt-7 md:-mt-1.5">
+                            <h4 className="text-2xl 2xl:text-3xl font-bold text-heading">
+                                {t('text-inquiry')}
+                            </h4>
+                        </div>
+                        <InquiryForm />
+                    </div>
+                </div>
             </Container>
         </div>
     );
@@ -63,12 +73,10 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "nike" } },
-            { params: { slug: "eybl" } },
-            { params: { slug: "gtcuts" } },
-            { params: { slug: "travis" } },
-            { params: { slug: "dunks" } },
-            { params: { slug: "jordan-4" } },
+            { params: { slug: "3stripe" } },
+            { params: { slug: "yzy-350" } },
+            { params: { slug: "yzy-700" } },
+            { params: { slug: "yzy-slide" } },
             // Add more paths as needed
         ],
         fallback: true,

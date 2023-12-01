@@ -11,9 +11,7 @@ import { generateCartItem } from '@utils/generate-cart-item';
 import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
-import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
-import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
-
+import { useFetchFirebaseProductSize } from "@framework/product/firebase/get-product-sizes";
 export default function ProductPopup() {
   const { t } = useTranslation('common');
   const {
@@ -27,32 +25,28 @@ export default function ProductPopup() {
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
-  const { url, images, name, description, default_price, metadata } = data;
+  const { _id, url, image, name, description, default_price, metadata } = data;
 
   const productType = () => {
-    if (data.metadata.type == "Replica" || data.metadata.type == "Refurbished") {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
       return "Sizes (US - Men)";
     }
     else {
       return "Sizes (Asia - Men)";
     }
   }
-  const { data: prod_data } = useFetchProductSize(data.url, attributes[productType()]);
 
-  function getProductPrice(prod_price: any) {
-    const { data } = useFetchItemPrice(prod_price)
-    return data;
-  }
-  console.log("attributes: ", attributes[productType()])
-  console.log("data: ", data)
+  const { data: firebaseProdData } = useFetchFirebaseProductSize(data.data()._id, attributes[productType()]);
+  console.log("firebaseProdData: ", firebaseProdData);
+
+  // console.log("attributes: ", attributes[productType()])
   const { price, basePrice, discount } = usePrice({
-    // amount: data.sale_price ? data.sale_price : data.price,
-    amount: getProductPrice(default_price)?.unit_amount,
-    baseAmount: data.default_price,
+    // amount: getProductPrice(default_price)?.unit_amount,
+    amount: data.data().price * 100,
+    baseAmount: data.data().price * 100,
     currencyCode: 'USD',
   });
 
-  // const variations = getVariations(data.variations);
   const variations =
   {
     "Sizes (US - Men)": [
@@ -215,32 +209,18 @@ export default function ProductPopup() {
           "slug": "size"
         }
       },
-      // {
-      //   "id": 6,
-      //   "value": "XXXL",
-      //   "attribute": {
-      //     "id": 1,
-      //     "name": "Size",
-      //     "slug": "size"
-      //   }
-      // },
     ]
   }
 
-
-  function getProductSizes(prod_slug: string) {
-    const { data } = useFetchProductSizes(prod_slug)
-    return data;
-  }
-
   const productAttributes = () => {
-    if (data.metadata.type == "Replica" || data.metadata.type == "Refurbished") {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
       return variations;
     } else {
       return clothingVariations;
     }
   }
 
+<<<<<<< HEAD
   console.log("productAttributes: ", productAttributes());
 
   try {
@@ -248,6 +228,9 @@ export default function ProductPopup() {
   } catch {
     console.log("undefined")
   }
+=======
+  // console.log("productAttributes: ", productAttributes());
+>>>>>>> paypal
 
   const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&
@@ -266,22 +249,31 @@ export default function ProductPopup() {
       setViewCartBtn(true);
     }, 600);
 
+<<<<<<< HEAD
     // const item_data = getProdSize(data.url, attributes['Sizes (US - M)']);
     const item = generateCartItem(prod_data[0]!);
     // const item = generateCartItem(data!, attributes);
+=======
+    const item = generateCartItem(firebaseProdData!.data, firebaseProdData!.id);
+
+>>>>>>> paypal
     try {
       console.log("generated cart item ", item, quantity)
       } catch {
         console.log("undefined generated cart item")
       }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> paypal
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
 
   function navigateToProductPage() {
     closeModal();
-    router.push(`/products/${metadata.slug}`, undefined, {
+    router.push(`/products/${data.data().url}`, undefined, {
       locale: router.locale,
     });
   }
@@ -307,7 +299,7 @@ export default function ProductPopup() {
         >
           <img
             src={
-              images[0] ??
+              data.data().image ??
               '/assets/placeholder/products/product-thumbnail.svg'
             }
             alt={name}
@@ -323,11 +315,11 @@ export default function ProductPopup() {
               role="button"
             >
               <h2 className="text-heading text-lg md:text-xl lg:text-2xl font-semibold hover:text-black">
-                {name}
+                {data.data().name}
               </h2>
             </div>
             <p className="text-sm leading-6 md:text-body md:leading-7">
-              {description}
+              {data.data().description}
             </p>
 
             <div className="flex items-center mt-3">

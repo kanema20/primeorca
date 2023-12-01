@@ -4,6 +4,7 @@ import ProductCardGridLoader from '@components/ui/loaders/product-card-grid-load
 import { useKobeArrivalsQuery } from '@framework/product/get-all-flash-sale-products';
 import Alert from '@components/ui/alert';
 import dynamic from 'next/dynamic';
+import { useNewArrivalsQuery } from '@framework/product/firebase/get-new-arrivals';
 
 const Countdown = dynamic(() => import('react-countdown'), { ssr: false });
 
@@ -119,10 +120,11 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
   disableBorderRadius = false,
   bgGray,
 }) => {
-  const { data, isLoading, error } = useKobeArrivalsQuery({
+
+  const { isLoading, data: firebaseArrivals, error } = useNewArrivalsQuery({
     limit: limit || 20,
-    // demoVariant,
   });
+  console.log("firebaseArrivals: ", firebaseArrivals)
 
   if (isLoading) {
     return (
@@ -137,7 +139,7 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
         <div
           className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-${TwoXlCols} gap-x-3 md:gap-x-5 xl:gap-x-7 gap-y-4 lg:gap-y-5 xl:lg:gap-y-6 2xl:gap-y-8`}
         >
-          {Array.from({ length: limit || 10 }).map((_, idx) => (
+          {Array.from({ length: limit || 20 }).map((_, idx) => (
             <ProductCardGridLoader key={idx} uniqueKey={`flash-sale-${idx}`} />
           ))}
         </div>
@@ -179,7 +181,7 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
       >
         {limit ? (
           <>
-            {data
+            {firebaseArrivals
               ?.slice(0, limit)
               ?.map((product: any) => (
                 <ProductCard
@@ -196,7 +198,7 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
           </>
         ) : (
           <>
-            {data?.map((product: any) => (
+            {firebaseArrivals?.map((product: any) => (
               <ProductCard
                 key={`product--key${product.id}`}
                 product={product}

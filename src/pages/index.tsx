@@ -28,7 +28,7 @@ import InquiryForm from '@components/common/form/inquiry';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { CartProvider } from 'use-shopping-cart'
-import { useFetchFeatureProduct } from '@framework/product/get-single-product';
+// import { useFetchFeatureProduct } from '@framework/product/get-single-product';
 import ModalVideo from '@components/common/modal-video';
 import ModalPopup from '@components/common/modal-update';
 // const flashSaleCarouselBreakpoint = {
@@ -49,8 +49,8 @@ import ModalPopup from '@components/common/modal-update';
 
 export default function Home() {
   const { t } = useTranslation('common');
-  const { data, isLoading } = useFetchFeatureProduct('kobe-8-triple-white-halo');
-  isLoading && console.log("feature product loading", isLoading)
+  // const { data, isLoading } = useFetchFeatureProduct('kobe-8-triple-white-halo');
+  // isLoading && console.log("feature product loading", isLoading)
   // console.log("feature product data", data)
 
   return (
@@ -64,14 +64,14 @@ export default function Home() {
         href={``}
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
       /> */}
-      <BannerCardFeature
+      {/* <BannerCardFeature
         key={`banner--key${featureBanner.id}`}
         banner={featureBanner}
         product={data}
         // href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
         href={``}
         className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
-      />
+      /> */}
       {/* <BannerCard
         key={`banner--key${banner.id}`}
         banner={processBanner}
@@ -92,7 +92,7 @@ export default function Home() {
       <Divider />
       {/* <BrandBlock sectionHeading="text-top-brands" /> */}
       <BestSellerProductFeed />
-      <ProductsFlashSaleBlock date={'2023-03-01T01:02:03'} />
+      {/* <ProductsFlashSaleBlock date={'2023-03-01T01:02:03'} /> */}
       {/* <ProductsWithFlashSale carouselBreakpoint={flashSaleCarouselBreakpoint} /> */}
       {/* <BannerGridBlock />
       <CategoryGridBlock sectionHeading="text-featured-categories" /> */}

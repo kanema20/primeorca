@@ -12,12 +12,10 @@ import { useTranslation } from 'next-i18next';
 import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { Item } from '@contexts/cart/cart.utils';
 import { useFetchItemImage } from '@framework/product/get-product-image';
+import { DocumentData } from 'firebase/firestore';
 
-// type CartItemProps = {
-//   item: Item;
-// };
-
-const CartItem: React.FC<Item> = ({ item }) => {
+const CartItem: React.FC<DocumentData> = ({ item }) => {
+  // const CartItem: React.FC<Item> = ({ item }) => {
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
     return data;
@@ -35,14 +33,11 @@ const CartItem: React.FC<Item> = ({ item }) => {
 
   const { t } = useTranslation('common');
   const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
-  const { price } = usePrice({
-    amount: getProductPrice(item.default_price)?.unit_amount,
-    // amount: item.price,
-    currencyCode: 'USD',
-  });
+
   const { price: totalPrice } = usePrice({
     // amount: item.itemTotal,
-    amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,
+    // amount: getProductPrice(item.default_price)?.unit_amount * item.quantity,
+    amount: item.price * 100 * item.quantity,
     currencyCode: 'USD',
   });
 
@@ -59,7 +54,8 @@ const CartItem: React.FC<Item> = ({ item }) => {
     >
       <div className="relative flex flex-shrink-0 w-28 h-20 overflow-hidden bg-gray-200 rounded-md cursor-pointer md:w-30 md:h-20 ltr:mr-4 rtl:ml-4">
         <Image
-          src={getProductImage((item.id).split(".")[0]) ?? '/assets/placeholder/cart-item.svg'}
+          // src={getProductImage((item.id).split(".")[0]) ?? '/assets/placeholder/cart-item.svg'}
+          src={item?.images ?? '/assets/placeholder/cart-item.svg'}
           // src={'/assets/placeholder/cart-item.svg'}
           // src={'https://po-prod.s3.us-west-1.amazonaws.com/kobe5/Nike-Kobe-5-Protro-Undefeated-Hall-of-Fame-Product.png'}
           width={112}
@@ -87,7 +83,7 @@ const CartItem: React.FC<Item> = ({ item }) => {
         </Link>
         {/* @ts-ignore */}
         <span className="text-sm text-gray-400 mb-2.5">
-          {t('text-unit-price')} : &nbsp; {price}
+          {t('text-unit-price')}: ${item.price}.00
         </span>
 
         <div className="flex items-end justify-between">

@@ -21,6 +21,11 @@ import { forEach } from 'lodash';
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
+<<<<<<< HEAD
+=======
+import usePoofScript from '@utils/use-poof-script';
+import { useShoppingCart } from 'use-shopping-cart';
+>>>>>>> paypal
 
 export interface CheckoutItems {
   id?: string | number;
@@ -31,6 +36,11 @@ export interface CheckoutItems {
 }
 
 export default function Cart() {
+<<<<<<< HEAD
+=======
+  usePoofScript('https://www.poof.io/static/api/checkout_v2.js')
+  usePoofScript('https://www.poof.io/static/api/sdk.js')
+>>>>>>> paypal
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
@@ -41,11 +51,46 @@ export default function Cart() {
     currencyCode: 'USD',
   });
 
+  const payload = { "username": "Poof", "amount": "10" }
+
+
   function getProductPrice(prod_price: any) {
     const { data } = useFetchItemPrice(prod_price)
     return data;
   }
 
+<<<<<<< HEAD
+=======
+  const handlePoofCheckout = async () => {
+    if (total == 0) {
+      window.alert("Cart is empty");
+      return;
+    }
+    const options = {
+      method: 'POST',
+      url: 'https://www.poof.io/api/v1/checkout',
+      headers: {'content-type': 'application/json'},
+      data: {
+        username: 'Prime Orca Guest',
+        amount: total,
+        fields: ['eafesafd', 'fasdfa', 'dasfadfaf'],
+        success_url: 'https://www.Poof.io/success',
+      }
+    };
+    
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        router.push(response.data)
+
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+
+  }
+>>>>>>> paypal
 
   const handleCheckout = async () => {
     try {
@@ -63,29 +108,6 @@ export default function Cart() {
     }
   }
 
-  // const createCheckout = async () => {
-  //   setLoading(true);
-  //   // TODO: next.js api routing - checkout
-  //   // await fetch(ROUTES.CHECKOUT_SESSION, {
-  //   await fetch('http://localhost:8080/create-checkout-session', {
-  //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-  //     mode: 'cors', // no-  cors, *cors, same-origin
-  //     // credentials: 'omit', // include, *same-origin, omit
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     redirect: 'follow', // manual, *follow, error
-  //     // referrerPolicy: 'no-referrer', // no-referrer, *client
-  //     body: JSON.stringify({
-  //       items: getItemsFromCart(items),
-  //     }),
-  //   })
-  //     .then((data) => {
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
 
   function getTotalPrice(cartItems: any): number {
     let totalCart: number = 0;
@@ -178,7 +200,8 @@ export default function Cart() {
         {/* </span> */}
         {/* </Link> } */}
         <Button
-          onClick={handleCheckout}
+          // onClick={handleCheckout}
+          // onClick={handlePoofCheckout}
           className={cn(
             'w-full px-5 py-3 md:py-4 flex items-center justify-center rounded-md text-sm sm:text-base text-white focus:outline-none transition duration-300 ',
             isEmpty
@@ -186,10 +209,12 @@ export default function Cart() {
               : 'bg-heading hover:bg-gray-600'
           )}
         >
-          <span className="w-full ltr:pr-5 rtl:pl-5 -mt-0.5 py-0.5">
-            {/* @ts-ignore */}
-            {loading ? "Loading Checkout... " : t('text-proceed-to-checkout')}
-          </span>
+          <a href="/checkout">Proceed to Checkout</a>
+
+          {/* <span className="w-full ltr:pr-5 rtl:pl-5 -mt-0.5 py-0.5"> */}
+          {/* @ts-ignore */}
+          {/* {loading ? "Loading Checkout... " : t('text-proceed-to-checkout')} */}
+          {/* </span> */}
           {/* <span className="rtl:mr-auto ltr:ml-auto flex-shrink-0 -mt-0.5 py-0.5 flex">
             <span className="ltr:border-l rtl:border-r border-white ltr:pr-5 rtl:pl-5 py-0.5" />
             {cartTotal}

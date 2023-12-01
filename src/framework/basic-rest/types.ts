@@ -120,7 +120,8 @@ export type StripeProduct = {
   sale_price?: number;
   image: string;
   statement_descriptor: string;
-  images?: Attachment[];
+  // images?: Attachment[];
+  images: string;
   category?: Category;
   tag?: Tag[];
   metadata?: any[];

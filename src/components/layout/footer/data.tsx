@@ -152,23 +152,23 @@ export const footer = {
       lists: [
         {
           id: 1,
-          title: 'Kobe 5',
-          path: '/kobe/kobe-5',
+          title: 'KB 5',
+          path: '/KB/KB-5',
         },
         {
           id: 2,
-          title: 'Kobe 6',
-          path: '/kobe/kobe-6',
+          title: 'KB 6',
+          path: '/KB/KB-6',
         },
         {
           id: 3,
-          title: 'Kobe 8',
-          path: '/kobe/kobe-8',
+          title: 'KB 8',
+          path: '/KB/KB-8',
         },
         {
           id: 4,
-          title: 'Balenciaga',
-          path: '/balenciaga/track',
+          title: 'Balenci',
+          path: '/Balenci/track',
         },
         // {
         //   id: 3,

@@ -3,13 +3,14 @@
 import { useMutation } from "react-query";
 
 export interface CheckoutInputType {
-  firstName: string;
-  lastName: string;
-  phone: string;
+  name: string;
+  // lastName: string;
+  // phone: string;
   email: string;
   address: string;
   city: string;
   zipCode: string;
+  country: string;
   save: boolean;
   note: string;
 }

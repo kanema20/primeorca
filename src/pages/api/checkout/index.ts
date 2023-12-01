@@ -100,24 +100,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Create Checkout Sessions from body params.
       const session = await createCheckoutSession(req.body);
-
-      // const session = await stripe.checkout.session.create({
-      //   payment_method_types: ['card', 'cashapp'], // 'google_pay', 'apple_pay'],
-      //   line_items: {
-      //     price: "price_1Nao50CrveYCAKIStm2GcZD0",
-      //     quantity: 1,
-      //     adjustable_quantity: {
-      //       enabled: true,
-      //       minimum: 1,
-      //       maximum: 100,
-      //     }
-      //   },
-      //   mode: 'payment',
-      //   success_url: `${req.headers.origin}/success`,
-      //   cancel_url: `${req.headers.origin}/`,
-      // })
       res.status(200).json({ url: session.url });
-      // res.redirect(303, session.url);
     } catch (err) {
       console.log(err)
       res.status(err.statusCode || 500).json(err.message);

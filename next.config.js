@@ -20,7 +20,7 @@ module.exports = withPWA({
       {
         protocol: 'https',
         hostname: '**.amazonaws.com',
-        // hostname: 'po-prod.s3.us-west-1.amazonaws.com',
+        // hostname: 'po-prod.s3.us-west-1fs.amazonaws.com',
         // port: '',
         // pathname: '/links/**',
       },

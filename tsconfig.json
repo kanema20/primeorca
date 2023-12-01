@@ -43,7 +43,10 @@
       ],
       "@utils/*": [
         "src/utils/*"
-      ]
+      ],
+      "@firebase/*": [
+        "src/pages/api/firebase/*"
+      ],
     },
     "incremental": true
   },
@@ -66,7 +69,8 @@
     "src/pages/api/create-products-with-sizes.js",
     "src/pages/api/update-products.js",
     "src/pages/api/firebase/init.ts",
-    "src/pages/api/firebase/getProducts.js"
+    "src/pages/api/firebase/getProducts.js",
+    "src/pages/api/firebase/updateProducts.js",
   ],
   "exclude": [
     "node_modules"

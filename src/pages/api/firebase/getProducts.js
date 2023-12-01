@@ -3,17 +3,6 @@ const { getAuth } = require('firebase/auth');
 const { collection, query, where, onSnapshot, getFirestore, doc, setDoc } = require('firebase/firestore');
 const { getStorage } = require('firebase/storage');
 
-// const { getFirebaseConfig } = require('./config');
-// const config = {
-//     apiKey: process.env.FIREBASE_API_KEY,
-//     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-//     databaseURL: process.env.FIREBASE_DB_URL,
-//     projectId: process.env.FIREBASE_PROJECT_ID,
-//     storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-//     messagingSenderId: process.env.FIREBASE_MSG_SENDER_ID,
-//     appId: process.env.FIREBASE_APP_ID
-// };
-
 const firebaseConfig = {
     apiKey: "AIzaSyB7H6KvluxP9pqi2raDp1e6tfcIIUQhsR4",
     authDomain: "prime-orca-701ba.firebaseapp.com",
@@ -32,20 +21,18 @@ function getFirebaseConfig() {
 }
 
 async function getProductsByCollection(query_) {
+    const collection_ = [];
     const q = query(collection(db, "products"), where("metadata_.collection", "==", `${query_}`));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        const kobe6_ = [];
         querySnapshot.forEach((doc) => {
-            kobe6_.push(doc.data().name);
-            kobe6_.push(doc.data().price);
+            collection_.push(doc.data());
+            console.log(doc.data().name)
+            // console.log("collection_: ", collection_)
         });
-        console.log("current kobe 6: ", kobe6_.join(", "));
+        console.log("collection_: ", collection_)
     });
+    return collection_;
 }
-
-// async function  {
-
-// }
 
 initializeApp(getFirebaseConfig());
 
@@ -53,4 +40,4 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-getProductsByCollection("kobe6");
+getProductsByCollection('kobe-5');
