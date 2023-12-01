@@ -11,16 +11,15 @@ const cors = Cors({
 })
 
 // set some important variables
-const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_PROD_URL, PAYPAL_SANDBOX_URL } = process.env;
+const { PAYPAL_CLIENT_ID_LIVE, PAYPAL_CLIENT_SECRET_LIVE, PAYPAL_PROD_URL, PAYPAL_SANDBOX_URL } = process.env;
 
 /**
  * Create an order
  * @see https://developer.paypal.com/docs/api/orders/v2/#orders_create
  */
 export async function createOrder(data: CreateOrderData, actions: CreateOrderActions) {
-    // const purchaseAmount = "69.00"; // TODO: pull prices from a database
     const accessToken = await generateAccessToken();
-    const url = `${PAYPAL_SANDBOX_URL}/v2/checkout/orders`;
+    const url = `${PAYPAL_PROD_URL}/v2/checkout/orders`;
     const response = await fetch(url, {
         method: "post",
         headers: {
@@ -73,7 +72,7 @@ export function onCancel() {
  */
 export async function capturePayment(orderId: NextApiRequest) {
     const accessToken = await generateAccessToken();
-    const url = `${PAYPAL_SANDBOX_URL}/v2/checkout/orders/${orderId}/capture`;
+    const url = `${PAYPAL_PROD_URL}/v2/checkout/orders/${orderId}/capture`;
     const response = await fetch(url, {
         method: "post",
         headers: {
@@ -91,9 +90,9 @@ export async function capturePayment(orderId: NextApiRequest) {
  */
 export async function generateAccessToken() {
     const auth = Buffer.from(
-        PAYPAL_CLIENT_ID + ":" + PAYPAL_CLIENT_SECRET,
+        PAYPAL_CLIENT_ID_LIVE + ":" + PAYPAL_CLIENT_SECRET_LIVE,
     ).toString("base64");
-    const response = await fetch(`${PAYPAL_SANDBOX_URL}/v1/oauth2/token`, {
+    const response = await fetch(`${PAYPAL_PROD_URL}/v1/oauth2/token`, {
         method: "post",
         body: "grant_type=client_credentials",
         headers: {
@@ -110,7 +109,7 @@ export async function generateAccessToken() {
  */
 export async function generateClientToken() {
     const accessToken = await generateAccessToken();
-    const response = await fetch(`${PAYPAL_SANDBOX_URL}/v1/identity/generate-token`, {
+    const response = await fetch(`${PAYPAL_PROD_URL}/v1/identity/generate-token`, {
         method: "post",
         headers: {
             Authorization: `Bearer ${accessToken}`,

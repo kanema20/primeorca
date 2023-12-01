@@ -7,11 +7,11 @@ const fs = require('fs');
 const path = require('path');
 
 const kobe5Products = require('./mvp/kobe5.js');
-const kobe5_1Products = require('./mvp/kobe5_1.js');
+// const kobe5_1Products = require('./mvp/kobe5_1.js');
 const kobe6Products = require('./mvp/kobe6.js');
-const kobe6_1Products = require('./mvp/kobe6_1.js');
+// const kobe6_1Products = require('./mvp/kobe6_1.js');
 const kobe8Products = require('./mvp/kobe8.js');
-const kobe8_1Products = require('./mvp/kobe8_1.js');
+// const kobe8_1Products = require('./mvp/kobe8_1.js');
 const kobe5offwhite = require('./mvp/kobe-off-white.js');
 const balenciProducts = require('./mvp/balenciaga.js');
 const balenci2Products = require('./mvp/balenciaga-2.js');

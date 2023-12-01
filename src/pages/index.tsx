@@ -30,7 +30,7 @@ import { useTranslation } from 'next-i18next';
 import { CartProvider } from 'use-shopping-cart'
 // import { useFetchFeatureProduct } from '@framework/product/get-single-product';
 import ModalVideo from '@components/common/modal-video';
-import ModalPopup from '@components/common/modal-update';
+// import ModalPopup from '@components/common/modal-update';
 // const flashSaleCarouselBreakpoint = {
 //   '1280': {
 //     slidesPerView: 1,
@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <Container>
-      <ModalPopup />
+      {/* <ModalPopup /> */}
       {/* <HeroWithCategory bannerData={heroBanner} /> */}
       {/* <BannerCard
         key={`banner--key${banner.id}`}

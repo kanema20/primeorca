@@ -21,11 +21,9 @@ import { forEach } from 'lodash';
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
-<<<<<<< HEAD
-=======
+
 import usePoofScript from '@utils/use-poof-script';
 import { useShoppingCart } from 'use-shopping-cart';
->>>>>>> paypal
 
 export interface CheckoutItems {
   id?: string | number;
@@ -36,11 +34,8 @@ export interface CheckoutItems {
 }
 
 export default function Cart() {
-<<<<<<< HEAD
-=======
   usePoofScript('https://www.poof.io/static/api/checkout_v2.js')
   usePoofScript('https://www.poof.io/static/api/sdk.js')
->>>>>>> paypal
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
@@ -59,8 +54,6 @@ export default function Cart() {
     return data;
   }
 
-<<<<<<< HEAD
-=======
   const handlePoofCheckout = async () => {
     if (total == 0) {
       window.alert("Cart is empty");
@@ -90,7 +83,6 @@ export default function Cart() {
       });
 
   }
->>>>>>> paypal
 
   const handleCheckout = async () => {
     try {

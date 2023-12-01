@@ -220,17 +220,7 @@ export default function ProductPopup() {
     }
   }
 
-<<<<<<< HEAD
-  console.log("productAttributes: ", productAttributes());
-
-  try {
-  console.log("prod_data[0] ", prod_data[0])
-  } catch {
-    console.log("undefined")
-  }
-=======
   // console.log("productAttributes: ", productAttributes());
->>>>>>> paypal
 
   const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&
@@ -249,24 +239,13 @@ export default function ProductPopup() {
       setViewCartBtn(true);
     }, 600);
 
-<<<<<<< HEAD
-    // const item_data = getProdSize(data.url, attributes['Sizes (US - M)']);
-    const item = generateCartItem(prod_data[0]!);
-    // const item = generateCartItem(data!, attributes);
-=======
     const item = generateCartItem(firebaseProdData!.data, firebaseProdData!.id);
 
->>>>>>> paypal
     try {
       console.log("generated cart item ", item, quantity)
       } catch {
         console.log("undefined generated cart item")
       }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> paypal
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }
