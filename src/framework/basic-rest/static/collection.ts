@@ -5,7 +5,7 @@ export const collectionData = [
     id: 1,
     slug: ROUTES.BALENCI,
     image: '/assets/images/collection/balenciaga-closeup.png',
-    title: 'Balenciaga Track',
+    title: 'Balenci Track',
     description: 'Balenci balenci balenci !',
   },
   {
@@ -19,7 +19,7 @@ export const collectionData = [
     id: 3,
     slug: ROUTES.GALLERY,
     image: '/assets/images/collection/Gallery-Dept-Painted-Flare-Sweat-Pants-Orange.jpg',
-    title: 'Gallery Dept.',
+    title: 'A Dept. of Galleries',
     description: 'Shop the latest Flare Sweats.',
   },
 ]

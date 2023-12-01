@@ -14,7 +14,6 @@ import { db, storage } from '@firebase/app';
 import { QueryOptionsType, QueryKobeItem } from '@framework/types';
 import dotenv from 'dotenv';
 dotenv.config();
-import { StripeProduct } from "@framework/types";
 
 const fetchFeatureProduct = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;

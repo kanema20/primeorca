@@ -1,0 +1,20 @@
+
+
+{
+  "select": {
+     "fieldPath": "/"
+  },
+  "from":
+    {
+    "collectionId": "payments",
+    "allDescendants": false
+    },
+  "orderBy":
+    {
+      "field": {
+        "fieldPath": "created_date"
+    },
+    "direction": "DESCENDING"
+      },
+    "limit": 1
+}

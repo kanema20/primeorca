@@ -89,6 +89,7 @@ export interface IPayments {
     fee?: number;
     net_amount?: number;
     lineItem: string[];
+    lineItemPrice: number[];
     quantity: number[]; // or lineItemMapping? { lineItem: string, quantity: number}
     shipping_address?: string;
     shipping_address_city?: string;
@@ -97,7 +98,7 @@ export interface IPayments {
     shipping_address_zip?: string;
     status: string;
     statement_descriptor: string;
-    created_date?: number;
+    created_date?: string;
 }
 
 export interface IInvoices {

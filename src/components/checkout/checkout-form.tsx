@@ -21,6 +21,8 @@ import {
 import { useCart } from '@contexts/cart/cart.context';
 import { createOrder, onApprove, onCancel } from 'src/pages/api/paypal';
 import { IPayments } from '@firebase/types/types';
+import { AmountWithCurrencyCodeOptional, PurchaseItem } from '@paypal/paypal-js';
+import { forEach } from 'lodash';
 
 interface CheckoutInputType {
   name: string;
@@ -33,6 +35,16 @@ interface CheckoutInputType {
   country: string;
   save: boolean;
   note: string;
+}
+
+interface CheckoutItem {
+  name: string;
+  quantity: string;
+  description: string;
+  sku: string;
+  category: string;
+  unit_amount: AmountWithCurrencyCodeOptional;
+  // [key: string]: unknown;
 }
 
 const CheckoutForm: React.FC = () => {
@@ -85,6 +97,29 @@ const CheckoutForm: React.FC = () => {
     return cart_;
   }
 
+  function structureItemsForPaypal(cartItems: any): PurchaseItem[] {
+    let cart_: PurchaseItem[] = [];
+    cartItems?.map((cartItem: any) => (
+      cart_.push({
+        name: cartItem.name,
+        quantity: cartItem.quantity,
+        description: cartItem.description,
+        sku: cartItem.id,
+        category: "PHYSICAL_GOODS",
+        unit_amount: {
+          currency_code: "USD",
+          // value: (cartItem.price * 100).toString(),
+          value: (cartItem.price).toString(),
+        }
+      })
+    ))
+    return cart_;
+  }
+
+  function sendToAirtable(paypalResponse: any): void {
+    
+  }
+
   function totalShipping(cartItems: any): number {
     let qty: number = 0;
     cartItems?.map((cartItem: any) => (
@@ -120,6 +155,7 @@ const CheckoutForm: React.FC = () => {
       // like product ids and quantities
       body: JSON.stringify({
         // cart: getItemsFromCart(items),
+        items: [],
         amount: createPaypalOrderAmount()
       })
       // body: JSON.stringify({ "intent": "CAPTURE", "purchase_units": [{ "reference_id": "d9f80740-38f0-11e8-b467-0ed5f89f718b", "amount": { "currency_code": "USD", "value": "100.00" } }], "payment_source": { "paypal": { "experience_context": { "payment_method_preference": "IMMEDIATE_PAYMENT_REQUIRED", "brand_name": "EXAMPLE INC", "locale": "en-US", "landing_page": "LOGIN", "shipping_preference": "SET_PROVIDED_ADDRESS", "user_action": "PAY_NOW", "return_url": "https://example.com/returnUrl", "cancel_url": "https://example.com/cancelUrl" } } } })
@@ -174,10 +210,21 @@ const CheckoutForm: React.FC = () => {
               purchase_units: [
                 {
                   description: "PRIME ORCA",
+                  items: structureItemsForPaypal(items),
                   amount: {
                     currency_code: "USD",
-                    // value: createPaypalOrderAmount().toString(),
                     value: createPaypalOrderAmount().toString(),
+                    // value: (getTotalPrice(items) / 100 + totalShipping(items)).toString(),
+                    breakdown: {
+                      item_total: {
+                        currency_code: "USD",
+                        value: (getTotalPrice(items) / 100).toString(),
+                      },
+                      shipping: {
+                        currency_code: "USD",
+                        value: (totalShipping(items)).toString(),
+                      }
+                    }
                   },
                 },
               ],
@@ -187,14 +234,26 @@ const CheckoutForm: React.FC = () => {
             const order_ = await actions.order.capture();
             console.log("order", order_);
 
+            const lineItemArray: string[] = [];
+            const linePriceArray: number[] = [];
+            const lineQtyArray: number[] = [];
+
+            forEach(items, (item: any) => {
+              lineItemArray.push(item.name);
+              linePriceArray.push(item.price);
+              lineQtyArray.push(item.quantity);
+            })
+
             const orderData: IPayments = {
               id: order_.id,
               addedToAirtable: true,
               amount: parseInt(order_.purchase_units[0].amount.value),
               // fee: order_.purchase_units[0].payments.captures[0].seller_receivable_breakdown.paypal_fee.value,
               // net_amount: order_.purchase_units[0].payments.captures[0].seller_receivable_breakdown.net_amount.value,
-              lineItem: [(items[0].price).toString()],
-              quantity: [items[0].quantity],
+              lineItem: lineItemArray,
+              lineItemPrice: linePriceArray,
+              quantity: lineQtyArray,
+              // quantity: [items[0].quantity],
               shipping_address: order_.purchase_units[0].shipping.address.address_line_1,
               shipping_address_city: order_.purchase_units[0].shipping.address.admin_area_2,
               shipping_address_state: order_.purchase_units[0].shipping.address.admin_area_1,
@@ -204,7 +263,7 @@ const CheckoutForm: React.FC = () => {
               statement_descriptor: "PRIME ORCA",
               customer_name: order_.payer.name.given_name + " " + order_.payer.name.surname,
               customer_email: order_.payer.email_address,
-
+              created_date: order_.create_time,
             }
             handleApprove(orderData);
           }}

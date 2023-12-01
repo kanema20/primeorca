@@ -10,7 +10,7 @@ export default function BestSellerProductFeed() {
 
 	return (
 		<ProductsBlock
-			sectionHeading="text-best-sellers"
+			sectionHeading="All Products"
 			products={data}
 			loading={isLoading}
 			error={error?.message}

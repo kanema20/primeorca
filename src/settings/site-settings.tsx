@@ -324,71 +324,71 @@ export const siteSettings = {
             id: 2,
             path: `${ROUTES.OFF}`,
             // label: 'OFF WHITE ✖ NIKE',
-            label: 'OFF WHITE',
+              label: 'Off Wht',
           },
           {
             id: 3,
             path: `${ROUTES.RHUDE}`,
-            label: 'Rhude',
+            label: 'Rude!',
           },
           {
             id: 4,
             path: `${ROUTES.GALLERY}`,
-            label: 'Gallery Dept.',
+            label: 'A Dept of Galleries',
           },
           {
             id: 5,
             path: `${ROUTES.MONCLER}`,
-            label: 'Moncler',
+            label: 'Monclurr',
           },
           {
             id: 6,
             path: `${ROUTES.RICKOWENS}`,
-            label: 'Rick Owens',
+            label: 'Pickle Rick O',
           },
         ],
       },
       {
         id: 6,
         path: '/',
-        label: 'Kobe 🐍',
+        label: 'KB 🐍',
         subMenu: [
           {
             id: 1,
             path: `${ROUTES.KOBE5}`,
-            label: 'Kobe 5',
+            label: 'KB 5',
           },
           {
             id: 2,
             path: `${ROUTES.KOBE6}`,
-            label: 'Kobe 6',
+            label: 'KB 6',
           },
           {
             id: 3,
             path: `${ROUTES.KOBE8}`,
-            label: 'Kobe 8',
+            label: 'KB 8',
           },
         ],
       },
       {
         id: 3,
         path: '/',
-        label: 'Nike ✔',
+        label: 'NKE ✔',
         subMenu: [
           {
             id: 1,
-            path: '/nike/gtcuts',
+            path: '/Nke/gtcuts',
             label: 'GT Cuts',
           },
           {
             id: 2,
-            path: '/nike/eybl',
+            path: '/Nke/eybl',
             label: 'EYBL 🍊',
           },
           {
             id: 3,
-            path: '/nike/travis',
-            label: 'Travis Scott 🌵',
+            path: '/Nke/TS',
+            label: 'TS 🌵',
           },
           {
             id: 4,
@@ -398,7 +398,7 @@ export const siteSettings = {
           {
             id: 5,
             path: `${ROUTES.JORDAN4}`,
-            label: 'Jordan 4',
+            label: 'AJ 4',
           },
         ],
       },
@@ -409,35 +409,35 @@ export const siteSettings = {
         subMenu: [
           {
             id: 1,
-            path: '/balenciaga/track',
+            path: '/Balenci/track',
             label: 'Track',
           },
           {
             id: 2,
-            path: '/balenciaga/triple-s',
-            label: 'Triple S',
+            path: '/Balenci/triple-s',
+            label: '3x S',
           },
         ],
       },
       {
         id: 5,
         path: '/',
-        label: 'Yeezy 🐐',
+        label: 'KANYE 2024 🐐',
         subMenu: [
           {
             id: 1,
             path: `${ROUTES.YEEZY350}`,
-            label: 'Yeezy 350',
+            label: 'YZY 350',
           },
           {
             id: 2,
             path: `${ROUTES.YEEZY700}`,
-            label: 'Yeezy 700',
+            label: 'YZY 700',
           },
           {
             id: 3,
             path: `${ROUTES.YEEZYSLIDE}`,
-            label: 'Yeezy Slide',
+            label: 'YZY Slide',
           },
         ],
       },
@@ -694,8 +694,8 @@ export const siteSettings = {
       // },
       {
         id: 8,
-        path: '/prada/cloudbust',
-        label: 'Prada 🌫',
+        path: '/Prda/cloudbust',
+        label: '🅿️rada 🌫',
       },
       // {
       // id: 9,
@@ -704,18 +704,18 @@ export const siteSettings = {
       // },
       {
         id: 10,
-        path: '/mcqueen/oversized',
-        label: 'McQueen 👑',
+        path: '/McQ/oversized',
+        label: 'McQ 👑',
       },
       {
         id: 11,
-        path: '/nike/travis',
-        label: 'Travis Scott 🌵',
+        path: '/Nke/TS',
+        label: 'TS 🌵',
       },
       {
         id: 12,
-        path: '/dior/b22',
-        label: 'DIOR 💎',
+        path: '/DYOR/b22',
+        label: 'DYOR 💎',
       },
     ],
     mobileMenu: [
@@ -880,7 +880,7 @@ export const siteSettings = {
       {
         id: 6,
         path: '/',
-        label: 'Kobe 🐍',
+        label: 'KB 🐍',
         subMenu: [
           {
             id: 1,
@@ -917,17 +917,17 @@ export const siteSettings = {
           {
             id: 3,
             path: `${ROUTES.TRAVIS}`,
-            label: 'Travis Scott 🌵',
+            label: 'TS 🌵',
           },
           {
             id: 4,
             path: `${ROUTES.DUNKS}`,
-            label: 'SB Dunks ',
+            label: 'SB Dnks',
           },
           {
             id: 5,
             path: `${ROUTES.JORDAN4}`,
-            label: 'Jordan 4',
+            label: 'AJ 4',
           },
         ],
       },
@@ -944,29 +944,29 @@ export const siteSettings = {
           {
             id: 2,
             path: `${ROUTES.TRIPLES}`,
-            label: 'Triple S',
+            label: '3x S',
           },
         ],
       },
       {
         id: 5,
         path: '/',
-        label: 'Yeezy 🐐',
+        label: 'YZY 🐐',
         subMenu: [
           {
             id: 1,
             path: `${ROUTES.YEEZY350}`,
-            label: 'Yeezy 350',
+            label: 'YZY 350',
           },
           {
             id: 2,
             path: `${ROUTES.YEEZY700}`,
-            label: 'Yeezy 700',
+            label: 'YZY 700',
           },
           {
             id: 3,
             path: `${ROUTES.YEEZYSLIDE}`,
-            label: 'Yeezy Slide',
+            label: 'YZY Slide',
           },
         ],
       },
@@ -977,8 +977,8 @@ export const siteSettings = {
       // },
       {
         id: 8,
-        path: '/prada/cloudbust',
-        label: 'Prada 🌫',
+        path: '/Prda/cloudbust',
+        label: 'Prda 🌫',
       },
       // {
       //   id: 9,
@@ -987,18 +987,18 @@ export const siteSettings = {
       // },
       {
         id: 10,
-        path: '/mcqueen/oversized',
-        label: 'McQueen 👑',
+        path: '/McQ/oversized',
+        label: 'McQ 👑',
       },
       {
         id: 12,
-        path: '/dior/b22',
-        label: 'Dior 💎',
+        path: '/DYOR/b22',
+        label: 'DYOR 💎',
       },
       {
         id: 13,
-        path: '/nike/travis',
-        label: 'Travis Scott 🌵',
+        path: '/Nke/TS',
+        label: 'TS 🌵',
       },
       // {
       //   id: 14,

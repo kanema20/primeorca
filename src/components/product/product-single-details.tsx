@@ -22,6 +22,7 @@ import { ROUTES } from '@utils/routes';
 import { Item } from '@contexts/cart/cart.utils';
 import { useFetchItemImage } from '@framework/product/get-product-image';
 import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
+import { useFetchIndividualProductQuery, useFetchFirebaseProductSize } from '@framework/product/firebase/get-individual-product';
 
 const productGalleryCarouselResponsive = {
   '768': {
@@ -39,11 +40,13 @@ interface IndividualProdProps {
 
 // const ProductSingleDetails: React.FC = () => {
 const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
-  const { data: prodData, isLoading } = useFetchFeatureProduct(data);
-  console.log("prodData: ", prodData)
-  // const {
-  //   query: { slug },
-  // } = useRouter();
+  console.log("data: ", data)
+  const {
+		// isFetching: isFirestoreLoading,
+		data: firestoreData,
+		error: firestoreError,
+	} = useFetchIndividualProductQuery(data);
+  console.log("firestoreData: ", firestoreData)
   function getProductPrice(prod_price: any) {
     const { data, isLoading } = useFetchItemPrice(prod_price)
     if (isLoading) return <p>Loading...</p>;
@@ -55,12 +58,23 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
     return data;
   }
 
+  const productType = () => {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
+      return "Sizes (US - Men)";
+    }
+    else {
+      return "Sizes (Asia - Men)";
+    }
+  }
   const { width } = useSsrCompatible(useWindowSize(), { width: 0, height: 0 });
   const { addItemToCart } = useCart();
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [quantity, setQuantity] = useState(1);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
-  const { data: prod_data } = useFetchProductSize(data.url, attributes['Sizes (US - M)']);
+  // const { data: prod_data } = useFetchProductSize(data.url, attributes['Sizes (US - M)']);
+  const { data: prodDataSizes } = useFetchFirebaseProductSize(firestoreData.url, attributes[productType()]);
+  console.log("prodDataSizes: ", prodDataSizes);
+
   const { price, basePrice, discount } = usePrice(
     data &&
     {

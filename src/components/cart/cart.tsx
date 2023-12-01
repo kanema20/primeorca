@@ -192,7 +192,7 @@ export default function Cart() {
         {/* </Link> } */}
         <Button
           // onClick={handleCheckout}
-          onClick={handlePoofCheckout}
+          // onClick={handlePoofCheckout}
           className={cn(
             'w-full px-5 py-3 md:py-4 flex items-center justify-center rounded-md text-sm sm:text-base text-white focus:outline-none transition duration-300 ',
             isEmpty
@@ -200,12 +200,12 @@ export default function Cart() {
               : 'bg-heading hover:bg-gray-600'
           )}
         >
-          {/* <a href="/checkout">Proceed to Checkout</a> */}
+          <a href="/checkout">Proceed to Checkout</a>
 
-          <span className="w-full ltr:pr-5 rtl:pl-5 -mt-0.5 py-0.5">
+          {/* <span className="w-full ltr:pr-5 rtl:pl-5 -mt-0.5 py-0.5"> */}
           {/* @ts-ignore */}
-          {loading ? "Loading Checkout... " : t('text-proceed-to-checkout')}
-          </span>
+          {/* {loading ? "Loading Checkout... " : t('text-proceed-to-checkout')} */}
+          {/* </span> */}
           {/* <span className="rtl:mr-auto ltr:ml-auto flex-shrink-0 -mt-0.5 py-0.5 flex">
             <span className="ltr:border-l rtl:border-r border-white ltr:pr-5 rtl:pl-5 py-0.5" />
             {cartTotal}

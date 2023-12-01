@@ -11,12 +11,11 @@ import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
-import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
+import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
-import { slice } from 'lodash';
 import InquiryForm from '@components/common/form/inquiry';
 
-export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticPaths>) {
+export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticProps>) {
     const router = useRouter();
 
     const { t } = useTranslation('common');
@@ -36,7 +35,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                                         <a>{t('breadcrumb-home')}</a>
                                     </ActiveLink>
                                     <ActiveLink
-                                        href={`${ROUTES.BALENCI}`}
+                                        href={`${ROUTES.KOBE}/${slug}`}
                                         activeClassName="font-semibold text-heading"
                                     >
                                         {/* <a className="capitalize">{t('breadcrumb-collection')}</a> */}
@@ -47,9 +46,12 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                             {/* <CollectionFilters /> */}
                         </StickyBox>
                     </div>
+
                     <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
                         {/* <CollectionTopBar /> */}
                         {/* <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1> */}
+                        <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug}</h1>
+
                         <ProductGrid slug={slug} />
                     </div>
                 </div>
@@ -73,8 +75,10 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "mcqueen" } },
-            { params: { slug: "oversized" } },
+            { params: { slug: "KB" } },
+            { params: { slug: "KB-5" } },
+            { params: { slug: "KB-6" } },
+            { params: { slug: "KB-8" } },
             // Add more paths as needed
         ],
         fallback: true,

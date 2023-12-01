@@ -74,10 +74,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
             { params: { slug: "drip" } },
-            { params: { slug: "off-white-nike" } },
-            { params: { slug: "rhude" } },
-            { params: { slug: "moncler" } },
-            { params: { slug: "rick-owens" } },
+            { params: { slug: "off-wht-nke" } },
+            { params: { slug: "Rude" } },
+            { params: { slug: "Monclurr" } },
+            { params: { slug: "RO" } },
             // { params: { slug: "kobe-5" } },
             // { params: { slug: "kobe-6" } },
             // { params: { slug: "kobe-8" } },

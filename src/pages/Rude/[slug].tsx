@@ -13,6 +13,7 @@ import CollectionTopBar from '@components/collection/collection-top-bar';
 import { CollectionFilters } from '@components/collection/collection-filters';
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
 import { SwitchLayoutGroupContext } from 'framer-motion';
+import { slice } from 'lodash';
 import InquiryForm from '@components/common/form/inquiry';
 
 export default function Collections({ slug, }: InferGetStaticPropsType<typeof getStaticPaths>) {
@@ -35,7 +36,7 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                                         <a>{t('breadcrumb-home')}</a>
                                     </ActiveLink>
                                     <ActiveLink
-                                        href={`${ROUTES.ADIDAS}`}
+                                        href={`${ROUTES.RHUDE}`}
                                         activeClassName="font-semibold text-heading"
                                     >
                                         {/* <a className="capitalize">{t('breadcrumb-collection')}</a> */}
@@ -46,10 +47,9 @@ export default function Collections({ slug, }: InferGetStaticPropsType<typeof ge
                             {/* <CollectionFilters /> */}
                         </StickyBox>
                     </div>
-
                     <div className="w-full ltr:lg:-ml-9 rtl:lg:-mr-9">
                         {/* <CollectionTopBar /> */}
-                        <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1>
+                        {/* <h1 className="text-lg font-bold md:text-xl lg:text-2xl text-heading">{slug.charAt(0).toUpperCase() + slug.slice(1)}</h1> */}
                         <ProductGrid slug={slug} />
                     </div>
                 </div>
@@ -73,10 +73,7 @@ Collections.Layout = Layout;
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
-            { params: { slug: "adidas" } },
-            { params: { slug: "yeezy-350" } },
-            { params: { slug: "yeezy-700" } },
-            { params: { slug: "yeezy-slide" } },
+            { params: { slug: "Rude" } },
             // Add more paths as needed
         ],
         fallback: true,

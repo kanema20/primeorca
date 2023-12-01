@@ -4,7 +4,36 @@ const { collection, query, where, onSnapshot, getFirestore, doc, setDoc, addDoc,
 const { getStorage } = require('firebase/storage');
 const { v4 } = require('uuid');
 
-const kobe5Products = require('../mvp/kobe5');
+// const kobe5Products = require('../mvp/kobe5');
+// const kobe6Products = require('../mvp/kobe6');
+// const kobe8Products = require('../mvp/kobe8');
+// const balenci = require('../mvp/balenciaga');
+// const dior = require("../mvp/dior")
+// const eybl = require('../mvp/eybl');
+// const gtcuts = require('../mvp/gt-cuts');
+// const travis = require('../mvp/travis');
+
+// const tripleS = require('../mvp/bal-triple-s');
+// const dunks = require('../mvp/nike-dunks');
+// AJ 4
+// const AJ = require('../mvp/jordan4');
+// YEEZY
+// const yeezy350 = require('../mvp/350');
+// const yeezy700 = require('../mvp/700');
+// const yeezyslide = require('../mvp/yeezy-slide');
+
+// const cloudburst = require('../mvp/cloudburst'); // PRADA
+
+const mcqueen = require('../mvp/mcqueen');
+
+// Clothes
+// Off white
+const off = require('../mvp/off-white-updated'); 
+const rhude = require('../mvp/rhude')
+const gdpt = require('../mvp/gallery-dept')
+const moncler = require('../mvp/moncler')
+const rick = require('../mvp/rick-owens')
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyB7H6KvluxP9pqi2raDp1e6tfcIIUQhsR4",
@@ -17,6 +46,7 @@ const firebaseConfig = {
 };
 
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
+const designersizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12'];
 const clothingSizes_ = ['S', 'M', 'L', 'XL', 'XXL'];
 
 function getFirebaseConfig() {
@@ -68,11 +98,11 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-for (const product of kobe5Products) {
+for (const product of mcqueen) {
     console.log("product: ", product)
     const subCollection_ = createSubCollection(product._id)
     console.log("subCollection_: ", subCollection_)
-    for (const size of sizes_) {
+    for (const size of designersizes_) {
         addDocToSubCollection(subCollection_, createProductObject(product, size))
     }
 }

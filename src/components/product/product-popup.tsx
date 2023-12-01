@@ -253,7 +253,7 @@ export default function ProductPopup() {
 
   function navigateToProductPage() {
     closeModal();
-    router.push(`/products/${metadata.slug}`, undefined, {
+    router.push(`/products/${data.data().url}`, undefined, {
       locale: router.locale,
     });
   }

@@ -10,7 +10,7 @@ import {
     DocumentData,
     where,
     getDocs
-} from "firebase/firestore";
+} from "@firebase/firestore";
 import { db, storage } from '@firebase/app';
 
 const fetchCollection = async ({ queryKey }: any) => {
