@@ -19,7 +19,7 @@ const fetchNewArrivals = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
 
     // const ref = query(collection(firestore, "products"), limit(20)); // where("available", "==", "true"),
-    const query_ref = getDocs(query(collection(db, "products"), limit(20), where("metadata_.type", "==", "Sample"), where("metadata_.type", "==", "Clothing Sample")));
+    const query_ref = getDocs(query(collection(db, "products"), where("metadata_.type", "==", "Clothing Sample")));
 
     let query_data: any = [];
     const snapshot = (await query_ref).docs;

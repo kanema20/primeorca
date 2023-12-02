@@ -107,7 +107,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
 };
 
 const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
-  sectionHeading = 'text-new-arrivals',
+  sectionHeading = 'Clothing Products',
   className = 'mb-12 md:mb-14 xl:mb-16',
   date = '2023-03-01T01:02:03',
   disableSectionPadding = false,
