@@ -28,13 +28,13 @@ const { v4 } = require('uuid');
 
 // const cloudburst = require('../mvp/cloudburst'); // PRADA
 
-const mcqueen = require('../mvp/mcqueen');
+// const mcqueen = require('../mvp/mcqueen');
 
 // Clothes
 // Off white
-const off = require('../mvp/off-white-updated'); 
-const rhude = require('../mvp/rhude')
-const gdpt = require('../mvp/gallery-dept')
+// const off = require('../mvp/off-white-updated'); 
+// const rhude = require('../mvp/rhude')
+// const gdpt = require('../mvp/gallery-dept')
 const moncler = require('../mvp/moncler')
 const rick = require('../mvp/rick-owens')
 
@@ -48,8 +48,6 @@ const firebaseConfig = {
     appId: "1:626567034901:web:86ad8946dadb882304f61c",
     measurementId: "G-K5WRK3SXRD"
 };
-
-const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 
 function getFirebaseConfig() {
     if (Object.values(firebaseConfig).some((value) => !value))
@@ -78,8 +76,9 @@ function fetchData(product_catalogue) { // local path
     return data;
 }
 
-function createClothingObject(productArray, size_) {
+function createClothingObject(productArray) {
     return {
+        _id: productArray._id,
         name: productArray.name,
         description: "**IMPORTANT** Clothing sizes are in Asian sizes. It is advised to size up 1 (or 2) sizes from US size depending on bodily girth (ex. US Large = Asian XL). The Prime Orca God Tier Batch - " + productArray.name,
         price: productArray.price,
@@ -87,15 +86,17 @@ function createClothingObject(productArray, size_) {
         shippable: true,
         statement_descriptor: "PRIME ORCA LLC",
         url: productArray.url,
-        metadata: {
+        brand: productArray.brand,
+        currency: "USD",
+        lowestResellPrice: productArray.lowestResellPrice,
+        resellLinks: productArray.resellLinks,
+        make: productArray.make,
+        metadata_: {
             slug: productArray.url,
-            brand: productArray.metadata_.brand,
             category: productArray.metadata_.category,
             collection: productArray.metadata_.collection,
-            make: productArray.make,
             release: productArray.releaseDate,
             type: "Sample Clothing",
-            size: size_,
         }
     }
 }
@@ -139,7 +140,8 @@ const db = getFirestore();
 const storage = getStorage();
 
 // upload data
-uploadData(mcqueen);
+// const data = createClothingObject(moncler);
+uploadData(rick)
 
 module.exports = {
     auth, db, storage

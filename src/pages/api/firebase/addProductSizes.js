@@ -24,14 +24,14 @@ const { v4 } = require('uuid');
 
 // const cloudburst = require('../mvp/cloudburst'); // PRADA
 
-const mcqueen = require('../mvp/mcqueen');
+// const mcqueen = require('../mvp/mcqueen');
 
 // Clothes
 // Off white
-const off = require('../mvp/off-white-updated'); 
-const rhude = require('../mvp/rhude')
-const gdpt = require('../mvp/gallery-dept')
-const moncler = require('../mvp/moncler')
+// const off = require('../mvp/off-white-updated'); 
+// const rhude = require('../mvp/rhude')
+// const gdpt = require('../mvp/gallery-dept')
+// const moncler = require('../mvp/moncler')
 const rick = require('../mvp/rick-owens')
 
 
@@ -83,7 +83,6 @@ function createSubCollection(parentDocId) {
     const parentDocRef = doc(db, 'products', parentDocId);
     const subCollectionRef = collection(parentDocRef, parentDocId + 'size');
     console.log("subcollection created successfully: " + subCollectionRef.id)
-    // const subCollectionRef = collectionGroup(db, 'mySubCollection').where('parentId', '==', parentDoctId);
     return subCollectionRef;
 }
 
@@ -98,7 +97,7 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-for (const product of mcqueen) {
+for (const product of rick) {
     console.log("product: ", product)
     const subCollection_ = createSubCollection(product._id)
     console.log("subCollection_: ", subCollection_)

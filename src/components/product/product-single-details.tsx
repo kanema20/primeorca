@@ -59,7 +59,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
   }
 
   const productType = () => {
-    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Clothing Sample") {
       return "Sizes (US - Men)";
     }
     else {

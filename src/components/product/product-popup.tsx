@@ -28,7 +28,7 @@ export default function ProductPopup() {
   const { _id, url, image, name, description, default_price, metadata } = data;
 
   const productType = () => {
-    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Clothing Sample") {
       return "Sizes (US - Men)";
     }
     else {
@@ -46,7 +46,6 @@ export default function ProductPopup() {
     baseAmount: data.data().price * 100,
     currencyCode: 'USD',
   });
-
   const variations =
   {
     "Sizes (US - Men)": [
@@ -213,7 +212,7 @@ export default function ProductPopup() {
   }
 
   const productAttributes = () => {
-    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Refurbished") {
+    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Clothing Sample") {
       return variations;
     } else {
       return clothingVariations;
@@ -246,6 +245,7 @@ export default function ProductPopup() {
       } catch {
         console.log("undefined generated cart item")
       }
+
     addItemToCart(item, quantity);
     // addItemToCart(data, quantity);
   }

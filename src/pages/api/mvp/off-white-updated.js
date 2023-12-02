@@ -88,7 +88,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee37",
         "name": "off-wht Diag Print Zip Up Hoodie White/Multicolor",
         "price": "79",
         "brand": "OFF-WHT",
@@ -108,7 +108,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee38",
         "price": "44",
         "name": "off-wht Oversized Diag Arrows T-shirt Black/Multicolor",
         "brand": "OFF-WHT",
@@ -128,7 +128,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee39",
         "price": "44",
         "name": "off-wht Oversized Diag Arrows T-shirt White/Multicolor",
         "brand": "OFF-WHT",
@@ -148,7 +148,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee40",
         "price": "49",
         "name": "off-wht Galaxy Brushed T-shirt Black/Blue",
         "brand": "OFF-WHT",
@@ -168,7 +168,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee41",
         "price": "79",
         "name": "off-wht Galaxy Brushed Zip Up Hoodie Black/Blue",
         "brand": "OFF-WHT",
@@ -188,7 +188,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee42",
         "price": "69",
         "name": "off-wht Galaxy Brushed Sweatshirt Black/Blue",
         "brand": "OFF-WHT",
@@ -208,7 +208,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee43",
         "price": "69",
         "name": "off-wht Diag Arrows Sweatshirt Off White/Multicolor",
         "brand": "OFF-WHT",
@@ -228,7 +228,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee44",
         "price": "69",
         "name": "off-wht Diag Arrows Sweatshirt Off White/Multicolor",
         "brand": "OFF-WHT",
@@ -248,7 +248,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee45",
         "price": "69",
         "name": "off-wht Diag Arrows Sweatshirt Black/Multicolor",
         "brand": "OFF-WHT",
@@ -268,7 +268,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee46",
         "price": "69",
         "name": "off-wht Diag Arrows Zip Up Hoodie Black/Multicolor",
         "brand": "OFF-WHT",
@@ -288,7 +288,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee47",
         "price": "69",
         "name": "off-wht Arrow Carav Mercy Skat S/S Tee Black/White",
         "brand": "OFF-WHT",
@@ -308,7 +308,7 @@ const offWhiteUpdated = [
         "releaseDate": ""
     },
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee48",
         "price": "49",
         "name": "off-wht Brush Arrows Slim Skate S/S Tee White/Multi",
         "brand": "OFF-WHT",
@@ -329,7 +329,7 @@ const offWhiteUpdated = [
     },
 
     {
-        "_id": "64dc52e51589d91dd641ee36",
+        "_id": "64dc52e51589d91dd641ee49",
         "price": "49",
         "name": "off-wht Brush Arrows Slim Skate S/S Tee Black/Multi",
         "brand": "OFF-WHT",

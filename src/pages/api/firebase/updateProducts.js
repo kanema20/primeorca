@@ -28,13 +28,17 @@ async function updateData(firestore) {
     const querySnapshot = await getDocs(collection(firestore, "products")); //, where("metadata_.collection", "==", "yeezy-700"));
 
     querySnapshot.forEach((doc) => {
-        updateDoc(doc.ref, {
-            metadata_: {
-                ...doc.data().metadata_,
-                type: "Sample" // new fields to update
-            },
-            // price: 150,
-        })
+        if (doc.data().metadata_.type === "Sample") {
+            console.log("already updated w Sample type")
+        } else {
+            updateDoc(doc.ref, {
+                metadata_: {
+                    ...doc.data().metadata_,
+                    type: "Clothing Sample" // new fields to update
+                },
+                // price: 150,
+            })
+        }
         console.log(`${doc.data().name}: ${doc.data().price, doc.data().available}`)
     });
 
