@@ -23,6 +23,8 @@ import { createOrder, onApprove, onCancel } from 'src/pages/api/paypal';
 import { IPayments } from '@firebase/types/types';
 import { AmountWithCurrencyCodeOptional, PurchaseItem } from '@paypal/paypal-js';
 import { forEach } from 'lodash';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 interface CheckoutInputType {
   name: string;
@@ -50,6 +52,7 @@ interface CheckoutItem {
 const CheckoutForm: React.FC = () => {
   usePoofScript('https://www.poof.io/static/api/checkout_v2.js');
   usePoofScript('https://www.poof.io/static/api/sdk.js');
+  const PAYPAL_CLIENT: string = process.env.PAYPAL_CLIENT_ID_LIVE;
 
   const { items, total, isEmpty } = useCart();
   const router = useRouter()
@@ -407,7 +410,7 @@ const CheckoutForm: React.FC = () => {
             </Button> */}
             { /* TODO: Add Paypal Checkout button*/}
           </div>
-          <PayPalScriptProvider options={{ clientId: "AYqPtOjgPKFkNAgu5zPCXKZdX2P9nt38CZMtuCEtexw91qT-CXZ58Uesjwvmc34naubEkvJSBnMG4RSI", components: "buttons", "enable-funding": "venmo", currency: "USD" }}>
+          <PayPalScriptProvider options={{ clientId: "AdDDjpd7Ad1UNu1ZwAzTRRqhlau4Kmg8zYG7GDa0rPLV4FZuGwO5I5oGdN1cQ-qmoQGRPPPlqCgsG5sX", components: "buttons", "enable-funding": "venmo", currency: "USD" }}>
             <ButtonWrapper showSpinner={false} />
           </PayPalScriptProvider>
         </div>
