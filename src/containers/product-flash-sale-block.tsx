@@ -1,10 +1,9 @@
 import SectionHeader from '@components/common/section-header';
 import ProductCard from '@components/product/product-card';
 import ProductCardGridLoader from '@components/ui/loaders/product-card-grid-loader';
-import { useKobeArrivalsQuery } from '@framework/product/get-all-flash-sale-products';
 import Alert from '@components/ui/alert';
 import dynamic from 'next/dynamic';
-import { useNewArrivalsQuery } from '@framework/product/firebase/get-new-arrivals';
+import { useNewArrivalsQuery } from '@framework/product/_firebase/get-new-arrivals';
 
 const Countdown = dynamic(() => import('react-countdown'), { ssr: false });
 

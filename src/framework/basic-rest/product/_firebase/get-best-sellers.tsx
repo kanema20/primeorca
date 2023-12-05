@@ -11,7 +11,7 @@ import {
     where,
     getDocs
 } from "firebase/firestore";
-import { db } from '@firebase/app';
+import { db } from '@firebaseQueries/app';
 
 const fetchBestSellers = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;

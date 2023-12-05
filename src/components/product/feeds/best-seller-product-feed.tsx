@@ -1,6 +1,6 @@
 import ProductsBlock from "@containers/products-block";
 import { useBestSellerProductsQuery } from "@framework/product/get-all-best-seller-products";
-import { useBestSellersQuery } from "@framework/product/firebase/get-best-sellers";
+import { useBestSellersQuery } from "@framework/product/_firebase/get-best-sellers";
 
 export default function BestSellerProductFeed() {
 	const { data, isLoading, error } = useBestSellersQuery({

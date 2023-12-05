@@ -22,7 +22,7 @@ import { ROUTES } from '@utils/routes';
 import { Item } from '@contexts/cart/cart.utils';
 import { useFetchItemImage } from '@framework/product/get-product-image';
 import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
-import { useFetchIndividualProductQuery, useFetchFirebaseProductSize } from '@framework/product/firebase/get-individual-product';
+import { useFetchIndividualProductQuery, useFetchFirebaseProductSize } from '@framework/product/_firebase/get-individual-product';
 
 const productGalleryCarouselResponsive = {
   '768': {

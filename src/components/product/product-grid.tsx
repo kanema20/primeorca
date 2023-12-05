@@ -3,7 +3,7 @@ import Button from "@components/ui/button";
 import type { FC } from "react";
 import { useProductsQuery } from "@framework/product/get-all-products";
 import { useKobeCollectionQuery } from "@framework/product/get-collection";
-import { useGetCollectionQuery } from "@framework/product/firebase/get-by-collection";
+import { useGetCollectionQuery } from "@framework/product/_firebase/get-by-collection";
 import { useRouter } from "next/router";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
 import { useTranslation } from "next-i18next";

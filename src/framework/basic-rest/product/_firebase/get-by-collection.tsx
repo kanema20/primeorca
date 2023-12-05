@@ -11,7 +11,7 @@ import {
     where,
     getDocs
 } from "@firebase/firestore";
-import { db, storage } from '@firebase/app';
+import { db, storage } from '@firebaseQueries/app';
 
 const fetchCollection = async ({ queryKey }: any) => {
     const [_key, _params, slug] = queryKey;

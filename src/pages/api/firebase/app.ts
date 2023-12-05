@@ -8,7 +8,7 @@ import { getFirebaseConfig } from './config';
 import type { Auth } from 'firebase/auth';
 import type { Functions } from 'firebase/functions';
 import type { Firestore } from 'firebase/firestore';
-import type { FirebaseApp } from 'firebase/app';
+import { FirebaseApp } from 'firebase/app';
 import type { FirebaseStorage } from 'firebase/storage';
 
 type Firebase = {
@@ -32,7 +32,6 @@ function initialize(): Firebase {
 
 export function getFirebase(): Firebase {
     const firebase = initialize();
-
     // if (isUsingEmulator) return connectToEmulator(firebase);
 
     return firebase;

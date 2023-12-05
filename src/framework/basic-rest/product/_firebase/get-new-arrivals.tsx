@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 
 // import { firestore } from '../../../../pages/api/firebase/firebase';
-import { db } from '@firebase/app';
+import { db } from '@firebaseQueries/app';
 
 const fetchNewArrivals = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;

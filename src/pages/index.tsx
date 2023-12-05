@@ -28,24 +28,7 @@ import InquiryForm from '@components/common/form/inquiry';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { CartProvider } from 'use-shopping-cart'
-// import { useFetchFeatureProduct } from '@framework/product/get-single-product';
 import ModalVideo from '@components/common/modal-video';
-// import ModalPopup from '@components/common/modal-update';
-// const flashSaleCarouselBreakpoint = {
-//   '1280': {
-//     slidesPerView: 1,
-//     spaceBetween: 28,
-//   },
-//   '768': {
-//     slidesPerView: 2,
-//     spaceBetween: 20,
-//   },
-//   '0': {
-//     slidesPerView: 1,
-//     spaceBetween: 12,
-//   },
-// };
-
 
 export default function Home() {
   const { t } = useTranslation('common');

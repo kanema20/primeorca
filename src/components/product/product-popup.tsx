@@ -11,7 +11,7 @@ import { generateCartItem } from '@utils/generate-cart-item';
 import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
-import { useFetchFirebaseProductSize } from "@framework/product/firebase/get-product-sizes";
+import { useFetchFirebaseProductSize } from "@framework/product/_firebase/get-product-sizes";
 export default function ProductPopup() {
   const { t } = useTranslation('common');
   const {

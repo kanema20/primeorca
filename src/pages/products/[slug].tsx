@@ -7,7 +7,7 @@ import Divider from "@components/ui/divider";
 import Breadcrumb from "@components/common/breadcrumb";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
-import { useFetchIndividualProductQuery } from '@framework/product/firebase/get-individual-product';
+import { useFetchIndividualProductQuery } from '@framework/product/_firebase/get-individual-product';
 	export default function ProductPage({ slug }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
 		<>

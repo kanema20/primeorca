@@ -9,7 +9,7 @@ import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-produc
 import usePrice from '@framework/product/use-price';
 import { Item } from '@contexts/cart/cart.utils';
 import { useRouter } from 'next/router'
-import { useAddNewPaymentRecord } from "@framework/product/firebase/post-payment-capture";
+import { useAddNewPaymentRecord } from "@framework/product/_firebase/post-payment-capture";
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
 import usePoofScript from '@utils/use-poof-script';
@@ -20,7 +20,7 @@ import {
 } from "@paypal/react-paypal-js";
 import { useCart } from '@contexts/cart/cart.context';
 import { createOrder, onApprove, onCancel } from 'src/pages/api/paypal';
-import { IPayments } from '@firebase/types/types';
+import { IPayments } from '@firebaseQueries/types/types';
 import { AmountWithCurrencyCodeOptional, PurchaseItem } from '@paypal/paypal-js';
 import { forEach } from 'lodash';
 import * as dotenv from 'dotenv';

@@ -1,6 +1,5 @@
 const { where, collection, getFirestore, setDoc, doc, query, onSnapshot, updateDoc, getDocs } = require("firebase/firestore");
 const { useFirestoreCollectionMutation, useFirestoreDocumentMutation } = require("@react-query-firebase/firestore");
-// import { firestore } from '@firebase/firebase';
 const { initializeApp } = require('firebase/app');
 
 const firebaseConfig = {

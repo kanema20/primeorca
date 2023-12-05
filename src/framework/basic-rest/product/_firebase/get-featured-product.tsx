@@ -9,7 +9,7 @@ import {
     where,
     getDocs
 } from "firebase/firestore";
-import { db, storage } from '@firebase/app';
+import { db, storage } from '@firebaseQueries/app';
 
 import { QueryOptionsType, QueryKobeItem } from '@framework/types';
 import dotenv from 'dotenv';

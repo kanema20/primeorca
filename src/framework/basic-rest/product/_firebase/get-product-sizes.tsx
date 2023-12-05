@@ -1,7 +1,7 @@
+import { IProduct } from "@firebase/types/types";
 import { QueryOptionsType, QueryKobeItem } from '@framework/types';
-import http from '@framework/utils/http';
-import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import { useQuery } from 'react-query';
+import { getFirebaseConfig } from '../../../../pages/api/firebase/config';
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
 import {
     query,
@@ -13,29 +13,11 @@ import {
     getDocs,
     getDoc,
     doc
-} from "@firebase/firestore";
-import { db, storage } from '@firebase/app';
+} from "firebase/firestore";
+import { db } from '@firebaseQueries/app';
 
-const fetchIndividualProduct = async ({ queryKey }: any) => {
-    const [_key, _params, slug] = queryKey;
 
-    const collectionRef = getDocs(query(collection(db, "products"), where('url', '==', slug)));
-    let query_data: any = [];
-    const snapshot = (await collectionRef).docs;
-    snapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-        query_data.push(doc.data());
-    });
-
-    console.log("snapshot: ", snapshot)
-    return snapshot[0].data();
-};
-
-export const useFetchIndividualProductQuery = (slug: string) => {
-    return useQuery<any, Error>(['get-individual-product', slug], fetchIndividualProduct);
-};
-
-export const fetchIndividualProductSize = async (parentCollectionId: string, attr: string) => {
+export const fetchFirebaseProductSize = async (parentCollectionId: string, attr: string) => {
     // TODO: Use Firebase to get parentCollectionId_    
     // search Collection and retrieve document with metadata[size] = attr
     const parentDocRef = doc(db, 'products', parentCollectionId);
@@ -48,8 +30,9 @@ export const fetchIndividualProductSize = async (parentCollectionId: string, att
     }
 }
 
+
 export const useFetchFirebaseProductSize = (parentCollectionId: string, attr: string) => {
     return useQuery<DocumentData, Error>(['firebase_product_size', parentCollectionId, attr], () =>
-    fetchIndividualProductSize(parentCollectionId, attr)
+        fetchFirebaseProductSize(parentCollectionId, attr)
     );
 }

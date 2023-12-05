@@ -1,7 +1,7 @@
 import isEmpty from "lodash/isEmpty";
 import { DocumentData } from "firebase/firestore";
 import { Item, getItem } from "src/contexts/cart/cart.utils";
-import { IProduct } from "@firebase/types/types"
+import { IProduct } from "@firebaseQueries/types/types"
 
 // export function generateCartItem(item: IProduct, attributes: object) {
 export function generateCartItem(item: DocumentData, id: string) {

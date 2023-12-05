@@ -5,9 +5,9 @@ import {
     addDoc
 } from "firebase/firestore";
 
-import { db } from '@firebase/app';
+import { db } from '@firebaseQueries/app';
 
-import { IPayments } from '@firebase/types/types';
+import { IPayments } from '@firebaseQueries/types/types';
 
 // import sendgrid from "@sendgrid/mail";
 

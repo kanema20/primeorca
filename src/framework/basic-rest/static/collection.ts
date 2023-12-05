@@ -3,7 +3,7 @@ import { ROUTES } from '@utils/routes';
 export const collectionData = [
   {
     id: 1,
-    slug: ROUTES.BALENCI,
+    slug: ROUTES.TRACK,
     image: '/assets/images/collection/balenciaga-closeup.png',
     title: 'Balenci Track',
     description: 'Balenci balenci balenci !',
@@ -21,6 +21,23 @@ export const collectionData = [
     image: '/assets/images/collection/Gallery-Dept-Painted-Flare-Sweat-Pants-Orange.jpg',
     title: 'A Dept. of Galleries',
     description: 'Shop the latest Flare Sweats.',
+  },
+]
+
+export const balenciCategoryData = [
+  {
+    id: 1,
+    slug: ROUTES.TRACK,
+    image: '/assets/images/collection/balenciaga-closeup.png',
+    title: 'Balenci Track',
+    description: 'Balenci balenci balenci !',
+  },
+  {
+    id: 2,
+    slug: ROUTES.TRIPLES,
+    image: '/assets/images/collection/balenciaga-closeup.png',
+    title: 'Balenci 3xS',
+    description: 'collection-description-two',
   },
 ]
 

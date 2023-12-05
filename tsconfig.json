@@ -44,7 +44,7 @@
       "@utils/*": [
         "src/utils/*"
       ],
-      "@firebase/*": [
+      "@firebaseQueries/*": [
         "src/pages/api/firebase/*"
       ],
     },
