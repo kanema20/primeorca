@@ -37,4 +37,4 @@ export function getFirebase(): Firebase {
     return firebase;
 }
 
-export const { firestore: db, auth, storage } = getFirebase();
+export const { firestore, auth, storage } = getFirebase();

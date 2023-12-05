@@ -15,5 +15,5 @@ import {
     // getCountFromServer
 } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { db, storage } from './app';
+import { firestore, storage } from './app';
 import type { WithFieldValue, Query } from 'firebase/firestore';

@@ -13,13 +13,13 @@ import {
     getDocs,
     getDoc,
     doc
-} from "@firebase/firestore";
-import { db, storage } from '@firebaseQueries/app';
+} from "firebase/firestore";
+import { firestore, storage } from '@firebaseQueries/app';
 
 const fetchIndividualProduct = async ({ queryKey }: any) => {
     const [_key, _params, slug] = queryKey;
 
-    const collectionRef = getDocs(query(collection(db, "products"), where('url', '==', slug)));
+    const collectionRef = getDocs(query(collection(firestore, "/products"), where('url', '==', slug)));
     let query_data: any = [];
     const snapshot = (await collectionRef).docs;
     snapshot.forEach((doc) => {

@@ -11,12 +11,12 @@ import {
     where,
     getDocs
 } from "firebase/firestore";
-import { db } from '@firebaseQueries/app';
+import { firestore } from '@firebaseQueries/app';
 
 const fetchBestSellers = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
 
-    const query_ref = getDocs(query(collection(db, "products"), where("metadata_.type", "==", "Sample")));//,where("metadata_.type", "==", "Clothing Sample")));
+    const query_ref = getDocs(query(collection(db, "/products"), where("metadata_.type", "==", "Sample")));//,where("metadata_.type", "==", "Clothing Sample")));
 
     let query_data: any = [];
     const snapshot = (await query_ref).docs;

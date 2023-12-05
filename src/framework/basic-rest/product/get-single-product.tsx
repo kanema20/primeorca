@@ -11,8 +11,8 @@ import {
     DocumentData,
     where,
     getDocs
-} from "@firebase/firestore";
-import { db, storage } from '@firebaseQueries/app';
+} from "firebase/firestore";
+import { firestore, storage } from '@firebaseQueries/app';
 
 // const fetchIndividualProduct = async ({ queryKey }: any) => {
 //     const [_key, _params] = queryKey;
@@ -30,7 +30,7 @@ const fetchIndividualProduct = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
     console.log(queryKey);
 
-    const collectionRef = getDocs(query(collection(db, "products"), where('url', '==', queryKey)));
+    const collectionRef = getDocs(query(collection(firestore, "/products"), where('url', '==', queryKey)));
     const snapshot = (await collectionRef).docs;
     snapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
@@ -80,7 +80,7 @@ const fetchIndividualProductSize = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
     console.log(queryKey);
 
-    const collectionRef = getDocs(query(collection(db, "products"), where('url', '==', queryKey)));
+    const collectionRef = getDocs(query(collection(firestore, "/products"), where('url', '==', queryKey)));
     const snapshot = (await collectionRef).docs;
     snapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);

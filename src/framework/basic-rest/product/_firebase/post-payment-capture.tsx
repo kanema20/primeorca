@@ -5,7 +5,7 @@ import {
     addDoc
 } from "firebase/firestore";
 
-import { db } from '@firebaseQueries/app';
+import { firestore } from '@firebaseQueries/app';
 
 import { IPayments } from '@firebaseQueries/types/types';
 

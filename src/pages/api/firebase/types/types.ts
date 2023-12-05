@@ -1,4 +1,4 @@
-import { DocumentData } from '@firebase/firestore-types';
+import { DocumentData } from 'firebase/firestore';
 import { type } from 'os';
 import { QueryKey } from 'react-query';
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;

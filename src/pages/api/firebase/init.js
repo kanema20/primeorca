@@ -58,7 +58,7 @@ function getFirebaseConfig() {
 
 async function getProductsByCollection(query_) {
     let collection_ = [];
-    const q = query(collection(db, "products"), where("metadata_.collection", "==", `${query_}`));
+    const q = query(collection(db, "/products"), where("metadata_.collection", "==", `${query_}`));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         querySnapshot.forEach((doc) => {
             collection_.push(doc.data());

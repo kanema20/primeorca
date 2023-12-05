@@ -14,7 +14,7 @@ import {
     getDoc,
     doc
 } from "firebase/firestore";
-import { db } from '@firebaseQueries/app';
+import { firestore } from '@firebaseQueries/app';
 
 
 export const fetchFirebaseProductSize = async (parentCollectionId: string, attr: string) => {
