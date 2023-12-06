@@ -902,7 +902,7 @@ export const siteSettings = {
       {
         id: 3,
         path: '/',
-        label: 'Nike ✔',
+        label: 'NKE ✔',
         subMenu: [
           {
             id: 1,
@@ -939,7 +939,7 @@ export const siteSettings = {
           {
             id: 1,
             path: `${ROUTES.TRACK}`,
-            label: 'Track',
+            label: 'Trck',
           },
           {
             id: 2,
