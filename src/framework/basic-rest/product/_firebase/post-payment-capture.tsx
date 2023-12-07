@@ -15,7 +15,7 @@ import { IPayments } from '@firebaseQueries/types/types';
 
 const addNewPaymentDoc = async (paymentData: IPayments) => {
     // post payment capture to firestore table
-    const docRef = await addDoc(collection(db, 'payments'), paymentData);
+    const docRef = await addDoc(collection(firestore, 'payments'), paymentData);
     console.log(paymentData, "payment data");
     const res = await fetch("/api/email/send-email-receipt", {
         body: JSON.stringify({

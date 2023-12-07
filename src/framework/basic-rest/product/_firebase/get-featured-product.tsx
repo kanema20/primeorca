@@ -19,7 +19,7 @@ const fetchFeatureProduct = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
     console.log(queryKey);
 
-    const collectionRef = getDocs(query(collection(db, "/products"), where('url', '==', queryKey)));
+    const collectionRef = getDocs(query(collection(firestore, "/products"), where('url', '==', queryKey)));
     const snapshot = (await collectionRef).docs;
     snapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);

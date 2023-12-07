@@ -38,7 +38,7 @@ export const useFetchIndividualProductQuery = (slug: string) => {
 export const fetchIndividualProductSize = async (parentCollectionId: string, attr: string) => {
     // TODO: Use Firebase to get parentCollectionId_    
     // search Collection and retrieve document with metadata[size] = attr
-    const parentDocRef = doc(db, 'products', parentCollectionId);
+    const parentDocRef = doc(firestore, 'products', parentCollectionId);
     const subcollectionQuery = query(collection(parentDocRef, parentDocRef.id + 'size'), where('metadata.size', '==', attr));
     const subcollectionSnapshot = await getDocs(subcollectionQuery);
     const snapshot = (await subcollectionSnapshot).docs;
