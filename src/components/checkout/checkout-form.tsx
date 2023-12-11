@@ -5,21 +5,21 @@ import { useCheckoutMutation } from '@framework/checkout/use-checkout';
 import { CheckBox } from '@components/ui/checkbox';
 import Button from '@components/ui/button';
 import Router from 'next/router';
-import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
+import { useFetchItemPrice } from '@framework/product/get-product-price';
 import usePrice from '@framework/product/use-price';
 import { Item } from '@contexts/cart/cart.utils';
 import { useRouter } from 'next/router'
 import { useAddNewPaymentRecord } from "@framework/product/_firebase/post-payment-capture";
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
-import usePoofScript from '@utils/use-poof-script';
+// import usePoofScript from '@utils/use-poof-script';
 import {
   PayPalScriptProvider,
   PayPalButtons,
   usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
 import { useCart } from '@contexts/cart/cart.context';
-import { createOrder, onApprove, onCancel } from 'src/pages/api/paypal';
+// import { createOrder, onApprove, onCancel } from 'src/pages/api/paypal';
 import { IPayments } from '@firebaseQueries/types/types';
 import { AmountWithCurrencyCodeOptional, PurchaseItem } from '@paypal/paypal-js';
 import { forEach } from 'lodash';
@@ -50,10 +50,8 @@ interface CheckoutItem {
 }
 
 const CheckoutForm: React.FC = () => {
-  usePoofScript('https://www.poof.io/static/api/checkout_v2.js');
-  usePoofScript('https://www.poof.io/static/api/sdk.js');
-  const PAYPAL_CLIENT: string = process.env.PAYPAL_CLIENT_ID_LIVE;
-
+  // usePoofScript('https://www.poof.io/static/api/checkout_v2.js');
+  // usePoofScript('https://www.poof.io/static/api/sdk.js');
   const { items, total, isEmpty } = useCart();
   const router = useRouter()
   const { t } = useTranslation();
@@ -83,14 +81,14 @@ const CheckoutForm: React.FC = () => {
     ))
     return totalCart;
   }
-  const { price: subtotal } = usePrice({
-    amount: getTotalPrice(items), currencyCode: 'USD',
-  });
+  // const { price: subtotal } = usePrice({
+  //   amount: getTotalPrice(items), currencyCode: 'USD',
+  // });
 
-  function getProductPrice(prod_price: any) {
-    const { data } = useFetchItemPrice(prod_price)
-    return data;
-  }
+  // function getProductPrice(prod_price: any) {
+  //   const { data } = useFetchItemPrice(prod_price)
+  //   return data;
+  // }
 
   function getItemsFromCart(cartItems: any): Item[] {
     let cart_: Item[] = [];
@@ -182,7 +180,6 @@ const CheckoutForm: React.FC = () => {
     const href_ = "/success";
     router.push(href_)
 
-    console.log("orderId: ", orderId)
   }
 
 
@@ -400,7 +397,7 @@ const CheckoutForm: React.FC = () => {
             placeholderKey="forms:placeholder-order-notes"
             className="relative pt-3 xl:pt-6"
           /> */}
-          <div className="flex w-full">
+          {/* <div className="flex w-full"> */}
             {/* <Button
               clzzassName="w-full sm:w-auto"
               loading={isLoading}
@@ -409,7 +406,7 @@ const CheckoutForm: React.FC = () => {
               {t('common:button-place-order')}
             </Button> */}
             { /* TODO: Add Paypal Checkout button*/}
-          </div>
+          {/* </div> */}
           <PayPalScriptProvider options={{ clientId: "AdDDjpd7Ad1UNu1ZwAzTRRqhlau4Kmg8zYG7GDa0rPLV4FZuGwO5I5oGdN1cQ-qmoQGRPPPlqCgsG5sX", components: "buttons", "enable-funding": "venmo", currency: "USD" }}>
             <ButtonWrapper showSpinner={false} />
           </PayPalScriptProvider>

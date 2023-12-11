@@ -31,8 +31,8 @@ export interface CheckoutItems {
 }
 
 export default function Cart() {
-  usePoofScript('https://www.poof.io/static/api/checkout_v2.js')
-  usePoofScript('https://www.poof.io/static/api/sdk.js')
+  // usePoofScript('https://www.poof.io/static/api/checkout_v2.js')
+  // usePoofScript('https://www.poof.io/static/api/sdk.js')
   const { t } = useTranslation('common');
   const { closeCart } = useUI();
   const { items, total, isEmpty } = useCart();
