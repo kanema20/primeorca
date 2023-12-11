@@ -95,7 +95,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
             url: product.url,
         }
     })
-    // const _product = await products.find(product => product.url === slug)
     const _product = await stripe.products.retrieve(
         'prod_ONumhCfPoYOiKu',
     );
@@ -103,6 +102,9 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
     const individualProduct = {};
     // JSON.parse(JSON.stringify(_product))
     console.log("_product: ", _product)
+
+    //////////////////////////
+
     return {
         props: {
             // individualProduct,

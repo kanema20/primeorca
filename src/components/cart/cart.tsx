@@ -114,8 +114,9 @@ export default function Cart() {
     let cart_: CheckoutItems[] = [];
     forEach(cartItems, (item) => {
       cart_.push({
-        price: item.default_price,
+        price: item.price,
         quantity: item.quantity,
+        image: item.image
         // adjustable_quantity: {
         //   enabled: true,
         //   minimum: 1,

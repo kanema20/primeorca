@@ -7,8 +7,26 @@ import Divider from "@components/ui/divider";
 import Breadcrumb from "@components/common/breadcrumb";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps, GetStaticProps, GetStaticPaths, InferGetStaticPropsType, InferGetServerSidePropsType } from 'next';
-import { useFetchIndividualProductQuery } from '@framework/product/_firebase/get-individual-product';
-	export default function ProductPage({ slug }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+import { useFetchItemImage } from '@framework/product/get-product-image';
+import { useFetchIndividualProductQuery, useFetchFirebaseProductSize } from '@framework/product/_firebase/get-individual-product';
+import { useQuery } from 'react-query';
+import { useFirestoreQuery } from "@react-query-firebase/firestore";
+import {
+    query,
+    collection,
+    limit,
+    QuerySnapshot,
+    DocumentData,
+    where,
+    getDocs,
+    getDoc,
+    doc
+} from "firebase/firestore";
+import { firestore } from '@firebaseQueries/app';  
+
+
+
+	export default function ProductPage({ individData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
 		<>
 			<Divider className="mb-0" />
@@ -16,8 +34,8 @@ import { useFetchIndividualProductQuery } from '@framework/product/_firebase/get
 				<div className="pt-8">
 					<Breadcrumb />
 				</div>
-				<ProductSingleDetails data={slug} />
-				<RelatedProducts sectionHeading="text-related-products" />
+				<ProductSingleDetails data={individData} />
+				{/* <RelatedProducts sectionHeading="text-related-products" /> */}
 				<Subscription />
 			</Container>
 		</>
@@ -27,17 +45,45 @@ import { useFetchIndividualProductQuery } from '@framework/product/_firebase/get
 ProductPage.Layout = Layout;
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, params }) => {
+
 	const { slug } = params;
-	// const {
-	// 	// isFetching: isFirestoreLoading,
-	// 	data: firestoreData,
-	// 	error: firestoreError,
-	// } = useFetchIndividualProductQuery({ ...query }, slug);
-	// const individualProduct = JSON.stringify(firestoreData)
-	// console.log("individualProduct: ", individualProduct)
+
+	const fetchIndividualData = async (value: string) => {
+		const q = query(collection(firestore, '/products'), where('url', '==', value));
+		const querySnapshot = await getDocs(q);
+		const documents = querySnapshot.docs.map((doc) => ({
+		  id: doc.id,
+		  ...doc.data(),
+		}));
+		return documents[0];
+	  };
+	  
+	//   const { data: individData, isLoading, isError } = useQuery(['fetch_individual_data', slug], () =>
+	// 	fetchIndividualData(slug)
+	//   );
+	  
+	//   if (isLoading) {
+	//   return <div>Loading...</div>;
+	//   }
+	  
+	//   if (isError) {
+	//   return <div>Error fetching data</div>;
+	//   }
+	  
+	  const individData: any = await fetchIndividualData(slug);
+	
+	  console.log("individData: ", individData)
+
+	  // const {
+		// 	data: firestoreData,
+		// 	error: firestoreError,
+		// } = useFetchIndividualProductQuery({ ...query }, slug);
+		// const individualProduct = JSON.stringify(firestoreData)
+		// console.log("individualProduct: ", individualProduct)
 	return {
 		props: {
-			slug,
+			individData,
+			slug, 	
 			...(await serverSideTranslations(locale!, [
 				"common",
 				"forms",

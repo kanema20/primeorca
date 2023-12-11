@@ -14,31 +14,36 @@ import {
     getDoc,
     doc
 } from "firebase/firestore";
-import { firestore, storage } from '@firebaseQueries/app';
+import { firestore } from '@firebaseQueries/app';  
+// const fetchIndividualProduct = async ({ queryKey }: any) => {
+//     const [_key, _params, slug] = queryKey;
+const fetchIndividualProduct = async (slug: string) => {
 
-const fetchIndividualProduct = async ({ queryKey }: any) => {
-    const [_key, _params, slug] = queryKey;
+    const collectionRef = await getDocs(query(collection(firestore, "/products"), where('url', '==', slug)));
+    // const snapshot = (await collectionRef).docs;
+    const documents = collectionRef.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
 
-    const collectionRef = getDocs(query(collection(firestore, "/products"), where('url', '==', slug)));
-    let query_data: any = [];
-    const snapshot = (await collectionRef).docs;
-    snapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-        query_data.push(doc.data());
-    });
+    // snapshot.forEach((doc) => {
+    //     console.log(`${doc.id} => ${doc.data()}`);
+    // });
 
-    console.log("snapshot: ", snapshot)
-    return snapshot[0].data();
+    console.log("documents: ", documents)
+
+    return documents;
 };
 
 export const useFetchIndividualProductQuery = (slug: string) => {
-    return useQuery<any, Error>(['get-individual-product', slug], fetchIndividualProduct);
+    // return useQuery<any, Error>(['get-individual-product', slug], fetchIndividualProduct);
+    return useQuery<DocumentData, Error>(['get-individual-product', slug], () =>
+    fetchIndividualProduct(slug))
 };
 
 export const fetchIndividualProductSize = async (parentCollectionId: string, attr: string) => {
-    // TODO: Use Firebase to get parentCollectionId_    
     // search Collection and retrieve document with metadata[size] = attr
-    const parentDocRef = doc(firestore, 'products', parentCollectionId);
+    const parentDocRef = doc(firestore, '/products', parentCollectionId);
     const subcollectionQuery = query(collection(parentDocRef, parentDocRef.id + 'size'), where('metadata.size', '==', attr));
     const subcollectionSnapshot = await getDocs(subcollectionQuery);
     const snapshot = (await subcollectionSnapshot).docs;

@@ -28,7 +28,7 @@ export default function ProductPopup() {
   const { _id, url, image, name, description, default_price, metadata } = data;
 
   const productType = () => {
-    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Clothing Sample") {
+    if (data.data().metadata_.type == "Sample") {
       return "Sizes (US - Men)";
     }
     else {
@@ -39,9 +39,7 @@ export default function ProductPopup() {
   const { data: firebaseProdData } = useFetchFirebaseProductSize(data.data()._id, attributes[productType()]);
   console.log("firebaseProdData: ", firebaseProdData);
 
-  // console.log("attributes: ", attributes[productType()])
   const { price, basePrice, discount } = usePrice({
-    // amount: getProductPrice(default_price)?.unit_amount,
     amount: data.data().price * 100,
     baseAmount: data.data().price * 100,
     currencyCode: 'USD',
@@ -212,14 +210,12 @@ export default function ProductPopup() {
   }
 
   const productAttributes = () => {
-    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Clothing Sample") {
+    if (data.data().metadata_.type == "Sample") {
       return variations;
     } else {
       return clothingVariations;
     }
   }
-
-  // console.log("productAttributes: ", productAttributes());
 
   const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&
@@ -239,15 +235,7 @@ export default function ProductPopup() {
     }, 600);
 
     const item = generateCartItem(firebaseProdData!.data, firebaseProdData!.id);
-
-    try {
-      console.log("generated cart item ", item, quantity)
-      } catch {
-        console.log("undefined generated cart item")
-      }
-
     addItemToCart(item, quantity);
-    // addItemToCart(data, quantity);
   }
 
   function navigateToProductPage() {

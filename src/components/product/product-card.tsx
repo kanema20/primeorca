@@ -8,7 +8,6 @@ import ProductViewIcon from '@components/icons/product-view-icon';
 import ProductWishIcon from '@components/icons/product-wish-icon';
 import ProductCompareIcon from '@components/icons/product-compare-icon';
 import RatingDisplay from '@components/common/rating-display';
-import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 
 interface ProductProps {
   // product: Stripe.Product;
@@ -62,13 +61,9 @@ const ProductCard: FC<ProductProps> = ({
   //   const { data } = useFetchItemPrice(prod_price)
   //   return data;
   // }
-
+  console.log("product: ", product);
   const { price, basePrice, discount } = usePrice({
     amount: product?.data().price * 100,
-    // amount: product?.price * 100,
-    // amount: getProductPrice(product.default_price)?.unit_amount,
-    // baseAmount: product.sale_price,
-    // baseAmount: getProductPrice(product.default_price)?.unit_amount,
     currencyCode: 'USD',
   });
 

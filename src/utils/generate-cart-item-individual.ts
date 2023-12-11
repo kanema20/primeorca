@@ -3,8 +3,7 @@ import { DocumentData } from "firebase/firestore";
 import { Item, getItem } from "src/contexts/cart/cart.utils";
 import { IProduct } from "@firebaseQueries/types/types"
 
-// export function generateCartItem(item: IProduct, attributes: object) {
-export function generateCartItem(item: DocumentData, id: string) {
+export function generateCartItemIndividual(item: DocumentData, id: string) {
 
   const { name, url, images, price, metadata } = item;
   
@@ -13,7 +12,7 @@ export function generateCartItem(item: DocumentData, id: string) {
     name,
     url,
     images,
-    price,
-    size: metadata.size,
+    price: price,
+    size: metadata,
   };
 }

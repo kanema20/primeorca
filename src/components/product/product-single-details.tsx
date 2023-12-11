@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import Button from '@components/ui/button';
 import Counter from '@components/common/counter';
 import { useRouter } from 'next/router';
-import { useProductQuery } from '@framework/product/get-product';
-import { useFetchFeatureProduct } from '@framework/product/get-single-product';
-import { getVariations } from '@framework/utils/get-variations';
-import usePrice from '@framework/product/use-price';
 import { useCart } from '@contexts/cart/cart.context';
 import { generateCartItem } from '@utils/generate-cart-item';
 import { ProductAttributes } from './product-attributes';
@@ -17,12 +13,9 @@ import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from 'swiper/react';
 import ProductMetaReview from '@components/product/product-meta-review';
 import { useSsrCompatible } from '@utils/use-ssr-compatible';
-import { useFetchItemPrice, fetchItemPrice } from '@framework/product/get-product-price';
 import { ROUTES } from '@utils/routes';
 import { Item } from '@contexts/cart/cart.utils';
-import { useFetchItemImage } from '@framework/product/get-product-image';
-import { fetchItemSizes, useFetchItemSizes, useFetchProductSizes, useFetchProductSize } from '@framework/product/get-product-sizes';
-import { useFetchIndividualProductQuery, useFetchFirebaseProductSize } from '@framework/product/_firebase/get-individual-product';
+import { useFetchFirebaseProductSize } from "@framework/product/_firebase/get-individual-product";
 
 const productGalleryCarouselResponsive = {
   '768': {
@@ -34,57 +27,10 @@ const productGalleryCarouselResponsive = {
 };
 
 interface IndividualProdProps {
-  // slug: string;
-  data: any;
+  data: Item;
 }
 
-// const ProductSingleDetails: React.FC = () => {
-const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
-  console.log("data: ", data)
-  const {
-		// isFetching: isFirestoreLoading,
-		data: firestoreData,
-		error: firestoreError,
-	} = useFetchIndividualProductQuery(data);
-  console.log("firestoreData: ", firestoreData)
-  function getProductPrice(prod_price: any) {
-    const { data, isLoading } = useFetchItemPrice(prod_price)
-    if (isLoading) return <p>Loading...</p>;
-    return data;
-  }
-
-  function getProductImage(prod_id: any) {
-    const { data } = useFetchItemImage(prod_id);
-    return data;
-  }
-
-  const productType = () => {
-    if (data.data().metadata_.type == "Sample" || data.metadata.type == "Clothing Sample") {
-      return "Sizes (US - Men)";
-    }
-    else {
-      return "Sizes (Asia - Men)";
-    }
-  }
-  const { width } = useSsrCompatible(useWindowSize(), { width: 0, height: 0 });
-  const { addItemToCart } = useCart();
-  const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
-  const [quantity, setQuantity] = useState(1);
-  const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
-  // const { data: prod_data } = useFetchProductSize(data.url, attributes['Sizes (US - M)']);
-  const { data: prodDataSizes } = useFetchFirebaseProductSize(firestoreData.url, attributes[productType()]);
-  console.log("prodDataSizes: ", prodDataSizes);
-
-  const { price, basePrice, discount } = usePrice(
-    data &&
-    {
-      amount: data.price,
-      baseAmount: 9000,
-      currencyCode: 'USD',
-    }
-  );
-
-  const variations =
+const variations =
   {
     "Sizes (US - Men)": [
       {
@@ -246,37 +192,60 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
           "slug": "size"
         }
       },
-      // {
-      //   "id": 6,
-      //   "value": "XXXL",
-      //   "attribute": {
-      //     "id": 1,
-      //     "name": "Size",
-      //     "slug": "size"
-      //   }
-      // },
     ]
   }
 
 
-  const isSelected = !isEmpty(variations)
+// const ProductSingleDetails: React.FC = () => {
+const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
+  const { width } = useSsrCompatible(useWindowSize(), { width: 0, height: 0 });
+  const { addItemToCart } = useCart();
+  const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
+  const [quantity, setQuantity] = useState(1);
+  const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
+
+
+  // console.log("individualData: ", data);
+
+  const productType = () => {
+    if (data.metadata_.type == "Sample") {
+      return "Sizes (US - Men)";
+    }
+    else {
+      return "Sizes (Asia - Men)";
+    }
+  }
+
+  const productAttributes = () => {
+    if (data.metadata_.type == "Sample") {
+      return variations;
+    } else {
+      return clothingVariations;
+    }
+  }
+
+    const isSelected = !isEmpty(productAttributes())
     ? !isEmpty(attributes) &&
-    Object.keys(variations).every((variation) =>
+    Object.keys(productAttributes()).every((variation) =>
       attributes.hasOwnProperty(variation)
     )
     : true;
 
-  console.log("data: ", data)
+  const { data: dataSize } = useFetchFirebaseProductSize(data.id, attributes[productType()]);
+  // console.log("dataSize: ", dataSize);
+
+  
   function addToCart() {
     if (!isSelected) return;
+    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)']) == undefined) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
     setTimeout(() => {
       setAddToCartLoader(false);
     }, 600);
-
-    const item = generateCartItem(prod_data[0]!);
+    const item = generateCartItem(dataSize!.data, dataSize!.id);
     addItemToCart(item, quantity);
+
     toast('Added to cart', {
       progressClassName: 'fancy-progress-bar',
       position: width > 768 ? 'bottom-right' : 'top-right',
@@ -287,6 +256,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
       draggable: true,
     });
     console.log(item, 'item');
+
   }
 
   function handleAttribute(attribute: any) {
@@ -295,6 +265,11 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
       ...attribute,
     }));
   }
+  // const {
+	// 	data: firestoreData,
+	// 	error: firestoreError,
+	// } = useFetchIndividualProductQuery(data);
+  // console.log("firestoreData: ", firestoreData)
 
   return (
     <div className="block lg:grid grid-cols-9 gap-x-10 xl:gap-x-14 pt-7 pb-10 lg:pb-14 2xl:pb-20 items-start">
@@ -348,8 +323,6 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
                 data.image ??
                 '/assets/placeholder/products/product-gallery.svg'
               }
-              // alt={`${data[0].name}--${index}`}
-              // alt={`${data[0].name}}`}
               className="object-cover w-full"
             />
           </div>
@@ -367,23 +340,24 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
           </p>
           <div className="flex items-center mt-5">
             <div className="text-heading font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
-              {price}
+              ${data.price}.00 
             </div>
-            {discount && (
+            {/* {discount && ( */}
+             {(
               <span className="line-through font-segoe text-gray-400 text-sm md:text-base lg:text-lg xl:text-xl ltr:pl-2 rtl:pr-2">
-                {basePrice}
+                {/* {data.price} base price */}
               </span>
             )}
           </div>
         </div>
 
         <div className="pb-3 border-b border-gray-300">
-          {Object.keys(variations).map((variation) => {
+        {Object.keys(productAttributes()).map((variation) => {
             return (
               <ProductAttributes
-                key={variation}
+                key={`popup-attribute-key${variation}`}
                 title={variation}
-                attributes={variations[variation]}
+                attributes={productAttributes()[variation]}
                 active={attributes[variation]}
                 onClick={handleAttribute}
               />
@@ -416,13 +390,13 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
                 Brand:
               </span>
-              {(data.metadata.brand).toUpperCase()}
+              {(data.metadata_.brand).toUpperCase()}
             </li>
             <li>
               <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
                 Collection:
               </span>
-              {data.metadata.collection}
+              {data.metadata_.collection}
               {/* <Link
                 href={`/${data.metadata.brand}/${data.metadata.collection}`}
                 className="transition hover:underline hover:text-heading"
