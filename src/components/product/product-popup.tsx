@@ -25,6 +25,7 @@ export default function ProductPopup() {
   const [attributes, setAttributes] = useState<{ [key: string]: string }>({});
   const [viewCartBtn, setViewCartBtn] = useState<boolean>(false);
   const [addToCartLoader, setAddToCartLoader] = useState<boolean>(false);
+  const [individPageLoader, setIndividPageLoader] = useState<boolean>(false);
   const { _id, url, image, name, description, default_price, metadata } = data;
 
   const productType = () => {
