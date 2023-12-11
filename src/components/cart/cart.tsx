@@ -22,9 +22,6 @@ import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
 
-import usePoofScript from '@utils/use-poof-script';
-import { useShoppingCart } from 'use-shopping-cart';
-
 export interface CheckoutItems {
   id?: string | number;
   default_price?: string;

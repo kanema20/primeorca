@@ -5,7 +5,6 @@ const stripe = require('stripe')(process.env.NEXT_PUBLIC_STRIPE_API);
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import Cors from 'cors'
-import { validateCartItems } from 'use-shopping-cart/utilities'
 import { CheckoutItems } from '@components/cart/cart';
 import { forEach } from 'lodash';
 

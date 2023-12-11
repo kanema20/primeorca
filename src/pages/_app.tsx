@@ -71,12 +71,6 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 						height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
 				}}
 			/>
-			<CartProvider
-				cartMode="checkout-session"
-				stripe=""
-				currency="USD"
-				shouldPersist={true}
-			>
 				<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
 					<QueryClientProvider client={queryClientRef.current}>
 						{/* @ts-ignore */}
@@ -95,8 +89,6 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 						{/* <ReactQueryDevtools /> */}
 					</QueryClientProvider>
 				</AnimatePresence>
-			</CartProvider>
-			<Drift appId="r2s7deavw4m3" />
 		</>
 	);
 };

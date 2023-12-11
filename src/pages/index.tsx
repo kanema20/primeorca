@@ -27,7 +27,6 @@ import ContactInfoBlock from '@containers/contact-info';
 import InquiryForm from '@components/common/form/inquiry';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { CartProvider } from 'use-shopping-cart'
 import ModalVideo from '@components/common/modal-video';
 
 export default function Home() {
