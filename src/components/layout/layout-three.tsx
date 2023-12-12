@@ -21,25 +21,25 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 					},
 				]}
 				title="Prime Orca"
-				description="Premium basketball and streetwear."
+				description="Stay drippy with Prime Orca. 🌊"
 				canonical="https://primeorca.com"
 				openGraph={{
 					url: 'https://primeorca.com',
-					title: 'Prime Orca',
+					title: 'Prime Orca 🌊',
 					description:
-						'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
+						'Stay drippy with Prime Orca. 🌊',
 					images: [
 						{
-							url: '/assets/images/og-image-01.png',
+							url: '/assets/images/po-logo.png',
 							width: 800,
 							height: 600,
-							alt: 'Og Image Alt',
+							alt: 'Prime Orca 🌊',
 						},
 						{
-							url: '/assets/images/og-image-02.png',
+							url: '/assets/images/po-logo.png',
 							width: 900,
 							height: 800,
-							alt: 'Og Image Alt Second',
+							alt: 'Prime Orca 🌊',
 						},
 					],
 				}}

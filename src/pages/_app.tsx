@@ -11,7 +11,6 @@ import { ToastContainer } from 'react-toastify';
 // import { ReactQueryDevtools } from "react-query/devtools";
 import { appWithTranslation } from 'next-i18next';
 import { DefaultSeo } from '@components/common/default-seo';
-import { CartProvider } from 'use-shopping-cart'
 import Head from 'next/head';
 
 // Load Open Sans and satisfy typeface font
@@ -28,7 +27,7 @@ import '@styles/custom-plugins.css';
 import '@styles/tailwind.css';
 import '@styles/rc-drawer.css';
 import { getDirection } from '@utils/get-direction';
-import Drift from 'react-driftjs';
+// import Drift from 'react-driftjs';
 
 function handleExitComplete() {
 	if (typeof window !== 'undefined') {
