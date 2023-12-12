@@ -20,7 +20,7 @@ interface IEmailParams {
     try {
       await sendgrid.send(email);
     } catch (error) {
-      throw new Error('Email could not be sent, Please try again later');
+      throw new Error('Email could not be sent,  tPleasery again later');
     }
   };
   
