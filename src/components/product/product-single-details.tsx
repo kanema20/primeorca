@@ -280,10 +280,10 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
           }}
           breakpoints={productGalleryCarouselResponsive}
           className="product-gallery"
-          buttonGroupClassName="hidden"
+          // buttonGroupClassName="hidden"
         >
 
-          {/* <SwiperSlide key={`product-gallery-key`}>
+          <SwiperSlide key={`product-gallery-key`}>
             <div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
               <img
                 src={
@@ -294,7 +294,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
                 className="object-cover w-full"
               />
             </div>
-          </SwiperSlide> */}
+          </SwiperSlide>
 
           {/* {data?.gallery?.map((item, index: number) => (
             <SwiperSlide key={`product-gallery-key-${index}`}>

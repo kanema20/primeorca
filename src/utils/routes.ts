@@ -11,7 +11,7 @@ export const ROUTES = {
   TRACK: "/Balenci/track",
   TRIPLES: "/Balenci/triple-s",
   NIKE: "/Nke",
-  EYBL: "/Nke/EYBL",
+  EYBL: "/Nke/eybl",
   GT: "/Nke/gtcuts",
   TRAVIS: "/Nke/TS",
   DUNKS: "/Nke/dnks",
