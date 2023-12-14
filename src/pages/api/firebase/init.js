@@ -29,18 +29,19 @@ const { v4 } = require('uuid');
 // const cloudburst = require('../mvp/cloudburst'); // PRADA
 
 // const mcqueen = require('../mvp/mcqueen');
+const nb = require('../mvp/nb');
 
 // Clothes
 // Off white
 // const off = require('../mvp/off-white-updated'); 
 // const rhude = require('../mvp/rhude')
 // const gdpt = require('../mvp/gallery-dept')
-const moncler = require('../mvp/moncler')
-const rick = require('../mvp/rick-owens')
+// const moncler = require('../mvp/moncler')
+// const rick = require('../mvp/rick-owens')
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB7H6KvluxP9pqi2raDp1e6tfcIIUQhsR4",
+    apiKey: "AIzaSyCexrpFItMgo_NZGFJ-LL08f5-hSuK1jCc",
     authDomain: "prime-orca-701ba.firebaseapp.com",
     projectId: "prime-orca-701ba",
     storageBucket: "prime-orca-701ba.appspot.com",
@@ -141,7 +142,7 @@ const storage = getStorage();
 
 // upload data
 // const data = createClothingObject(moncler);
-uploadData(rick)
+uploadData(nb)
 
 module.exports = {
     auth, db, storage

@@ -346,6 +346,11 @@ export const siteSettings = {
             path: `${ROUTES.RICKOWENS}`,
             label: 'Pickle Rick O',
           },
+          {
+            id: 6,
+            path: `${ROUTES.NB}`,
+            label: 'NB 👨🏻',
+          },
         ],
       },
       {
@@ -853,27 +858,32 @@ export const siteSettings = {
           {
             id: 2,
             path: `${ROUTES.OFF}`,
-            label: 'OFF WHITE',
+            label: 'wht but off',
           },
           {
             id: 3,
             path: `${ROUTES.RHUDE}`,
-            label: 'Rhude',
+            label: 'Rude!',
           },
           {
             id: 4,
             path: `${ROUTES.GALLERY}`,
-            label: 'Gallery Dept.',
+            label: 'Dept. of Galleries',
           },
           {
             id: 5,
             path: `${ROUTES.MONCLER}`,
-            label: 'Moncler',
+            label: 'Monclurr',
           },
           {
             id: 6,
             path: `${ROUTES.RICKOWENS}`,
-            label: 'Rick Owens',
+            label: 'Pickle Rick O',
+          },
+          {
+            id: 6,
+            path: `${ROUTES.NB}`,
+            label: 'NB 👨🏻',
           },
         ],
       },

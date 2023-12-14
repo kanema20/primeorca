@@ -25,6 +25,7 @@ const { v4 } = require('uuid');
 // const cloudburst = require('../mvp/cloudburst'); // PRADA
 
 // const mcqueen = require('../mvp/mcqueen');
+const nb = require('../mvp/nb');
 
 // Clothes
 // Off white
@@ -32,7 +33,7 @@ const { v4 } = require('uuid');
 // const rhude = require('../mvp/rhude')
 // const gdpt = require('../mvp/gallery-dept')
 // const moncler = require('../mvp/moncler')
-const rick = require('../mvp/rick-owens')
+// const rick = require('../mvp/rick-owens')
 
 
 const firebaseConfig = {
@@ -60,7 +61,9 @@ function createProductObject(productArray, size_) {
     return {
         // id: v4(),
         name: `${productArray.name} - ${size_}`,
-        description: "**IMPORTANT** For US Size 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Orca Tier Batch - " + productArray.name,
+        // description: "**IMPORTANT** Clothing sizes are in Asian sizes. It is advised to size up 1 (or 2) sizes from US size depending on bodily girth (ex. US Large = Asian XL). The Prime Orca God Tier Batch - " + productArray.name,
+        // description: "**IMPORTANT** For US Size 13, and 14, it is advised to size up (0.5-1 size) if you have wider feet. The Orca Tier Batch - " + productArray.name,
+        description: "The Orca Tier Batch - " + productArray.name,
         currency: "USD",
         price: productArray.price,
         images: productArray.image,
@@ -97,7 +100,7 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-for (const product of rick) {
+for (const product of nb) {
     console.log("product: ", product)
     const subCollection_ = createSubCollection(product._id)
     console.log("subCollection_: ", subCollection_)

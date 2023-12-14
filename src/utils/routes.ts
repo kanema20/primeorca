@@ -7,6 +7,7 @@ export const ROUTES = {
   KOBE6: "/KB/KB-6",
   KOBE8: "/KB/KB-8",
   MONCLER: "/drip/Monclurr",
+  NB: "/NB",
   BALENCI: "/Balenci",
   TRACK: "/Balenci/track",
   TRIPLES: "/Balenci/triple-s",
