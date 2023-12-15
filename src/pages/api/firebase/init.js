@@ -29,7 +29,19 @@ const { v4 } = require('uuid');
 // const cloudburst = require('../mvp/cloudburst'); // PRADA
 
 // const mcqueen = require('../mvp/mcqueen');
-const nb = require('../mvp/nb');
+// const nb = require('../mvp/nb');
+
+//Accessories
+const lvBelts = require('../mvp/lv-belts');
+// const gucciBelts = require('../mvp/gucci-belts');
+// wallets
+
+// Women's acc.
+// chanel
+// ysl
+    
+// hellstar
+
 
 // Clothes
 // Off white
@@ -142,7 +154,7 @@ const storage = getStorage();
 
 // upload data
 // const data = createClothingObject(moncler);
-uploadData(nb)
+uploadData(lvBelts)
 
 module.exports = {
     auth, db, storage

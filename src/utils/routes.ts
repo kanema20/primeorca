@@ -9,6 +9,7 @@ export const ROUTES = {
   MONCLER: "/drip/Monclurr",
   NB: "/NB",
   BALENCI: "/Balenci",
+  ACCESSORIES: "/accessories",
   TRACK: "/Balenci/track",
   TRIPLES: "/Balenci/triple-s",
   NIKE: "/Nke",

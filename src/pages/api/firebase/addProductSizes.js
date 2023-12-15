@@ -49,6 +49,8 @@ const firebaseConfig = {
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
 const designersizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12'];
 const clothingSizes_ = ['S', 'M', 'L', 'XL', 'XXL'];
+const designerBeltSizes_ = ['30', '32', '34', '36', '38', '40']; // TODO: waist?
+
 
 function getFirebaseConfig() {
     if (Object.values(firebaseConfig).some((value) => !value))
