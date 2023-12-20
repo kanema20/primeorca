@@ -33,9 +33,11 @@ export default function ProductPopup() {
       return "Sizes (US - Men)";
     } else if (data.data().metadata_.type == "Clothing Sample") {
       return "Sizes (Asia - Men)";
+    } else if (data.data().metadata_.type == "Waist Sample") {
+      return "Sizes (cm/in)";
     }
     else {
-      return "Sizes (cm/in)";
+      return "";
     }
   }
 
@@ -289,13 +291,28 @@ export default function ProductPopup() {
     ]
   }
 
+  const noVariations = {"One Size": [
+    {
+      "id": 1,
+      "value": "Std",
+      "attribute": {
+        "id": 1,
+        "name": "Size",
+        "slug": "size"
+      }
+    },
+  ]}
+
   const productAttributes = () => {
     if (data.data().metadata_.type == "Sample") {
       return variations;
     } else if (data.data().metadata_.type == "Clothing Sample") {
       return clothingVariations;
-    } else {
+    } else if (data.data().metadata_.type == "Waist Sample") {
       return waistVariations;
+    }
+    else {
+      return noVariations;
     }
   }
 
@@ -308,7 +325,7 @@ export default function ProductPopup() {
 
   function addToCart() {
     if (!isSelected) return;
-    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)'] || attributes['Sizes (cm/in)']) == undefined) return;
+    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)'] || attributes['Sizes (cm/in)'] || attributes['One Size']) == undefined) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
     setTimeout(() => {
@@ -383,7 +400,7 @@ export default function ProductPopup() {
               )}
             </div>
           </div>
-
+            
           {Object.keys(productAttributes()).map((variation) => {
             return (
               <ProductAttributes

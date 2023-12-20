@@ -4,6 +4,7 @@ import Counter from '@components/common/counter';
 import { useRouter } from 'next/router';
 import { useCart } from '@contexts/cart/cart.context';
 import { generateCartItem } from '@utils/generate-cart-item';
+import { generateCartItemNoSize } from '@utils/generate-cart-item-no-size';
 import { ProductAttributes } from './product-attributes';
 import isEmpty from 'lodash/isEmpty';
 import Link from '@components/ui/link';
@@ -272,6 +273,19 @@ const variations =
     ]
   }
 
+  const noVariations = {"One Size": [
+    {
+      "id": 1,
+      "value": "Std",
+      "attribute": {
+        "id": 1,
+        "name": "Size",
+        "slug": "size"
+      }
+    },
+  ]}
+
+
 
 // const ProductSingleDetails: React.FC = () => {
 const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
@@ -289,9 +303,11 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
       return "Sizes (US - Men)";
     } else if (data.metadata_.type == "Clothing Sample") {
       return "Sizes (Asia - Men)";
+    } else if (data.metadata_.type == "Waist Sample") {
+      return "Sizes (cm/in)";
     }
     else {
-      return "Sizes (cm/in)";
+      return "One Size";
     }
   }
 
@@ -300,13 +316,15 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
       return variations;
     } else if (data.metadata_.type == "Clothing Sample") {
       return clothingVariations;
+    } else if (data.metadata_.type == "Waist Sample") {
+      return waistVariations;
     }
     else {
-      return waistVariations;
+      return noVariations;
     }
   }
 
-    const isSelected = !isEmpty(productAttributes())
+    const isSelected = !isEmpty(productAttributes()) || productAttributes() != null
     ? !isEmpty(attributes) &&
     Object.keys(productAttributes()).every((variation) =>
       attributes.hasOwnProperty(variation)
@@ -314,12 +332,11 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
     : true;
 
   const { data: dataSize } = useFetchFirebaseProductSize(data.id, attributes[productType()]);
-  // console.log("dataSize: ", dataSize);
 
   
   function addToCart() {
     if (!isSelected) return;
-    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)'] || attributes['Sizes (cm/in)']) == undefined) return;
+    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)'] || attributes['Sizes (cm/in)'] || attributes['One Size']) == undefined) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
     setTimeout(() => {
@@ -434,7 +451,7 @@ const ProductSingleDetails: React.FC<IndividualProdProps> = ({ data }) => {
         </div>
 
         <div className="pb-3 border-b border-gray-300">
-        {Object.keys(productAttributes()).map((variation) => {
+        {productAttributes() == null ? "" : Object.keys(productAttributes()).map((variation) => {
             return (
               <ProductAttributes
                 key={`popup-attribute-key${variation}`}

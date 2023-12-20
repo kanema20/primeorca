@@ -32,12 +32,16 @@ async function updateData(firestore) {
         } 
         else if (doc.data().metadata_.type === "Clothing Sample") {
             console.log("already updated w Clothing Sample type")
-        } 
+        }
+        else if (doc.data().metadata_.type === "Waist Sample") {
+            console.log("already updated w Waist Sample type")
+        }
         else {
             updateDoc(doc.ref, {
                 metadata_: {
                     ...doc.data().metadata_,
-                    type: "Waist Sample" // new fields to update
+                    type: "Accessory Sample" // new fields to update
+                    // type: "Waist Sample" // new fields to update
                     // type: "Clothing Sample" // new fields to update
                     // type: "Sample" // new fields to update
                 },

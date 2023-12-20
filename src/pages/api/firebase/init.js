@@ -35,13 +35,14 @@ const { v4 } = require('uuid');
 // const MonclurrShort  = require('../mvp/moncler-short');
 //Accessories
 // const lvBelts = require('../mvp/lv-belts');
-const gucciBelts = require('../mvp/gucci-belts');
+// const gucciBelts = require('../mvp/gucci-belts');
 // wallets
 
 // Women's acc.
 // chanel
+const cc = require('../mvp/womens/chanel');
 // ysl
-    
+const ysl = require('../mvp/womens/ysl');
 // hellstar
 
 
@@ -156,7 +157,7 @@ const storage = getStorage();
 
 // upload data
 // const data = createClothingObject(moncler);
-uploadData(gucciBelts)
+uploadData(ysl)
 
 module.exports = {
     auth, db, storage

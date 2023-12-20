@@ -40,7 +40,12 @@ const { v4 } = require('uuid');
 
 //Accessories
 // const lvBelts = require('../mvp/lv-belts');
-const gucciBelts = require('../mvp/gucci-belts');
+// const gucciBelts = require('../mvp/gucci-belts');
+
+// chanel
+const cc = require('../mvp/womens/chanel');
+// ysl
+const ysl = require('../mvp/womens/ysl');
 
 
 const firebaseConfig = {
@@ -57,8 +62,8 @@ const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '1
 // const designersizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12'];
 const clothingSizes_ = ['S', 'M', 'L', 'XL', 'XXL'];
 const designerBeltSizes_ = ['30', '32', '34', '36', '38', '40']; // TODO: waist?
-
 const waistSizes_ = ['65/26', '73/28', '80/30', '87/33', '93/35', '100/37', '110/40', '120/42'];
+const accessorySizes_ = ['Std'];
 
 function getFirebaseConfig() {
     if (Object.values(firebaseConfig).some((value) => !value))
@@ -110,11 +115,11 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-for (const product of gucciBelts) {
+for (const product of ysl) {
     console.log("product: ", product)
     const subCollection_ = createSubCollection(product._id)
     console.log("subCollection_: ", subCollection_)
-    for (const size of waistSizes_) {
+    for (const size of accessorySizes_) {
         addDocToSubCollection(subCollection_, createProductObject(product, size))
     }
 }
