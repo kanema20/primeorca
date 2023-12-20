@@ -9,14 +9,15 @@ import {
     QuerySnapshot,
     DocumentData,
     where,
-    getDocs
+    getDocs,
+    orderBy
 } from "firebase/firestore";
 import { firestore } from '@firebaseQueries/app';
 
 const fetchBestSellers = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
 
-    const query_ref = getDocs(query(collection(firestore, "/products"), where("metadata_.type", "==", "Sample")));
+    const query_ref = getDocs(query(collection(firestore, "/products"), where("metadata_.type", "==", "Sample"), orderBy("_id", "desc")));
 
     let query_data: any = [];
     const snapshot = (await query_ref).docs;
