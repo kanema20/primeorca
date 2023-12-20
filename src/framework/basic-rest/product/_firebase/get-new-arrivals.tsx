@@ -9,7 +9,8 @@ import {
     QuerySnapshot,
     DocumentData,
     where,
-    getDocs
+    getDocs, 
+    orderBy
 } from "firebase/firestore";
 
 // import { firestore } from '../../../../pages/api/firebase/firebase';
@@ -19,7 +20,7 @@ const fetchNewArrivals = async ({ queryKey }: any) => {
     const [_key, _params] = queryKey;
 
     // const ref = query(collection(firestore, "products"), limit(20)); // where("available", "==", "true"),
-    const query_ref = getDocs(query(collection(firestore, "/products"), where("metadata_.type", "==", "Clothing Sample")));
+    const query_ref = getDocs(query(collection(firestore, "/products"), where("metadata_.type", "==", "Clothing Sample"), orderBy('updatedAt', 'desc')));
 
     let query_data: any = [];
     const snapshot = (await query_ref).docs;
