@@ -37,7 +37,7 @@ export default function ProductPopup() {
       return "Sizes (cm/in)";
     }
     else {
-      return "";
+      return "One Size";
     }
   }
 
