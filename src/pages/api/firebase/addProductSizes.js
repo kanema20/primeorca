@@ -25,7 +25,10 @@ const { v4 } = require('uuid');
 // const cloudburst = require('../mvp/cloudburst'); // PRADA
 
 // const mcqueen = require('../mvp/mcqueen');
-const nb = require('../mvp/nb');
+// const nb = require('../mvp/nb');
+// const bberry = require('../mvp/bberry');
+// const hellstr = require('../mvp/hellstr');
+// const MonclurrShort  = require('../mvp/moncler-short'); 
 
 // Clothes
 // Off white
@@ -34,6 +37,10 @@ const nb = require('../mvp/nb');
 // const gdpt = require('../mvp/gallery-dept')
 // const moncler = require('../mvp/moncler')
 // const rick = require('../mvp/rick-owens')
+
+//Accessories
+// const lvBelts = require('../mvp/lv-belts');
+const gucciBelts = require('../mvp/gucci-belts');
 
 
 const firebaseConfig = {
@@ -47,10 +54,11 @@ const firebaseConfig = {
 };
 
 const sizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12', '13', '14'];
-const designersizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12'];
+// const designersizes_ = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '12'];
 const clothingSizes_ = ['S', 'M', 'L', 'XL', 'XXL'];
 const designerBeltSizes_ = ['30', '32', '34', '36', '38', '40']; // TODO: waist?
 
+const waistSizes_ = ['65/26', '73/28', '80/30', '87/33', '93/35', '100/37', '110/40', '120/42'];
 
 function getFirebaseConfig() {
     if (Object.values(firebaseConfig).some((value) => !value))
@@ -102,11 +110,11 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-for (const product of nb) {
+for (const product of gucciBelts) {
     console.log("product: ", product)
     const subCollection_ = createSubCollection(product._id)
     console.log("subCollection_: ", subCollection_)
-    for (const size of designersizes_) {
+    for (const size of waistSizes_) {
         addDocToSubCollection(subCollection_, createProductObject(product, size))
     }
 }

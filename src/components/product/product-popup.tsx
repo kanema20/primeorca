@@ -31,9 +31,11 @@ export default function ProductPopup() {
   const productType = () => {
     if (data.data().metadata_.type == "Sample") {
       return "Sizes (US - Men)";
+    } else if (data.data().metadata_.type == "Clothing Sample") {
+      return "Sizes (Asia - Men)";
     }
     else {
-      return "Sizes (Asia - Men)";
+      return "Sizes (cm/in)";
     }
   }
 
@@ -210,11 +212,90 @@ export default function ProductPopup() {
     ]
   }
 
+  const waistVariations = {
+    "Sizes (cm/in)": [
+      {
+        "id": 1,
+        "value": "65/26",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 2,
+        "value": "73/28",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 3,
+        "value": "80/30",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 4,
+        "value": "87/33",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 5,
+        "value": "93/35",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 6,
+        "value": "100/37",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 7,
+        "value": "110/40",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+      {
+        "id": 8,
+        "value": "120/42",
+        "attribute": {
+          "id": 1,
+          "name": "Size",
+          "slug": "size"
+        }
+      },
+    ]
+  }
+
   const productAttributes = () => {
     if (data.data().metadata_.type == "Sample") {
       return variations;
-    } else {
+    } else if (data.data().metadata_.type == "Clothing Sample") {
       return clothingVariations;
+    } else {
+      return waistVariations;
     }
   }
 
@@ -227,7 +308,7 @@ export default function ProductPopup() {
 
   function addToCart() {
     if (!isSelected) return;
-    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)']) == undefined) return;
+    if ((attributes['Sizes (US - Men)'] || attributes['Sizes (Asia - Men)'] || attributes['Sizes (cm/in)']) == undefined) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
     setTimeout(() => {

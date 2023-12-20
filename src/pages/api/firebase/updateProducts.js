@@ -29,11 +29,17 @@ async function updateData(firestore) {
     querySnapshot.forEach((doc) => {
         if (doc.data().metadata_.type === "Sample") {
             console.log("already updated w Sample type")
-        } else {
+        } 
+        else if (doc.data().metadata_.type === "Clothing Sample") {
+            console.log("already updated w Clothing Sample type")
+        } 
+        else {
             updateDoc(doc.ref, {
                 metadata_: {
                     ...doc.data().metadata_,
-                    type: "Clothing Sample" // new fields to update
+                    type: "Waist Sample" // new fields to update
+                    // type: "Clothing Sample" // new fields to update
+                    // type: "Sample" // new fields to update
                 },
                 // price: 150,
             })

@@ -73,11 +73,11 @@ export default function Home() {
       <CollectionBlock data={collection} />
       <Divider />
       {/* <BrandBlock sectionHeading="text-top-brands" /> */}
+      {/* <CategoryGridBlock sectionHeading="text-featured-categories" />  */}
       <ProductsFlashSaleBlock date={'2023-03-01T01:02:03'} />
       <BestSellerProductFeed />
       {/* <ProductsWithFlashSale carouselBreakpoint={flashSaleCarouselBreakpoint} /> */}
-      {/* <BannerGridBlock />
-      <CategoryGridBlock sectionHeading="text-featured-categories" /> */}
+      {/* <BannerGridBlock /> */}
       {/* <Divider /> */}
       {/* <NewArrivalsProductFeed /> */}
       {/* <DownloadApps /> */}

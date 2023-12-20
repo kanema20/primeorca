@@ -7,6 +7,8 @@ import CategoryCardLoader from '@components/ui/loaders/category-card-loader';
 import { useFeaturedCategoriesQuery } from '@framework/category/get-all-featured-categories';
 import Alert from '@components/ui/alert';
 import { useSsrCompatible } from '@utils/use-ssr-compatible';
+import { categoryData } from '@framework/static/category';
+import { Category } from '@framework/types';
 
 interface CategoriesProps {
   sectionHeading: string;
@@ -40,6 +42,10 @@ const CategoryGridBlock: React.FC<CategoriesProps> = ({
   const { data, isLoading, error } = useFeaturedCategoriesQuery({
     limit: 10,
   });
+
+  console.log("category data", categoryData);
+  console.log("data", data);
+  
 
   return (
     <div className={className}>
@@ -87,6 +93,7 @@ const CategoryGridBlock: React.FC<CategoriesProps> = ({
                     />
                   ))}
             </div>
+            
           )}
         </>
       )}

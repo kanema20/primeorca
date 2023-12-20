@@ -351,6 +351,16 @@ export const siteSettings = {
             path: `${ROUTES.NB}`,
             label: 'NB 👨🏻',
           },
+          {
+            id: 7,
+            path: `${ROUTES.BBERRY}`,
+            label: 'BBERRY 🍓',
+          },
+          {
+            id: 8,
+            path: `${ROUTES.HELLSTR}`,
+            label: 'HELLSTR',
+          },
         ],
       },
       {
@@ -722,6 +732,43 @@ export const siteSettings = {
         path: '/DYOR/b22',
         label: 'DYOR 💎',
       },
+      {
+        id: 13,
+        path: '/accessories',
+        label: 'Accessories 👜',
+        subMenu: [
+          {
+            id: 1,
+            path: `${ROUTES.BELTS}`,
+            label: 'Belts',
+          },
+          {
+            id: 2,
+            path: `${ROUTES.WATCHES}`,
+            label: 'Watches',
+          },
+          {
+            id: 3,
+            path: `${ROUTES.BAGS}`,
+            label: 'Bags',
+          },
+          {
+            id: 4,
+            path: `${ROUTES.WALLETS}`,
+            label: 'Wallets',
+          },
+          {
+            id: 5,
+            path: `${ROUTES.ICE}`,
+            label: 'Ice',
+          },
+          {
+            id: 6,
+            path: `${ROUTES.GLASSES}`,
+            label: 'Glasses',
+          },
+        ],
+      },
     ],
     mobileMenu: [
       // {
@@ -885,6 +932,16 @@ export const siteSettings = {
             path: `${ROUTES.NB}`,
             label: 'NB 👨🏻',
           },
+          {
+            id: 7,
+            path: `${ROUTES.BBERRY}`,
+            label: 'BBERRY 🍓',
+          },
+          {
+            id: 8,
+            path: `${ROUTES.HELLSTR}`,
+            label: 'HELLSTR',
+          },
         ],
       },
       {
@@ -1001,7 +1058,7 @@ export const siteSettings = {
         label: 'McQ 👑',
       },
       {
-        id: 12,
+        id: 12,     
         path: '/DYOR/b22',
         label: 'DYOR 💎',
       },
@@ -1009,6 +1066,43 @@ export const siteSettings = {
         id: 13,
         path: '/Nke/TS',
         label: 'TS 🌵',
+      },
+      {
+        id: 14,
+        path: '/accessories',
+        label: 'Accessories [👜]',
+        subMenu: [
+          {
+            id: 1,
+            path: `${ROUTES.BELTS}`,
+            label: 'Belts',
+          },
+          {
+            id: 2,
+            path: `${ROUTES.WATCHES}`,
+            label: 'Watches',
+          },
+          {
+            id: 3,
+            path: `${ROUTES.BAGS}`,
+            label: 'Bags',
+          },
+          {
+            id: 4,
+            path: `${ROUTES.WALLETS}`,
+            label: 'Wallets',
+          },
+          {
+            id: 5,
+            path: `${ROUTES.ICE}`,
+            label: 'Ice',
+          },
+          {
+            id: 6,
+            path: `${ROUTES.GLASSES}`,
+            label: 'Glasses',
+          },
+        ],
       },
       // {
       //   id: 14,

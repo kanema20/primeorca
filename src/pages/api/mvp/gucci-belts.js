@@ -3,7 +3,7 @@ const gccBelts =
     {
       "_id": "657b7df2c7ec2afe38228541",
       "name": "gcc Belt Bag GG Supreme Small Beige/Black",
-    "price": "69",
+    "price": "99",
     "brand": "gcc",
       "lowestResellPrice.stockX": "495",
       "image": "https://prime-orca.s3.us-east-2.amazonaws.com/gucci-belts/Gucci-Waist-Bag-GG-Supreme-Small-Canvas-Leather-Brown-Black-v2.png",
@@ -15,7 +15,7 @@ const gccBelts =
       "metadata_": {
         "brand": "gcc",
         "category": "belts",
-        "collection": "gcc-belts",
+        "collection": "belts",
         "slug": "gcc-waist-belt-small-canvas-leather-brown-beige"
     },
       "releaseDate": ""
@@ -23,7 +23,7 @@ const gccBelts =
     {
       "_id": "657b7df2c7ec2afe38228542",
       "name": "gcc Belt GG Supreme Leather 1.5 Width Beige/Ebony",
-    "price": "69",
+    "price": "99",
     "brand": "gcc",
       "lowestResellPrice.stockX": "263",
       "image": "https://prime-orca.s3.us-east-2.amazonaws.com/gucci-belts/Gucci-Belt-GG-Supreme-Leather-15-Width-Beige-Ebony.jpg",
@@ -35,7 +35,7 @@ const gccBelts =
       "metadata_": {
         "brand": "gcc",
         "category": "belts",
-        "collection": "gcc-belts",
+        "collection": "belts",
         "slug": "gcc-belt-gg-supreme-leather-15-width-beige-ebony"
     },
       "releaseDate": ""
@@ -43,7 +43,7 @@ const gccBelts =
     {
       "_id": "657b7df2c7ec2afe38228543",
       "name": "gcc x Disney Donald Duck GG Supreme Belt Bag Beige/Ebony",
-    "price": "69",
+    "price": "99",
     "brand": "gcc",
       "lowestResellPrice.stockX": "1065",
       "image": "https://prime-orca.s3.us-east-2.amazonaws.com/gucci-belts/Gucci-x-Disney-Donald-Duck-GG-Supreme-Belt-Bag-Beige-Ebony.jpg",
@@ -55,7 +55,7 @@ const gccBelts =
       "metadata_": {
         "brand": "gcc",
         "category": "belts",
-        "collection": "gcc-belts",
+        "collection": "belts",
         "slug": "gcc-x-disney-donald-duck-gg-supreme-belt-bag-beige-ebony"
     },
       "releaseDate": ""

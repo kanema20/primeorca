@@ -10,10 +10,10 @@ export const collectionData = [
   },
   {
     id: 2,
-    slug: ROUTES.KOBE6,
-    image: '/assets/images/collection/kobe-6-grinch-2.jpg',
-    title: 'collection-title-two',
-    description: 'collection-description-two',
+    slug: ROUTES.BELTS,
+    image: 'https://prime-orca.s3.us-east-2.amazonaws.com/lv-belts/Louis-Vuitton-LV-Initiales-Silver-Buckle-Belt-Monogram-40mm-Brown-Black-Studio-1.jpg',
+    title: 'Designer Belts',
+    description: 'LV, GC, etc.',
   },
   {
     id: 3,
