@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
   } = useForm<ContactFormValues>();
   function onSubmit(values: ContactFormValues) {
     console.log(values, 'contact');
-    sendForm("service_98y4xgd", "template_xod81hn", "#contact-form", "ftsPUcoP3FCRkQx5e").then(
+    sendForm("service_98y4xgd", "template_14dvjai", "#contact-form", "ftsPUcoP3FCRkQx5e").then(
       (result) => {
         alert("Message Sent Successfully");
         console.log(result.text);
