@@ -27,26 +27,14 @@ async function updateData(firestore) {
     const querySnapshot = await getDocs(collection(firestore, "products")); //, where("metadata_.collection", "==", "yeezy-700"));
 
     querySnapshot.forEach((doc) => {
-        if (doc.data().metadata_.type === "Sample") {
-            console.log("already updated w Sample type")
-        } 
-        else if (doc.data().metadata_.type === "Accessory Sample") {
-            console.log("already updated w Accessory Sample type")
-        }
-        else if (doc.data().metadata_.type === "Waist Sample") {
-            console.log("already updated w Waist Sample type")
-        }
-        else {
+        if (doc.data().metadata_.collection === "dt") {
             updateDoc(doc.ref, {
-                metadata_: {
-                    ...doc.data().metadata_,
-                    type: "Clothing Sample" // new fields to update
-                    // type: "Waist Sample" // new fields to update
-                    // type: "Clothing Sample" // new fields to update
-                    // type: "Sample" // new fields to update
-                },
+                image: "https://prime-orca.s3.us-east-2.amazonaws.com/denim-tears/" + doc.data().url + ".jpg",
                 // price: 150,
             })
+        } 
+        else {
+            console.log("next...")
         }
         console.log(`${doc.data().name}: ${doc.data().price, doc.data().available}`)
     });

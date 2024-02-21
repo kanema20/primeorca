@@ -83,6 +83,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
             { params: { slug: "bberry" } },
             { params: { slug: "NB" } },
             { params: { slug: "hellstr" } },
+            { params: { slug: "dt" } },
             // { params: { slug: "kobe-5" } },
             // { params: { slug: "kobe-6" } },
             // { params: { slug: "kobe-8" } },

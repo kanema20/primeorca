@@ -43,10 +43,18 @@ const { v4 } = require('uuid');
 // const gucciBelts = require('../mvp/gucci-belts');
 
 // chanel
-const cc = require('../mvp/womens/chanel');
+// const cc = require('../mvp/womens/chanel');
 // ysl
-const ysl = require('../mvp/womens/ysl');
+// const ysl = require('../mvp/womens/ysl');
 
+//lv bags
+// const lvBags = require('../mvp/womens/lv-bags');
+
+//gucci bags
+// const gucciBags = require('../mvp/womens/gucci-bags');
+// const chromehearts = require('../mvp/chrome-hearts');
+// const diorTote = require('../mvp/womens/dior-tote');
+const denimTears = require('../mvp/denim-tears');
 
 const firebaseConfig = {
     apiKey: "AIzaSyB7H6KvluxP9pqi2raDp1e6tfcIIUQhsR4",
@@ -115,11 +123,11 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-for (const product of ysl) {
+for (const product of denimTears) {
     console.log("product: ", product)
     const subCollection_ = createSubCollection(product._id)
     console.log("subCollection_: ", subCollection_)
-    for (const size of accessorySizes_) {
+    for (const size of clothingSizes_) {
         addDocToSubCollection(subCollection_, createProductObject(product, size))
     }
 }

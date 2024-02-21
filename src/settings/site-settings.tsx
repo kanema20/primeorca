@@ -359,7 +359,11 @@ export const siteSettings = {
           {
             id: 8,
             path: `${ROUTES.HELLSTR}`,
-            label: 'HELLSTR',
+            label: 'HELLSTR 🔥',
+          },          {
+            id: 9,
+            path: `${ROUTES.DT}`,
+            label: 'DT 💧',
           },
         ],
       },
@@ -940,7 +944,12 @@ export const siteSettings = {
           {
             id: 8,
             path: `${ROUTES.HELLSTR}`,
-            label: 'HELLSTR',
+            label: 'HELLSTR 🔥',
+          },
+          {
+            id: 8,
+            path: `${ROUTES.DT}`,
+            label: 'DT 💧',
           },
         ],
       },

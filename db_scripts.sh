@@ -7,3 +7,6 @@ node ./src/pages/api/firebase/updateProducts.js
 # ADD INDIVIDUAL PRODUCT SIZES
 node ./src/pages/api/firebase/addProductSizes.js
 
+# UPDATE IMAGES FOR COLLECTION
+node ./src/pages/api/firebase/updateProductImages.js
+

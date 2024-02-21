@@ -11,6 +11,7 @@ export const ROUTES = {
   BALENCI: "/Balenci",
   BBERRY: "/drip/bberry",
   HELLSTR: "/drip/hellstr",
+  DT: "/drip/dt",
   ACCESSORIES: "/accessories",
   BELTS: "/accessories/belts",
   WATCHES: "/accessories/watches",

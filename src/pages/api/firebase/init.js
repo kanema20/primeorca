@@ -40,11 +40,17 @@ const { v4 } = require('uuid');
 
 // Women's acc.
 // chanel
-const cc = require('../mvp/womens/chanel');
+// const cc = require('../mvp/womens/chanel');
 // ysl
-const ysl = require('../mvp/womens/ysl');
+// const ysl = require('../mvp/womens/ysl');
 // hellstar
 
+
+//lv bags
+// const lvBags = require('../mvp/womens/lv-bags');
+
+//gucci bags
+// const gucciBags = require('../mvp/womens/gucci-bags');
 
 // Clothes
 // Off white
@@ -53,6 +59,9 @@ const ysl = require('../mvp/womens/ysl');
 // const gdpt = require('../mvp/gallery-dept')
 // const moncler = require('../mvp/moncler')
 // const rick = require('../mvp/rick-owens')
+// const chromehearts = require('../mvp/chrome-hearts');
+// const diorTote = require('../mvp/womens/dior-tote');
+const denimTears = require('../mvp/denim-tears');
 
 
 const firebaseConfig = {
@@ -157,7 +166,7 @@ const storage = getStorage();
 
 // upload data
 // const data = createClothingObject(moncler);
-uploadData(ysl)
+uploadData(denimTears)
 
 module.exports = {
     auth, db, storage
